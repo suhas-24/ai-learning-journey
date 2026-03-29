@@ -1,71 +1,117 @@
 # Phase 9 - Evals + Observability + EDD
 
 **Status:** 🔴 Not Started  
-**Started:** -  
-**Completed:** -  
+**Started:** Not started yet  
+**Completed:** Not completed yet  
 **Estimated Duration:** 4 weeks
 
 ---
 
-## Learning Objectives
+## Why This Phase Matters
 
-- [ ] Build evaluation datasets from real failures
-- [ ] Measure correctness, groundedness, and task success rate
-- [ ] Add tracing, prompt/version tracking, and cost dashboards
-- [ ] Practice evaluation-driven development for agent changes
-- [ ] Investigate regressions systematically instead of guessing
-- [ ] Use observability to connect failures back to root causes
+An AI system that "felt good in testing" is not enough. Engineering means measuring quality, finding regressions, understanding failures, and proving that changes actually improved the system. This phase turns AI work from intuition-driven iteration into evidence-driven iteration.
+
+EDD, or Evaluation-Driven Development, is the discipline that keeps improvements honest.
 
 ---
 
-## What I'm Learning
-
-### Evals
-_My notes go here_
-
-### Observability
-_My notes go here_
+## Core Ideas To Master
 
 ### Evaluation-Driven Development
-_My notes go here_
+
+1. define success before building
+2. build a golden dataset
+3. run evals on every important change
+4. turn failures into new test cases
+5. never ship blind
+
+### Evaluation Types
+
+- final answer scoring
+- trajectory scoring for tool use and intermediate decisions
+- RAG-focused metrics such as faithfulness and context precision
+- LLM-as-judge with structured rubrics
+- prompt A/B testing when multiple prompts compete
+
+### Observability
+
+- trace every model call and tool call
+- track token cost, latency, success rate, and failure clusters
+- version prompts and compare results over time
+- connect production failures back to reproducible examples
 
 ---
 
-## Phase Project: eval + telemetry suite
+## Metrics I Need To Care About
 
-**Description:** A reusable evaluation and observability layer for agent systems with test cases, traces, and regression alerts.
+- time to first token
+- tokens per second
+- cost per task
+- task success rate
+- tool call success rate
+- hallucination rate
+- context precision and recall for retrieval systems
 
-**Repo link:** _
-
-**Status:** 🔴 Not Started
-
-**What I built:**  
-_Describe what you built_
-
-**What broke:**  
-_What went wrong and how you fixed it_
-
-**What I learned:**  
-_Key takeaways_
+If I cannot measure the system, I cannot improve it reliably.
 
 ---
 
-## Resources Used
+## Phase Project: Full Eval Suite + Observability Layer
 
-| Resource | Type | My Rating | Notes |
-| --- | --- | --- | --- |
-| Langfuse docs | Docs | /5 | |
-| LangSmith docs | Docs | /5 | |
-| RAGAS docs | Docs | /5 | |
+**Project goal:** add a real measurement stack to the agent built in Phases 7 and 8.  
+**Planned repo:** inside the main agent system or as a connected evaluation package  
+**Current project status:** planned, not started
+
+### Required outputs
+
+- a golden dataset with representative tasks and edge cases
+- automated evaluation runs
+- trace dashboards for model and tool behavior
+- failure thresholds that can block merges or deployments
+- a feedback loop that turns production mistakes into eval cases
+
+### Tooling To Explore
+
+- RAGAS
+- Langfuse
+- LangSmith
+- PromptFoo or DeepEval
 
 ---
 
-## Key Insights
+## Exit Criteria
 
-_The most important things I understood in this phase_
+- I can create a useful golden dataset instead of cherry-picking easy examples.
+- I can measure RAG quality and task quality separately.
+- I can trace a bad output back to the step that caused it.
+- I can explain the difference between observability and evaluation.
+- I can set a quality threshold that guards against regressions.
 
 ---
 
-## Questions I Still Have
+## Common Traps To Avoid
 
-_Things I want to understand better_
+- only checking final answers and ignoring broken tool choices
+- using tiny or overly easy evaluation sets
+- trusting one judge model without thinking about its bias
+- treating dashboards as success instead of using them to drive fixes
+
+---
+
+## Resources For This Phase
+
+| Resource | Why it matters | How I should use it |
+| --- | --- | --- |
+| RAGAS docs | Strong baseline for RAG evaluation | Start with faithfulness and relevance first |
+| Langfuse docs | Good tracing and prompt versioning | Instrument one project end to end |
+| PromptFoo or DeepEval docs | Helps compare prompt variants quickly | Use for controlled prompt experiments |
+| LangSmith docs | Useful if LangGraph becomes central | Compare dataset and tracing workflows |
+
+---
+
+## Questions I Want To Answer During This Phase
+
+- What failures matter most to real users?
+- Which metrics are worth blocking a merge on?
+- How do I keep evals cheap enough to run often?
+- What is the smallest useful observability setup for an individual builder?

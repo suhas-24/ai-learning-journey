@@ -1,71 +1,120 @@
 # Phase 4 - MCP + CLI + A2A Protocols
 
 **Status:** 🔴 Not Started  
-**Started:** -  
-**Completed:** -  
+**Started:** Not started yet  
+**Completed:** Not completed yet  
 **Estimated Duration:** 3-4 weeks
 
 ---
 
-## Learning Objectives
+## Why This Phase Matters
 
-- [ ] Build polished CLI tools that solve real tasks
-- [ ] Understand how MCP exposes tools, resources, and prompts
-- [ ] Connect an agent to external tools through MCP
-- [ ] Learn the role of A2A for agent-to-agent collaboration
-- [ ] Practice schema design for stable tool contracts
-- [ ] Debug tool execution failures across process boundaries
+An agent without tools is just a chat interface. Real utility comes from the ability to call external systems safely and predictably. In 2026 there is no single tool-connection pattern that wins everywhere, so I need to learn the tradeoffs:
 
----
-
-## What I'm Learning
-
-### CLI Design
-_My notes go here_
-
-### MCP Fundamentals
-_My notes go here_
-
-### A2A Concepts
-_My notes go here_
+- MCP for typed, discoverable, auth-friendly tool contracts
+- CLI for local tools and token-efficient workflows
+- direct API wrappers for the simplest and lowest-latency integrations
+- A2A when one agent needs help from another
 
 ---
 
-## Phase Project: MCP-powered research CLI
+## Core Ideas To Master
 
-**Description:** A command-line assistant that exposes local and remote tools through MCP and can hand work off across protocol boundaries.
+### MCP
 
-**Repo link:** _
+- client/server model
+- JSON-RPC transport
+- tool discovery and typed contracts
+- authentication-heavy integrations such as GitHub, Slack, databases, and browser tools
 
-**Status:** 🔴 Not Started
+### CLI As A Tool Surface
 
-**What I built:**  
-_Describe what you built_
+- shell commands can be cheaper and faster than wrapping everything in an MCP server
+- local development workflows often fit naturally as `git`, `gh`, `docker`, `pytest`, or `aws` commands
+- command execution needs guardrails, argument hygiene, and good output parsing
 
-**What broke:**  
-_What went wrong and how you fixed it_
+### A2A
 
-**What I learned:**  
-_Key takeaways_
-
----
-
-## Resources Used
-
-| Resource | Type | My Rating | Notes |
-| --- | --- | --- | --- |
-| Model Context Protocol docs | Docs | /5 | |
-| Typer docs | Docs | /5 | |
-| A2A protocol references | Docs | /5 | |
+- capability discovery across agents
+- delegation to a specialized peer agent
+- coordination for parallel work
+- best suited to multi-agent systems or mixed-vendor environments
 
 ---
 
-## Key Insights
+## Decision Framework To Internalize
 
-_The most important things I understood in this phase_
+| Situation | Best default |
+| --- | --- |
+| Remote service with complex auth and typed contracts | MCP |
+| Local dev tool or script | CLI |
+| Simple wrapper where speed matters most | Direct API |
+| Agent handing work to another agent | A2A |
+
+The important lesson is not "always use MCP." The important lesson is choosing the lightest tool surface that preserves safety and clarity.
 
 ---
 
-## Questions I Still Have
+## Phase Project: One Tool, Three Implementations
 
-_Things I want to understand better_
+**Project goal:** implement the same GitHub Issue Creator workflow three ways and compare them.  
+**Planned repo:** a dedicated experiment repo created during this phase  
+**Current project status:** planned, not started
+
+### Required implementations
+
+1. MCP server implementation
+2. CLI implementation using `gh`
+3. direct REST API implementation using `httpx`
+
+### What to measure
+
+- token usage
+- implementation complexity
+- latency
+- reliability
+- how much context the agent needs to use each tool correctly
+
+### What this project is really teaching
+
+- there is no silver bullet integration style
+- protocol choices affect cost, speed, observability, and operator experience
+
+---
+
+## Exit Criteria
+
+- I can explain when MCP is the right tool and when it is overkill.
+- I can safely invoke local CLI tools from Python.
+- I can build one small MCP server.
+- I can compare CLI and API integrations on more than "it feels better."
+- I understand what A2A solves that normal tool calling does not.
+
+---
+
+## Common Traps To Avoid
+
+- building a protocol-heavy solution for a tiny local task
+- ignoring auth and audit requirements when choosing a tool integration
+- treating CLI output as stable if it actually is not
+- assuming agent-to-agent delegation is useful before a single agent works reliably
+
+---
+
+## Resources For This Phase
+
+| Resource | Why it matters | How I should use it |
+| --- | --- | --- |
+| MCP official docs | Primary source for the standard | Build the quickstart server first |
+| A2A spec | Shows the shape of agent delegation | Read for concepts, not memorization |
+| `gh` CLI docs | Best local GitHub workflow surface | Rebuild one action end to end |
+| GitHub REST API docs | Baseline direct integration example | Compare response shape and auth flow |
+
+---
+
+## Questions I Want To Answer During This Phase
+
+- What extra safety does MCP buy me in practice?
+- How much cheaper is a CLI workflow for local development tasks?
+- When is a direct API wrapper the most maintainable answer?
+- What coordination problems are actually worth solving with A2A?
