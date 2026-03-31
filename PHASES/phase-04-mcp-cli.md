@@ -16,29 +16,61 @@ An agent without tools is just a chat interface. Real utility comes from the abi
 - direct API wrappers for the simplest and lowest-latency integrations
 - A2A when one agent needs help from another
 
+This phase is where the curriculum stops being about model responses and starts being about action. The difference is huge: a model answer is information, but a tool call can change state in the real world.
+
 ---
 
-## Core Ideas To Master
+## Chapter Map
 
-### MCP
+### Chapter 1: Tool Surfaces
 
-- client/server model
-- JSON-RPC transport
-- tool discovery and typed contracts
-- authentication-heavy integrations such as GitHub, Slack, databases, and browser tools
+Agents can use tools through direct API calls, command-line programs, or protocol-based servers. The question is not which one is coolest. The question is which one fits the task and the environment.
 
-### CLI As A Tool Surface
+### Chapter 2: MCP
 
-- shell commands can be cheaper and faster than wrapping everything in an MCP server
-- local development workflows often fit naturally as `git`, `gh`, `docker`, `pytest`, or `aws` commands
-- command execution needs guardrails, argument hygiene, and good output parsing
+MCP provides a typed way to expose tools and resources. That matters when the tool boundary should be explicit, discoverable, and stable. It is especially useful when authentication, remote services, and structured contracts matter.
 
-### A2A
+### Chapter 3: CLI Integration
 
-- capability discovery across agents
-- delegation to a specialized peer agent
-- coordination for parallel work
-- best suited to multi-agent systems or mixed-vendor environments
+The command line is still one of the best tool surfaces for local and developer-oriented tasks. Tools like `git`, `gh`, `pytest`, and `docker` are already standardized, fast, and familiar. Good CLI integration is often simpler than building a protocol server.
+
+### Chapter 4: Direct API Wrappers
+
+Sometimes the right answer is a thin Python client around a REST endpoint. This is often the simplest path when latency matters and the integration surface is small.
+
+### Chapter 5: A2A
+
+A2A is the language of delegation between agents. It becomes useful when one agent should hand off to another with a different capability, rather than trying to do everything itself.
+
+---
+
+## Topic Guide
+
+### MCP Concepts
+
+- the server exposes capability
+- the client discovers and calls it
+- typed definitions reduce ambiguity
+- authentication belongs in the architecture, not as an afterthought
+
+### CLI Concepts
+
+- shell tools are composable
+- local commands are often the fastest bridge to real system actions
+- parsing command output is part of the job
+- safe execution needs timeout, validation, and scope limits
+
+### API Wrapper Concepts
+
+- the wrapper is often only a few lines
+- the important part is handling auth, errors, and payload shape cleanly
+- wrappers are useful when the task is narrow and the API is stable
+
+### A2A Concepts
+
+- capability discovery means one agent can ask what another can do
+- delegation lets specialized agents work in parallel
+- handoff is better than duplication when a task changes shape
 
 ---
 
@@ -52,6 +84,23 @@ An agent without tools is just a chat interface. Real utility comes from the abi
 | Agent handing work to another agent | A2A |
 
 The important lesson is not "always use MCP." The important lesson is choosing the lightest tool surface that preserves safety and clarity.
+
+That means the same task can have three valid answers, but the best one depends on context:
+
+- local developer task: CLI
+- remote structured service: MCP
+- very small integration: direct API
+- specialized handoff: A2A
+
+---
+
+## Study Sequence
+
+1. read one MCP quickstart and inspect how tools are described
+2. practice calling a local CLI from Python
+3. write a direct API wrapper for one narrow service
+4. compare the maintenance and runtime tradeoffs
+5. reason about where delegation between agents would actually help
 
 ---
 
@@ -101,14 +150,23 @@ The important lesson is not "always use MCP." The important lesson is choosing t
 
 ---
 
-## Resources For This Phase
+## Resource Notes
 
-| Resource | Why it matters | How I should use it |
-| --- | --- | --- |
-| MCP official docs | Primary source for the standard | Build the quickstart server first |
-| A2A spec | Shows the shape of agent delegation | Read for concepts, not memorization |
-| `gh` CLI docs | Best local GitHub workflow surface | Rebuild one action end to end |
-| GitHub REST API docs | Baseline direct integration example | Compare response shape and auth flow |
+### MCP Official Docs
+
+Start with the quickstart and the explanation of client/server roles. Focus on how tools are described and discovered rather than trying to memorize every transport detail.
+
+### A2A Spec
+
+Read it for capability discovery, delegation, and workflow composition. The useful part is the shape of cooperation, not the vendor names.
+
+### `gh` CLI Docs
+
+Use them to understand a practical, production-grade developer tool surface. This matters because a lot of useful agent behavior can be implemented by composing existing commands.
+
+### GitHub REST API Docs
+
+Use them as the simplest baseline for direct integrations. They are the reference point for comparison when deciding whether MCP or CLI adds enough value.
 
 ---
 

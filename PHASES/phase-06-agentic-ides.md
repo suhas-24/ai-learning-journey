@@ -7,11 +7,31 @@
 
 ---
 
-## Why This Phase Matters
+## Why This Phase Exists
 
-Coding agents are now part of the workflow, whether I like it or not. The question is not whether to use them. The question is how to use them without becoming dependent on code I do not understand.
+Coding agents are part of modern development now, but they are not magic. They are productive because they can read files, propose changes, run commands, and iterate faster than a human can type. They are dangerous when they produce code the human cannot explain.
 
-This phase is about learning to collaborate with agents while keeping judgment, review discipline, and architectural ownership.
+This phase is about building a professional relationship with agentic tools: use them for speed, but keep ownership of judgment, architecture, and review.
+
+---
+
+## Chapter Map
+
+### 6.1 AI-Native IDEs
+
+Cursor, Windsurf, and Zed sit inside the editor. They are strongest when I want interactive help, fast diffs, and a visible model-driven workflow while I stay in the loop.
+
+### 6.2 CLI Agents
+
+Claude Code, OpenAI Codex CLI, and Aider work from the terminal. They tend to feel more like goal-oriented collaborators that can inspect a repo and make file-level changes.
+
+### 6.3 Editor Extensions
+
+Cline, Roo Code, and GitHub Copilot Agent are closer to a plugin experience. They can be helpful, but the quality depends heavily on how clearly the task is framed.
+
+### 6.4 Workflow Discipline
+
+The tool matters less than the process: give good context, inspect the plan, review the diff, and never merge what I do not understand.
 
 ---
 
@@ -19,75 +39,74 @@ This phase is about learning to collaborate with agents while keeping judgment, 
 
 ### AI-Native IDEs
 
-- Cursor
-- Windsurf
-- Zed with local model support
+- Cursor: strongest when I want interactive assistance and direct code editing in the editor
+- Windsurf: good for comparing multiple model behaviors in one workflow
+- Zed: attractive when I want a fast, privacy-oriented editor workflow
 
 ### CLI Agents
 
-- Claude Code
-- OpenAI Codex CLI
-- Aider
+- Claude Code: terminal-first and file-aware
+- OpenAI Codex CLI: useful for structured, repo-aware tasks
+- Aider: git-native and open-source, which makes it a strong comparison point
 
 ### Editor Extensions
 
-- Cline
-- Roo Code
-- GitHub Copilot Agent
-
-Each category changes how much autonomy the tool gets, how visible its actions are, and how review should work.
+- Cline: flexible and open
+- Roo Code: variant with a different task style
+- GitHub Copilot Agent: convenient inside the GitHub ecosystem
 
 ---
 
 ## Working Rules For Coding Agents
 
 - write repo instructions before assigning real work
-- let the agent read the codebase before asking it to modify anything
-- review every diff like a skeptical engineer, not a grateful spectator
-- use agents to accelerate execution, not outsource understanding
-- never merge code I cannot explain
+- let the agent inspect the codebase before it edits anything
+- ask for a plan before asking for implementation on non-trivial tasks
+- review the diff before running the code, not after blindly accepting it
+- use agents to speed up execution, not to outsource understanding
+- never merge code that I cannot explain line by line if needed
 
 ---
 
-## Practice Loop For This Phase
+## Practice Loop
 
-1. Pick a small task in a repo I understand.
-2. Ask one coding agent to inspect context first.
-3. Compare its plan with my own mental model.
-4. Let it implement a bounded change.
-5. Review the diff, run checks, and explain the change in my own words.
-6. Record what the agent did well and where it hallucinated, overreached, or missed context.
+1. Pick a bounded task in a repo I already understand.
+2. Ask the agent to inspect context and explain its plan.
+3. Compare its plan against my own mental model.
+4. Let it make a small, testable change.
+5. Review the diff and run checks.
+6. Write down what the agent got right, what it missed, and what I had to fix.
 
 ---
 
 ## Phase Project: Agent-Assisted Refactor Log
 
-**Project goal:** maintain a running log of coding-agent sessions, including what task was given, what changed, what failed, and what human review caught.  
+**Project goal:** maintain a running log of coding-agent sessions, including task framing, model behavior, human review, and outcomes.  
 **Planned repo:** could live in a dedicated notes repo or in this repository under a future log section  
 **Current project status:** planned, not started
 
-### What the log should capture
+### What The Log Should Capture
 
-- prompt or task framing
+- task framing
 - tool used
 - scope of change
 - what the agent understood correctly
-- mistakes or dangerous assumptions
-- what I had to fix manually
+- hallucinations, overreach, or unsafe assumptions
+- what human review had to correct
 
-### What this project should teach
+### What This Project Should Teach
 
-- how different agent surfaces behave on the same kind of task
-- how to give instructions that produce better results
+- which agent surfaces fit exploration versus implementation versus verification
+- how much context is enough before handing a task to an agent
 - where human review creates the most value
 
 ---
 
 ## Exit Criteria
 
-- I can explain the difference between IDE copilots and goal-based CLI agents.
-- I know how to prepare repo instructions for a coding agent.
-- I can spot common hallucinations, overengineering, and unsafe edits in generated diffs.
+- I can explain the difference between an IDE copilot and a goal-based CLI agent.
+- I know how to prepare repo instructions before assigning real work.
+- I can spot hallucinations, overengineering, and unsafe edits in generated diffs.
 - I have a repeatable review workflow for agent-produced code.
 
 ---
@@ -95,20 +114,20 @@ Each category changes how much autonomy the tool gets, how visible its actions a
 ## Common Traps To Avoid
 
 - vibe coding beyond my understanding
-- asking for architecture decisions before I understand the problem
+- asking for architecture decisions before understanding the problem
 - giving tasks that are too vague or too broad
 - trusting clean-looking code more than tested code
 - using coding agents as an excuse not to learn fundamentals
 
 ---
 
-## Resources For This Phase
+## Resources And What They Help Me Learn
 
-| Resource | Why it matters | How I should use it |
-| --- | --- | --- |
-| Claude Code docs | Best reference for CLI agent workflows | Practice file-aware tasks and review loops |
-| Cursor docs | Useful for repo rules and editor flow | Compare interactive editing with CLI agents |
-| Aider docs | Good open-source contrast | Notice how Git-native workflows shape review |
+| Resource | What It Teaches |
+| --- | --- |
+| Claude Code docs | File-aware CLI workflows, task framing, and review discipline |
+| Cursor docs | Editor-centric collaboration and rules-driven behavior |
+| Aider docs | Git-native workflows and explicit file diffs |
 
 ---
 
@@ -116,5 +135,5 @@ Each category changes how much autonomy the tool gets, how visible its actions a
 
 - Which tasks should I always keep human-led?
 - How much context should I provide before asking an agent to edit?
-- What is the best way to review generated code quickly but safely?
+- What is the fastest safe way to review generated code?
 - Which coding agent fits exploration, implementation, and verification best?

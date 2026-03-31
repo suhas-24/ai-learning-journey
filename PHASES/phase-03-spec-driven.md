@@ -13,34 +13,69 @@ Ad-hoc prompts inside Python files are technical debt. They are hard to review, 
 
 The point is to make agent behavior inspectable, editable, and testable.
 
+The deeper lesson is that an AI system should have a human-readable contract. If I cannot explain what the agent is allowed to do, what it should avoid, and how it knows it succeeded, then the system is not yet ready to grow.
+
 ---
 
-## Core Ideas To Master
+## Chapter Map
 
-### The Spec File Ecosystem
+### Chapter 1: Why Specs Exist
 
-| File | Why it exists |
-| --- | --- |
-| `AGENTS.md` | Defines role, goals, tools, constraints, and completion conditions |
-| `CLAUDE.md` | Gives coding agents project-specific behavior and repo rules |
-| `SKILL.md` | Explains a reusable workflow or tool contract clearly |
-| `.cursorrules` | Sets editor-level behavior for Cursor |
-| `SYSTEM.md` | Establishes high-level global rules for custom agents |
+Specs turn "what should this agent do?" into a durable artifact. Instead of burying behavior inside code or prompts, I write it down where it can be reviewed and versioned.
 
-### Spec Design Principles
+### Chapter 2: The Spec Ecosystem
 
-- one agent should have one clear responsibility
-- constraints must be explicit, not implied
-- success criteria should tell the agent when it is done
-- tool usage should be described in plain language and examples
-- escalation behavior matters as much as happy-path behavior
+Different files serve different audiences. `AGENTS.md` describes the agent. `CLAUDE.md` describes the repo. `SKILL.md` describes a reusable workflow or capability. `.cursorrules` affects the editor. `SYSTEM.md` captures global policy. The important thing is not the file names themselves, but having clear layers.
 
-### Workflow Discipline
+### Chapter 3: Writing Good Constraints
 
-1. write the behavioral contract
-2. write the tool contract
-3. review whether the task is actually clear
-4. only then implement the code
+Constraints are not there to be dramatic. They are there to prevent ambiguity. Good constraints tell the agent what it must never do, what it should always do, and when it should escalate.
+
+### Chapter 4: Defining Success
+
+An agent needs a finish line. That finish line may be "summarize the findings," "create the issue," or "ask for approval before writing." Without a success definition, the agent can keep wandering.
+
+### Chapter 5: Spec-Driven Workflow
+
+The workflow is contract first, code second. The spec is the source of truth. If the code disagrees with the spec, the code is wrong.
+
+---
+
+## Topic Guide
+
+### Role Definition
+
+- one responsibility per agent keeps behavior understandable
+- role language should be concrete, not theatrical
+- the agent should know what kind of work belongs to it
+
+### Tool Contracts
+
+- tools should list inputs, outputs, and when to use them
+- examples help reduce misuse
+- small tools are easier to reason about than giant multipurpose ones
+
+### Boundaries And Escalation
+
+- explicit no-go areas are as important as allowed behaviors
+- human escalation should be part of the design
+- the agent should know when it should stop and ask instead of guessing
+
+### Versioned Behavior
+
+- spec files belong in Git
+- spec changes should be reviewed like code changes
+- behavior history should be traceable over time
+
+---
+
+## Study Sequence
+
+1. inspect an existing agent or tool spec
+2. identify role, tools, constraints, and success criteria
+3. write a minimal but complete `AGENTS.md`
+4. add tool-specific `SKILL.md` files only where behavior needs reuse
+5. check whether behavior can be changed by editing the spec alone
 
 ---
 
@@ -50,6 +85,12 @@ The point is to make agent behavior inspectable, editable, and testable.
 - behavior changes can happen by editing spec files instead of rewriting logic
 - coding agents have enough context to make useful changes safely
 - failures become easier to debug because intended behavior is written down
+
+---
+
+## A Mental Model For This Phase
+
+Think of specs as the behavioral interface of the agent. The code is the machine. The spec is the contract. The best systems make the contract visible enough that another person can understand and improve it without reading every implementation detail first.
 
 ---
 
@@ -92,13 +133,19 @@ If I can change meaningful behavior by editing a spec file without changing Pyth
 
 ---
 
-## Resources For This Phase
+## Resource Notes
 
-| Resource | Why it matters | How I should use it |
-| --- | --- | --- |
-| Real `AGENTS.md` examples | Shows what good constraints look like | Compare multiple repos and note common patterns |
-| Claude Code docs | Helps structure `CLAUDE.md` well | Use it to define repo-specific coding rules |
-| Cursor rules examples | Useful for editor behavior | Keep them minimal and testable |
+### Real `AGENTS.md` Examples
+
+Read them to see how strong instructions stay specific, short, and actionable. The useful pattern is "who this agent is, what it does, what it must not do."
+
+### Claude Code Docs
+
+Use them to understand how repo-level instructions influence coding agents. The goal is a project file that improves output without becoming a junk drawer.
+
+### Cursor Rules Examples
+
+Study them for editor behavior and lightweight guardrails. Good editor rules are narrow, concrete, and easy to update.
 
 ---
 

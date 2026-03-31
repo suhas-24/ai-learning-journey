@@ -2,6 +2,8 @@
 
 This is a personal learning repository, not a collaborative project roadmap for outside contributors. It exists to document one person's path into AI engineering as honestly as possible, including unfinished work, wrong turns, and evolving opinions.
 
+Because the repo is personal, the main standard is usefulness to the learner. A change is good if it makes the next study session clearer, the next build easier, or the next bug easier to understand.
+
 ## What Is Welcome
 
 - Forks for your own adaptation
@@ -28,3 +30,13 @@ Every note here should help with one of three things:
 - understanding a concept
 - shipping a project
 - remembering how a real problem was solved
+
+## Editing Principle
+
+When updating this repository, prefer content that answers:
+
+- what is this concept?
+- why does it matter?
+- how does it show up in practice?
+- what usually goes wrong?
+- what should I do next?

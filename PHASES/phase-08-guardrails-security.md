@@ -7,11 +7,29 @@
 
 ---
 
-## Why This Phase Matters
+## Why This Phase Exists
 
-Once an agent can send email, write files, call APIs, or spend money, safety stops being a nice-to-have. Prompt injection, sensitive data leakage, excessive autonomy, and unbounded cost are not theoretical problems. They are production realities.
+The moment an agent can do something real, safety becomes part of the design, not an afterthought. Sending an email, deleting a file, making an API request, or spending money all require boundaries. This phase is about making useful systems that do not turn reckless just because the model is confident.
 
-This phase exists so I can build agents that are useful without being reckless.
+---
+
+## Chapter Map
+
+### 8.1 Threat Modeling For LLM Systems
+
+I need to understand how an attacker or a bad input can push an agent off course. The main risks are prompt injection, sensitive data leakage, insecure output handling, excessive agency, and poisoned retrieval.
+
+### 8.2 Guardrail Layers
+
+Safety works best as layers: validate input, validate output, sanitize tool arguments, gate irreversible actions, sandbox risky execution, and log everything important.
+
+### 8.3 Governance Patterns
+
+Governance is the policy layer above the tools. It decides when the agent can act, when it needs review, and when a human must be in the loop.
+
+### 8.4 Safe Execution
+
+Any place the agent can run code or issue destructive commands needs isolation and least privilege.
 
 ---
 
@@ -61,13 +79,19 @@ This phase exists so I can build agents that are useful without being reckless.
 **Planned repo:** implemented inside the Phase 7 project or as a dedicated extension layer  
 **Current project status:** planned, not started
 
-### Required controls
+### Required Controls
 
 - prompt-injection detection and handling
 - validation of tool inputs and outputs
 - approval gate for costly or irreversible actions
 - sandboxing for code execution
 - immutable audit log for actions and decisions
+
+### What This Project Should Prove
+
+- I can protect the agent without making it useless.
+- I can explain where safety checks belong in the request lifecycle.
+- I can reduce blast radius using policy, validation, and isolation together.
 
 ### Tooling To Explore
 
@@ -97,20 +121,20 @@ This phase exists so I can build agents that are useful without being reckless.
 
 ---
 
-## Resources For This Phase
+## Resources And What They Help Me Learn
 
-| Resource | Why it matters | How I should use it |
-| --- | --- | --- |
-| OWASP LLM guidance | Best risk vocabulary | Use it to frame concrete threats |
-| NeMo Guardrails docs | Policy and safety patterns | Prototype a small policy set first |
-| Guardrails AI docs | Validation patterns for Python systems | Focus on tool and schema boundaries |
-| Security writeups on prompt injection | Helps avoid naive defenses | Turn examples into test cases |
+| Resource | What It Teaches |
+| --- | --- |
+| OWASP LLM guidance | Concrete risk language for threat modeling |
+| NeMo Guardrails docs | How policy rules and flow control fit together |
+| Guardrails AI docs | Input/output validation and repair workflows |
+| Security writeups on prompt injection | How attacks actually work and how to test for them |
 
 ---
 
 ## Questions I Want To Answer During This Phase
 
-- Which safety checks should happen before a model call, after a model call, and before a tool call?
+- Which safety checks belong before a model call, after a model call, and before a tool call?
 - How do I decide when an action needs human approval?
 - What should my minimum audit log include for a production agent?
 - What is the safest default permission model for agent tools?

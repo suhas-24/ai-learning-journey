@@ -7,11 +7,34 @@
 
 ---
 
-## Why This Phase Matters
+## Why This Phase Exists
 
-This is the phase where toy agents stop being enough. One model calling tools in a loop is fragile for long tasks, hard to debug, and expensive to operate. Orchestration introduces state and control flow. Harness engineering introduces the surrounding system that makes agents resilient.
+Single-loop agents fail in the real world because they have no durable memory, no explicit control flow, and no disciplined response when something goes wrong. Orchestration adds structure. Harness engineering adds the operational shell that keeps the agent alive long enough to do useful work.
 
-The harness is the difference between a flashy demo and a durable product.
+This is the phase where the system becomes more important than the prompt.
+
+---
+
+## Chapter Map
+
+### 7.1 Orchestration Frameworks
+
+- LangGraph gives a graph of nodes, edges, and state transitions.
+- CrewAI organizes work by role and delegation.
+- PydanticAI emphasizes typed inputs and outputs.
+- OpenAI Agents SDK focuses on handoffs, tracing, and validation patterns.
+
+### 7.2 Harness Engineering
+
+The harness is the set of systems around the model that handle planning, retries, rollbacks, budgets, approval gates, checkpoints, and audit logs.
+
+### 7.3 Agent Design Patterns
+
+The same agent architecture should not be used for every problem. Some tasks want one agent with tools. Others want an orchestrator and sub-agents. Still others want parallel workers or a debate structure.
+
+### 7.4 Long-Running Execution
+
+Long tasks need checkpoints, resumability, progress reporting, and a clear dead-letter path when repeated failures happen.
 
 ---
 
@@ -51,8 +74,8 @@ The harness is the difference between a flashy demo and a durable product.
 - the model is only one component in the system
 - long-running tasks need explicit state and failure handling
 - cost discipline must be designed, not wished into existence
-- reflection is useful only when scored against a clear rubric
-- human oversight should appear at the right irreversible boundaries
+- reflection is only useful when it is scored against a clear rubric
+- human oversight should appear at the irreversible boundaries
 
 ---
 
@@ -62,22 +85,30 @@ The harness is the difference between a flashy demo and a durable product.
 **Planned repo:** dedicated Phase 7 repository  
 **Current project status:** planned, not started
 
-### Planned architecture
+### Planned Architecture
 
-- Researcher agent gathers inputs
-- Analyst agent synthesizes and critiques
-- Reporter agent produces final output
+- Researcher gathers inputs and tool output
+- Analyst synthesizes and critiques
+- Reporter turns the result into a final artifact
 - LangGraph manages state, transitions, and checkpoints
-- cost governor limits total spend
-- approval gate blocks irreversible output changes
+- a cost governor limits total spend
+- an approval gate blocks irreversible output changes
 
-### Harness features that must exist
+### Harness Features That Must Exist
 
 - checkpoint state every few steps
 - retry transient tool failures
 - stop on budget overrun
 - emit structured logs
 - support resume after crash or interruption
+- log each meaningful decision for debugging later
+
+### What This Project Should Prove
+
+- I can design control flow instead of a single prompt loop.
+- I can choose the right orchestration pattern for the job.
+- I can make long-running work inspectable and recoverable.
+- I can protect the system from cost and failure spirals.
 
 ---
 
@@ -87,34 +118,34 @@ The harness is the difference between a flashy demo and a durable product.
 - I can choose a framework based on constraints, not brand familiarity.
 - I can build a persistent state model for a multi-step task.
 - I can insert human approval where it actually matters.
-- I can describe the full path of an agent failure and how the harness should react.
+- I can describe the failure path for a long-running agent and how the harness should react.
 
 ---
 
 ## Common Traps To Avoid
 
 - adding more agents when one agent is still poorly designed
-- confusing branching logic with true reliability
+- confusing branching logic with real reliability
 - building reflection loops without clear scoring criteria
-- ignoring checkpoint and resume until after a failure happens
+- ignoring checkpoint and resume until after failure happens
 - forgetting that logging is part of the product, not just debugging sugar
 
 ---
 
-## Resources For This Phase
+## Resources And What They Help Me Learn
 
-| Resource | Why it matters | How I should use it |
-| --- | --- | --- |
-| LangGraph docs | Best foundation for stateful orchestration | Build the quickstart, then extend it with persistence |
-| CrewAI docs | Good comparison point for multi-agent collaboration | Study role design and delegation |
-| AI Engineering by Chip Huyen | Strong systems framing | Focus on reliability and production patterns |
-| Anthropic agent engineering writeups | Good practical heuristics | Extract repeatable guardrails and harness lessons |
+| Resource | What It Teaches |
+| --- | --- |
+| LangGraph docs | How stateful orchestration is modeled and persisted |
+| CrewAI docs | How role design and delegation change multi-agent behavior |
+| AI Engineering by Chip Huyen | How to think about reliability, evaluation, and production systems |
+| Anthropic agent engineering writeups | Practical heuristics for control, reflection, and failure handling |
 
 ---
 
 ## Questions I Want To Answer During This Phase
 
-- When does a second agent help, and when does it just create more failure modes?
+- When does a second agent help, and when does it just add failure modes?
 - What should be stored in state versus derived on the fly?
 - What budget and latency controls are realistic for a production agent?
 - Which failures should trigger retry, and which should immediately escalate to a human?

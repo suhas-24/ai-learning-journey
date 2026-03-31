@@ -15,6 +15,20 @@ This phase is about turning the previous ten phases into public credibility.
 
 ---
 
+## What This Phase Is Really About
+
+Portfolio work is not just packaging. It is the moment where private skill becomes public proof.
+
+The portfolio should show three things:
+
+- I can build systems
+- I can explain systems
+- I can measure systems
+
+That combination is what makes the work legible to another engineer or hiring manager.
+
+---
+
 ## The Three Portfolio Projects This Journey Must Produce
 
 ### Project 1 - Production RAG System
@@ -30,6 +44,21 @@ Shows orchestration, harness engineering, state management, and observability.
 Shows production deployment, governance, security, and real-user thinking.
 
 Together, these projects should demonstrate a complete AI engineering profile rather than one narrow specialty.
+
+---
+
+## Story Arc For The Portfolio
+
+The portfolio should read like a sequence:
+
+1. I learned to build reliably in Python
+2. I learned to use model APIs directly
+3. I learned to reason about context and retrieval
+4. I learned to orchestrate and secure agents
+5. I learned to evaluate quality instead of guessing
+6. I learned to package those systems into public proof
+
+That story arc matters because it helps another person see growth instead of a pile of disconnected repos.
 
 ---
 
@@ -52,6 +81,7 @@ Together, these projects should demonstrate a complete AI engineering profile ra
 - one technical post or writeup per major project
 - visible GitHub activity tied to real systems
 - at least one meaningful open-source contribution if possible
+- consistent naming, screenshots, and setup instructions across repos
 
 ### Interview Readiness
 
@@ -59,12 +89,14 @@ Together, these projects should demonstrate a complete AI engineering profile ra
 - talk through one failure and how it was fixed
 - describe evaluation strategy, not just feature set
 - answer why a specific tool or model was chosen
+- show the reasoning behind tradeoffs, not just the final implementation
 
 ### Positioning
 
 - resume framed around shipped systems and measurable outcomes
 - LinkedIn aligned with the project story
 - targeted outreach to engineers and hiring managers in AI product teams
+- a simple narrative that connects the three projects into one capability stack
 
 ---
 
@@ -82,6 +114,16 @@ Together, these projects should demonstrate a complete AI engineering profile ra
 - eval summaries
 - short writeups on what was hard and what improved
 - a concise resume project section for each system
+- a top-level portfolio summary that explains the whole learning journey
+
+### What To Polish In Each Project
+
+- problem statement
+- architecture
+- how the system is tested
+- what metrics matter
+- what tradeoffs were made
+- what failure modes remain
 
 ---
 

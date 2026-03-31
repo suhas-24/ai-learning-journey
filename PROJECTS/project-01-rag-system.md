@@ -13,6 +13,16 @@ Build a knowledge-base agent over a real document corpus with hybrid retrieval, 
 
 ---
 
+## What This Project Teaches
+
+- how retrieval systems work end to end
+- how to choose chunking, metadata, and retrieval strategies intentionally
+- how to separate retrieval failure from generation failure
+- how to measure whether answers are actually grounded
+- how to decide whether GraphRAG is worth the extra complexity
+
+---
+
 ## Target User And Use Case
 
 - primary user: a person who needs answers over a specific document collection
@@ -29,6 +39,8 @@ Build a knowledge-base agent over a real document corpus with hybrid retrieval, 
 - normalize metadata
 - chunk content intentionally by document type
 - generate embeddings
+- preserve source path, section name, and timestamp where relevant
+- keep ingestion repeatable so reruns do not drift unexpectedly
 
 ### Retrieval Layer
 
@@ -36,24 +48,30 @@ Build a knowledge-base agent over a real document corpus with hybrid retrieval, 
 - BM25 or equivalent keyword retrieval
 - hybrid fusion
 - reranking for top results
+- query rewriting when the first query is too vague
+- metadata filters when the user cares about source type or topic
+- reranking when the first retrieval pass is noisy
 
 ### Knowledge Graph Layer
 
 - extract important entities and relationships
 - store graph connections for multi-hop queries
 - use graph retrieval only when relationship reasoning matters
+- cluster related topics when a simple chunk index is not enough
 
 ### Answer Layer
 
 - grounded answer generation
 - citation formatting
 - confidence notes when retrieved context is weak
+- explicit "I could not find enough evidence" behavior when the corpus is thin
 
 ### Evaluation Layer
 
 - RAGAS metrics
 - manual review on difficult queries
 - regression set for repeated testing
+- compare direct retrieval versus hybrid retrieval on the same test set
 
 ---
 
@@ -64,6 +82,7 @@ Build a knowledge-base agent over a real document corpus with hybrid retrieval, 
 3. Add hybrid search and reranking.
 4. Add evaluation with RAGAS.
 5. Add graph layer only if the corpus benefits from connected reasoning.
+6. Add a simple report or dashboard that shows metric trends over time.
 
 ---
 
@@ -83,6 +102,9 @@ Build a knowledge-base agent over a real document corpus with hybrid retrieval, 
 - poor chunking creates bad retrieval no matter how good the model is
 - graph extraction may add complexity without enough payoff
 - evaluation can become shallow if I only test easy questions
+- citations can become decorative instead of verifiable
+- the corpus may need more preprocessing than expected
+- the system may look good in demos but fail on specific factual questions
 
 ---
 
@@ -93,6 +115,7 @@ Build a knowledge-base agent over a real document corpus with hybrid retrieval, 
 - measurable retrieval quality
 - grounded answers with visible sources
 - clear explanation of where GraphRAG helped and where it did not
+- a short retrospective describing what retrieval choices mattered most
 
 ---
 

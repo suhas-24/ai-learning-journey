@@ -1,36 +1,160 @@
 # People To Follow
 
-The goal here is not to doomscroll AI news. The goal is to follow people who sharpen technical judgment, system thinking, and practical engineering habits.
+This list is about learning from people who teach systems thinking, model behavior, and practical engineering habits. The aim is not to keep up with everything they post. The aim is to absorb the kinds of ideas that improve project decisions.
 
 ## How To Use This List
 
-- favor people who explain tradeoffs, not just launch announcements
-- save good threads into phase notes instead of passively consuming them
-- compare what influential builders say against what my own projects reveal
+- follow for judgment, not for announcements
+- turn good ideas into phase notes
+- compare their advice with what my own projects actually prove
 
 ## Practitioners And Researchers Worth Following
 
-| Name | Handle | Why they matter | Best use |
-| --- | --- | --- | --- |
-| Andrej Karpathy | @karpathy | Clear explanations of model behavior and learning intuition | Good for fundamentals and mental models |
-| Chip Huyen | @chiphuyen | Strong AI engineering and systems perspective | Useful across phases 2, 7, and 9 |
-| Harrison Chase | @hwchase17 | Close to the orchestration ecosystem | Track LangGraph and agent workflow patterns |
-| Dario Amodei | @DarioAmodei | Signals on model capability and safety direction | Useful for high-level frontier context |
-| Simon Willison | @simonw | Practical, grounded experimentation with LLM tools | Excellent for everyday applied ideas |
-| Sebastian Raschka | @rasbt | Strong teaching style for model internals and fine-tuning | Best in phases 2 and 10 |
-| Greg Brockman | @gdb | Useful for product and ecosystem shifts | Follow with a filter for actual engineering relevance |
+### Andrej Karpathy
+
+Handle: @karpathy
+
+### What to learn from him
+
+- how to think about models in plain language
+- intuition for training, representation, and generation
+- why learning fundamentals matters before architecture hype
+
+### Best use
+
+- Phase 2 and Phase 10
+
+### Chip Huyen
+
+Handle: @chiphuyen
+
+### What to learn from her
+
+- AI engineering as a systems discipline
+- evaluation, deployment, and product tradeoffs
+- the difference between demos and production systems
+
+### Best use
+
+- Phases 2, 7, 9, and 11
+
+### Harrison Chase
+
+Handle: @hwchase17
+
+### What to learn from him
+
+- orchestration and agent workflow design
+- how the LangGraph ecosystem thinks about agent state
+- practical agent-building patterns
+
+### Best use
+
+- Phases 4 and 7
+
+### Dario Amodei
+
+Handle: @DarioAmodei
+
+### What to learn from him
+
+- safety and frontier capability framing
+- where model capability is likely heading
+
+### Best use
+
+- Phase 8 for safety context
+
+### Simon Willison
+
+Handle: @simonw
+
+### What to learn from him
+
+- practical LLM usage
+- tool-centric experimentation
+- careful, reproducible thinking
+
+### Best use
+
+- Phases 2, 4, and 9
+
+### Sebastian Raschka
+
+Handle: @rasbt
+
+### What to learn from him
+
+- model internals
+- clear teaching on machine learning and fine-tuning
+- disciplined explanation of concepts
+
+### Best use
+
+- Phases 2 and 10
+
+### Greg Brockman
+
+Handle: @gdb
+
+### What to learn from him
+
+- product and ecosystem shifts
+- how model platforms evolve
+
+### Best use
+
+- Phase 2 as high-level context
 
 ## Blogs And Engineering Sources
 
-| Source | Why it matters | Best use |
-| --- | --- | --- |
-| Anthropic Engineering | Strong practical writeups on agent and model behavior | Capture ideas that change how systems are built |
-| OpenAI Research | Useful for API and model direction | Track techniques that become product features |
-| ByteByteGo | Systems thinking in compact form | Good support material for architecture intuition |
-| Ahead of AI | Research explanations that stay readable | Useful when exploring new model or retrieval ideas |
+### Anthropic Engineering
+
+### What it teaches
+
+- model behavior
+- agent design patterns
+- practical deployment thinking
+
+### Best use
+
+- Phases 2, 7, and 8
+
+### OpenAI Research
+
+### What it teaches
+
+- model and API direction
+- productized capability trends
+
+### Best use
+
+- Phase 2 and Phase 9
+
+### ByteByteGo
+
+### What it teaches
+
+- systems thinking
+- architecture tradeoffs explained simply
+
+### Best use
+
+- Phase 7 and Phase 11
+
+### Ahead of AI
+
+### What it teaches
+
+- model and research interpretation
+- readable explanations of technical changes
+
+### Best use
+
+- Phases 2, 5, and 10
 
 ## Personal Notes
 
-- Simon Willison is especially valuable because he turns abstract model behavior into repeatable practices.
-- Chip Huyen is one of the best guides for treating AI work as engineering instead of prompt theater.
+- Simon Willison is especially helpful because he turns abstract tool use into concrete practice.
+- Chip Huyen is one of the best references for treating AI work as engineering, not prompt theater.
 - Following fewer thoughtful people is better than following every noisy account in the space.

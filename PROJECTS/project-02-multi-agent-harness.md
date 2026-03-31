@@ -13,6 +13,16 @@ Build a three-agent system that can research, analyze, and report on a complex t
 
 ---
 
+## What This Project Teaches
+
+- how to split work into distinct agent responsibilities
+- how state persists across long tasks
+- how approvals and rollback protect irreversible actions
+- how traces and logs make multi-agent systems debuggable
+- how to keep autonomy bounded by a clear harness
+
+---
+
 ## Agent Roles
 
 ### Researcher
@@ -20,18 +30,21 @@ Build a three-agent system that can research, analyze, and report on a complex t
 - gathers raw information
 - chooses tools and retrieval paths
 - records source material clearly
+- keeps citations and evidence organized
 
 ### Analyst
 
 - synthesizes findings
 - checks for contradictions or weak evidence
 - decides whether more retrieval is needed
+- scores whether the current evidence is good enough to continue
 
 ### Reporter
 
 - turns the final result into a usable output format
 - makes assumptions explicit
 - routes the result to the human approval step
+- produces the final artifact in a predictable structure
 
 ---
 
@@ -43,6 +56,7 @@ Build a three-agent system that can research, analyze, and report on a complex t
 - reflection step that scores output before advancing
 - human approval gate before irreversible actions
 - Langfuse traces for every step
+- clear schema for task state, evidence, and pending decisions
 
 ---
 
@@ -54,6 +68,8 @@ Build a three-agent system that can research, analyze, and report on a complex t
 - hard budget cap
 - timeout boundaries for long-running tasks
 - audit log with structured events
+- isolated sub-agent context so one agent does not contaminate another unnecessarily
+- a way to stop or pause the run when confidence drops too low
 
 ---
 
@@ -64,6 +80,7 @@ Build a three-agent system that can research, analyze, and report on a complex t
 3. Add checkpointing and resume.
 4. Add reflection and approval gates.
 5. Add observability and performance reporting.
+6. Harden the harness with clear failure handling and auditability.
 
 ---
 
@@ -85,6 +102,8 @@ Build a three-agent system that can research, analyze, and report on a complex t
 - excessive cost from repeated loops
 - state model becoming too messy to reason about
 - approval gates added too late in the flow
+- agent handoffs becoming inconsistent or lossy
+- prompts drifting between runs because state is poorly structured
 
 ---
 
@@ -95,6 +114,7 @@ Build a three-agent system that can research, analyze, and report on a complex t
 - exposes its reasoning path and tool history through traces
 - asks for approval before risky output actions
 - has enough logging to debug a bad run after the fact
+- the role boundaries are clear enough that another person could extend the system safely
 
 ---
 

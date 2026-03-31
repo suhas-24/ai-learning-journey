@@ -13,31 +13,75 @@ Frameworks are helpful, but they can hide the most important parts of an AI syst
 
 The second half of this phase is context engineering: deciding what information belongs in the model's working memory at each step. This is the real successor to "prompt engineering."
 
+If Phase 1 teaches me how to write code, Phase 2 teaches me how to talk to a model like an engineer instead of a user clicking around in a chat app.
+
 ---
 
-## Core Ideas To Master
+## Chapter Map
 
-### Raw API Mechanics
+### Chapter 1: The API Conversation Shape
 
-- how a `messages` array actually looks
-- what `system`, `user`, and assistant content each do
-- temperature, max tokens, stop sequences, and streaming
-- tool calling and structured output without magical abstractions
-- token usage and cost as first-class engineering constraints
+An LLM API call is not magic. It is a structured request with a conversation, a system instruction, and generation settings. Understanding the request shape is the first step to understanding how the model is being guided.
 
-### Context Engineering
+### Chapter 2: Generation Controls
 
-- the model only knows what is inside the current context window
-- too little context causes weak answers
-- too much context causes confusion, waste, and slower responses
-- progressive disclosure beats dumping every document into every prompt
-- summaries, retrieval results, tool outputs, and memory all compete for space
+Temperature changes how random the model is. Max tokens changes how much it can say. Stop sequences tell it when to stop. Streaming lets me see tokens as they arrive instead of waiting for the whole answer.
 
-### Model Selection
+### Chapter 3: Tool Calling
 
-- pick the cheapest model that can reliably do the task
-- judge models by trajectory quality, not just final-answer hype
-- learn when a task needs reasoning depth versus fast throughput
+Tool calling is how the model asks for help from external systems. The model proposes a tool use, my code executes the tool, and the result goes back into the conversation. This is the basic pattern behind agents.
+
+### Chapter 4: Context Engineering
+
+The context window is the model's short-term memory. It contains the system prompt, history, retrieved content, and tool results. The hard part is deciding what to include, what to summarize, and what to leave out.
+
+### Chapter 5: Model Selection And Cost
+
+Different models have different strengths, prices, and tradeoffs. Some are better for extraction, some for reasoning, some for speed, and some for cost control. The right choice depends on the task, not hype.
+
+---
+
+## Topic Guide
+
+### Message Structure
+
+- `system` messages define the role and boundaries
+- `user` messages define the task
+- assistant messages represent model responses
+- tool messages feed back external results
+
+### Generation Settings
+
+- `temperature` affects variability
+- `max_tokens` controls output length
+- `stop` sequences help end generation cleanly
+- streaming lets me build responsive user experiences
+
+### Structured Output
+
+- use JSON-like output when the next step depends on machine-readable data
+- validate the output with Pydantic or a schema
+- do not trust the model just because the answer looks neat
+
+### Tool Use
+
+- define tools clearly, including names, inputs, and outputs
+- keep tools small and well-scoped
+- treat tool execution as normal program logic, not hidden model behavior
+
+### Context Strategy
+
+- include only what is relevant to the current step
+- summarize old history instead of keeping everything forever
+- retrieve documents when needed instead of dumping the whole corpus
+- use tool results to update context incrementally
+
+### Cost And Quality
+
+- every token has cost
+- every extra prompt chunk adds noise risk
+- model choice should be based on task complexity and tolerance for error
+- trajectory quality matters because agent workflows can fail before the final answer
 
 ---
 
@@ -59,6 +103,19 @@ The second half of this phase is context engineering: deciding what information 
 - build a "bad context" prompt and a "good context" prompt for the same task
 - compare a frontier model and a cheaper model on one extraction task and one reasoning task
 - simulate a small agent loop: ask model -> get tool call -> run tool -> send tool result -> finish task
+
+---
+
+## A Mental Model For This Phase
+
+Think of the model as a reasoning engine sitting inside a controlled information environment. The code around it is not decoration. The code is what decides what the model sees, what actions it can request, and how much information it is allowed to carry from step to step.
+
+Good context engineering answers four questions:
+
+- What does the model need right now?
+- What can be summarized?
+- What should be retrieved?
+- What should be left out entirely?
 
 ---
 
@@ -104,14 +161,23 @@ The second half of this phase is context engineering: deciding what information 
 
 ---
 
-## Resources For This Phase
+## Resource Notes
 
-| Resource | Why it matters | How I should use it |
-| --- | --- | --- |
-| Anthropic docs and cookbook | Clear examples for messages, tools, and streaming | Rebuild examples by hand |
-| OpenAI docs and cookbook | Good for cross-provider comparison | Compare response formats and tool flows |
-| Model pricing pages | Cost discipline starts early | Track price differences for identical tasks |
-| AI Engineering by Chip Huyen | Gives the systems view | Focus on API behavior and context design chapters |
+### Anthropic Docs And Cookbook
+
+Focus on message formatting, tool use, streaming, and usage reporting. The cookbook is especially useful because it shows direct, practical request/response shapes.
+
+### OpenAI Docs And Cookbook
+
+Use this to compare provider conventions, especially around structured output and tool interfaces. The goal is cross-provider literacy, not brand loyalty.
+
+### Model Pricing Pages
+
+Costs shape design. A model that is "good enough" for an extraction step may be the right choice if it is much cheaper and faster.
+
+### AI Engineering by Chip Huyen
+
+Use this as the systems-thinking companion to the API work. The best chapters for this phase are the ones that explain deployment, evaluation, and the relationship between models and products.
 
 ---
 

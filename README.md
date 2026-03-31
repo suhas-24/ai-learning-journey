@@ -7,6 +7,15 @@
 
 This repository is the working notebook for the full journey from absolute beginner to production-capable AI engineer. It is intentionally practical: the goal is not to collect links or certificates, but to build real systems, document what breaks, and turn each phase into proof of skill.
 
+The files in this repo should not be treated like a passive reading list. They are meant to behave like a learning operating system:
+
+- `README.md` tells me how to use the repository
+- `PROGRESS.md` captures the weekly learning loop
+- `PHASES/` contains the actual study notes
+- `PROJECTS/` contains the build plans for the portfolio pieces
+- `RESOURCES/` explains what each resource teaches
+- `WINS/` and `STUCK/` turn experience into memory
+
 ## Learning Principles
 
 - Build more than you watch. The roadmap is roughly 20% reading and 80% building.
@@ -40,6 +49,17 @@ Phase 11 ░░░░░░░░░░  0%   Portfolio + Job Readiness
 **Week:** Week 1  
 **Working on:** getting fluent with Python basics, terminal workflow, Git, Poetry, and the habit of writing notes while building
 
+## Weekly Operating Loop
+
+1. Read the current phase file and identify one concept to study deeply.
+2. Build one small thing that uses that concept.
+3. Update `PROGRESS.md` with what happened, what got stuck, and what comes next.
+4. If something went well, log it in `WINS/README.md`.
+5. If something confused me or slowed me down, log it in `STUCK/README.md`.
+6. Add one note to the active phase file so the phase gets richer over time.
+
+The loop matters because the curriculum gets longer than memory does. Notes need to become external memory.
+
 ## How This Repo Should Be Used
 
 | Folder | How I will use it |
@@ -50,6 +70,19 @@ Phase 11 ░░░░░░░░░░  0%   Portfolio + Job Readiness
 | `WINS/` | Visible proof of progress, especially on slow weeks |
 | `STUCK/` | Debugging journal that turns confusion into reusable knowledge |
 | `PROGRESS.md` | Weekly review cadence, goals, outcomes, and next moves |
+
+## What A Phase File Should Contain
+
+Each phase file should explain the topic, not just name it. A good phase file usually has:
+
+- why the phase exists
+- the main concepts and subtopics
+- the order to learn them in
+- what to build while learning
+- the traps and misunderstandings that tend to appear
+- what success looks like before moving on
+
+That structure is important because AI engineering concepts build on one another. If I cannot explain one layer clearly, the next layer becomes noisy.
 
 ## Definition Of A Good Week
 
@@ -65,6 +98,10 @@ Phase 11 ░░░░░░░░░░  0%   Portfolio + Job Readiness
 - A GitHub profile with clean READMEs, evaluation evidence, and honest engineering notes
 - Enough fluency with Python, LLM APIs, MCP, LangGraph, and guardrails to build without hand-holding
 - A personal library of wins, failures, fixes, and design decisions I can talk through in interviews
+
+## Notes On Pace
+
+This journey should be steady rather than heroic. A good week is one where I learned something concrete, built something small, and left behind a clearer trail than I started with. The goal is compounding understanding, not sprinting through material and forgetting it a week later.
 
 ## Related Repositories
 

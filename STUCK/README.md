@@ -2,12 +2,22 @@
 
 This is the debugging handbook for the journey. Every useful engineer develops a private memory of failure modes; this file makes that memory explicit.
 
+A good stuck entry is not a complaint log. It is a precise record of a mismatch between expectation and reality.
+
 ## What Belongs Here
 
 - bugs that took time to understand
 - environment issues that blocked progress
 - conceptual confusion that became clear after a breakthrough
 - mistakes caused by rushing, guessing, or skipping fundamentals
+
+## What Makes A Good Stuck Entry
+
+- the problem is specific enough that I could reproduce it later
+- the attempts I made are recorded, not just the final fix
+- the root cause is named, not hidden behind the solution
+- the lesson is reusable in a future phase
+- the entry helps future-me avoid wasting time again
 
 ## How To Write A Good Entry
 
@@ -44,3 +54,11 @@ Capture five things:
 **The Solution:** Switched the GitHub API calls to `curl`, which used the system trust chain correctly.  
 **Root Cause:** Local Python certificate configuration was not aligned with the system certificate store.  
 **Lesson:** When a networking issue looks environmental, test the same request with another client before assuming the API is the problem.
+
+### 2026-03-31 - Large curriculum updates need tighter module boundaries
+**Phase:** Pre-Phase 1  
+**The Problem:** The repository is growing large enough that editing everything in one window risks losing detail.  
+**What I Tried:** Split the work into coordination files and separate module ownership.  
+**The Solution:** Use parallel workers with clear ownership instead of one giant editing pass.  
+**Root Cause:** Context compression becomes a real risk once the notes become rich.  
+**Lesson:** The repo needs modular ownership as much as it needs content quality.
