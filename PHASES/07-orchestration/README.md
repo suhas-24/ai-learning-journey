@@ -1,12 +1,39 @@
 # Phase 07 - Orchestration and Harness Engineering
 
-This module teaches how to turn a simple model call into a dependable workflow.
+This module teaches how to turn one model call into a dependable workflow.
 
-A `model` is the part that generates text or chooses an action. An `orchestration harness` is everything around it that decides what happens next, keeps track of progress, enforces limits, and handles failure. If the model is the worker, the harness is the supervisor, clipboard, and safety rail.
+Before we go further, here are the core words in plain language:
 
-This module stays on the plain-language side on purpose. We start with simple ideas like "what happens next" and "what should happen if something fails," then build toward control flow, checkpoints, approvals, and recovery.
+- a `model` is the part that generates text or chooses an action
+- `orchestration` means deciding what happens next
+- a `harness` is the system around the model that keeps work organized, safe, and observable
+- `state` is the information the system remembers while it works
+- a `checkpoint` is a saved point that lets the system continue later
 
-Start here, then move in order:
+If those words are new, that is normal. We start with ordinary ideas like step order, memory, and recovery, then name the technical version after the idea is clear.
+
+## What This Phase Is Really About
+
+The main lesson is simple: a model can suggest the next move, but a larger system must decide whether that move should happen, how much it may cost, and what to do if something breaks.
+
+## What You Will Learn
+
+- what orchestration means in everyday language
+- why a workflow needs a controller instead of only a model
+- when a task needs a loop, a pipeline, a graph, a queue, or multiple agents
+- how to model durable state instead of hiding everything inside chat history
+- where retries, budgets, approvals, and logs belong in a production harness
+- how to reason about failure paths before they happen in production
+
+## How To Use This Phase
+
+1. Read the chapters in order.
+2. Use the snippets as examples of shape and structure.
+3. Work through the labs with a small task you understand.
+4. Use the checkpoints to explain the ideas in plain words.
+5. Use troubleshooting when the system feels confusing or brittle.
+
+## Module Map
 
 1. [Control Flow and Topologies](./chapters/01-control-flow-and-topologies.md)
 2. [State, Checkpoints, and Resumability](./chapters/02-state-checkpoints-and-resumability.md)
@@ -21,15 +48,6 @@ Use the supporting snippets while you read:
 - [State Schema](./snippets/state-schema.md)
 - [Runtime Commands](./snippets/runtime-commands.md)
 
-## What you will learn
-
-- what orchestration means in everyday language
-- why a workflow needs a controller instead of only a model
-- when a task needs a loop, a graph, a queue, or multiple agents
-- how to model durable state instead of hiding everything inside chat history
-- where retries, budgets, approvals, and logs belong in a production harness
-- how to reason about failure paths before they happen in production
-
-## Completion standard
+## Completion Standard
 
 You are done with this phase when you can design a small orchestrated system, explain its state transitions, and walk through how it behaves under timeout, bad tool output, budget pressure, and human approval.

@@ -1,8 +1,13 @@
 # Chapter 2 - Project Storytelling
 
-Storytelling for engineers is not marketing fluff. It is structured explanation.
+Storytelling for engineers is not marketing fluff.
+It is structured explanation.
 
-The point is to help another person understand the problem, the system, the evidence, and the limits without guessing.
+This chapter starts with the basic words:
+
+- a `story` is a sequence that helps someone understand what happened
+- a `tradeoff` is a choice where you gain one thing and give up another
+- a `limit` is something the system still cannot do well
 
 ## The Four-Part Project Story
 
@@ -15,23 +20,21 @@ Use this order when explaining a project:
 
 This structure works in READMEs, interviews, demos, and networking conversations.
 
-If you remember only one pattern from this chapter, remember this one.
+## Turning Raw Work Into Clear README Text
 
-## Turning Raw Work Into Strong README Sections
-
-Weak README line:
+Weak line:
 
 ```text
-Built a RAG chatbot with advanced retrieval and vector search.
+Built an advanced AI workflow.
 ```
 
-Stronger README line:
+Stronger line:
 
 ```text
-Built a document-grounded question answering system over internal policy manuals, combining hybrid retrieval, reranking, and citation-aware answer generation. Evaluated on a 120-question regression set with faithfulness and answer relevance tracking.
+Built a document-grounded question answering system over internal policy manuals, using retrieval, reranking, and citation-aware answer generation. Evaluated it on a 120-question regression set.
 ```
 
-The second version explains scope, mechanism, and evidence.
+The stronger line explains scope, mechanism, and evidence.
 
 ## What To Include In A Failure Story
 
@@ -40,27 +43,25 @@ A useful failure story includes:
 - what broke
 - how you diagnosed it
 - what changed
-- what metric or behavior improved
+- what improved afterward
 
 Example:
 
 ```text
-Early retrieval quality looked good in demos but failed on policy comparison questions. Manual review showed chunking had split exceptions away from the main rule text. I changed the chunking strategy to preserve section boundaries, added reranking, and context recall improved on the hard set.
+Early retrieval looked good in demos but failed on policy comparison questions. Manual review showed chunking had split exceptions away from the main rule text. I changed the chunking strategy, added reranking, and context recall improved on the hard set.
 ```
 
-That is the kind of explanation interviewers remember.
-
-Failure stories build trust because they show judgment, not just success.
+That kind of story builds trust because it shows judgment, not just success.
 
 ## Anti-Patterns
 
-Avoid:
+Avoid lines like:
 
 - "used cutting-edge AI"
 - "built an autonomous system"
 - "improved productivity"
 
-Unless you can explain exactly how, these lines weaken credibility.
+If you cannot explain exactly how, those lines weaken credibility.
 
 ## Chapter Exercise
 

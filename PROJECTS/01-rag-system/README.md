@@ -1,46 +1,55 @@
 # Project 1 - Production RAG System
 
-Build a document-grounded question answering system that can ingest a real corpus, retrieve relevant evidence, generate answers with citations, and prove quality through evaluation instead of demos alone.
+This project teaches how to build a question-answering system that answers from documents instead of from guesswork.
 
-A RAG system, short for retrieval-augmented generation, is a setup where the model first looks up relevant text and then uses that text to answer. The retrieval part finds the evidence. The generation part turns that evidence into a response. Grounding means the answer stays tied to the evidence instead of guessing.
+If the term `RAG` is new, it means `retrieval-augmented generation`. That sounds complicated, but the idea is simple:
 
-## Project Goal
+- `retrieval` means finding useful text first
+- `generation` means having the model write the answer after it sees that text
+- `grounded` means the answer stays tied to the evidence instead of inventing facts
 
-The project is successful when a reviewer can see:
+Think of it like this: before answering, the system checks its notes.
 
-- a reproducible ingestion pipeline
-- intentional retrieval design
-- answer grounding with visible evidence
-- measurable quality on a fixed eval set
+## What You Will Build
 
-In plain language, the project should show that the system can find the right information and use it responsibly.
+You will build a system that can:
 
-## Target Users
+- ingest a real document collection
+- break documents into smaller pieces called `chunks`
+- search for the most relevant chunks
+- generate an answer with citations
+- evaluate whether the answer is actually good
 
-- internal teams searching policy or operations documents
-- technical users searching manuals or runbooks
-- research users querying papers or long-form notes
+## Before You Start
 
-## Suggested Stack
+Here are the main words in plain language:
 
-- Python + FastAPI
-- vector database of your choice
-- BM25 or equivalent lexical retrieval
-- reranker
-- optional graph store for relationship-heavy corpora
-- eval toolkit such as RAGAS plus manual review
+- a `corpus` is the set of documents you want to search
+- a `chunk` is a small piece of a document
+- an `embedding` is a numeric representation of text meaning
+- a `vector database` is a place to store and search embeddings
+- `retrieval` means finding the most useful evidence
+- `reranking` means reordering results so the best evidence rises to the top
+- a `citation` points back to the source chunk used for the answer
 
-If those names are new, use this plain-English translation:
+## Why This Project Matters
 
-- `FastAPI` is a Python web framework that makes it easier to expose your system through an API
-- a `vector database` stores embeddings, which are number-based representations of text meaning
-- `BM25` is a classic keyword-search method that works well when exact words matter
-- `lexical retrieval` means searching by words and terms rather than by meaning alone
-- a `reranker` is a second scoring step that reorders retrieved results so the most useful evidence rises to the top
-- a `graph store` keeps entities and relationships when the knowledge is better represented as connected facts
-- `RAGAS` is a toolkit people often use to evaluate retrieval-augmented systems
+Many beginner AI demos stop at “the answer sounds nice.” This project goes further. It shows whether the system can:
 
-## Recommended Folder Layout
+- find the right source material
+- avoid unsupported claims
+- explain where its answer came from
+- improve when you tune the retrieval step
+
+## How To Use This Folder
+
+- `README.md` explains the project in simple language
+- `architecture.md` shows how the parts fit together
+- `build-plan.md` gives the build order
+- `eval-plan.md` explains how to measure quality
+- `rubric.md` gives a quick readiness check
+
+## Suggested Repo Layout
 
 ```text
 01-rag-system/
@@ -51,7 +60,7 @@ If those names are new, use this plain-English translation:
 └── rubric.md
 ```
 
-When you implement the repo itself, aim for:
+When you turn this into code, a clear layout often looks like this:
 
 ```text
 src/
@@ -68,13 +77,11 @@ reports/
 ## Milestones
 
 1. Ingest and normalize a real document corpus.
-2. Build a baseline vector-search pipeline.
+2. Build a baseline search flow that returns chunks.
 3. Add hybrid retrieval and reranking.
-4. Add grounded answer generation with citations.
-5. Build an eval set and track quality.
-6. Add optional graph reasoning only if the corpus needs it.
-
-`Vector-search` means retrieving documents by meaning using embeddings. `Hybrid retrieval` means combining meaning-based search with keyword-based search so you get the strengths of both.
+4. Generate answers with visible citations.
+5. Create an eval set and measure quality.
+6. Add graph reasoning only if the documents truly need it.
 
 ## Core Artifacts
 
@@ -86,18 +93,21 @@ reports/
 - metric report
 - short demo or walkthrough
 
-## Success Criteria
+## Success Looks Like
 
-- answers cite the exact source chunks used
+A good reviewer should be able to see that:
+
+- the system uses evidence, not vibes
 - retrieval quality is measured, not guessed
-- the repo explains retrieval tradeoffs clearly
-- a stranger can run or understand the system without private context
+- citations are easy to inspect
+- the repo explains the tradeoffs clearly
 
 ## Demo Guidance
 
-Show:
+Show one example of each:
 
-- one retrieval success case
-- one hard case
-- one evaluation summary
-- one limitation such as weak results on comparison questions or sparse documents
+- a question the baseline system answers well
+- a hard question that reveals a weakness
+- a retrieval improvement
+- an eval result that proves the improvement
+- one limitation the system still has

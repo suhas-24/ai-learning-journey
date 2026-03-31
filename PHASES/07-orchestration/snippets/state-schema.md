@@ -2,6 +2,8 @@
 
 Use this as a compact template for orchestrated runs.
 
+This is the memory card for one run. Keep it small, clear, and easy to resume from.
+
 ```json
 {
   "run_id": "string",
@@ -38,5 +40,7 @@ Use this as a compact template for orchestrated runs.
 - `artifacts`: points to external outputs without bloating state
 - `budget`: allows policy checks before each expensive step
 - `approval`: makes irreversible actions auditable
+
+If a field does not help the system continue or recover, it probably belongs somewhere else.
 
 Return to [README](../README.md).

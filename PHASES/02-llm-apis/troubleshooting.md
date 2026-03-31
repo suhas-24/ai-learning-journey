@@ -10,7 +10,7 @@ Inspect the raw text. Models often wrap JSON in explanation or markdown fences. 
 
 ## "The tool call keeps coming back with bad arguments"
 
-Your tool description may be too vague, or the argument schema may be underspecified. Make the tool narrower and add one concrete example.
+Your tool description may be too vague, or the argument shape may be underspecified. Make the tool narrower and add one concrete example.
 
 ## "Adding more context made the answer worse"
 

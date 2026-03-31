@@ -1,5 +1,7 @@
 # Lab 1 - Convert a Script to Spec-First
 
+In this lab, a `script` means a small program or workflow that already does one job. Your job is to write down the rules first, before you change the code.
+
 This lab helps you feel the difference between hidden behavior and visible behavior.
 
 ## Goal

@@ -2,6 +2,8 @@
 
 Use this shape to keep traces queryable and comparable.
 
+This example shows the kind of record you want when you need to answer: what happened, when did it happen, and where did the problem start?
+
 ```json
 {
   "trace_id": "trace_001",
@@ -27,5 +29,7 @@ Use this shape to keep traces queryable and comparable.
 - use the same `run_id` everywhere
 - record both successes and failures
 - keep trace fields machine-readable so dashboards and scripts can query them
+
+Machine-readable just means another program can read the data without guessing.
 
 Pair this with [Troubleshooting](../troubleshooting.md).

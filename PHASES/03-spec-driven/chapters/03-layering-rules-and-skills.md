@@ -1,6 +1,14 @@
 # Chapter 3 - Layering Repo Rules, Agent Files, and Skills
 
+If `repo`, `agent`, and `skill` are all new words, here is the simple split:
+
+- a `repo` is the whole project folder
+- an `agent` is one worker with a specific job
+- a `skill` is one reusable procedure for doing a repeated task
+
 Not every rule belongs in the same file. Good spec-driven systems separate layers so each one has a clear job.
+
+Here, a `layer` just means a level of responsibility. Bigger rules live higher up, and narrower instructions live closer to the worker that uses them.
 
 ## 1. Repo-Level Rules
 
@@ -57,6 +65,12 @@ Before editing docs, inspect the existing file, identify missing examples, then 
 ```
 
 These three rules do different jobs. Putting them all in one file would make the system harder to maintain.
+
+Think of it like this:
+
+- the repo file tells everyone the house rules
+- the agent file tells one person what room they are responsible for
+- the skill file tells them how to do one repeated task well
 
 ## 5. Common Confusion
 

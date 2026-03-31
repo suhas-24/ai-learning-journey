@@ -2,6 +2,10 @@
 
 This lab helps you design a small but meaningful evaluation set.
 
+## Why this matters
+
+If you test the system with weak examples, the score can look good even when the real experience is bad. This lab helps you choose examples that actually matter.
+
 ## Goal
 
 Create 12 cases for an internal knowledge assistant.
@@ -47,3 +51,5 @@ Pick at least one metric per case type:
 A JSON or YAML dataset draft plus a short note explaining why the cases are representative.
 
 Check your work against [Checkpoints](../checkpoints.md).
+
+If you are unsure about a case, ask whether it reflects a real situation a user would actually hit.

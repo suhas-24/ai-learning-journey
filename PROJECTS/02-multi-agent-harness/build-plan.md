@@ -1,6 +1,15 @@
 # Build Plan - Multi-Agent Research Harness
 
-This build plan starts small on purpose: first one worker with memory, then more roles, then safety and visibility.
+This plan starts with one worker and slowly adds control.
+
+Quick meanings:
+
+- a `stateful worker` is a worker that remembers what happened earlier in the run
+- a `persisted state store` is the saved location where that memory lives
+- a `handoff contract` is the clear agreement about what one role passes to the next role
+- a `timeout budget` is the maximum time you allow a step to use
+- `structured logs` are logs written in a consistent field-based format so they are easier to search later
+- an `artifact` is any saved output you can inspect, such as a report, trace, or summary file
 
 ## Milestone 1 - Single-Agent Baseline
 
@@ -10,6 +19,10 @@ Deliverables:
 - persisted state store
 - simple task intake
 
+Why this step exists:
+
+- you need a working memory before you split the work into roles
+
 Definition of done:
 
 - a run can survive a process restart
@@ -18,10 +31,14 @@ Definition of done:
 
 Deliverables:
 
-- Researcher role
-- Analyst role
-- Reporter role
+- `Researcher` role
+- `Analyst` role
+- `Reporter` role
 - handoff contract between roles
+
+Why this step exists:
+
+- each role should have one clear job
 
 Definition of done:
 
@@ -36,6 +53,10 @@ Deliverables:
 - retry policy
 - stop conditions
 
+Why this step exists:
+
+- autonomy should have a ceiling
+
 Definition of done:
 
 - unsafe or irreversible actions cannot happen without review
@@ -47,6 +68,10 @@ Deliverables:
 - traces
 - structured logs
 - run summary report
+
+Why this step exists:
+
+- a failed run should still teach you something
 
 Definition of done:
 
@@ -61,9 +86,13 @@ Deliverables:
 - intervention notes
 - improvement backlog
 
+Why this step exists:
+
+- the harness should be tested on repeatable tasks, not anecdotes
+
 Definition of done:
 
-- the harness is evaluated on repeatable tasks, not anecdotes
+- the system is evaluated on scenarios you can run again later
 
 ## Milestone 6 - Packaging
 
@@ -73,6 +102,10 @@ Deliverables:
 - architecture writeup
 - demo showing pause, resume, and approval
 
+Why this step exists:
+
+- another engineer should be able to understand the system quickly
+
 Definition of done:
 
-- another engineer can understand both the autonomy and the constraints
+- the project is easy to explain and easy to inspect

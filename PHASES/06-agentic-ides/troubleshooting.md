@@ -2,6 +2,8 @@
 
 Use this page when a coding-agent workflow feels fast but unsafe.
 
+If you are unsure what went wrong, start with the scope, then the checks, then the files.
+
 ## The agent keeps changing unrelated files
 
 Common reasons:
@@ -48,3 +50,5 @@ Common reasons:
 - workers edited shared files
 
 Go back to [Chapter 4](./chapters/04-multi-agent-coding-workflows.md) and make the split smaller.
+
+If two workers need the same file, let one worker own it and let the other review it after the fact.

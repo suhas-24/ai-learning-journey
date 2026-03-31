@@ -1,35 +1,45 @@
 # Example LoRA config
-# This file shows the shape of a small fine-tuning run.
+# This file shows the shape of a small fine-tuning run in plain language.
 
 experiment_name: support-routing-lora-v1
 base_model: mistral-7b-instruct
 method: lora
+
 dataset:
+  # Paths to the three data splits.
   train_path: data/train.jsonl
   validation_path: data/validation.jsonl
   test_path: data/test.jsonl
+
 training:
+  # How fast the model changes.
   learning_rate: 0.0002
+  # How many passes over the training data.
   epochs: 3
+  # How many examples are processed at once.
   micro_batch_size: 4
+  # Lets you simulate a bigger batch without extra memory.
   gradient_accumulation_steps: 4
-  warmup_ratio: 0.05
+  # Keeps very long examples from taking too much memory.
   max_seq_length: 2048
+
 lora:
+  # Smaller values mean fewer adapter parameters.
   r: 16
   alpha: 32
   dropout: 0.05
+  # The model layers that receive adapters.
   target_modules:
     - q_proj
-    - k_proj
     - v_proj
-    - o_proj
+
 evaluation:
   primary_metric: macro_f1
   secondary_metrics:
     - schema_validity
     - latency_ms
     - cost_per_1000_requests
+
 artifacts:
   adapter_output_dir: outputs/support-routing-lora-v1
   report_path: reports/support-routing-lora-v1.md

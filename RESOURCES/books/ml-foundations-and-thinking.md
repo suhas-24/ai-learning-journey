@@ -1,21 +1,27 @@
 # ML Foundations And Systems Thinking
 
-This guide covers the books that give you the vocabulary and judgment needed to understand model-based systems without hand-waving. These books matter because they make later phases less magical and more explainable.
+This guide gives you the vocabulary and judgment needed to understand model-based systems without hand-waving. These books matter because they make later phases less magical and more explainable.
 
-If you are seeing terms like `model`, `training`, `evaluation`, or `generalization` for the first time, think of them this way:
+If you are seeing terms like `model`, `training`, `evaluation`, or `generalization` for the first time, here is the simple version:
 
-- a `model` is a system that learns patterns from examples
-- `training` is the process of teaching it from data
-- `evaluation` is how you check whether it works
-- `generalization` is whether it still works on new data it has not seen before
+- A `model` is a system that learns patterns from examples.
+- `Training` is the process of teaching it from data.
+- `Evaluation` is how you check whether it works.
+- `Generalization` is whether it still works on new data it has not seen before.
+
+## How To Use These Books
+
+- Learn the terms well enough to explain them without jargon.
+- Rephrase each concept in the context of a project you are building.
+- If a tool or framework tutorial starts making strong claims, use these books to ask better questions about data, evals, and failure modes.
 
 ## The Hundred-Page Machine Learning Book
 
 ### What this book teaches
 
-This book teaches the shortest useful map of machine learning. It does not make you an ML researcher, but it gives you the language to understand training, evaluation, bias, generalization, and model error.
+This book gives the shortest useful map of machine learning. It will not turn you into a researcher, but it will give you the language to understand training, evaluation, bias, generalization, and model error.
 
-### Major topics and subtopics
+### Core topics and subtopics
 
 - Supervised learning: inputs, labels, fitting, and prediction.
 - Unsupervised learning: clustering, dimensionality reduction, and pattern discovery.
@@ -28,6 +34,10 @@ This book teaches the shortest useful map of machine learning. It does not make 
 - Best in Phase 1 as orientation.
 - Useful again in Phase 2 when ML vocabulary shows up in API, embedding, and evaluation discussions.
 
+### Watch for
+
+- This book is short on purpose. Use it to build a map, then return to the specific topic later when you need depth.
+
 ### Best companion resources
 
 - [../tools/python-foundation-tools.md](../tools/python-foundation-tools.md)
@@ -37,9 +47,9 @@ This book teaches the shortest useful map of machine learning. It does not make 
 
 ### What this book teaches
 
-This book teaches how ML systems fail after deployment and how a team designs around those failures. It is less about one model architecture and more about the system around the model.
+This book explains how ML systems fail after deployment and how a team designs around those failures. It is less about one model architecture and more about the system around the model.
 
-### Major topics and subtopics
+### Core topics and subtopics
 
 - Problem design: setting the right objective, constraints, and business framing.
 - Data strategy: collection, labeling, quality control, and feedback loops.
@@ -53,14 +63,12 @@ This book teaches how ML systems fail after deployment and how a team designs ar
 - Best in Phase 9 for evaluation and observability.
 - Useful in Phase 11 when you need to explain a project as an evolving system rather than a one-time demo.
 
+### Watch for
+
+- The book is strongest when you treat it as an operations guide, not just a modeling guide.
+
 ### Best companion resources
 
 - [../courses/evals-and-mlops-courses.md](../courses/evals-and-mlops-courses.md)
 - [../tools/evals-observability-tools.md](../tools/evals-observability-tools.md)
 - [../people/systems-thinkers.md](../people/systems-thinkers.md)
-
-## How To Use These Books Well
-
-- Learn the terms well enough to explain them without jargon.
-- Rephrase each concept in the context of a project you are building.
-- If a tool or framework tutorial starts making strong claims, use these books to ask better questions about data, evals, and failure modes.

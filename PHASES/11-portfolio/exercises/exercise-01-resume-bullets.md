@@ -4,15 +4,15 @@
 
 Turn project reality into resume bullets that are specific, technical, and defensible.
 
-Defensible means you can explain why the bullet is true if someone asks you about it.
+`Defensible` means you can explain why the bullet is true if someone asks you about it.
 
 ## Instructions
 
 For each of the three portfolio projects, write:
 
 - one long-form bullet for your master resume
-- one shortened bullet for application tailoring
-- one interview note describing the proof behind the bullet
+- one shorter bullet for tailoring an application
+- one interview note explaining the proof behind the bullet
 
 ## Quality Bar
 

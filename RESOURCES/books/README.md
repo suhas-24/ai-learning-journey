@@ -1,8 +1,8 @@
 # Books Reference
 
-Books are where you build durable mental models. A strong book slows you down just enough to understand why a system behaves the way it does, which tradeoffs matter, and what failure patterns keep showing up across tools and frameworks.
+Books are where you build durable understanding. A good technical book slows the pace enough for the ideas to settle. It should explain what a system is, why it behaves the way it does, and what tradeoffs matter when you move from a demo to something real.
 
-If you are brand new, think of a book here as a long explanation of the idea behind the tool. It should help you answer questions like:
+If you are new, think of a book as the long version of the answer to five questions:
 
 - What is this thing?
 - Why does it exist?
@@ -13,21 +13,21 @@ If you are brand new, think of a book here as a long explanation of the idea beh
 ## How To Read A Technical Book In This Repo
 
 - Read for concepts you can reuse, not for completion.
-- After each chapter, write one answer to this question: "What design decision would I make differently now?"
-- Stop when the book stops adding leverage for your current phase.
+- After each chapter, write one sentence answering, "What would I do differently now?"
+- Stop once the book stops changing how you design, debug, or explain the system.
+
+## When Books Help Most
+
+- Use books when a topic feels too fast or too fragmented.
+- Use books before advanced project work if you can do the task mechanically but cannot explain the tradeoffs.
+- Pair each book with [../by-phase.md](../by-phase.md) so the reading matches the phase you are in.
 
 ## Guides In This Folder
 
-- [ai-engineering-and-llm-systems.md](./ai-engineering-and-llm-systems.md): books for application architecture, retrieval, orchestration, reliability, and production quality.
-- [ml-foundations-and-thinking.md](./ml-foundations-and-thinking.md): books that teach ML vocabulary, system thinking, monitoring, and problem framing.
-- [model-internals-and-finetuning.md](./model-internals-and-finetuning.md): books for transformers, training dynamics, and why fine-tuning works.
+- [ai-engineering-and-llm-systems.md](./ai-engineering-and-llm-systems.md) covers application architecture, retrieval, orchestration, reliability, and production quality.
+- [ml-foundations-and-thinking.md](./ml-foundations-and-thinking.md) covers ML vocabulary, systems thinking, monitoring, and problem framing.
+- [model-internals-and-finetuning.md](./model-internals-and-finetuning.md) covers transformers, training dynamics, and why fine-tuning works.
 
-## When Books Beat Other Resource Types
+## Where To Start
 
-- Use books instead of videos when a topic keeps feeling shallow or fragmented.
-- Use books before advanced project work when you can perform tasks mechanically but still cannot explain the tradeoffs.
-- Pair each book with [by-phase.md](../by-phase.md) so the reading stays connected to the active phase.
-
-## Next Step
-
-If you are unsure where to start, begin with [ai-engineering-and-llm-systems.md](./ai-engineering-and-llm-systems.md). It does the best job of connecting model behavior to product-quality engineering.
+If you are unsure, begin with [ai-engineering-and-llm-systems.md](./ai-engineering-and-llm-systems.md). It connects model behavior to the way real products are built and maintained.

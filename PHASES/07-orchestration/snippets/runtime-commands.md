@@ -2,6 +2,8 @@
 
 These commands are examples of how an operator might inspect an orchestrated run.
 
+They are not the workflow itself. They are the tools you use to look at the workflow after it has run.
+
 ## Find failed runs
 
 ```bash

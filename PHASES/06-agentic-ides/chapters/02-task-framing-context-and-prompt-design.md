@@ -2,11 +2,22 @@
 
 Most agent problems are not really model problems. They are task problems.
 
-If the task is vague, the agent will guess. If the task is bounded, the agent has a chance to be helpful.
+If the task is vague, the agent guesses. If the task is bounded, the agent can help.
+
+## What A Task Brief Is
+
+A task brief is a short instruction that tells the agent:
+
+- what to do
+- where to do it
+- where not to go
+- how success will be checked
+
+Think of it like giving directions before someone starts moving furniture. If the room is not named, the route is not clear, and the rules are not stated, you will get the wrong result.
 
 ## What A Good Brief Includes
 
-- the objective
+- the objective in one or two sentences
 - the files or folders the agent may edit
 - the files or systems the agent must not touch
 - the checks the agent should run
@@ -22,6 +33,12 @@ Bad:
 Fix the retrieval code.
 ```
 
+Why this is weak:
+
+- it does not say which retrieval code
+- it does not say what "fix" means
+- it does not say how to prove success
+
 Good:
 
 ```text
@@ -32,7 +49,12 @@ Run pytest tests/retrieval -q.
 Return a short summary with files changed and any open risks.
 ```
 
-The second prompt is better because it says what to change, what not to change, and how to prove success.
+Why this is better:
+
+- it names the task
+- it names the boundaries
+- it names the check
+- it names the return format
 
 ## Context
 
@@ -49,7 +71,7 @@ Do not give the agent:
 
 - a giant pile of unrelated prose
 - instructions without boundaries
-- both brainstorming and execution instructions at once
+- brainstorming notes mixed with execution instructions
 
 ## Example
 
@@ -62,6 +84,6 @@ A strong brief would say:
 3. add a tiny benchmark script under `scripts/`
 4. return results as a table
 
-That makes it much more likely the agent will produce something useful.
+That makes it much more likely the agent will produce something useful because the task is narrow and the shape of the output is clear.
 
 Next: [Chapter 3](./03-review-verification-and-safe-iteration.md).

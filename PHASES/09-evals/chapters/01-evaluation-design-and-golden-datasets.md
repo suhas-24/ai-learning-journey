@@ -4,6 +4,16 @@ Good evaluation starts before optimization. If you wait until after a change to 
 
 `Evaluation` means checking a system with a repeatable method instead of guessing. A `golden dataset` is a small set of examples that represents the real work the system must do.
 
+## First words
+
+- `repeatable` means you can run the same check again and get comparable results
+- `dataset` means a collection of examples
+- `golden` means chosen carefully because it represents the standard you want to compare against
+
+## Why this matters
+
+If you do not define good behavior first, you cannot tell whether a change improved the system or just made it sound different.
+
 ## What a golden dataset is
 
 A golden dataset is a small, carefully chosen set of examples that represents the real job your system must do.
@@ -49,6 +59,8 @@ Ask:
 - what failure is expensive or risky
 
 That is where your early cases should come from.
+
+Those questions help you choose examples that matter in real life, not just examples that are easy to score.
 
 ## Test shape matters
 

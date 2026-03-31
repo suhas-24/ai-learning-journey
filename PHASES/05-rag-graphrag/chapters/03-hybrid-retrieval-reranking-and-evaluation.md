@@ -11,6 +11,8 @@ That is the basic idea behind hybrid retrieval and reranking.
 - dense search, which looks for meaning
 - sparse search, which looks for exact words or identifiers
 
+In plain language, hybrid retrieval says: do not trust only meaning and do not trust only exact words. Use both so the system has a better chance of finding the right evidence.
+
 This matters because many questions use both kinds of signal.
 
 Example question:
@@ -23,6 +25,8 @@ Dense search helps with the natural-language part. Sparse search helps with `inv
 
 `Reranking` means scoring the first search results again with a more careful step.
 
+Think of reranking as a second pass that re-orders the candidates after the first search has gathered them.
+
 Why do this?
 
 - the first search can be broad
@@ -30,6 +34,8 @@ Why do this?
 - the final context becomes cleaner
 
 ## Evaluation
+
+`Evaluation` means checking how well the system worked.
 
 Do not mix search quality and answer quality into one vague score.
 
@@ -53,6 +59,10 @@ If the answer is wrong but sounds reasonable:
 2. compare dense-only and hybrid search
 3. rerank the same candidate set
 4. check whether the good chunk was present but too low
+
+## Tiny Example
+
+If a question says `ERR-BILL-402`, sparse search may catch that exact code. If the question says `the billing retry workflow that failed after the rollout`, dense search may catch the meaning. Hybrid retrieval tries to catch both.
 
 ## Simple Pipeline
 

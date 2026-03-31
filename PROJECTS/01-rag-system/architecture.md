@@ -1,86 +1,87 @@
 # Architecture - Production RAG System
 
-Before the diagram, here are the key words in simple language:
+This page explains how the project works from the ground up.
 
-- a corpus is the set of documents you want to search
-- a chunk is a smaller piece of a document
-- an embedding is a numerical representation of text that helps similar text sit near each other
-- retrieval means finding the most relevant chunks
-- reranking means reordering those chunks to improve quality
-- citations are the pointers that show where the answer came from
+If a word below is new, read its short definition before looking at the diagram:
 
-## System Overview
+- a `corpus` is the document collection you search
+- a `chunk` is a small piece of a document
+- an `embedding` is a number-based representation of meaning
+- `retrieval` means finding the chunks most likely to help
+- `reranking` means sorting the first results again to improve quality
+- a `citation` is the link back to the evidence used in the answer
+
+## System Shape
 
 ```text
-documents -> ingestion -> chunk store + metadata -> hybrid retrieval -> reranking -> answer generation -> citations + eval logging
+documents -> ingestion -> chunks + metadata -> retrieval -> reranking -> answer generation -> citations + eval logs
 ```
 
-## Components
+## Component Guide
 
 ### 1. Ingestion
 
-Responsibilities:
+Ingestion is the step that brings documents into the system.
 
-- load Markdown, PDF, HTML, or plain text
-- normalize metadata
-- preserve document id, section, and source path
-- chunk content by semantic boundaries where possible
-- embed chunks and write them to the vector store
+It usually:
 
-Artifacts:
+- loads Markdown, PDF, HTML, or text files
+- records document name, section, and source path
+- splits long documents into chunks
+- writes chunk data and embeddings to storage
 
-- ingestion manifest
-- chunk dataset
-- embedding index
+Why it exists:
+
+- so the system can search documents consistently
+- so later steps know where each answer came from
 
 ### 2. Retrieval
 
-Responsibilities:
+Retrieval is the step that finds the most useful chunks for a question.
 
-- vector retrieval for semantic similarity
-- lexical retrieval for exact terms and rare phrases
-- fusion or rank combination
-- metadata filtering by source, date, topic, or document type
+It often combines:
 
-Interfaces:
+- semantic search, which looks for similar meaning
+- keyword search, which looks for exact words
+- filters, which narrow results by date, topic, or source
 
-```python
-def retrieve(query: str, k: int = 8, filters: dict | None = None) -> list[dict]:
-    ...
-```
+Why it exists:
 
-Return fields should include:
-
-- chunk_id
-- document_id
-- score
-- source_path
-- section_title
-- chunk_text
+- the model should not answer from memory alone
+- the answer should start with evidence
 
 ### 3. Reranking
 
-Responsibilities:
+Reranking is a second sorting step.
 
-- reorder top retrieved results using a stronger model or heuristic
-- discard noisy chunks
-- improve precision before answer generation
+It takes the first retrieved results and reorders them so the strongest evidence appears first.
+
+Why it exists:
+
+- the first search pass is fast, but not always perfect
+- reranking often helps with accuracy on harder questions
 
 ### 4. Answer Generation
 
-Responsibilities:
+This is the step where the model writes the response.
 
-- answer only from retrieved evidence
-- produce citations tied to source chunks
-- abstain or ask for clarification when evidence is weak
+It should:
 
-Suggested output schema:
+- use only retrieved evidence
+- attach citations to source chunks
+- say “I do not know” or ask for more detail when evidence is weak
+
+Suggested output shape:
 
 ```json
 {
   "answer": "The retention policy is 90 days for audit logs.",
   "citations": [
-    {"source_path": "docs/security/logging.md", "section": "Retention", "chunk_id": "c_104"}
+    {
+      "source_path": "docs/security/logging.md",
+      "section": "Retention",
+      "chunk_id": "c_104"
+    }
   ],
   "confidence_note": "High confidence because two policy sections agreed."
 }
@@ -88,21 +89,23 @@ Suggested output schema:
 
 ### 5. Evaluation
 
-Responsibilities:
+Evaluation is the step that checks whether the system is actually improving.
 
-- score retrieval and answer quality
-- log hard failures
-- compare experiments across retrieval strategies
+It should measure:
+
+- whether retrieval found the right evidence
+- whether the answer stayed grounded
+- whether citations point to the right place
 
 ## Optional Graph Layer
 
-Add a graph layer only if your corpus demands multi-hop reasoning across entities, policies, or relationships. Do not add it for resume theater.
+Add a graph layer only if the corpus needs multi-step relationship reasoning.
 
-Graph reasoning means following connections between things, like who owns what policy or how one concept links to another.
+If that sentence feels vague, think of a graph as a map of connected facts, like “who owns this policy” or “which concept depends on another one.”
 
-## Architecture Decisions To Document
+## Decisions To Document
 
-- why you chose chunk size and overlap
+- why you chose your chunk size
 - why hybrid retrieval was needed or not
-- when reranking helped enough to justify cost
+- when reranking helped enough to justify its cost
 - whether graph reasoning earned its complexity

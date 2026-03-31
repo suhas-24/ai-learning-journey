@@ -1,5 +1,7 @@
 # Chapter 1 - Why Specs Exist
 
+If the word `spec` is new, think of it as a plain-language promise sheet. It tells people and agents what should happen, what should not happen, and who is responsible for the work.
+
 Specs exist because hidden behavior becomes hard to trust.
 
 If an agent’s rules only live inside code, the next person has to reverse-engineer the system to understand what it is supposed to do. That creates fragile behavior, slow reviews, and accidental drift.
@@ -14,6 +16,11 @@ Without specs, important behavior gets buried in places like:
 - editor-specific rule files with no clear scope
 
 That means the behavior exists, but it is not easy to inspect.
+
+When behavior is hidden, two bad things happen:
+
+- people cannot tell whether the system is following the rules
+- future changes accidentally break things nobody realized were important
 
 ## 2. What a Good Spec Does
 
@@ -46,6 +53,8 @@ Why the second version is better:
 - it has a clear job
 - it says what not to do
 - it gives a real escalation rule
+
+In other words, the second version gives the agent guardrails, which are the simple limits that keep it from wandering into the wrong job.
 
 ## 4. Common Confusion
 

@@ -1,4 +1,5 @@
 // A tiny example graph: one service, one team, one incident.
+// The arrows show which things are connected.
 MERGE (svc:Service {name: "invoice-worker"})
 MERGE (team:Team {name: "billing-platform"})
 MERGE (incident:Incident {id: "INC-42"})

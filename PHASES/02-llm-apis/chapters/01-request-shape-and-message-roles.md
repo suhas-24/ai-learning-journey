@@ -1,29 +1,55 @@
 # Chapter 1 - Request Shape and Message Roles
 
-An LLM call is not "send a paragraph and hope." It is a structured request made of parts. If you understand the parts, the behavior stops feeling mysterious.
+This chapter starts at the beginning: what actually happens when your code asks a language model for help.
 
-## 1. Start With the Plain Meaning
+## 1. The Basic Idea
 
-An **LLM** is a large language model. It is a program trained on lots of text so it can predict and generate text.
+An LLM is a program that reads text and produces text.
+
+That sounds simple, but there is an important detail: your code does not just send a blob of text and hope for the best. It sends a shaped request. That request is made of parts, and each part has a job.
+
+If you understand the parts, the model stops feeling mysterious.
+
+## 2. A Model Call in Plain Language
 
 Think of a model call like this:
 
 ```text
-response = model(messages, tools, settings, extra_context)
+response = model(request)
 ```
 
-Your code decides what goes into that call. That means your code has a lot of influence over the result.
+Your request usually contains:
 
-## 2. Message Roles
+- messages
+- settings
+- optional tool descriptions
+- extra context you want the model to use
 
-Most APIs use some version of these roles:
+Your program decides all of that. The model only sees what you include.
+
+## 3. What a Message Is
+
+A `message` is one item in the conversation.
+
+You can think of messages like notes passed between people in a group chat:
+
+- one note explains the rules
+- one note asks the question
+- one note gives a previous answer
+- one note brings back information from a tool
+
+Most model APIs use message roles so the request stays organized.
+
+## 4. Message Roles
+
+Common roles are:
 
 - `system`: broad rules, tone, and boundaries
-- `user`: the question or task
-- `assistant`: earlier model replies
+- `user`: the task or question from the person using the system
+- `assistant`: a reply from the model
 - `tool`: output from outside code after a tool runs
 
-Example conversation shape:
+Example:
 
 ```json
 [
@@ -34,26 +60,30 @@ Example conversation shape:
 ]
 ```
 
-This is just a structured way of saying "here is the conversation so far."
+This is not magic. It is just a clean way to say, "Here is the conversation so far, and here is information the model should use next."
 
-## 3. Settings
+## 5. Settings
+
+Settings are small choices your code makes before the request goes out.
 
 Common settings include:
 
 - `temperature`: how much randomness to allow
 - output limit: how long the answer may become
 - streaming: whether the answer arrives in pieces
-- tool definitions: what actions the model may ask for
+- tool definitions: what outside actions the model may ask for
 
 ### Temperature in plain language
+
+`Temperature` controls how much variety the model is allowed to show.
 
 - low temperature: more repeatable
 - medium temperature: some variety
 - high temperature: more creative, but less predictable
 
-Use low temperature for extraction, classification, and structured tasks. Use higher temperature only when creativity is the point.
+For extraction, classification, and other strict tasks, lower temperature usually makes life easier.
 
-## 4. Better Request Shape
+## 6. Why Request Shape Matters
 
 Weak request:
 
@@ -79,27 +109,27 @@ Better request:
 }
 ```
 
-Why the second request works better:
+The second request works better because:
 
 - it gives the model a job
 - it narrows the task
-- it uses low randomness for a ranking task
+- it lowers randomness for a task that needs consistent structure
 
-## 5. Common Confusion
+## 7. Common Confusion
 
 ### Conflicting instructions
 
-If one instruction says "be concise" and another says "write a long essay," the model sees a conflict. Your job is to remove or resolve the conflict before sending the request.
+If one instruction says "be concise" and another says "write a long essay," the model may receive mixed signals. Your job is to remove that conflict before sending the request.
 
 ### Missing history
 
-The model does not truly remember unless your code sends the earlier facts again.
+The model does not truly remember past conversations unless your code includes the important parts again.
 
 ### Too much context
 
-If you paste ten documents when only one matters, the answer can become noisy. More text does not automatically mean better help.
+If you add too much unrelated text, the answer can become noisy. More text is not automatically better.
 
-## 6. What To Practice
+## 8. What To Practice
 
 - write one short request for a factual task and one for a creative task
 - explain which settings you would change and why

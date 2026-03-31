@@ -1,42 +1,64 @@
 # Phase 10 - Fine-Tuning
 
-This phase is about one simple question: when is it worth teaching a model a new habit instead of just giving it better instructions?
+This phase answers a simple question: when should you teach a model a new habit instead of giving it better instructions?
 
-A large language model, or LLM, is a program trained on lots of text so it can predict useful text responses. Fine-tuning means training that model a little more on your own examples so it behaves better on one narrow task. That is different from prompting, which changes the instructions at run time, and different from retrieval, which changes the information the model can see at run time.
+Before we go further, here are the plain-English words we will use:
 
-Fine-tuning is the phase where you stop asking "Can I train a model?" and start asking "What failure mode am I fixing that prompting and retrieval did not fix?" If you cannot answer that question in one sentence, you are not ready to tune yet.
+- a `model` is a program that turns input into output by using patterns it learned earlier
+- a `base model` is the starting model before you customize it
+- `training` means showing the model examples so it can adjust its internal settings
+- an `example` is one input and one correct answer
+- a `label` is the answer you want the model to choose
+- `loss` is a score that tells you how far the model's answer is from the correct answer
+- a `weight` is one of the internal settings the model uses when it makes a prediction
+- `inference` means using the model after training to make a real prediction
+- a `dataset` is a group of examples stored together
 
-This phase teaches fine-tuning as an engineering decision, not a prestige move. By the end, you should be able to define a narrow task, assemble a clean dataset, run a small LoRA-style experiment, and decide with evidence whether the tuned model is actually better than a strong prompt baseline.
+`Fine-tuning` means training a base model again on your own examples so it becomes more reliable on one narrow task. That is different from prompting, where you change the instructions at runtime, and different from retrieval, where you change what information the model can see at runtime.
 
-`LoRA` is short for low-rank adaptation. In beginner terms, it means teaching the model with a much smaller set of trainable add-ons instead of retraining the whole model. `QLoRA` is a memory-saving version of the same idea, which makes this style of tuning easier on smaller hardware.
+The main lesson in this phase is not "train everything." The main lesson is "decide carefully whether training is the right fix."
+
+## What This Phase Is Really About
+
+If a model is missing facts, fine-tuning is usually not the answer.
+If a model keeps making the same kind of mistake on the same narrow task, fine-tuning might help.
+
+This phase teaches fine-tuning as an engineering decision. By the end, you should know how to:
+
+- define a narrow task clearly
+- prepare a clean dataset
+- run a small tuning experiment
+- compare the tuned model to a strong baseline
+- decide whether the change was worth the cost
 
 ## Outcomes
 
 By the end of this phase, you should be able to:
 
-- explain the difference between prompt engineering, RAG, and fine-tuning in operational terms
-- define a tuning-worthy task with stable labels and measurable outputs
-- prepare supervised fine-tuning data in production-like formats
-- choose between full fine-tuning, LoRA, QLoRA, or "do not fine-tune"
-- evaluate tuned and untuned systems on the same held-out set
-- write an honest experiment report that includes cost, quality, and maintenance tradeoffs
+- explain the difference between prompting, retrieval, and fine-tuning
+- write a task spec with one clear output format
+- build train, validation, and test splits
+- prepare a small supervised fine-tuning dataset
+- choose between LoRA, QLoRA, or no fine-tuning
+- evaluate a tuned model against the same baseline and held-out set
+- write a short decision memo that names both gains and tradeoffs
 
 ## Prerequisites
 
 You should already be comfortable with:
 
-- Python scripting and virtual environments
-- calling LLM APIs and saving structured outputs
-- retrieval and eval basics from earlier phases
-- command-line workflows, Git, and simple experiment tracking
+- Python scripts and virtual environments
+- calling an LLM API and reading structured output
+- basic retrieval and evaluation ideas from earlier phases
+- command-line work, Git, and simple notes about experiments
 
-If any of those terms feel fuzzy, do not worry. The chapters below will restate the ideas in simpler words before they use them.
+If any of those terms feel fuzzy, that is okay. The chapters below restate them in simpler words before building on them.
 
 ## What You Will Build
 
-You will run a narrow-task fine-tuning experiment around a realistic business task such as support routing, document labeling, or structured summarization. The project in this phase is not "train a giant model." The project is "prove whether a tuned model beats a careful baseline on a task that matters."
+You will run a small fine-tuning experiment for one narrow task, such as support routing, document labeling, or structured summarization.
 
-In plain language, the goal is to make one small job more reliable, not to make the model smarter at everything.
+The goal is not to train a giant model. The goal is to prove whether a tuned model is actually better than a careful prompt baseline on one useful job.
 
 ## Recommended Study Order
 
@@ -45,7 +67,7 @@ In plain language, the goal is to make one small job more reliable, not to make 
 3. Read [chapters/03-training-strategies.md](./chapters/03-training-strategies.md).
 4. Read [chapters/04-evaluation-and-iteration.md](./chapters/04-evaluation-and-iteration.md).
 5. Complete the labs in order.
-6. Finish [checkpoints.md](./checkpoints.md) and use [troubleshooting.md](./troubleshooting.md) when results look suspicious.
+6. Finish [checkpoints.md](./checkpoints.md) and use [troubleshooting.md](./troubleshooting.md) when results look odd.
 
 ## Directory Map
 
@@ -70,35 +92,36 @@ In plain language, the goal is to make one small job more reliable, not to make 
 
 ## Mental Model
 
-Use this ladder every time you feel tempted to fine-tune:
+Use this ladder when you are tempted to fine-tune too early:
 
 ```text
-Bad output -> inspect task definition
-          -> improve instructions
-          -> improve examples
-          -> improve retrieval/context
-          -> add structured validation
-          -> only then test fine-tuning
+bad output
+  -> fix the task definition
+  -> improve the prompt
+  -> improve the examples
+  -> improve retrieval or validation
+  -> only then test fine-tuning
 ```
 
-Fine-tuning is about changing the model's default behavior. It is not the right tool for giving the model fresh facts every day. If the failure comes from missing knowledge, fix retrieval. If the failure comes from inconsistent behavior on the same narrow task, tuning may help.
+Fine-tuning changes what the model tends to do by default. It is not the right tool for adding fresh facts every day.
 
-When you see the word `token`, think "a small piece of text." Tokenization is the process of splitting text into those pieces before the model can process it.
+If the problem is missing knowledge, use retrieval.
+If the problem is unstable behavior on one narrow task, tuning may help.
 
 ## Time Budget
 
-- Week 1: task selection, baseline creation, label policy
-- Week 2: dataset preparation and audit
-- Week 3: first tuning run and held-out evaluation
-- Week 4: error analysis, iteration, final decision memo
+- Week 1: choose the task and write the spec
+- Week 2: collect and audit the dataset
+- Week 3: run a small training experiment
+- Week 4: evaluate, analyze errors, and decide what to do next
 
 ## Phase Deliverable
 
 Write a short experiment report that answers:
 
-1. What exact failure mode did you target?
+1. What exact problem were you trying to fix?
 2. What baseline did you compare against?
-3. What data did you use, and how did you keep train and eval separate?
+3. What data did you use, and how did you keep test data separate?
 4. Where did the tuned model improve?
 5. Where did it still fail?
-6. Was the gain worth the maintenance cost?
+6. Was the improvement worth the maintenance cost?

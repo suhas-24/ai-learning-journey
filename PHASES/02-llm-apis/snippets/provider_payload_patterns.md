@@ -1,6 +1,6 @@
 # Provider Payload Patterns
 
-The exact fields vary by provider, but the learning goal stays stable: messages, settings, and optional tool definitions.
+The exact fields vary by provider, but the learning goal stays the same: send messages, choose settings, and optionally describe tools.
 
 ## Generic Message Payload
 

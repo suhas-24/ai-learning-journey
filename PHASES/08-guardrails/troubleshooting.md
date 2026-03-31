@@ -1,5 +1,7 @@
 # Troubleshooting
 
+Use this page when the guardrails feel either too weak or too strict. Each symptom below is written as a common beginner mistake so you can recognize it in a real project.
+
 ## Symptom: the system still follows malicious instructions from retrieved text
 
 Likely causes:
@@ -13,6 +15,8 @@ Fix:
 - label retrieval as untrusted context
 - detect instruction-like text
 - reduce permissions on downstream tools
+
+In plain language: do not let copied text act like a boss.
 
 ## Symptom: validators reject too many legitimate requests
 
@@ -28,6 +32,8 @@ Fix:
 - separate schema validation from policy validation
 - expand allowlists through explicit review, not ad hoc bypasses
 
+In plain language: the checker is too strict, so normal work keeps getting blocked.
+
 ## Symptom: approval exists, but actions still feel unsafe
 
 Likely causes:
@@ -42,6 +48,8 @@ Fix:
 - store exact approved payload
 - attach an idempotency key
 
+In plain language: the human said yes, but the system still has too much freedom.
+
 ## Symptom: incident reviews are inconclusive
 
 Likely causes:
@@ -55,6 +63,8 @@ Fix:
 - log both allowed and blocked actions
 - attach run id to every policy event
 - make audit records queryable
+
+In plain language: the system did not leave enough clues for you to understand what happened.
 
 Next phase connection:
 

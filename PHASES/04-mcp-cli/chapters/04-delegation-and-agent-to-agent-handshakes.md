@@ -1,6 +1,10 @@
 # Chapter 4 - Safe Delegation Between Agents
 
+If `delegation` is new, it just means "give part of the work to someone else on purpose."
+
 Delegation means giving part of the work to another agent on purpose.
+
+A `handshake` is the small exchange of information that lets both sides agree on the task before work starts. In this chapter, it means the notes that make the handoff safe and clear.
 
 That sounds simple, but it only helps when the second agent truly owns a different piece of the job. If both agents need the same files, the same permission, and the same context, then delegation is mostly noise.
 

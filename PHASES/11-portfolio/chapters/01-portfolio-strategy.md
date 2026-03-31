@@ -1,56 +1,62 @@
 # Chapter 1 - Portfolio Strategy
 
-The mistake most learners make is thinking a portfolio is a gallery. A strong portfolio is an argument.
+This chapter answers three beginner questions:
 
-That argument is simple: "I can build useful systems, explain how they work, and show evidence that they behave well."
+- what is a portfolio
+- what should it prove
+- how do I choose projects that help
+
+## First Principles
+
+Here are the words we need first:
+
+- a `portfolio` is a set of proof that shows what you can do
+- an `artifact` is a thing a reviewer can inspect
+- `evidence` is proof that supports a claim
+- a `metric` is a number used to measure quality
+- a `case study` is a written explanation of a project and its results
 
 ## What The Portfolio Needs To Prove
 
 For AI engineering roles, your public work should prove:
 
 - you can design systems, not just call an API
-- you can measure quality, not just show outputs
-- you can handle failure, risk, and iteration
+- you can measure quality, not just show a screenshot
+- you can handle failure and tradeoffs
 - you can communicate clearly to technical readers
 
-Here, evidence means something a reviewer can inspect, not just something you say is true.
+The reviewer should be able to inspect the repo and understand why the work is credible.
 
-## Choose Projects By Signal, Not By Novelty
+## Choose Projects By Signal, Not By Flash
 
-Pick projects that expose engineering judgment:
+Pick projects that reveal engineering judgment:
 
-- retrieval system with grounded citations and evals
-- orchestration harness with state, retries, approvals, and traces
-- production-minded workflow agent with safety boundaries and metrics
+- a retrieval system with grounded citations and evaluations
+- an orchestration harness with state, retries, and traces
+- a workflow agent with safety checks and metrics
 
-These projects are good not because they sound impressive, but because they reveal different layers of skill.
-
-Signal means "what this project tells a reviewer about your abilities."
+These are useful because they show different layers of skill.
 
 ## The Hiring Manager Lens
 
-A reviewer scanning your repo asks:
+A hiring manager usually asks:
 
-- Does this person understand architecture?
-- Can they finish systems?
-- Do they know how to evaluate quality?
+- Does this person understand the problem?
+- Can they finish a system?
+- Do they know how to measure quality?
 - Can they explain tradeoffs?
 
-Design your portfolio to answer those questions quickly.
-
-The reviewer is usually looking for clarity, not hype.
+Design your portfolio to answer those questions quickly and calmly.
 
 ## Portfolio Narrative
 
-Write a one-paragraph story that links the projects:
+Write one short story that links your projects:
 
 ```text
-I build AI systems that are useful, measurable, and safe to operate. My work started with retrieval quality, expanded into agent orchestration and observability, and matured into production-style workflow automation with evaluation and governance.
+I build AI systems that are useful, measurable, and safe to operate. My work began with retrieval quality, expanded into orchestration and observability, and became more production-minded over time.
 ```
 
-That narrative should show progression without exaggeration.
-
-It should sound like a real person describing their work, not a slogan.
+That story should sound like a real person describing real work.
 
 ## Evidence Stack For Each Project
 
@@ -75,4 +81,4 @@ Open each of your three projects and write one sentence for:
 - the main metric
 - the most honest limitation
 
-If any sentence feels vague, the repo still needs work.
+If any sentence feels vague, the project still needs more work.

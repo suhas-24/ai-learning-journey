@@ -1,23 +1,25 @@
 # Lab 1 - Baseline Versus Tuned Model
 
-This lab teaches the core discipline of the phase: never judge a tuned model in isolation.
+This lab teaches the main discipline of the phase: never judge a tuned model by itself.
 
-If the word "baseline" is new, it simply means "the simplest version we compare everything else against."
+Before we begin, one simple definition:
+
+- a `baseline` is the simplest version you compare against
 
 ## Goal
 
-Build a prompt-only baseline for a narrow classification task, then compare it with a tuned model using the same held-out set.
+Build a prompt-only baseline for one narrow classification task, then compare it with a tuned model on the same held-out examples.
 
-## Lab Setup
+## Pick One Task
 
-Pick one task:
+Choose one task:
 
 - support ticket routing
 - contract clause classification
 - issue triage
 - structured summary type prediction
 
-Keep the label set below 8 classes for the first run.
+Keep the label set small for the first run.
 
 ## Steps
 
@@ -25,10 +27,10 @@ Keep the label set below 8 classes for the first run.
 
 Write:
 
-- input shape
-- output schema
-- label policy
-- business metric
+- what comes in
+- what comes out
+- what each label means
+- why the task matters
 
 ### 2. Build The Baseline
 
@@ -46,15 +48,17 @@ Classify each ticket into exactly one label:
 Return JSON with keys label and reason.
 ```
 
-Run it on 30 to 50 held-out examples and log the outputs.
+Run it on 30 to 50 held-out examples and save the outputs.
 
 ### 3. Prepare Train And Validation Data
 
-Use the JSONL style shown in [snippets/support-routing-train.jsonl](../snippets/support-routing-train.jsonl). Keep the test set separate.
+Use the JSONL style shown in [snippets/support-routing-train.jsonl](../snippets/support-routing-train.jsonl).
+Keep the test set separate.
 
 ### 4. Run A Small Tuning Job
 
-You can use a managed provider workflow or an open-source PEFT stack. Keep the first run intentionally small.
+Use either a managed provider workflow or an open-source LoRA setup.
+Keep the first run small so mistakes are cheap.
 
 ### 5. Compare Results
 
@@ -63,7 +67,7 @@ Record:
 - accuracy or macro F1
 - schema validity
 - cost
-- inference latency
+- latency
 - recurring error types
 
 ### 6. Write A Decision Memo
@@ -72,9 +76,9 @@ Answer:
 
 - Did the tuned model improve enough to matter?
 - Which failures remain?
-- Would better prompts or more data likely help more than another training run?
+- Would better prompts or better data help more?
 
-The goal of this lab is not to chase the fanciest training setup. It is to learn how to make a fair comparison.
+The goal is to make a fair comparison, not to chase the fanciest training setup.
 
 ## Deliverable
 
@@ -88,6 +92,6 @@ One markdown note with:
 
 ## Reflection Questions
 
-- Did the tuned model improve the exact failure mode you targeted?
-- Did it introduce any new failures?
-- If you only had one more day, would you collect better data or run another training job?
+- Did the tuned model improve the exact problem you targeted?
+- Did it introduce any new problems?
+- If you had one more day, would you collect better data or run another training job?

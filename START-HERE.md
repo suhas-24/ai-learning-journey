@@ -16,6 +16,8 @@ It is not a certificate course, a random bookmark dump, or a chat transcript arc
 
 If this is all new, start with these simple meanings:
 
+- `AI` means software that can do tasks that usually need human-like thinking.
+- `model` means a trained piece of software that makes predictions from examples.
 - `LLM` means large language model. It is software trained on lots of text so it can predict and generate text.
 - `token` means a small piece of text the model reads or writes.
 - `tokenization` means breaking text into tokens so the model can process it.
@@ -52,6 +54,8 @@ Use the phase in this order:
 5. answer the `checkpoints.md`
 6. use `troubleshooting.md` when you get stuck
 
+If a step feels too fast, slow down and reread the page before moving on. A beginner does not need to be fast. A beginner needs a clear path.
+
 ## What To Do Every Week
 
 - choose one concept to understand deeply
@@ -62,7 +66,7 @@ Use the phase in this order:
 
 ## If You Are Completely New
 
-Do not jump straight to agents, RAG, or LangGraph because those terms are trendy. Start with Phase 1. The first real bottleneck in AI engineering is not model access. It is weak fundamentals:
+Do not jump straight to multi-step agents, document-retrieval systems, or workflow frameworks such as LangGraph just because those topics are trendy. Start with Phase 1. The first real bottleneck in AI engineering is not model access. It is weak fundamentals:
 
 - not understanding Python data structures
 - not understanding APIs

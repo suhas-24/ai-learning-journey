@@ -2,12 +2,12 @@
 
 Use this rubric to check whether the project feels like a real operational system with guardrails, not just a clever prototype.
 
-Score the project from 1 to 5 in each area.
+Score each area from 1 to 5.
 
 ## Scope Discipline
 
-- 1: vague "AI assistant"
-- 3: narrow workflow selected
+- 1: vague “AI assistant”
+- 3: a narrow workflow is selected
 - 5: scope is clear, bounded, and tied to business rules
 
 ## Safety Design
@@ -26,10 +26,10 @@ Score the project from 1 to 5 in each area.
 
 - 1: claims without evidence
 - 3: scenarios and metrics exist
-- 5: system is assessed against realistic workflow cases and failure modes
+- 5: the system is assessed against realistic workflow cases and failure modes
 
 ## Communication
 
-- 1: repo is thin
-- 3: system and limits are understandable
-- 5: portfolio-grade presentation with honest production judgment
+- 1: the repo is thin
+- 3: the system and its limits are understandable
+- 5: the project feels portfolio-grade and shows production judgment

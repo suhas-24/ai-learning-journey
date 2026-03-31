@@ -4,9 +4,15 @@ This guide covers the resources that teach how to talk to models clearly, shape 
 
 If these terms are still new, here is the plain version:
 
-- a `prompt` is the instruction you give the model
-- an `API` is a programmatic way for one piece of software to talk to another
-- a `workflow` is a sequence of steps, not just one answer
+- A `prompt` is the instruction you give the model.
+- An `API` is a programmatic way for one piece of software to talk to another.
+- A `workflow` is a sequence of steps, not just one answer.
+
+## How To Use This Guide
+
+- Start here if you know what a model is but are not yet comfortable asking it to do useful work.
+- Treat each course as practice in clear thinking, not just prompt writing.
+- After each lesson, rewrite the idea in your own words before moving on.
 
 ## ChatGPT Prompt Engineering For Developers
 
@@ -16,7 +22,7 @@ This course teaches the first principles of working with instruction-following m
 
 An instruction-following model is a model that tries to do what you ask in text. It still needs clear directions, just like a person does.
 
-### Major topics and subtopics
+### Core topics and subtopics
 
 - Instruction design: clear tasks, context, and intent.
 - Few-shot prompting: examples that teach a pattern.
@@ -29,13 +35,17 @@ An instruction-following model is a model that tries to do what you ask in text.
 - Best at the start of Phase 2.
 - Useful again in Phase 3 when you turn instructions into specs and repeatable workflows.
 
+### Watch for
+
+- The point is not to memorize prompt templates. The point is to understand why the model changes when the instruction changes.
+
 ## Building Systems With The ChatGPT API
 
 ### What it teaches
 
-This course teaches how one model call becomes a workflow. The central lesson is that prompts sit inside application logic, state, validation, and user interaction.
+This course explains how one model call becomes a workflow. The central lesson is that prompts sit inside application logic, state, validation, and user interaction.
 
-### Major topics and subtopics
+### Core topics and subtopics
 
 - Request structure: messages, system guidance, and task-specific context.
 - Workflow composition: chaining steps together instead of overloading one prompt.
@@ -48,13 +58,17 @@ This course teaches how one model call becomes a workflow. The central lesson is
 - Best during Phase 2.
 - Revisit during Phase 3 to think about specs, interfaces, and response contracts.
 
+### Watch for
+
+- One big prompt is tempting, but real systems usually need smaller steps and explicit checks.
+
 ## OpenAI Cookbook And Claude Cookbook
 
 ### What they teach
 
 These are example libraries more than traditional courses, but they act like lab manuals. They show how SDK calls, tool use, structured outputs, and streaming patterns look in real code.
 
-### Major topics and subtopics
+### Core topics and subtopics
 
 - SDK setup and request construction.
 - Streaming patterns and partial output handling.
@@ -65,6 +79,10 @@ These are example libraries more than traditional courses, but they act like lab
 
 - Phase 2 when you need working code patterns.
 - Phase 9 when you want example evaluation or structured testing flows.
+
+### Watch for
+
+- Code examples are helpful, but they can hide the idea if you copy them before understanding the shape of the request and response.
 
 ## What To Practice After This Guide
 

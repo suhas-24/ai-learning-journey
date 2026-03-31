@@ -1,5 +1,5 @@
-from pathlib import Path
 import json
+from pathlib import Path
 
 
 def load_items(path: Path) -> list[dict]:
@@ -7,9 +7,13 @@ def load_items(path: Path) -> list[dict]:
     if not path.exists():
         raise FileNotFoundError(f"Missing file: {path}")
 
+    # Read the file as text, then turn the JSON text into Python data.
     data = json.loads(path.read_text(encoding="utf-8"))
+
+    # This example expects a list at the top level.
     if not isinstance(data, list):
         raise ValueError("Expected a list of inventory records")
+
     return data
 
 
@@ -29,9 +33,13 @@ def summarize_items(items: list[dict]) -> dict[str, int]:
 
 
 def main() -> None:
+    # This is the file the program will read by default.
     inventory_path = Path("inventory.json")
+
     items = load_items(inventory_path)
     summary = summarize_items(items)
+
+    # Print the final answer in a human-friendly shape.
     print(json.dumps(summary, indent=2))
 
 

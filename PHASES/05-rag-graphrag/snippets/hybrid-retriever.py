@@ -13,6 +13,7 @@ def retrieve_sparse(query: str) -> list[tuple[str, float]]:
 
 def reciprocal_rank_fusion(*result_sets: list[tuple[str, float]], k: int = 60) -> list[tuple[str, float]]:
     # Combine rankings by giving each result set a small amount of credit.
+    # This is one simple way to merge meaning-based and exact-word search results.
     scores: dict[str, float] = defaultdict(float)
     for result_set in result_sets:
         for rank, (chunk_id, _) in enumerate(result_set, start=1):
@@ -22,6 +23,8 @@ def reciprocal_rank_fusion(*result_sets: list[tuple[str, float]], k: int = 60) -
 
 if __name__ == "__main__":
     query = "Which service owns ERR-BILL-402 remediation?"
+    # Dense search looks for meaning.
+    # Sparse search looks for the exact error code.
     fused = reciprocal_rank_fusion(retrieve_dense(query), retrieve_sparse(query))
     for chunk_id, score in fused[:5]:
         print(chunk_id, round(score, 5))

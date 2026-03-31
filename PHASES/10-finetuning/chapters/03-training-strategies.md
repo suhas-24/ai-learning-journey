@@ -2,66 +2,74 @@
 
 Once the task and dataset are stable, the next question is how much of the model you need to change.
 
-At this point, "train" simply means "show the model lots of examples so it can adjust its behavior." The training method decides how much of the model changes and how expensive that change is.
+Here are the words we need first:
 
-## Full Fine-Tuning Versus Parameter-Efficient Tuning
+- `training` means showing the model examples so it can adjust its behavior
+- a `weight` is one of the model's internal settings
+- `loss` is a score that measures how far the model's answer is from the correct answer
+- `inference` means using the model after training to make predictions
+- `quantization` means using a smaller numeric representation so the model uses less memory
 
-Full fine-tuning updates all model weights. That is expensive, memory-heavy, and often unnecessary for narrow tasks.
+## Full Fine-Tuning Versus LoRA
 
-Parameter-efficient methods such as LoRA train a much smaller set of weights while keeping the base model mostly frozen. This is why LoRA is the default starting point for many practical projects.
+Full fine-tuning updates all model weights.
+That can be expensive and memory-heavy.
 
-Think of model weights as learned settings inside the model. Full fine-tuning changes many of those settings. LoRA changes a smaller add-on set of settings.
+LoRA, short for low-rank adaptation, trains a smaller set of adapter weights while keeping most of the base model frozen.
+
+For a beginner, the key idea is simple:
+
+- full fine-tuning changes a lot of the model
+- LoRA changes a smaller add-on part of the model
 
 ## Why LoRA Matters
 
-LoRA works by injecting small trainable matrices into selected layers. You do not need to derive the linear algebra to use it well, but you should know the operational effect:
+LoRA is popular because it often gives you a practical middle ground:
 
-- less memory usage
-- faster experimentation
-- easier swapping between task adapters
-- lower cost for narrow-task experiments
+- lower memory use
+- faster experiments
+- easier swapping between task-specific adapters
+- lower cost for narrow tasks
 
-For a beginner, the main point is simple: LoRA is a cheaper way to try a custom training idea without rebuilding the whole model.
+Think of the base model as a general machine and the LoRA adapter as a small extra part that teaches one new habit.
 
 ## When QLoRA Helps
 
-QLoRA quantizes the base model to reduce memory usage and then trains LoRA adapters on top. Choose it when:
+QLoRA combines quantization with LoRA so the base model takes less memory.
+
+Choose it when:
 
 - your hardware is limited
-- you want to test a larger base model
+- you want to try a larger base model
 - a small loss in training precision is acceptable
 
-Avoid treating QLoRA as magic. It makes experiments more accessible, but it does not fix bad data or a bad task definition.
-
-It is a memory trick, not a quality trick.
-
-Quantization means using a smaller, more compact representation of the model so it uses less memory while it runs.
+QLoRA is a memory trick, not a magic quality trick. It helps you fit the experiment, but it does not fix bad data or a weak task spec.
 
 ## Training Pipeline Stages
 
 1. Choose a base model.
 2. Format train and validation data.
-3. Tokenize the dataset consistently.
-4. Configure LoRA or full-tuning parameters.
-5. Train for a small number of epochs.
+3. Tokenize the examples consistently.
+4. Choose LoRA or full fine-tuning.
+5. Train for a small number of passes.
 6. Evaluate on validation and gold examples.
 7. Save the adapter or tuned checkpoint.
-8. Run held-out test comparisons against the baseline.
+8. Compare the tuned model with the baseline on held-out data.
 
-Tokenization appears here because the training tool needs to turn each example into tokens before the model can learn from it. Tokenization is just the step where text gets split into the small units the model processes.
+`Tokenize` here means splitting text into the small pieces the model processes.
 
 ## Configuration Concepts
 
 You should understand these knobs:
 
-- batch size: how many examples per update
-- learning rate: how aggressively weights change
-- epochs: how many passes through the training set
-- sequence length: maximum token length per example
-- gradient accumulation: simulates larger batches when memory is tight
-- target modules: which model layers receive adapters
+- batch size: how many examples are processed at one time
+- learning rate: how quickly the model changes
+- epochs: how many times the model sees the training data
+- sequence length: the maximum number of tokens in one example
+- gradient accumulation: a way to simulate larger batches when memory is tight
+- target modules: which parts of the model receive adapters
 
-You do not need to become a math expert to use these settings. You only need to know which ones affect memory, speed, and how quickly the model learns.
+You do not need the math to use these settings well. You only need to know which ones affect memory, speed, and how quickly the model learns.
 
 Example LoRA config:
 
@@ -81,38 +89,34 @@ gradient_accumulation_steps: 4
 max_seq_length: 2048
 ```
 
-See [snippets/lora-config.yaml](../snippets/lora-config.yaml) for a fuller version.
+See [snippets/lora-config.yaml](../snippets/lora-config.yaml) for the same idea in a commented file.
 
-## Practical Rule: Start Small
+## Start Small
 
 Your first run should be intentionally small:
 
-- subset of data
-- low epoch count
+- a subset of the data
+- a low epoch count
 - one baseline
-- one held-out scorecard
+- one scorecard
 
-The goal of run one is not excellence. It is pipeline proof. You want to verify that formatting, training, saving, loading, and evaluation all work before burning time on bigger runs.
-
-Small runs are kinder to beginners because they make mistakes cheaper and easier to debug.
+The goal of the first run is not greatness. The goal is to prove the pipeline works.
 
 ## Managed Providers Versus Open Source
 
 Managed provider fine-tuning:
 
 - easier setup
-- faster path to first result
-- less infrastructure control
+- faster first result
+- less control over the stack
 
 Open-source local workflow:
 
 - more control
-- better understanding of the stack
-- more setup and debugging burden
+- more setup and debugging
+- deeper understanding of the pieces
 
 There is no moral winner here. Pick the path that matches what you are trying to learn.
-
-If your learning goal is deep operational understanding, do at least one open workflow. If your product goal is speed, a managed workflow may be enough.
 
 ## What To Log Every Run
 
@@ -120,14 +124,12 @@ If your learning goal is deep operational understanding, do at least one open wo
 - dataset version
 - split version
 - config values
-- wall-clock runtime
+- runtime
 - cost
 - validation scores
 - gold-set failures
 
-If you cannot reconstruct what changed between runs, you are not doing experiments. You are gambling.
-
-Good experiment notes are a form of memory. They let future-you understand what happened without guessing.
+If you cannot reconstruct what changed between runs, you are not doing experiments. You are guessing.
 
 ## Chapter Exercise
 

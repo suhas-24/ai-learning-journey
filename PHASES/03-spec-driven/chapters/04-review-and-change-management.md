@@ -1,5 +1,10 @@
 # Chapter 4 - Review and Change Management
 
+If `review` and `change management` sound formal, the beginner version is simple:
+
+- `review` means checking whether the spec really says what we want
+- `change management` means changing behavior in a controlled way so surprises are less likely
+
 Specs become valuable when they are treated as living contracts rather than one-time setup files.
 
 ## 1. Review Specs Like Code

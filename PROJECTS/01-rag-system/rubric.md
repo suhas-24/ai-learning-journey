@@ -1,35 +1,35 @@
 # Rubric - Production RAG System
 
-Use this rubric as a quick honesty check. If a section scores low, the project probably needs more work before it is portfolio-ready.
+Use this rubric as a quick honesty check.
 
-Score the project from 1 to 5 in each area.
+Score each area from 1 to 5.
 
 ## Problem Framing
 
-- 1: vague chatbot idea
-- 3: clear corpus and user need
-- 5: strong problem definition with realistic scope and constraints
+- 1: a vague “chat with documents” idea
+- 3: a clear corpus and user need
+- 5: a realistic problem with scope and constraints
 
 ## Retrieval Design
 
-- 1: vector search only with no justification
+- 1: vector search only, with no explanation
 - 3: chunking and retrieval choices are documented
-- 5: hybrid retrieval and reranking decisions are evidence-backed
+- 5: hybrid retrieval and reranking are justified with evidence
 
 ## Grounding
 
-- 1: answers look plausible but lack proof
+- 1: answers sound plausible but have no proof
 - 3: citations exist
 - 5: citations are reliable, inspectable, and part of the evaluation
 
 ## Evaluation
 
-- 1: only screenshots
-- 3: basic metric reporting
-- 5: repeatable eval set, metrics, and error analysis
+- 1: only screenshots or anecdotes
+- 3: basic metrics are reported
+- 5: there is a repeatable eval set, metrics, and error analysis
 
 ## Communication
 
-- 1: README is thin
-- 3: architecture and setup are understandable
-- 5: the repo is portfolio-grade and interview-ready
+- 1: the README is too thin to help a beginner
+- 3: the architecture and setup are understandable
+- 5: the repo feels portfolio-ready and interview-ready

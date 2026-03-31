@@ -12,6 +12,14 @@ A simple way to think about it is this:
 
 If those phrases are new, that is completely fine. The chapters in this module build them from the ground up.
 
+If you want the smallest beginner version of the ideas:
+
+- a `tool` is a helper the system can use to get something done
+- a `client` is the thing asking for the tool
+- a `server` is the thing that offers the tool and performs the work
+- a `protocol` is the shared rulebook that lets the client and server understand each other
+- a `tool boundary` is the line between what the model decides and what the tool is allowed to do
+
 ## What You Will Learn
 
 - how to choose the simplest tool surface that still solves the job

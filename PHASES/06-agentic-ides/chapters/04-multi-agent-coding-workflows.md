@@ -4,6 +4,18 @@ Multiple agents only help when the work can be split cleanly.
 
 If two agents need the same file at the same time, the setup is probably wrong.
 
+`Hand off` means one person or agent finishes its part and clearly passes the next part to someone else. It is the same idea as handing a baton in a relay race.
+
+## What Multi-Agent Work Means
+
+Using more than one agent is like giving different helpers different jobs at the same time.
+
+- one helper can read and summarize
+- one helper can make edits
+- one helper can review the result
+
+This only works when the jobs do not overlap.
+
 ## A Healthy Pattern
 
 Use a conductor and workers:
@@ -11,6 +23,8 @@ Use a conductor and workers:
 - the conductor owns the overall plan
 - each worker owns a clear slice
 - a reviewer checks the work without blindly rewriting it
+
+Think of the conductor as the person who keeps the map, not the person doing every step.
 
 ## What A Handoff Should Say
 
@@ -60,3 +74,5 @@ Do not add another agent for:
 ## Final Rule
 
 Multi-agent work is mostly about coordination. Good boundaries matter more than clever prompts.
+
+If the handoff is fuzzy, fix the handoff before adding more workers.

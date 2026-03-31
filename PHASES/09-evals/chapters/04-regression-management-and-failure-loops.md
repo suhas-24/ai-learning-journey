@@ -2,6 +2,15 @@
 
 The most valuable eval habit is simple: every serious failure should have a path to becoming a permanent test.
 
+## First words
+
+- `regression` means something got worse after a change
+- `failure loop` means the same mistake keeps reappearing because nobody turned it into a check
+
+## Why this matters
+
+Without regression control, teams fix the same bug more than once. With it, each failure becomes a lesson the system remembers.
+
 ## Evaluation-driven development loop
 
 ```text
@@ -64,3 +73,4 @@ Use these links when fixing failures:
 ## The real standard
 
 A mature AI repo does not merely collect dashboards. It uses measurements to decide whether a change was safe, useful, and worth shipping.
+In plain language: the numbers should help you choose, not just decorate a report.

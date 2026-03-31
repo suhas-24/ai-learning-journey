@@ -1,5 +1,7 @@
 # Checkpoints
 
+Use these checkpoints as a quick self-test. If a line feels fuzzy, go back to the chapter that introduced the word.
+
 ## Knowledge checks
 
 - I can explain the difference between evaluation and observability.

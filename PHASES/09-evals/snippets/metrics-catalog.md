@@ -2,6 +2,8 @@
 
 Use this as a quick reference when choosing what to measure.
 
+The goal is not to measure everything. The goal is to measure the few things that tell you whether the system is actually doing its job.
+
 | Metric | Best for | Caution |
 | --- | --- | --- |
 | Faithfulness | retrieval-grounded answers | requires good context and judge design |

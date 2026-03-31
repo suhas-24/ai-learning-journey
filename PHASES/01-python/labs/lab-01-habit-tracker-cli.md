@@ -2,6 +2,10 @@
 
 This lab turns the chapter ideas into one small program you can run from the terminal.
 
+A **terminal** is a text window where you type commands. A **CLI** is a program you run by typing a command instead of clicking buttons.
+
+We will also use **JSON**, which is a text format for data that looks a little like Python dictionaries and lists.
+
 ## Goal
 
 Build a command-line tool that:
@@ -45,6 +49,8 @@ Write a function that:
 - loads JSON text
 - confirms the top-level value is a list
 
+If a **file path** feels new, think of it as the address of a file on your computer.
+
 If you need a pattern to copy, look at [inventory_report.py](../snippets/inventory_report.py).
 
 ## Step 2 - Write the Summarizer
@@ -60,6 +66,8 @@ Write a function that returns:
 ```
 
 Do not print inside this function. Return the data so the CLI can decide how to display it.
+
+Returning data means the function gives its answer back to the rest of the program so another part can use it.
 
 ## Step 3 - Build the CLI Output
 
@@ -78,6 +86,8 @@ Todo: 1
 - the file does not exist
 - the JSON is invalid
 - one task is missing the `done` field
+
+These failures are useful because they teach you what the program expects and where it stops when the input is wrong.
 
 ## Stretch Goal
 

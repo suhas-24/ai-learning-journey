@@ -1,33 +1,43 @@
 # Architecture - Enterprise Workflow Agent
 
-Before the diagram, here are the main words in plain language:
+This page explains the system in plain language before the design details.
 
-- intake means accepting and checking the request
-- policy means the rules that decide what the system is allowed to do
-- telemetry means logs, traces, or metrics that show system behavior
-- audit means a record you can inspect later to reconstruct what happened
-- a schema is the shape of the data you expect, like which fields must exist and what they should contain
+## Main Terms
 
-## System Overview
+- `intake` means accepting and checking the request
+- `policy` means the rules that decide what the system is allowed to do
+- `telemetry` means logs, traces, or metrics that show system behavior
+- an `audit trail` is a record you can inspect later to reconstruct what happened
+- a `schema` is the shape of the data you expect
+
+## System Shape
 
 ```text
 user or API -> intake layer -> agent planner/executor -> tools and policies -> approval/audit -> artifact delivery -> telemetry
 ```
 
-## Components
+## Component Guide
 
 ### 1. Intake Layer
 
-Responsibilities:
+The intake layer is where the request enters the system.
+
+It should:
 
 - accept a bounded workflow request
 - validate required fields
-- assign task id and status
-- expose progress to the user or operator
+- assign a task id and status
+- show progress to the user or operator
+
+Why it exists:
+
+- if the request is unclear, everything downstream becomes harder
 
 ### 2. Agent Execution Layer
 
-Responsibilities:
+The execution layer is where the agent works on the request.
+
+It should:
 
 - interpret the task within a narrow domain
 - call approved tools
@@ -46,14 +56,20 @@ Suggested artifact contract:
 }
 ```
 
+Why it exists:
+
+- the system should make its thinking visible instead of hiding it
+
 ### 3. Policy And Safety Layer
 
-Responsibilities:
+The policy layer is the rulebook.
+
+It should:
 
 - enforce allowed actions
 - validate schemas
 - require approval for high-risk steps
-- record every important decision
+- record important decisions
 
 Examples:
 
@@ -61,29 +77,43 @@ Examples:
 - refuse unsupported file types
 - stop when required evidence is missing
 
+Why it exists:
+
+- a useful system still needs boundaries
+
 ### 4. Telemetry And Operations
 
-Responsibilities:
+Telemetry is the evidence trail for operators.
+
+It should:
 
 - log requests and outcomes
-- track cost, latency, intervention rate
+- track cost, latency, and intervention rate
 - support incident review and rollback
+
+Why it exists:
+
+- you cannot operate what you cannot observe
 
 ### 5. Deployment
 
-Responsibilities:
+Deployment is making the system available in a controlled environment.
 
-- package the app with reproducible setup
+It should:
+
+- package the app reproducibly
 - manage secrets safely
 - provide a rollback path
 - expose health and status endpoints if relevant
 
-Deployment means making the system available in a controlled environment so real users or operators can rely on it.
+Why it exists:
 
-## Architecture Decisions To Document
+- the system has to be usable outside a notebook or demo
+
+## Decisions To Document
 
 - why the workflow scope is narrow
 - what actions are allowed automatically
 - which actions require approval
-- how failures are surfaced to operators
-- what "safe enough to deploy" means for this use case
+- how failures are shown to operators
+- what “safe enough to deploy” means here

@@ -2,6 +2,8 @@
 
 This lab takes you from a vague agent idea to a concrete execution graph.
 
+An `orchestrator` is the part that decides which step happens next. A `graph` is a map of boxes and arrows that shows the allowed next steps.
+
 ## Goal
 
 Design a small orchestrator for this task:
@@ -19,6 +21,8 @@ Write down at least five nodes. A strong answer usually includes:
 - approval
 - publish or stop
 
+A `node` is one box in the workflow. It should do one clear job.
+
 ## Step 2: define state
 
 Create a state shape with:
@@ -29,6 +33,8 @@ Create a state shape with:
 - retry counters
 - approval status
 - budget state
+
+`State` is the memory the workflow needs to keep going after a pause or crash.
 
 Use [State Schema](../snippets/state-schema.md) as a template.
 

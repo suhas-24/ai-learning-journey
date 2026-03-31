@@ -4,13 +4,19 @@ This guide covers the tools that teach containment, validation, and operational 
 
 In plain English, safety means the system should not take dangerous actions, reveal secrets, or keep running when it should stop.
 
+## How To Use This Guide
+
+- Start here when a system can act, but you need better control over what it is allowed to do.
+- Think in layers: execution boundary, policy boundary, output boundary, and measurement.
+- Safety is not a single feature. It is a system design choice.
+
 ## Docker
 
 ### What it teaches
 
 Docker teaches isolation and repeatability. It helps you package a system, separate host and runtime concerns, and create safer execution boundaries.
 
-### Major topics and subtopics
+### Core topics and subtopics
 
 - Images and containers.
 - Dockerfiles and reproducible environments.
@@ -22,13 +28,17 @@ Docker teaches isolation and repeatability. It helps you package a system, separ
 - Phase 1 for basic environment understanding.
 - Phase 8 for sandboxing and execution safety.
 
+### Watch for
+
+- The point is not to containerize everything. The point is to understand what the container keeps separate.
+
 ## NeMo Guardrails
 
 ### What it teaches
 
 NeMo Guardrails teaches policy-oriented control over model behavior. It is useful for learning how to express allowed behavior, blocked behavior, and conversation constraints outside the prompt alone.
 
-### Major topics and subtopics
+### Core topics and subtopics
 
 - Safety policy design.
 - Conversation constraints.
@@ -39,13 +49,17 @@ NeMo Guardrails teaches policy-oriented control over model behavior. It is usefu
 
 - Phase 8.
 
+### Watch for
+
+- Policies work best when they are simple enough to explain to a teammate.
+
 ## Guardrails AI
 
 ### What it teaches
 
 Guardrails AI teaches validation-first thinking. Instead of trusting the model output directly, you define checks, schemas, and recovery paths.
 
-### Major topics and subtopics
+### Core topics and subtopics
 
 - Output validation.
 - Schema enforcement.
@@ -55,6 +69,10 @@ Guardrails AI teaches validation-first thinking. Instead of trusting the model o
 ### Best phases
 
 - Phase 8.
+
+### Watch for
+
+- Validation is not a punishment for the model. It is a way to make downstream behavior safer and more predictable.
 
 ## Why These Tools Matter Together
 

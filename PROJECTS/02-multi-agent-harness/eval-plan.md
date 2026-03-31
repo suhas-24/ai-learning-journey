@@ -1,8 +1,16 @@
 # Eval Plan - Multi-Agent Research Harness
 
-An eval plan answers a simple question: did the harness do the whole job safely and recoverably, or did it only look good in one demo?
+This eval plan checks more than success.
 
-## Eval Questions
+It checks whether the harness works safely, recovers cleanly, and leaves enough evidence to understand what happened.
+
+Quick meanings:
+
+- a `scenario` is one repeatable test situation
+- an `intervention` is a moment when a human needs to step in
+- a `final artifact` is the saved result of the run, such as a report or summary
+
+## Questions To Answer
 
 - Can the harness complete complex tasks reliably?
 - Can it recover from interruption?
@@ -11,7 +19,7 @@ An eval plan answers a simple question: did the harness do the whole job safely 
 
 ## Scenario Suite
 
-Create 10 to 20 scenario-based tests such as:
+Create 10 to 20 scenario tests such as:
 
 - research a topic and produce a cited summary
 - hit a tool failure and retry
@@ -19,9 +27,9 @@ Create 10 to 20 scenario-based tests such as:
 - pause midway and resume
 - escalate when confidence drops
 
-## Metrics
+## Metrics To Track
 
-Track:
+Measure:
 
 - task completion rate
 - successful resume rate
@@ -32,22 +40,24 @@ Track:
 
 ## Qualitative Review
 
-Review:
+Read the runs and check:
 
-- handoff quality between roles
+- whether handoffs make sense
 - whether Analyst catches weak evidence
-- whether Reporter reflects uncertainty honestly
-- whether approval gates are understandable
+- whether Reporter states uncertainty honestly
+- whether approval prompts are understandable
 
-## Success Criteria
+## Success Looks Like
+
+You should be able to show that:
 
 - resume works in most tested interruption cases
 - risky actions consistently trigger approval
-- run summaries provide enough detail to debug failures
+- run summaries are detailed enough to debug failures
 
-## Demo Eval Guidance
+## Demo Guidance
 
-During the demo, show one scenario with:
+Show one scenario with:
 
 - normal progress
 - an induced fault

@@ -1,26 +1,24 @@
 # Courses Reference
 
-Courses are best used as guided accelerators. A good course gives you a first pass through a topic, a minimal vocabulary, and one or two patterns you can immediately test in code.
-
-If a book is the long explanation, a course is the short version. It should help you say, "I know what this thing is, I know why it matters, and I know the next small thing to try."
+Courses are guided first passes. A good course gives you enough structure to stop feeling lost, plus one or two patterns you can try right away. It should help you say, "I know what this is, I know why it matters, and I know the next small thing to try."
 
 ## How To Use Courses Well
 
-- Pair every course with a build task, even if the build is tiny.
-- Pause after each module and rewrite one idea from memory.
-- Promote only the useful ideas into your notes or implementation plan.
-
-## Guides In This Folder
-
-- [prompting-and-api-basics.md](./prompting-and-api-basics.md)
-- [rag-and-retrieval-courses.md](./rag-and-retrieval-courses.md)
-- [orchestration-and-agents-courses.md](./orchestration-and-agents-courses.md)
-- [evals-and-mlops-courses.md](./evals-and-mlops-courses.md)
+- Pair every course with a small build task.
+- Pause after each module and explain one idea back in your own words.
+- Keep only the ideas that change what you would do in code or design.
 
 ## When Courses Help Most
 
-- When a topic is new and you need structure before reading a book.
-- When you need a shorter on-ramp than a large project or textbook.
-- When you want to compare an instructor's workflow against your own implementation choices.
+- Use courses when a topic is new and you need structure before reading a deeper book.
+- Use courses when you want a shorter on-ramp than a long textbook.
+- Use courses when you want to compare a guided workflow against your own implementation choices.
+
+## Guides In This Folder
+
+- [prompting-and-api-basics.md](./prompting-and-api-basics.md) teaches how to talk to a model and shape the result.
+- [rag-and-retrieval-courses.md](./rag-and-retrieval-courses.md) teaches how retrieval improves answer quality and where it fails.
+- [orchestration-and-agents-courses.md](./orchestration-and-agents-courses.md) teaches how tools, state, and delegation become a workflow.
+- [evals-and-mlops-courses.md](./evals-and-mlops-courses.md) teaches how to measure whether a system is actually improving.
 
 For phase-specific entry points, use [../by-phase.md](../by-phase.md).

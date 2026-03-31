@@ -4,7 +4,7 @@
 
 Review each portfolio project as if you were a hiring manager opening it for the first time.
 
-That means you should notice whether the project is understandable, believable, and complete without needing hidden context.
+That means noticing whether the project is understandable, believable, and complete without hidden context.
 
 ## Review Questions
 

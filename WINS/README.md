@@ -41,7 +41,7 @@ Each win should record:
 
 ### 2026-03-29 - Replaced the scaffold with a real study notebook
 **Phase:** Pre-Phase 1  
-**What happened:** Rewrote the placeholder files so the repo contains actual study guidance, project plans, and curated resources instead of empty templates.  
+**What happened:** Rewrote the starter files so the repo contains actual study guidance, project plans, and curated resources instead of empty templates.  
 **Why it matters:** Planning is now concrete enough to support execution.  
 **What it unlocks next:** The next updates can be about learning and building, not about repo setup.
 

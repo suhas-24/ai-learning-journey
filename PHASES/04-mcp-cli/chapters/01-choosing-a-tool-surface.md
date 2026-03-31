@@ -1,6 +1,10 @@
 # Chapter 1 - What a Tool Surface Is
 
+If the phrase `tool surface` is new, think of it as "the way the system reaches out and gets something done."
+
 A tool surface is the way a system reaches outside itself to do work.
+
+Think of a surface as the path the job takes: a typed command, a web request, a shared tool contract, or a handoff to another worker.
 
 For example, if an AI system needs to open a GitHub issue, it can do that in more than one way. It might run a command, send an HTTP request, call a shared tool, or ask another agent to do the job. The choice matters because each path has different cost, safety, and reuse tradeoffs.
 

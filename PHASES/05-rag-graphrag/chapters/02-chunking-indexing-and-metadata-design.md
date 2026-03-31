@@ -4,6 +4,12 @@ A `chunk` is a small piece of a document.
 
 That piece is what the system searches, ranks, and cites. If the piece is too big, it may mix unrelated ideas. If it is too small, it may lose the meaning.
 
+## Why We Split Documents At All
+
+The model cannot search a whole large document in one giant block forever. The system needs smaller pieces so it can compare them with the question.
+
+Chunking is just the process of deciding how those pieces should be made.
+
 ## Chunking Choices
 
 ### Fixed-size chunking
@@ -52,7 +58,7 @@ Weakness:
 
 `Metadata` is extra information attached to a chunk.
 
-Think of it like labels on a box.
+Think of it like a label on a box.
 
 Useful metadata includes:
 
@@ -71,6 +77,8 @@ Why it matters:
 ## Indexing
 
 An `index` is the search structure that helps the system find chunks quickly.
+
+A `vector database` is a place that stores embeddings and helps the system find chunks with similar meaning.
 
 Three simple patterns matter here:
 

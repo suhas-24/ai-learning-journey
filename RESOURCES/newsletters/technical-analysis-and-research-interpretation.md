@@ -4,13 +4,19 @@ This guide covers newsletters and sources that help you understand what a techni
 
 Use this when you need a translation layer between "interesting news" and "what should I actually do differently?"
 
+## How To Use This Category
+
+- Start here when you want meaning, not just headlines.
+- Ask how a new paper or product announcement changes your design decisions.
+- Use the source to slow down hype, not to create more of it.
+
 ## Ahead Of AI
 
 ### What it teaches
 
 Ahead of AI helps translate research and model announcements into engineering consequences. It is especially useful when you want to know whether a change affects retrieval, prompting, training, or evaluation practice.
 
-### Major themes and subtopics
+### Core themes and subtopics
 
 - Research interpretation.
 - Practical impact analysis.
@@ -19,6 +25,10 @@ Ahead of AI helps translate research and model announcements into engineering co
 ### Best phases
 
 - Phases 2, 5, and 10.
+
+### Watch for
+
+- The important question is always, "What would I do differently because of this?"
 
 ## Why This Category Matters
 

@@ -1,61 +1,73 @@
 # Eval Plan - Production RAG System
 
-An eval plan is how you decide whether the system is actually getting better. It is more than a screenshot because it gives you repeatable questions and repeatable checks.
+An `eval plan` is a repeatable way to answer one question: is the system getting better, or just looking better in one demo?
 
-## Eval Questions
+Quick meanings:
 
-- Did retrieval surface the right evidence?
-- Did the answer stay grounded in that evidence?
-- Did citations point to the correct sources?
-- Did quality improve after hybrid retrieval or reranking?
+- an `eval set` is a saved set of test questions you run again later
+- `context precision` asks whether the retrieved text is mostly useful
+- `context recall` asks whether the system found the important evidence at all
+- `faithfulness` asks whether the answer matches the evidence instead of inventing extra claims
+- `abstention` means the system says "I do not have enough evidence" instead of guessing
 
-## Eval Dataset
+## What This Plan Checks
 
-Build a set of 80 to 150 questions spanning:
+- Did retrieval find the right evidence?
+- Did the answer stay tied to that evidence?
+- Did citations point to the correct source chunks?
+- Did the quality improve after you changed retrieval or reranking?
+
+## Build An Eval Set
+
+Create 80 to 150 questions that cover:
 
 - fact lookup
 - section lookup
 - comparison across documents
-- multi-hop or synthesis questions
-- known difficult edge cases
+- multi-hop questions, which need more than one piece of evidence
+- hard edge cases that often fail
 
-For each item, store:
+For each question, store:
 
-- question
-- expected source documents
-- optional reference answer
-- difficulty tag
+- the question itself
+- the expected source document or documents
+- an optional reference answer
+- a difficulty label
 
-## Metrics
+## Metrics To Track
 
-Track:
+Measure:
 
-- context precision
-- context recall
+- `context precision`, which checks whether the retrieved context is useful
+- `context recall`, which checks whether the right evidence was found
 - answer relevance
-- faithfulness
+- faithfulness, which checks whether the answer matches the evidence
 - citation accuracy
-- abstention quality on weak-context questions
+- abstention quality, which checks whether the system refuses weak questions instead of guessing
 
 ## Manual Review
 
-Manually review at least 20 hard queries every major iteration. Record:
+Even with metrics, humans still need to read hard cases.
+
+Review at least 20 difficult questions per major iteration and record:
 
 - missing evidence
 - irrelevant chunks
 - unsupported claims
 - citation mistakes
 
-## Success Criteria
+## Success Looks Like
 
-- retrieval metrics improve from baseline after hybrid tuning
-- citations are correct on at least 90 percent of reviewed samples
-- weak-context cases prefer abstention over fabrication
+You should be able to show that:
 
-## Demo Eval Guidance
+- retrieval metrics improved after tuning
+- citations are correct on reviewed samples
+- weak-context questions are handled by abstaining, not fabricating
 
-In the demo, show:
+## Demo Guidance
 
-- one query where baseline retrieval failed
-- the same query after a retrieval improvement
-- one score table or chart from the eval report
+Show:
+
+- one query that baseline retrieval missed
+- the same query after an improvement
+- one small table or chart from the eval report

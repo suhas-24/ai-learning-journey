@@ -1,6 +1,8 @@
 # Eval Scorecard Template
 
-Use this page to compare a baseline model and a tuned model side by side. The goal is to make the decision easy to explain later.
+Use this page to compare a baseline model and a tuned model side by side.
+
+The scorecard should make the decision easy to explain later.
 
 ## Run Metadata
 
@@ -35,4 +37,4 @@ Use this page to compare a baseline model and a tuned model side by side. The go
 
 ## Why
 
-Write 5 to 8 lines explaining the decision in engineering terms.
+Write 5 to 8 lines explaining the decision in plain engineering language.

@@ -4,6 +4,19 @@
 
 A `graph` is a set of things and the connections between them. If that sounds abstract, think of people and who knows whom, or services and what they depend on.
 
+## What A Graph Is
+
+In plain language, a graph is just a map of relationships.
+
+The things are called `entities`.
+The links between them are called `relationships`.
+
+Example:
+
+- `invoice-worker` is an entity
+- `billing-platform` is an entity
+- `invoice-worker` depends on `billing-platform` is a relationship
+
 ## When GraphRAG Helps
 
 GraphRAG is useful when the question needs relationships, not just matching text.

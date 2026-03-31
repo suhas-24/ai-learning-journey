@@ -4,6 +4,16 @@ Metrics are useful only when they match the failure mode you care about.
 
 A `metric` is a number or label that helps summarize behavior. A `rubric` is a scoring guide that explains what different scores mean. You use both because numbers alone can be misleading.
 
+## First words
+
+- `score` means a simple way to compare results
+- `interpretation` means what the score tells you in plain English
+- `judge model` means another model helping score outputs
+
+## Why this matters
+
+A high score can hide the wrong kind of success. The system may sound good while still missing facts, ignoring evidence, or taking unsafe actions.
+
 ## Separate the layers
 
 For a retrieval system, at least three layers matter:
@@ -13,6 +23,7 @@ For a retrieval system, at least three layers matter:
 - task outcome
 
 A response can sound polished while being poorly grounded. That is why one score is rarely enough.
+Think of it like checking a meal for taste, temperature, and cleanliness. One check does not tell you everything.
 
 ## Common metrics
 

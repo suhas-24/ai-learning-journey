@@ -1,6 +1,17 @@
 # Chapter 2 - How MCP Tools Work
 
+Before we dig in, here are the plain-language meanings of a few words:
+
+- `schema` means a description of what the input should look like
+- `client` means the part asking for the tool
+- `server` means the part that offers the tool and does the work
+- `JSON` means a text format used to send structured data between programs
+
 `MCP` is a way to publish tools with a clear shape so a model can use them without guessing.
+
+If you have never worked with a client-server setup before, imagine a customer and a shop.
+The customer asks for something, the shop checks the request, and the shop returns the result.
+The protocol is just the shared set of rules that helps both sides understand each other.
 
 The useful idea here is simple: if a tool has a strict input shape and a predictable output shape, it is easier to use, easier to test, and easier to share.
 
@@ -16,6 +27,8 @@ An MCP tool usually works like this:
 6. the server returns a result
 
 That is all a protocol is doing here. It is just a shared rulebook.
+
+The rulebook matters because it keeps the model from inventing extra fields, guessing the wrong job, or reaching into places it should not control.
 
 ## What Makes A Good Tool
 

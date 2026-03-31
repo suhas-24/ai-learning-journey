@@ -1,14 +1,14 @@
 # Rubric - Multi-Agent Research Harness
 
-Use this rubric to check whether the design is actually controlled, not just complicated.
+Use this rubric to check whether the design is controlled instead of merely complicated.
 
-Score the project from 1 to 5 in each area.
+Score each area from 1 to 5.
 
 ## Role Design
 
-- 1: multiple agents but no clear responsibilities
+- 1: multiple agents, but no clear responsibilities
 - 3: role boundaries exist
-- 5: role boundaries, handoffs, and isolation choices are justified
+- 5: boundaries, handoffs, and isolation choices are justified
 
 ## Control Layer
 
@@ -20,7 +20,7 @@ Score the project from 1 to 5 in each area.
 
 - 1: run state disappears on failure
 - 3: basic resume works
-- 5: checkpointing and recovery are dependable and well documented
+- 5: checkpointing and recovery are dependable and documented
 
 ## Observability
 
@@ -30,6 +30,6 @@ Score the project from 1 to 5 in each area.
 
 ## Communication
 
-- 1: project feels conceptual
+- 1: the project feels conceptual only
 - 3: build and eval plans are clear
-- 5: repo presents a credible engineering harness with evidence
+- 5: the repo presents a credible engineering harness with evidence

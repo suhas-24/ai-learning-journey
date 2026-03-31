@@ -12,9 +12,13 @@ One file becomes hard to maintain when it tries to do too many different jobs:
 - format output
 - handle errors
 
-When that happens, the file is not "bad." It is just doing too much.
+When that happens, the file is not "bad." It is just doing too much for one place.
 
 ## 2. A Minimal Project Layout
+
+A `dependency` is a package your project uses. A `pyproject.toml` file is a small project file that records project settings and dependencies.
+
+`TOML` is a simple text format for settings. You can think of it as a neat way to store project rules in a file people can read.
 
 ```text
 habit_tracker/
@@ -30,6 +34,8 @@ habit_tracker/
 ```
 
 The goal is not to create lots of folders. The goal is to give each file one main reason to change.
+
+`__init__.py` is a file that helps Python treat a folder like a package. You do not need to master it yet; just know it is part of how importable folders are marked.
 
 ## 3. Modules and Imports
 
@@ -81,6 +87,14 @@ This sequence matters because it teaches a repeatable habit:
 - install only what the project needs
 - run tests
 - run lint checks
+
+### Why each step exists
+
+- A `virtual environment` is a private Python area for one project.
+- `venv` makes a private Python environment for one project
+- `pip` installs packages
+- `pytest` runs tests
+- `ruff` checks for style issues and some mistakes
 
 ## 6. Refactor Example
 

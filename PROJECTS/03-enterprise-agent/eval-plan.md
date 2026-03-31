@@ -1,8 +1,15 @@
 # Eval Plan - Enterprise Workflow Agent
 
-An eval plan here is not just about quality. It is also about safety, clarity, and whether operators can trust the system after something goes wrong.
+This eval plan checks quality, safety, and operator trust.
 
-## Eval Questions
+Quick meanings:
+
+- `operator trust` means a human reviewer feels the system is understandable and safe enough to rely on
+- `approval precision` asks whether the system requests approval for the right cases instead of too many or too few
+- `audit log completeness` asks whether the record contains enough detail to reconstruct what happened
+- `autonomy` means how much the system does on its own without a human step
+
+## Questions To Answer
 
 - Does the agent complete the bounded workflow accurately?
 - Does it ask for approval when it should?
@@ -20,9 +27,9 @@ Test scenarios should include:
 - tool failure during execution
 - operator rejection and retry
 
-## Metrics
+## Metrics To Track
 
-Track:
+Measure:
 
 - workflow completion rate
 - approval precision
@@ -40,15 +47,17 @@ Have a reviewer score:
 - clarity of escalation messages
 - usefulness of logs and artifacts
 
-## Success Criteria
+## Success Looks Like
+
+You should be able to show that:
 
 - high-risk actions always require approval
 - failed tasks leave enough evidence for review
 - the system remains useful without overclaiming autonomy
 
-## Demo Eval Guidance
+## Demo Guidance
 
-In the demo, show:
+Show:
 
 - a normal successful task
 - a policy-triggered approval

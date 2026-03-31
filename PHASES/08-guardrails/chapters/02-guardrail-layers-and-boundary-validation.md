@@ -4,6 +4,16 @@ Good safety does not live in one prompt line. It lives in layers.
 
 `Boundary validation` means checking something right before it crosses an important boundary, like before a model sees it, before a tool runs, or before an email leaves the system.
 
+## First words
+
+- `boundary` means a point where control changes
+- `validation` means checking whether something is allowed or well formed
+- `irreversible` means you cannot easily take the action back
+
+## Why this matters
+
+If we wait until the very end to check safety, the risky action may already have happened. The safer habit is to check before the model acts, before a tool acts, and before anything leaves the system for the outside world.
+
 ## The four main checkpoints
 
 ### 1. Before the model call
@@ -116,5 +126,7 @@ Ask:
 - does this check reduce a real failure mode
 - does it block normal work too often
 - can it fail closed when risk is high and fail open when risk is low
+
+The goal is not to stop everything. The goal is to stop the bad things while leaving ordinary work easy.
 
 Continue with [Policy, Approvals, and Least Privilege](./03-policy-approvals-and-least-privilege.md).

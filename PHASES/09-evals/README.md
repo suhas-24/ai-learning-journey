@@ -4,6 +4,8 @@ This module teaches how to measure an AI system honestly.
 
 An `eval` is a structured check that asks whether the system is doing its job. `Observability` means being able to see what happened during a real run. A `regression` is when a change accidentally makes something worse that used to work. We begin with those simple ideas and then build toward datasets, metrics, traces, and safety gates.
 
+If those words are unfamiliar, start with a school test. Evals are the test, observability is the ability to watch how the student solved the problem, and regression control is the habit of noticing when a new lesson accidentally makes the student worse.
+
 Recommended order:
 
 1. [Evaluation Design and Golden Datasets](./chapters/01-evaluation-design-and-golden-datasets.md)
@@ -26,6 +28,10 @@ Supporting references:
 - how to separate answer quality, retrieval quality, and tool behavior
 - what to log so an incident can be debugged after the fact
 - how to stop regressions by turning failures into repeatable checks
+
+## Why this matters
+
+Without evals, teams often ship changes that look fine in a demo but fail on real work. Without observability, you can see that something broke but not why. Without regression control, the same bug comes back again and again.
 
 ## Completion standard
 

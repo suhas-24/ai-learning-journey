@@ -1,15 +1,15 @@
 # Chapter 2 - Structured Output and Tool Calling
 
-This chapter is about two useful ideas:
+This chapter shows two things:
 
-- asking the model for a shaped answer instead of a paragraph
-- letting the model ask your program for outside help
+1. how to ask for an answer in a shape code can read
+2. how the model can ask your program for outside help
 
 ## 1. Structured Output
 
-Suppose you want the model to classify a support ticket. Free-form prose is awkward for code to read. A shape with named fields is easier.
+Sometimes you do not want a paragraph. You want a result with named pieces.
 
-Desired shape:
+For example, if the model is classifying a support ticket, this is easier for code to use:
 
 ```json
 {
@@ -19,37 +19,40 @@ Desired shape:
 }
 ```
 
-Now your code can check the fields before it acts.
+That shape is easier to check than a free-form paragraph.
 
 ### Why validation matters
 
-A model can still produce:
+The model can still make mistakes:
 
-- missing keys
-- wrong data types
-- extra words around the JSON
+- it might leave out a key
+- it might give the wrong type
+- it might wrap the JSON in extra text
 
-So you validate after generation. You do not trust the output just because it looks neat.
+That is why your program validates the output before trusting it.
 
 ## 2. Tool Calling
 
-Tool calling is not magic and it is not the model reaching out on its own. It is a simple loop:
+Tool calling is a back-and-forth pattern between the model and your program.
 
-1. your code sends the list of tools
-2. the model decides one is needed
+Think of it like this:
+
+1. your code sends the model a question and a list of helper tools
+2. the model decides a tool would help
 3. the model asks for that tool
-4. your code runs the tool
-5. your code sends the result back
-6. the model writes the final answer
+4. your program decides whether to run it
+5. your program runs it and gets the result
+6. your program sends the result back to the model
+7. the model writes the final answer
 
-That loop is the backbone of many agent systems.
+The model does not run tools by itself. Your program stays in charge.
 
 ## 3. Worked Example
 
 User asks:
 
 ```text
-What unresolved tasks are left in notes.txt?
+What unfinished tasks are in notes.txt?
 ```
 
 The model might ask for a file-reading tool:
@@ -61,16 +64,9 @@ The model might ask for a file-reading tool:
 }
 ```
 
-Your program runs the tool, gets the file content, and sends back something like:
+Your program reads the file, then returns the contents as a `tool` message.
 
-```json
-{
-  "role": "tool",
-  "content": "Task 1: add tests\nTask 2: fix docs"
-}
-```
-
-Then the model can answer using the actual file instead of guessing.
+After that, the model can answer using the actual text instead of guessing.
 
 ## 4. Good Tool Design
 
@@ -81,26 +77,26 @@ Good tools are:
 - safe to run
 - easy to test without a model
 
-If a tool tries to do too many unrelated jobs, it becomes hard to trust.
+If a tool tries to do too many unrelated jobs, it becomes hard to trust and hard to debug.
 
 ## 5. Common Confusion
 
 ### Tool schema is vague
 
-If the tool description is unclear, the model may send unusable arguments.
+If the tool description is unclear, the model may send arguments that do not make sense.
 
 ### Tool output is too large
 
-If a file reader returns a huge file, the next model step can become noisy. Summarize or chunk the result.
+If a tool returns a huge amount of text, the next model step can become crowded. Summarize or chunk the result.
 
 ### Tool result is not checked
 
-If a tool returns `None` or malformed data and you pass it onward, the loop becomes brittle.
+If a tool returns malformed data and you pass it onward without validation, the loop becomes brittle.
 
 ## 6. What To Practice
 
 - design one tool with clear input and output fields
-- simulate a tool call without using a real provider
+- simulate one tool call without using a real provider
 - validate one structured response before trusting it
 
 Next: [Chapter 3: Context Engineering](./03-context-engineering.md)

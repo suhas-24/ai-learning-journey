@@ -1,19 +1,29 @@
 # Phase 1 - Python From Zero
 
-This phase starts at the beginning. It assumes you are learning Python as a language, a computer program as a set of steps, and debugging as a normal part of learning. The goal is to help you read simple code, write simple code, and understand why it behaves the way it does.
+This phase starts at the beginning. It assumes you may not know what a program, a variable, a file, or an error is yet. The goal is to help you read simple Python, write simple Python, and understand why it behaves the way it does.
 
 If a word feels new, slow down. A good rule for this phase is: define the thing, then use the thing.
 
 ## What This Phase Is For
 
 - Python is the first language tool you need to read and write.
-- A script is the first small program you will control by hand.
-- A project is the first time you split one program into parts.
-- Validation, logging, and testing are the first habits that keep code honest.
+- A script is one file with a job to do.
+- A project is one idea split into a few files.
+- Validation, logging, and testing are the habits that keep code honest.
+
+## What You Will Learn First
+
+- what a value is
+- what a variable is
+- what a function is
+- what a file is
+- what a module is
+- what an error is
+- what a command-line tool, or CLI, is
 
 ## What You Will Be Able To Do
 
-- explain what a value, variable, function, file, and error are
+- explain what a value, variable, function, file, and error are in plain language
 - write a tiny Python program without copying every line blindly
 - read and write JSON data from a file
 - split one script into multiple files when it gets crowded

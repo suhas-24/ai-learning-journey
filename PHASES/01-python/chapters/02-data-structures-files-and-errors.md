@@ -4,7 +4,7 @@ This chapter shows how Python stores information and how real programs move that
 
 ## 1. Four Basic Containers
 
-A **container** is a value that holds other values.
+A **container** is a value that holds other values. Containers help you organize data so you can find it later.
 
 ### Lists
 
@@ -93,6 +93,8 @@ That pattern is important because many bugs are really just missing input.
 ## 3. Errors Are Useful Feedback
 
 An **exception** is Python saying, "I cannot continue safely with the data I have."
+
+A `ValueError` is a specific kind of exception. It means the value was the wrong shape or content for the job. A `FileNotFoundError` means Python looked for a file and could not find it.
 
 ```python
 def divide(total: int, count: int) -> float:

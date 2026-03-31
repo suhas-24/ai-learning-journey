@@ -17,9 +17,13 @@ This helps answer three beginner questions:
 - what comes out?
 - what shape should I expect?
 
+Type hints do not make the code magically safer by themselves. They make the code easier for humans and tools to understand.
+
 ## 2. Validation Protects the Program
 
 When data comes from a file, environment variable, or API, do not assume it is correct. Check it.
+
+`Validation` means checking that data has the shape and type you expect before the rest of the program uses it.
 
 ```python
 from pydantic import BaseModel, Field
@@ -34,9 +38,13 @@ If the data is wrong, the program should complain early and clearly. That is muc
 
 See [config_model.py](../snippets/config_model.py).
 
+`Pydantic` is a library that helps Python check and organize data by the shape you expect.
+
 ## 3. Async Helps With Waiting
 
 Use `async` when a program spends time waiting for outside work to finish.
+
+`asyncio` is the Python library that gives you the basic tools for async waiting.
 
 ```python
 import asyncio
@@ -64,7 +72,7 @@ import logging
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
-logger.info("Loading tasks", extra={"source": "tasks.json"})
+logger.info("Loading tasks from tasks.json")
 ```
 
 Logging helps you answer:
@@ -73,9 +81,13 @@ Logging helps you answer:
 - when did it happen?
 - with which input?
 
+The `INFO` level means "show normal useful messages." Logging is like a diary for the program, so you can understand what it did after the run is over.
+
 ## 5. CLIs Make Small Tools Easy To Reuse
 
 A **CLI** is a command-line interface. It lets people run your Python code with commands instead of editing the file every time.
+
+`Typer` is a library that helps turn a Python function into a command-line command.
 
 ```python
 import typer

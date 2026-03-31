@@ -12,6 +12,8 @@ You should be able to explain:
 4. why delegation needs clear ownership
 5. which parts of a tool should stay hidden on the server
 
+If any of those words feel fuzzy, reread Chapter 1 and Chapter 2 first. The goal here is understanding, not speed.
+
 ## Practical Checks
 
 - I can write a JSON schema that rejects extra properties.

@@ -2,17 +2,17 @@
   "default_strategy": "markdown_headings",
   "strategies": {
     "markdown_headings": {
-      "description": "Split Markdown files at headings so each chunk keeps one idea together.",
+      "description": "Split Markdown files at headings so each chunk keeps one idea together and is easier to search later.",
       "max_tokens": 500,
       "overlap_tokens": 60
     },
     "code_by_symbol": {
-      "description": "Split code by function or class so each chunk stays focused.",
+      "description": "Split code by function or class so each chunk stays focused on one thing at a time.",
       "max_tokens": 300,
       "overlap_tokens": 30
     },
     "fixed_fallback": {
-      "description": "Use this only when the document has almost no structure.",
+      "description": "Use this only when the document has almost no structure and you have no better choice.",
       "max_tokens": 400,
       "overlap_tokens": 40
     }

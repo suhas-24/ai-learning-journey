@@ -1,30 +1,60 @@
 # Project 3 - Enterprise Workflow Agent
 
-Build a production-minded workflow agent for a narrow business process, with clear boundaries, safety checks, observability, and deployment documentation. This project should show that you know how to make an AI system useful without pretending it can do everything safely.
+This project teaches how to build a narrow business workflow with safety, visibility, and careful deployment.
 
-A workflow is a repeatable sequence of steps that turns an input into an output. Intake is the part that accepts the request. Telemetry is the information the system records so operators can understand what happened. Audit trails are the records that show who did what and when. Deployment documentation is the written setup guide for running the system safely. Schema validation means checking that incoming or outgoing data matches the shape you expect. Audit logging means writing down important actions in a way that can be reviewed later. Monitoring means watching the system over time so problems are noticed quickly.
+If those words are new:
 
-## Project Goal
+- a `workflow` is a repeatable sequence of steps that turns input into output
+- `intake` is the part that accepts the request
+- `policy` is the rule set that decides what the system is allowed to do
+- `telemetry` is the system data that helps people watching the system understand behavior
+- an `audit trail` is a record of important actions and decisions
+- `schema validation` checks that data has the shape you expect
+- `monitoring` means watching the system over time so problems are noticed quickly
+- `bounded` means intentionally limited to a narrow job
+- an `operator` is the person responsible for watching, checking, or running the system
 
-Demonstrate end-to-end thinking across:
+The point of this project is not to make an “AI does everything” assistant.
+It is to make a bounded system that can do one job well, explain itself, and stop when a human needs to step in.
 
-- task intake
-- agent execution
-- safety controls
-- deployment
-- monitoring
-- human oversight
+## What You Will Build
 
-The beginner-friendly version of that goal is: build a system that can do a narrow job, explain itself, and stop when a human needs to step in.
+You will build a workflow agent that can:
+
+- accept a narrow business request
+- validate the request
+- execute a bounded action plan
+- ask for approval when needed
+- record logs and audit data
+- show how it would be deployed and monitored
+
+## Why This Project Matters
+
+This project shows that you can build something useful without pretending it is magic.
+
+It demonstrates:
+
+- clear scope
+- safe decision making
+- operator visibility
+- deployment thinking
 
 ## Suitable Use Cases
 
 - support workflow triage
 - document intake and classification
 - policy-compliant research summaries
-- internal operations assistant for a bounded process
+- internal operations assistance for a bounded process
 
-## Recommended Folder Layout
+## How To Use This Folder
+
+- `README.md` explains the project in plain language
+- `architecture.md` shows how the system is organized
+- `build-plan.md` gives the order of work
+- `eval-plan.md` shows how to test safety and reliability
+- `rubric.md` checks whether the project is production-minded
+
+## Suggested Repo Layout
 
 ```text
 03-enterprise-agent/
@@ -35,7 +65,7 @@ The beginner-friendly version of that goal is: build a system that can do a narr
 └── rubric.md
 ```
 
-When implemented as a code repo, target:
+When implemented as code, a clean layout often looks like this:
 
 ```text
 app/
@@ -66,14 +96,18 @@ reports/
 - system architecture
 - deployment checklist
 - metrics report
-- postmortem or retrospective
+- retrospective
 
-## Success Criteria
+Here, an `artifact` means a saved item another person can inspect, such as a checklist, report, README, or demo.
+
+## Success Looks Like
+
+A strong version of this project should prove that:
 
 - the agent solves a bounded task well
 - risky actions are controlled
-- system behavior is observable
-- the README communicates both capability and limits clearly
+- behavior is observable, which means another person can see what the system did
+- the README clearly states both capability and limits
 
 ## Demo Guidance
 

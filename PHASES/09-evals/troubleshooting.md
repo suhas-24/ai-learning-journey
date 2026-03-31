@@ -1,5 +1,7 @@
 # Troubleshooting
 
+Use this page when eval numbers look confusing. Each symptom is written in beginner language so you can match it to a real project.
+
 ## Symptom: eval scores look strong, but users still complain
 
 Likely causes:
@@ -13,6 +15,8 @@ Fix:
 - add failure-derived cases
 - split reporting by task type and subsystem
 - review a sample of real traces against the dataset
+
+In plain language: the test set was too easy or too small, so it missed the real problems.
 
 ## Symptom: dashboards are full, but no one knows what to do
 
@@ -28,6 +32,8 @@ Fix:
 - reduce dashboard noise to operationally useful signals
 - require run ids and node outcomes everywhere
 
+In plain language: the chart is busy, but it is not telling the team what action to take.
+
 ## Symptom: prompt changes cause mystery regressions
 
 Likely causes:
@@ -42,6 +48,8 @@ Fix:
 - rerun golden dataset cases before merge
 - add failing production examples into the dataset
 
+In plain language: the team changed the instructions but did not retest the system in a disciplined way.
+
 ## Symptom: retrieval metrics are poor, but answer quality sometimes looks good
 
 Likely causes:
@@ -53,6 +61,8 @@ Fix:
 
 - inspect faithfulness separately from relevance
 - improve retrieval ranking before celebrating answer polish
+
+In plain language: the answer may sound right even when the evidence behind it is weak.
 
 Cross-phase reminder:
 

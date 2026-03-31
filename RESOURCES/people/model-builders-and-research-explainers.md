@@ -2,15 +2,21 @@
 
 This guide focuses on people who make model internals, training behavior, and research ideas easier to understand without stripping away the hard parts.
 
-This is the folder to use when you want someone to explain how the model works from the inside, not just how to call it from code.
+Use this folder when you want someone to explain how the model works from the inside, not just how to call it from code.
+
+## How To Learn From This Category
+
+- Start with the person who explains the idea most clearly to you.
+- Look for repeated concepts, not one-off opinions.
+- Use these sources to build intuition, then return to the books and project guides for implementation.
 
 ## Andrej Karpathy
 
 ### What to learn from him
 
-Karpathy is one of the best teachers for model intuition. He is useful when you want plain-language explanations of tokenization, training, transformers, and representation learning.
+Karpathy is one of the clearest teachers for model intuition. He is useful when you want plain-language explanations of tokenization, training, transformers, and representation learning.
 
-### Major themes and subtopics
+### Core themes and subtopics
 
 - Neural network fundamentals.
 - Tokenization and sequence modeling.
@@ -21,13 +27,17 @@ Karpathy is one of the best teachers for model intuition. He is useful when you 
 
 - Phases 2 and 10.
 
+### Watch for
+
+- His strength is the explanation of the core machine first. That makes him useful when the model feels mysterious.
+
 ## Sebastian Raschka
 
 ### What to learn from him
 
-Sebastian Raschka is valuable because he explains model internals in a structured, teachable way. He is especially strong when you need to understand what fine-tuning changes and what it does not change.
+Sebastian Raschka explains model internals in a structured, teachable way. He is especially strong when you need to understand what fine-tuning changes and what it does not change.
 
-### Major themes and subtopics
+### Core themes and subtopics
 
 - Transformer mechanics.
 - Training loops and optimization.
@@ -38,13 +48,17 @@ Sebastian Raschka is valuable because he explains model internals in a structure
 
 - Phases 2 and 10.
 
+### Watch for
+
+- He is especially helpful when you want the pieces named in a way you can reuse in your own notes.
+
 ## Ahead Of AI
 
 ### What to learn from this source
 
 Ahead of AI is useful when you need technical developments interpreted carefully. It often helps bridge the gap between a research claim and the engineering consequences of that claim.
 
-### Major themes and subtopics
+### Core themes and subtopics
 
 - Research interpretation.
 - Model capability analysis.
@@ -53,6 +67,10 @@ Ahead of AI is useful when you need technical developments interpreted carefully
 ### Best phases
 
 - Phases 2, 5, and 10.
+
+### Watch for
+
+- The best value here is translation. It helps you turn a new paper or model update into a design decision.
 
 ## Companion Guides
 

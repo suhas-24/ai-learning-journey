@@ -1,6 +1,8 @@
 # Chapter 3 - Context Engineering
 
-**Context** means everything the model can see at the moment it answers: instructions, chat history, tool results, retrieved notes, and summaries. **Context engineering** is the skill of choosing that material carefully.
+`Context` means everything the model can see at the moment it answers: instructions, chat history, tool results, retrieved notes, and summaries.
+
+`Context engineering` is the skill of choosing that material carefully.
 
 ## 1. Why Context Matters
 
@@ -11,14 +13,14 @@ If the model answers badly, the problem may not be the model. It may be:
 - stale context
 - conflicting context
 
-That means the surrounding program is part of the quality of the answer.
+That means the surrounding program is part of the answer quality.
 
-## 2. A Useful Selection Rule
+## 2. A Simple Selection Rule
 
 Before adding anything to context, ask:
 
 1. Does the model need this right now?
-2. Is this the smallest useful form of it?
+2. Is this the smallest useful version of it?
 3. Can I summarize it or fetch it later instead?
 
 If the answer to the first question is "not really," leave it out.
@@ -45,7 +47,9 @@ This creates signal.
 
 ## 4. Summaries and Compaction
 
-Long-running systems need to shrink earlier history so the request does not grow forever. A simple pattern is:
+Long-running systems need to shrink earlier history so the request does not grow forever.
+
+A simple pattern is:
 
 - keep the last few turns exactly
 - summarize older turns into one compact note
@@ -56,6 +60,8 @@ See [context_compaction_example.md](../snippets/context_compaction_example.md).
 ## 5. Retrieval Versus Inline Context
 
 Do not dump a whole knowledge base into every request. Bring in only the pieces that matter now.
+
+`Retrieval` means finding a useful piece of information at question time and adding it to the request instead of pasting the whole library into the prompt.
 
 Inline context is best when:
 

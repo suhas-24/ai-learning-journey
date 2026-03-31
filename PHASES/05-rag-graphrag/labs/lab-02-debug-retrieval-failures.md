@@ -6,6 +6,10 @@ This lab is about diagnosis.
 
 Take one failed question and find the exact step where the system went wrong.
 
+## Before You Start
+
+In this lab, `diagnosis` means finding the step that caused the failure instead of guessing.
+
 ## Workflow
 
 1. Save the question.
@@ -33,3 +37,7 @@ Ask:
 - what things and connections would the graph need?
 
 If the answer is no, that is still a good result.
+
+## Tiny Example
+
+If the system finds the right document but not the right section, the problem is probably chunking or ranking. If it finds the right section and still answers badly, the problem is probably the answer step.

@@ -1,6 +1,15 @@
 # Build Plan - Production RAG System
 
-This build plan is the step-by-step path from "empty folder" to "a system that can answer with evidence."
+This plan moves from an empty folder to a system that can answer with evidence.
+
+Quick meanings for the terms used below:
+
+- a `metadata schema` is a simple description of the fields stored with each chunk, such as source name, page, date, or section
+- `top-k` means "the first k results," such as the top 5 or top 10 search results
+- `rank fusion` means combining multiple search scores into one ranking
+- `reranking` means sorting the first results again so the strongest evidence rises to the top
+- an `answer schema` is the expected shape of the answer, such as answer text plus citations
+- `abstention` means refusing to answer when the evidence is too weak
 
 ## Milestone 1 - Corpus And Ingestion
 
@@ -9,7 +18,11 @@ Deliverables:
 - document inventory
 - chunking strategy note
 - ingestion script
-- stored metadata schema
+- metadata schema
+
+Why this step exists:
+
+- before the system can search, it needs a clean way to read documents
 
 Definition of done:
 
@@ -19,9 +32,13 @@ Definition of done:
 
 Deliverables:
 
-- vector retrieval endpoint or script
-- top-k inspection notebook or report
+- retrieval script or endpoint
+- top-k inspection report
 - 20 manual test queries
+
+Why this step exists:
+
+- you need a simple baseline before you can improve anything
 
 Definition of done:
 
@@ -31,14 +48,18 @@ Definition of done:
 
 Deliverables:
 
-- lexical retrieval
+- keyword retrieval
 - rank fusion logic
 - reranking stage
 - side-by-side comparison report
 
+Why this step exists:
+
+- different search methods solve different problems
+
 Definition of done:
 
-- you can show at least one class of queries that improved
+- at least one class of queries improves in a visible way
 
 ## Milestone 4 - Answer Generation
 
@@ -48,6 +69,10 @@ Deliverables:
 - citation formatter
 - abstention behavior for weak context
 
+Why this step exists:
+
+- the model should only answer from evidence that can be inspected
+
 Definition of done:
 
 - answers include traceable citations and avoid unsupported claims
@@ -56,14 +81,18 @@ Definition of done:
 
 Deliverables:
 
-- eval dataset with gold answers or references
+- eval dataset with reference answers or expected sources
 - automated metrics
 - manual review sheet
 - experiment report
 
+Why this step exists:
+
+- improvement only matters if you can prove it
+
 Definition of done:
 
-- a reviewer can see how system quality is measured over time
+- a reviewer can see how quality is measured over time
 
 ## Milestone 6 - Demo And Packaging
 
@@ -71,9 +100,13 @@ Deliverables:
 
 - polished README
 - architecture diagram
-- short demo or screen recording
+- short demo or recording
 - lessons learned section
+
+Why this step exists:
+
+- the project should feel like something another engineer could reuse
 
 Definition of done:
 
-- the project reads like a shippable engineering artifact
+- the repo reads like a shippable engineering artifact

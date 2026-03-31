@@ -1,8 +1,16 @@
-# Harness Components and Runtime Policies
+# Chapter 3 - Harness Components and Runtime Policies
 
 The harness is the operational shell around the model.
 
 If the model is the part that writes the next sentence or picks the next action, the harness is the part that asks, "Should we do that, can we afford that, and what should happen if it fails?" It keeps the work safe, repeatable, and observable.
+
+If those words are new:
+
+- `harness` means the system around the model
+- `runtime policy` means a rule that guides what the system is allowed to do while it is running
+- `retry` means trying again after a temporary problem
+- `budget` means a limit on time, money, or effort
+- `dead-letter` means a place where failed runs are saved for human review
 
 ## The minimum viable harness
 
@@ -25,6 +33,8 @@ That sounds like a lot, but each piece solves one simple problem:
 - when do we stop
 - when do we ask a person
 - how do we know what happened
+
+Think of these as the guardrails on a road. The car can still move, but it cannot wander wherever it wants.
 
 ## Where each piece fits
 

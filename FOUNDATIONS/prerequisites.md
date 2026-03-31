@@ -1,6 +1,8 @@
 # Prerequisites
 
-You do not need to be an expert to start this repository. You do need a little patience, because the first unfamiliar words will show up quickly and that is normal.
+You do not need to be an expert to start this repository.
+
+You do need a little patience, because unfamiliar words will show up quickly and that is normal.
 
 ## What You Need
 
@@ -25,8 +27,12 @@ You do not need to be an expert to start this repository. You do need a little p
 
 ## The Most Important Skill
 
-The single most important skill is staying with confusion long enough to resolve it. Most of the roadmap is learnable if you keep building and debugging.
+The single most important skill is staying with confusion long enough to resolve it.
+
+Most of the roadmap is learnable if you keep building and debugging.
 
 ## A Gentle Rule
 
-If you hit an unfamiliar word, do not rush past it. Look it up in [glossary.md](./glossary.md), write down the simplest meaning you can find, and continue.
+If you hit an unfamiliar word, do not rush past it.
+
+Look it up in [glossary.md](./glossary.md), write down the simplest meaning you can find, and continue.

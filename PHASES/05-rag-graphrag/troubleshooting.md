@@ -2,7 +2,7 @@
 
 Use this page when the system feels impressive in a demo but weak in practice.
 
-## The retrieved chunks are related but not useful
+## The Retrieved Chunks Are Related But Not Useful
 
 Likely reasons:
 
@@ -16,7 +16,7 @@ Try:
 - use hybrid search
 - add filters based on document type
 
-## The citation points to the wrong section
+## The Citation Points To The Wrong Section
 
 Likely reasons:
 
@@ -30,7 +30,7 @@ Try:
 - tighter reranking
 - explicit citation instructions
 
-## GraphRAG looks fancy but answers are weak
+## GraphRAG Looks Fancy But Answers Are Weak
 
 Likely reasons:
 
@@ -40,7 +40,7 @@ Likely reasons:
 
 Use Chapter 4 as a decision point, not a justification for complexity.
 
-## The memory store returns stale facts
+## The Memory Store Returns Stale Facts
 
 Check:
 

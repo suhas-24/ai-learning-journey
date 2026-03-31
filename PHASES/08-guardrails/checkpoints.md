@@ -1,5 +1,7 @@
 # Checkpoints
 
+Use these checkpoints as a plain self-test. If a line feels fuzzy, go back to the matching chapter and read the example again.
+
 ## Knowledge checks
 
 - I can define prompt injection in operational terms, not only as a buzzword.

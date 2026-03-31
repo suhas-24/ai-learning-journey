@@ -1,6 +1,13 @@
 # Chapter 2 - Agent Contracts and Constraints
 
+If the phrase `agent contract` feels abstract, break it into two parts:
+
+- `agent` means the worker or assistant that does the task
+- `contract` means the clear agreement about what that worker should do
+
 This chapter shows what belongs in a good agent contract and how to write rules that help instead of confuse.
+
+Think of the contract as the note that tells a worker what job it has, what lines it must not cross, and what to do when the job is no longer safe to guess at.
 
 ## 1. Core Parts of an Agent Contract
 
@@ -42,6 +49,13 @@ Done: All owned modules include explanations, labs, snippets, checkpoints, and t
 ```
 
 This is short, but still operational.
+
+The reason this works is that each line answers one beginner question:
+
+- what is this worker for?
+- what is it allowed to see?
+- what is it allowed to change?
+- what happens if the task goes beyond its safe boundary?
 
 ## 4. Common Confusion
 

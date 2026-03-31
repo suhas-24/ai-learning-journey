@@ -1,8 +1,12 @@
 # Chapter 3 - Demos And Evidence
 
-A demo should confirm your engineering work, not hide missing rigor behind a happy-path screen recording.
+A demo should confirm your engineering work, not hide missing rigor behind a happy path.
 
-Evidence is anything that helps a reviewer check that the system behaves the way you say it does.
+Here are the words we need first:
+
+- a `demo` is a short walkthrough that shows the system working
+- `evidence` is proof a reviewer can inspect
+- a `trace` is a record of what the system did step by step
 
 ## What A Good Demo Shows
 
@@ -10,7 +14,7 @@ A strong technical demo includes:
 
 - the real input
 - what the system does step by step
-- where outputs come from
+- where the outputs come from
 - one metric or eval artifact
 - one failure boundary or safety check
 
@@ -40,9 +44,9 @@ Keep it short. Five focused minutes beats fifteen wandering minutes.
 ## What To Avoid
 
 - silent screen recordings with no context
-- only showing successful queries
+- only showing successful cases
 - hiding cost, latency, or quality tradeoffs
-- claiming production readiness without ops evidence
+- claiming production readiness without proof
 
 ## Demo Script Skeleton
 

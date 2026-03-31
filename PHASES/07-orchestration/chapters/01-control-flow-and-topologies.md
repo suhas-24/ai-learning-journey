@@ -6,7 +6,7 @@ When a person cooks, they do not dump every ingredient into the pan at once. The
 
 A model can suggest an answer or next action, but reliable software needs rules around that suggestion.
 
-## The core idea
+## The Core Idea
 
 A single-agent loop looks like this:
 
@@ -26,9 +26,9 @@ At that point we need explicit control flow.
 
 `Control flow` means the path your program follows. Sometimes that path is straight. Sometimes it branches, repeats, pauses, or asks a human for help.
 
-## Common orchestration topologies
+## Common Orchestration Topologies
 
-### 1. Single agent with tools
+### 1. Single Agent With Tools
 
 Use this when one model can reason about the whole task and tools are short-lived.
 
@@ -42,7 +42,7 @@ Failure mode:
 
 - the loop silently retries bad ideas because there is no external state machine
 
-### 2. Sequential pipeline
+### 2. Sequential Pipeline
 
 Each stage has a narrow job and passes structured output forward.
 
@@ -62,7 +62,7 @@ Failure mode:
 
 - brittle interfaces between stages if schemas are vague
 
-### 3. Orchestrator with specialists
+### 3. Orchestrator With Specialists
 
 A coordinator chooses which worker should act next.
 
@@ -84,7 +84,7 @@ Failure mode:
 
 - too many agents create more coordination cost than value
 
-### 4. Graph execution
+### 4. Graph Execution
 
 Graph orchestration models the workflow as nodes and edges with shared state.
 
@@ -101,7 +101,7 @@ Failure mode:
 
 - the graph becomes unreadable if nodes are too granular
 
-## Choosing the right topology
+## Choosing The Right Topology
 
 Use this decision table:
 
@@ -112,13 +112,13 @@ Use this decision table:
 | Do different roles need different prompts or permissions? | Specialization matters | Orchestrator with specialists |
 | Must the task survive restarts and support loops? | State must persist between steps | Graph execution |
 
-## A practical mental model
+## A Practical Mental Model
 
 Think of orchestration as air traffic control. The planes are model calls and tool calls. The controller does not fly the plane, but decides sequencing, spacing, escalation, and emergency handling.
 
 If you let planes manage the tower, you get collisions.
 
-## Example: research task with durable control flow
+## Example: Research Task With Durable Control Flow
 
 Suppose the user asks:
 
@@ -144,7 +144,7 @@ steps:
 
 Each step can fail differently. That is the point. Once steps are explicit, failures become local and debuggable.
 
-## What good looks like
+## What Good Looks Like
 
 A well-designed orchestrator has:
 

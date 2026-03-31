@@ -1,147 +1,119 @@
 # Chapter 2 - Data Design
 
-Most tuning failures are data failures wearing a model hat.
+Most tuning problems are really data problems.
 
-Before you collect anything, here is the simplest way to think about the moving parts:
+This chapter starts with the basic words:
 
-- a dataset is a set of examples the model learns from
-- a label is the answer you want the model to produce
-- train data teaches the model
-- validation data helps you adjust the experiment
-- test data is kept aside for the final check
+- a `dataset` is a group of examples stored together
+- an `example` is one input and one correct answer
+- a `label` is the answer you want the model to choose
+- `train data` is used to teach the model
+- `validation data` is used while you are choosing settings
+- `test data` is kept aside for the final check
 
-If you see `JSONL`, it means "JSON lines": one JSON object per line in a text file.
+If you see `JSONL`, it means one JSON object per line in a text file.
 
-## The Dataset Is The Product
+## Why Data Comes First
 
-When you fine-tune, you are not only training a model. You are encoding a policy. Every inconsistency in the dataset becomes an inconsistency the model may learn confidently.
+Fine-tuning does not create a new policy out of nowhere.
+It teaches the model the pattern in your examples.
 
-That is why dataset work comes before training code.
+If the examples are sloppy, the model learns sloppy habits.
+If the examples are clear, consistent, and realistic, the model has a better chance of learning the right pattern.
 
-If the examples are sloppy, the model learns sloppy habits. If the examples are clear, consistent, and realistic, the model has a much better chance of learning the right pattern.
+## Build The Label Policy First
 
-## Build A Label Policy First
+Before you write the dataset, write the label policy.
 
-Your label policy should answer:
+That policy should answer:
 
-- what counts as a positive example
-- what counts as a negative example
-- how to handle ambiguous cases
-- how to label borderline inputs
+- what each label means
+- what does not belong in each label
+- what to do with ambiguous cases
 - when a human should abstain instead of guessing
 
-For the support routing example, a weak label policy says "route tickets to the right team." A strong policy defines each class with inclusion and exclusion rules.
+For support routing, a strong policy says exactly when to use `billing`, `account_access`, `product_bug`, `feature_request`, or `other`.
 
-Inclusion rules explain what belongs in a label. Exclusion rules explain what does not belong there.
-
-## Dataset Splits
+## Train, Validation, Test
 
 Use three splits:
 
-- train: used for learning
-- validation: used while tuning
-- test: used only for final comparison
+- train: examples the model learns from
+- validation: examples you use while tuning
+- test: examples you never touch until the end
 
-The test set must stay untouched. Do not relabel it after peeking at errors unless you are fixing a true annotation mistake and documenting the change.
+The test set must stay separate. If you keep peeking at it and changing things, the final score stops being honest.
 
-This separation matters because you want one honest final check. If you keep changing the test set, the final score stops being trustworthy.
+## A Simple Example Format
 
-## Example Format
-
-Many supervised fine-tuning pipelines use instruction-style JSONL. A simple example:
+Many fine-tuning pipelines use instruction-style JSONL:
 
 ```json
 {"messages":[
-  {"role":"system","content":"You classify support tickets into one of: billing, product_bug, account_access, feature_request, other. Return JSON only."},
-  {"role":"user","content":"I was charged twice for my monthly plan after upgrading yesterday."},
+  {"role":"system","content":"Classify support tickets into billing, product_bug, account_access, feature_request, or other. Return JSON only."},
+  {"role":"user","content":"I was charged twice after upgrading my plan."},
   {"role":"assistant","content":"{\"label\":\"billing\",\"reason\":\"duplicate charge after upgrade\"}"}
 ]}
 ```
 
-Good examples are:
+Why this matters:
 
-- realistic
-- internally consistent
-- close to production inputs
-- balanced across easy and hard cases
-
-If you are new to tokenization, remember this simple idea: the model reads your examples after they have been split into small pieces called tokens. That is why example length and wording matter.
+- the input looks like the real task
+- the answer follows one fixed format
+- the label is easy to check
 
 ## Coverage Matters More Than Volume
 
-A dataset with 500 carefully chosen examples often beats 5,000 lazy examples.
+A dataset with 200 careful examples often beats 2,000 careless ones.
 
-Make sure your dataset covers:
+Make sure your data includes:
 
-- obvious examples
-- ambiguous phrasing
-- short inputs
-- long noisy inputs
-- typo-heavy user language
-- class boundary cases
-- adversarial or misleading wording
+- obvious cases
+- boundary cases
+- short messages
+- long noisy messages
+- typo-heavy examples
+- confusing wording
+- cases that are hard to label
 
-The goal is not to make the data look beautiful. The goal is to make it honest.
+The goal is not pretty data. The goal is honest data.
 
 ## Common Data Mistakes
 
-- duplicate near-identical examples
-- synthetic data that does not resemble real traffic
-- labels written by multiple people with no policy
-- hidden leakage from eval into train
-- over-cleaning user inputs until they no longer resemble production
+- duplicate examples
+- labels that mean different things to different people
+- synthetic examples that do not look like real traffic
+- train and test leakage
+- over-cleaning the input until it no longer feels real
 
 ## Data Audit Checklist
 
-Before training, ask:
+Before training, check:
 
-1. Can a human reviewer explain every label?
-2. Are class counts wildly imbalanced?
-3. Do we have enough hard examples?
-4. Are train and test examples clearly separated?
-5. Does the assistant output format exactly match production needs?
+1. Can a human explain every label?
+2. Are the classes balanced enough to learn from?
+3. Do we have enough difficult examples?
+4. Are train and test separate?
+5. Does the answer format match the production need?
 
-If a human cannot explain the label policy, the model probably will not learn it cleanly either.
-
-## Minimal Audit Script
-
-Even without a full pipeline, you can check label distribution:
-
-```python
-import json
-from collections import Counter
-
-counter = Counter()
-with open("train.jsonl") as f:
-    for line in f:
-        row = json.loads(line)
-        answer = row["messages"][-1]["content"]
-        counter[answer] += 1
-
-print(counter)
-```
-
-The point is not just counting labels. The point is discovering bad data before paying to train on it.
-
-This is a little like checking ingredients before cooking. Bad ingredients usually lead to a bad meal.
+If a human cannot explain the labels, the model will not learn them cleanly either.
 
 ## Gold Set Design
 
-Create a small gold set of difficult examples that you review manually every time:
+Create a small gold set of hard examples that you review every time:
 
-- 10 obvious examples
-- 10 boundary examples
-- 10 historically confusing examples
-- 10 business-critical examples
+- obvious examples
+- boundary examples
+- historically confusing examples
+- business-critical examples
 
-This becomes your sanity set across all experiments.
-
-The gold set is the small set of examples you trust most. It helps you see whether the model really improved on the tricky cases.
+This gold set helps you see whether the model really improved on the tricky cases.
 
 ## Chapter Exercise
 
 Using [snippets/support-routing-train.jsonl](../snippets/support-routing-train.jsonl), write down:
 
-- what the label policy probably is
-- which classes look underrepresented
-- one example you would add to catch a boundary case
+- what the label policy appears to be
+- which labels look overrepresented or underrepresented
+- one hard example you would add
+- one rule you would clarify

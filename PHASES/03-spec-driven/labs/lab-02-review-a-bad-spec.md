@@ -1,5 +1,7 @@
 # Lab 2 - Review a Bad Spec and Repair It
 
+In this lab, `review` means looking at a spec and asking whether a beginner could actually follow it without guessing.
+
 This lab teaches review judgment.
 
 ## Bad Spec Example

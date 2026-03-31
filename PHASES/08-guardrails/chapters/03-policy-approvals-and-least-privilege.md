@@ -4,6 +4,18 @@ Guardrails become real when the system knows not only what it can do, but also w
 
 `Least privilege` means giving each part of the system only the power it truly needs. If a component only needs to read data, do not let it write or delete data too.
 
+## First words
+
+- `policy` means a rule about what is allowed
+- `approval` means a human or trusted process says yes before an action happens
+- `privilege` means power or permission
+- `idempotency` means doing the same approved action twice should not create two side effects
+- `isolation` means running risky work in a contained place so it cannot freely affect the rest of the system
+
+## Why this matters
+
+If one helper has too much power, one bad prompt can become a real incident. Least privilege keeps small mistakes small.
+
 ## Least privilege
 
 Give each tool, worker, and role the minimum power required.
@@ -64,6 +76,13 @@ Minimum controls:
 - temporary credentials
 - resource limits
 
+Plain-language meanings:
+
+- a `sandboxed runtime` is a contained execution space for code
+- `read-only mounts` mean files can be seen but not changed
+- `temporary credentials` are short-lived secrets so stolen access does not last long
+- `resource limits` cap things like memory, time, or CPU so one bad run cannot consume everything
+
 ## Failure case: overpowered helper tool
 
 Scenario:
@@ -81,6 +100,8 @@ Fix:
 - split read and write tools
 - place write tools behind approval and path allowlists
 
+A `path allowlist` is a short list of folders the tool is allowed to touch. If a path is not on the list, the tool should refuse the action.
+
 ## Policy as code
 
 Keep policy explicit and reviewable.
@@ -97,5 +118,7 @@ policies:
     allowed_paths:
       - /tmp/sandbox/
 ```
+
+This kind of file is useful because people can read it, test it, and review it before a mistake reaches production.
 
 Continue with [Failure and Incident Walkthroughs](./04-failure-and-incident-walkthroughs.md).

@@ -1,5 +1,7 @@
 # Phase 06 Checkpoints
 
+Use this page to check understanding, not memorization.
+
 ## Concept Checks
 
 You are ready to move on if you can explain:

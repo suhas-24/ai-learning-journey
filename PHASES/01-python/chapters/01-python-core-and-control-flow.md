@@ -4,7 +4,7 @@ Python is a language for giving a computer small, exact instructions. This chapt
 
 ## 1. Values and Variables
 
-A **value** is a piece of data. A **variable** is a name that points to a value.
+A **value** is a piece of data. A **variable** is a name that points to a value. Think of a variable like a labeled box. The label is the name, and the thing inside the box is the value.
 
 ```python
 name = "Suhas"
@@ -18,7 +18,7 @@ Here is the plain-language version:
 - `3` is a whole number
 - `False` is a true/false value
 
-Python lets you store different kinds of values without writing a type label every time. That is convenient, but the value still has a type. A type tells Python what operations make sense.
+Python lets you store different kinds of values without writing a type label every time. That is convenient, but the value still has a type. A **type** tells Python what operations make sense.
 
 ```python
 task_count + 2      # works because both sides are numbers
@@ -32,9 +32,11 @@ The beginner habit is to ask:
 - what can I safely do with it?
 - what will happen if I use it the wrong way?
 
+When Python sees the wrong kind of value in the wrong place, it often raises a `TypeError`. That is Python's way of saying, "This operation does not match this type."
+
 ## 2. Conditions
 
-A **condition** lets a program choose between paths.
+A **condition** lets a program choose between paths. It is a question the code asks before it decides what to do next.
 
 ```python
 score = 82
@@ -75,7 +77,7 @@ When Python throws an error here, it is helping you notice that your data type i
 
 ## 3. Loops
 
-A **loop** repeats work.
+A **loop** repeats work. It is useful when you want to do the same action for many items.
 
 ```python
 tasks = ["read docs", "write notes", "run test"]
@@ -94,7 +96,7 @@ while countdown > 0:
     countdown -= 1
 ```
 
-### Worked example
+### Worked Example
 
 ```python
 tasks = [
@@ -120,7 +122,7 @@ This shows three useful ideas at once:
 
 ## 4. Functions
 
-A **function** is a named block of code that does one job.
+A **function** is a named block of code that does one job. Functions help you avoid repeating the same steps again and again.
 
 ```python
 def format_task(title: str, done: bool) -> str:

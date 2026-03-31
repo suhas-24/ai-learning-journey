@@ -7,7 +7,7 @@
 
 This repository is the working notebook for the full journey from absolute beginner to production-capable AI engineer. It is intentionally practical: the goal is not to collect links or certificates, but to build real systems, document what breaks, and turn each phase into proof of skill.
 
-If words like `LLM`, `token`, or `tokenization` feel unfamiliar, that is completely fine. A large language model, or LLM, is a program trained on lots of text so it can predict and generate text. A token is a small piece of text the model works with. Tokenization is the step that breaks text into those pieces. The repo explains those ideas from zero, so you do not need to arrive already fluent.
+If words like `AI`, `model`, `LLM`, `token`, or `tokenization` feel unfamiliar, that is completely fine. In this repo, `AI` means software that can do tasks that usually need human-like thinking. A `model` is a piece of software trained on examples so it can make predictions. A large language model, or `LLM`, is a model trained on lots of text so it can predict and generate text. A `token` is a small piece of text the model works with. `Tokenization` is the step that breaks text into those pieces. The repo explains those ideas from zero, so you do not need to arrive already fluent.
 
 The repository has been reorganized into a chapter-based curriculum with labs, snippets, checkpoints, and troubleshooting so it can teach directly instead of behaving like a long outline.
 
@@ -32,7 +32,7 @@ The files in this repo should not be treated like a passive reading list. They a
 - Learn the "why" before the framework. Raw concepts come first, convenience layers later.
 - Break things on purpose. Debugging is part of the curriculum, not a side effect.
 - Keep notes close to code. Each phase should produce artifacts, not just opinions.
-- Treat agent behavior like software. Specs, evals, observability, and safety all matter.
+- Treat agent behavior like software. Written instructions, quality checks, system visibility, and safety all matter.
 - Define a new term before you rely on it. If a word feels fuzzy, pause and write down what it means in plain language.
 
 ## Overall Progress
@@ -41,12 +41,12 @@ The files in this repo should not be treated like a passive reading list. They a
 Phase 1  ░░░░░░░░░░  0%   Python + Dev Tooling
 Phase 2  ░░░░░░░░░░  0%   Raw LLM APIs + Context Engineering
 Phase 3  ░░░░░░░░░░  0%   Spec-Driven Development
-Phase 4  ░░░░░░░░░░  0%   MCP + CLI + A2A Protocols
-Phase 5  ░░░░░░░░░░  0%   Advanced RAG + GraphRAG + Memory
+Phase 4  ░░░░░░░░░░  0%   Model Context Protocol (MCP), command-line tools, and agent handoffs
+Phase 5  ░░░░░░░░░░  0%   Retrieval-augmented generation, graph retrieval, and memory
 Phase 6  ░░░░░░░░░░  0%   Agentic IDEs + Coding Agents
-Phase 7  ░░░░░░░░░░  0%   Orchestration + Harness Engineering
-Phase 8  ░░░░░░░░░░  0%   Guardrails + Security + Governance
-Phase 9  ░░░░░░░░░░  0%   Evals + Observability + EDD
+Phase 7  ░░░░░░░░░░  0%   Workflow orchestration and control systems around the model
+Phase 8  ░░░░░░░░░░  0%   Guardrails, security, and operating rules
+Phase 9  ░░░░░░░░░░  0%   Quality checks, observability, and eval-driven development
 Phase 10 ░░░░░░░░░░  0%   Fine-Tuning (optional)
 Phase 11 ░░░░░░░░░░  0%   Portfolio + Job Readiness
 ```
@@ -84,12 +84,12 @@ The loop matters because the curriculum gets longer than memory does. Notes need
 
 | Folder | How I will use it |
 | --- | --- |
-| `PHASES/` | Chapter-based learning modules with teaching notes, labs, snippets, checkpoints, and troubleshooting |
-| `PROJECTS/` | Detailed build guides for the three portfolio-grade systems this roadmap requires |
-| `RESOURCES/` | Curated books, courses, tools, people, and newsletters with notes on what each one teaches |
-| `WINS/` | Visible proof of progress, especially on slow weeks |
-| `STUCK/` | Debugging journal that turns confusion into reusable knowledge |
-| `PROGRESS.md` | Weekly review cadence, goals, outcomes, and next moves |
+| `PHASES/` | Step-by-step lessons for each topic, with practice, examples, checks, and help for when things break |
+| `PROJECTS/` | Build guides for the three portfolio systems this journey asks for |
+| `RESOURCES/` | Reading and watching guides that explain what to study and why it matters |
+| `WINS/` | A place to record progress that might otherwise be forgotten |
+| `STUCK/` | A place to record bugs, confusion, and the fix that made them make sense |
+| `PROGRESS.md` | A weekly review of what happened, what was learned, and what comes next |
 
 ## What A Phase Module Should Contain
 
@@ -103,6 +103,13 @@ Each phase module should explain the topic, not just name it. A good phase modul
 - what success looks like before moving on
 
 That structure is important because AI engineering concepts build on one another. If I cannot explain one layer clearly, the next layer becomes noisy.
+
+For a beginner, “explaining a topic” means answering four plain questions:
+
+- What is this thing?
+- Why does it matter?
+- What do I do with it?
+- What usually goes wrong?
 
 In practice, each phase module should look like:
 
@@ -119,13 +126,13 @@ In practice, each phase module should look like:
 - I wrote down at least one thing I understood better than before.
 - I captured one win and one sticking point.
 - I can explain a concept in simple words, not just repeat jargon.
-- I moved one project artifact closer to something worth showing publicly.
+- I moved one saved project deliverable closer to something worth showing publicly.
 
 ## What Success Looks Like By The End
 
-- Three public projects that prove depth in RAG, orchestration, and production safety
+- Three public projects that prove depth in evidence-grounded answers, multi-step workflows, and production safety
 - A GitHub profile with clean READMEs, evaluation evidence, and honest engineering notes
-- Enough fluency with Python, LLM APIs, MCP, LangGraph, and guardrails to build without hand-holding
+- Enough fluency with Python, LLM APIs, tool protocols such as Model Context Protocol (MCP), workflow frameworks such as LangGraph, and safety checks to build without hand-holding
 - A personal library of wins, failures, fixes, and design decisions I can talk through in interviews
 
 ## Notes On Pace

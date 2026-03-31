@@ -1,5 +1,7 @@
 # Lab 2 - Tool Surface Decision Matrix
 
+In this lab, a `decision matrix` is just a table that helps you choose the best option for a job.
+
 This lab trains the judgment layer, not just implementation skill.
 
 ## Instructions

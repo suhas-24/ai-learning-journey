@@ -2,6 +2,10 @@
 
 This lab helps you practice threat modeling on a realistic AI workflow.
 
+## Why this matters
+
+You are learning how to spot trouble before the system ships. That is much easier than trying to fix a real incident after a user finds it.
+
 ## Workflow
 
 Use this scenario:
@@ -50,3 +54,5 @@ For each attack path, specify:
 ## Deliverable
 
 A one-page risk register using [Risk Register Schema](../snippets/risk-register-schema.md).
+
+If you are unsure whether something is an asset, ask: "Would we care if this got leaked, changed, or lost?"

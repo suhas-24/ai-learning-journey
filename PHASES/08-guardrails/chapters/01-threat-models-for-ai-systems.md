@@ -4,6 +4,18 @@ Threat modeling is the practice of asking, before launch, "How can this system b
 
 If that sounds abstract, think of it like safety planning for a busy kitchen. Before service starts, we ask what could burn, spill, get mixed up, or be sent to the wrong table. For AI systems, we ask the same style of question, but about prompts, data, and tools.
 
+## First words
+
+- `threat` means something that could cause harm
+- `model` here means a simple picture of how a system can fail
+- `asset` means something valuable that we want to protect
+- `trust boundary` means a place where we stop trusting something automatically
+- `attack path` means the way a bad outcome could happen
+
+## Why this matters
+
+AI systems do not only fail because of code bugs. They can also fail because someone writes a sneaky prompt, a document contains the wrong instruction, or a tool is allowed to do too much. A threat model helps us think about those risks before a real user finds them.
+
 ## Why AI threat models feel different
 
 Traditional software risk often lives in code paths and network boundaries. AI systems add a second control surface: language. The system can be manipulated through instructions, retrieved text, examples, or tool outputs.
@@ -69,6 +81,14 @@ Use this sequence:
 4. define controls
 5. define logging and response
 
+Think of it as answering five beginner questions:
+
+1. What are we trying to protect?
+2. Where does untrusted input enter?
+3. How could that input be used badly?
+4. What can stop or slow the bad path?
+5. How will we know if it happened?
+
 ## Example
 
 System:
@@ -112,5 +132,7 @@ For each workflow, ask:
 - what is the most likely abuse
 - what is the most damaging abuse
 - what is the cheapest control that meaningfully lowers risk
+
+If you can answer those three questions, you already have the beginning of a useful threat model.
 
 Use [Lab 01](../labs/lab-01-build-a-threat-model.md) to practice this directly.

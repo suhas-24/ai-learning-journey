@@ -2,6 +2,8 @@
 
 This lab compares workflows, not brands.
 
+A workflow is the path the work follows from the first request to the final checked result.
+
 ## Goal
 
 Run the same small task through two different agent surfaces and compare what happened.
@@ -34,3 +36,5 @@ Evaluate each tool on:
 2. Which tool overreached more often?
 3. Which tool made review easier?
 4. Which tool would you trust for a larger repo task?
+
+Write one short sentence for each answer. The point is to notice patterns, not to produce a polished report.

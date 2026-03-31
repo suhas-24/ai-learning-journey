@@ -11,33 +11,35 @@ This directory is the main curriculum. Each phase is a self-contained learning m
 5. Answer the questions in `checkpoints.md`.
 6. Open `troubleshooting.md` whenever you hit confusion or bad output.
 
+If a word in a phase title feels new, that is a clue to read the `README.md` slowly before touching the chapters.
+
 ## Curriculum
 
 ### Foundations
 
-- [01-python](./01-python/README.md): Python fluency, debugging habits, project structure, and the modern terminal workflow
-- [02-llm-apis](./02-llm-apis/README.md): direct model APIs, predictable response shapes, tool use, context design, and failure analysis
-- [03-spec-driven](./03-spec-driven/README.md): writing clear rules for agent behavior, layered instructions, reusable skills, and review discipline
+- [01-python](./01-python/README.md): learn the basics of programming, how to debug small mistakes, and how to keep a project organized
+- [02-llm-apis](./02-llm-apis/README.md): learn what an LLM is, how to send it text, how to read its output, and how to keep that output predictable
+- [03-spec-driven](./03-spec-driven/README.md): learn how to write clear rules for behavior so a person or agent can follow them without guessing
 
 ### Integration
 
-- [04-mcp-cli](./04-mcp-cli/README.md): when to use MCP, CLI, or direct API calls, plus tool-surface design
-- [05-rag-graphrag](./05-rag-graphrag/README.md): systems that look up useful information before answering, plus chunking, reranking, GraphRAG, and memory systems
-- [06-agentic-ides](./06-agentic-ides/README.md): coding agents, task framing, safe iteration, and review workflows inside AI-assisted development tools
+- [04-mcp-cli](./04-mcp-cli/README.md): learn how programs connect to outside tools and when to use an API, a command line, or a protocol like MCP
+- [05-rag-graphrag](./05-rag-graphrag/README.md): learn how to look up useful information before answering, and why chunking, reranking, and memory matter
+- [06-agentic-ides](./06-agentic-ides/README.md): learn how AI coding tools fit into a developer’s workflow and how to keep control of your changes
 
 ### Systems
 
-- [07-orchestration](./07-orchestration/README.md): step ordering, state, resumability, runtime policies, and failure handling
-- [08-guardrails](./08-guardrails/README.md): safety checks, threat modeling, approval rules, least privilege, and incident response
-- [09-evals](./09-evals/README.md): test datasets, metrics, traces, runtime visibility, and regression management
+- [07-orchestration](./07-orchestration/README.md): learn how a system decides what happens next, remembers progress, and handles failures
+- [08-guardrails](./08-guardrails/README.md): learn how to keep a system safe, bounded, and harder to misuse
+- [09-evals](./09-evals/README.md): learn how to test a system honestly, watch what it does, and catch regressions
 
 ### Specialization And Proof
 
-- [10-finetuning](./10-finetuning/README.md): when tuning is justified, dataset quality, training strategies, and evaluation loops
-- [11-portfolio](./11-portfolio/README.md): project storytelling, demos, public evidence, and job-readiness assets
+- [10-finetuning](./10-finetuning/README.md): learn when it makes sense to train a model on your own examples instead of only prompting it
+- [11-portfolio](./11-portfolio/README.md): learn how to explain your work clearly so other people can see what you can build
 
 ## Pairing Guides
 
-- Use [../FOUNDATIONS/README.md](../FOUNDATIONS/README.md) before Phase 1 if you need shared vocabulary and mental models.
+- Use [../FOUNDATIONS/README.md](../FOUNDATIONS/README.md) before Phase 1 if you need the shared vocabulary and mental models.
 - Use [../RESOURCES/by-phase.md](../RESOURCES/by-phase.md) to pick books, courses, tools, people, and newsletters that match your current phase.
 - Use [../PROJECTS/README.md](../PROJECTS/README.md) when you are ready to turn phase knowledge into portfolio-grade systems.

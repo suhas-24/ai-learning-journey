@@ -1,58 +1,60 @@
 # Chapter 4 - Evaluation And Iteration
 
-A tuned model is not "better" because the training loss went down. It is better only if it performs better than the baseline on the task you care about.
+A tuned model is not better just because the training loss went down.
+It is better only if it performs better than the baseline on the task you care about.
 
-Evaluation means checking the model against examples you did not train on. That is how you find out whether the improvement is real or just memorized.
+Here are the words we need first:
 
-The word `held-out` means "kept aside and not used for training."
+- `evaluation` means checking a model on examples it did not train on
+- `baseline` means the simple version you compare against
+- `held-out` means kept aside and not used for training
+- `metric` means the score you use to measure quality
 
 ## Baselines First
 
 Always compare at least:
 
-- prompt-only baseline
-- prompt plus validation or post-processing baseline, if relevant
-- tuned model
+- a prompt-only baseline
+- a prompt-plus-processing baseline, if you have one
+- the tuned model
 
-If the task needs private or fresh knowledge, also compare a retrieval-augmented baseline.
+If the task needs fresh or private knowledge, compare a retrieval-based baseline too.
 
-A baseline is the simple version you compare against. Without it, you do not know whether the training run actually helped.
+Without a baseline, you do not know whether the tuning run actually helped.
 
 ## What To Measure
 
 Choose metrics that match the task:
 
 - classification: accuracy, macro F1, confusion matrix
-- extraction: exact match, field-level precision and recall
-- structured generation: schema validity and task-specific correctness
-- summarization or rewriting: human rubric plus constrained checks
+- extraction: exact match, field precision, field recall
+- structured generation: schema validity and task correctness
+- summarization or rewriting: human rubric plus format checks
 
-Accuracy means "how often was it right overall?" Macro F1 is a score that gives each class equal weight so one common class does not hide problems in smaller classes. Schema validity means "did the output follow the format we asked for?"
-
-Avoid single-metric thinking. A tuned model that improves accuracy but breaks output format may still be worse in production.
-
-This is why evaluation is about behavior, not just one score.
+Accuracy tells you how often the model was right overall.
+Macro F1 gives each class equal weight so one common class does not hide problems in smaller classes.
+Schema validity tells you whether the output followed the format you asked for.
 
 ## Error Analysis
 
-After scoring, cluster failures:
+After scoring, group the failures:
 
-- class confusion
-- verbosity problems
-- hallucinated fields
-- formatting drift
-- edge-case instability
-- out-of-domain collapse
+- confusion between two labels
+- formatting problems
+- missing fields
+- overly long answers
+- edge cases that break the policy
+- out-of-domain inputs
 
-For each cluster, ask whether the issue comes from:
+For each group, ask what the real fix is:
 
-- data gap
-- unclear policy
-- underpowered model
-- weak baseline design
-- mismatch between training examples and real traffic
+- better data
+- clearer policy
+- stronger baseline
+- smaller task scope
+- a different model choice
 
-Error analysis is the part where you ask, "Why did it fail this way?" That question usually points to the real fix.
+Error analysis is where you ask, "Why did it fail this way?"
 
 ## Example Scorecard
 
@@ -64,37 +66,33 @@ Tuned macro F1: 0.88
 Baseline schema validity: 0.95
 Tuned schema validity: 0.99
 Most improved class: account_access
-Worst remaining weakness: feature_request vs other boundary cases
+Worst remaining weakness: feature_request vs other
 ```
 
-The scorecard is not just a report. It is a compact explanation of what improved and what still needs work.
+The scorecard should make the decision easy to explain later.
 
 ## Iteration Loop
 
 Use this loop after every run:
 
 1. Compare held-out scores.
-2. Inspect confusing examples manually.
-3. Revise label policy if it was ambiguous.
+2. Read the confusing examples.
+3. Fix the label policy if it was unclear.
 4. Add targeted examples instead of random volume.
 5. Re-run the smallest useful experiment.
-6. Stop when marginal gains are no longer worth the maintenance cost.
-
-Iteration is how you avoid both overconfident shipping and endless tuning.
+6. Stop when the improvement is no longer worth the maintenance cost.
 
 ## Production Readiness Questions
 
 Before shipping a tuned model, ask:
 
-- How will we version the dataset?
-- How will we detect drift?
-- What happens when the taxonomy changes?
-- How much does retraining cost in time and money?
-- Can we roll back quickly if quality drops?
+- how will we version the dataset
+- how will we detect drift
+- what happens when the label set changes
+- how much will retraining cost
+- can we roll back quickly
 
-Fine-tuning is not a one-time trick. It creates an ongoing asset that must be maintained.
-
-That is why the "should we ship this?" question matters just as much as the training run itself.
+Fine-tuning creates an ongoing asset, not a one-time trick.
 
 ## Final Experiment Memo Template
 

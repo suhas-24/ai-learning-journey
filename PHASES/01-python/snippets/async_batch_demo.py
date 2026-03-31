@@ -3,6 +3,7 @@ from time import perf_counter
 
 
 async def run_job(name: str, delay: float) -> str:
+    # Sleep is a simple stand-in for waiting on a slow outside task.
     await asyncio.sleep(delay)
     return f"{name} finished in {delay} seconds"
 

@@ -1,5 +1,7 @@
 # Chapter 3 - CLI and Direct API Workflows
 
+If `workflow` sounds abstract, just think "the step-by-step path from a request to a result."
+
 Not every job needs a special protocol.
 
 Sometimes the best tool is already available as a command. Sometimes the best tool is a direct request to a web service. This chapter helps you choose between those two simple options before you reach for anything heavier.

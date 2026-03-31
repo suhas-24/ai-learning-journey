@@ -11,6 +11,8 @@ You are ready to move on if you can explain:
 5. when a graph is actually worth the extra work
 6. why memory is more than one thing
 
+If those words still feel fuzzy, return to the chapter that defines them and read the tiny example again.
+
 ## Practical Checks
 
 - I can show the retrieved chunks for a question.
@@ -18,6 +20,8 @@ You are ready to move on if you can explain:
 - I can compare meaning-based search with hybrid search.
 - I can tell whether a failure happened before or after reranking.
 - I can explain what the graph edge points back to.
+
+These checks matter because a working demo is not the same thing as understanding.
 
 ## Mini Quiz
 
@@ -28,3 +32,7 @@ Expected answer: `Hybrid retrieval`, because it handles both kinds of signal.
 Question: Your system only answers short FAQ questions from independent notes. Should you add GraphRAG first?
 
 Expected answer: No. Improve chunking, metadata, and search first.
+
+Question: If the model sounds confident but cites the wrong source, is the problem automatically the model?
+
+Expected answer: No. First inspect retrieval, chunking, and ranking.

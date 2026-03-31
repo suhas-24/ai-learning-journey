@@ -1,22 +1,42 @@
 # Phase 06 - Coding Agents and Safe Review
 
-This phase explains how to work with coding assistants without turning off your judgment.
+This phase is about working with coding helpers without giving up your judgment.
 
-A few words first:
+Before we go further, here are the first words in plain language:
 
-- an `agent` is a program that can choose actions, not just answer questions
-- an `IDE` is an editor or development environment
-- `context` is the information the agent can see right now
-- a `diff` is the set of changes between the old version and the new version
+- an `editor` is the place where you write and change code
+- an `IDE` is an editor with more built-in help for coding
+- an `agent` is a program that can take actions, not just answer questions
+- a `diff` is a view of what changed between an old file and a new file
+- `context` is the information the agent can see while it works
 
-The goal here is not to trust the agent blindly. The goal is to learn how to give clear work, check the result, and keep control.
+If those words are new, that is okay. This phase exists to slow the ideas down and make them ordinary.
+
+## What This Phase Is Really About
+
+An agent can be helpful when the task is clear and the checks are clear. An agent can also be risky when the task is vague and the boundaries are missing.
+
+So this phase teaches two skills at the same time:
+
+1. how to ask for useful help
+2. how to inspect the result before trusting it
 
 ## What You Will Learn
 
-- how agentic IDEs, CLI agents, and editor extensions differ
-- how to write a task so an agent does not have to guess
-- how to review code changes, logs, and tests carefully
-- how to use more than one agent without creating chaos
+- what a coding agent is in everyday language
+- how an IDE agent, a CLI agent, and an editor extension feel different
+- how to write a task so the agent does not have to guess
+- how to review code changes carefully
+- how to compare two agent workflows on the same task
+- when multiple agents help and when they create confusion
+
+## How To Use This Phase
+
+1. Read the chapters in order.
+2. Copy the snippets into your own notes or sandbox.
+3. Do the labs on a repository you understand.
+4. Use the checkpoints to explain the ideas in your own words.
+5. Use troubleshooting when the workflow feels fast but unsafe.
 
 ## Module Map
 
@@ -29,14 +49,6 @@ The goal here is not to trust the agent blindly. The goal is to learn how to giv
 7. [Checkpoints](./checkpoints.md)
 8. [Troubleshooting](./troubleshooting.md)
 
-## How To Study This Phase
+## Core Rule
 
-1. Learn the different tool surfaces in Chapter 1.
-2. Learn how to write a bounded task in Chapter 2.
-3. Learn how to verify work in Chapter 3.
-4. Learn how to split work safely in Chapter 4.
-5. Do the labs with a real repository so the ideas feel concrete.
-
-## Core Principle
-
-Use agents for speed and coverage. Keep the final judgment human-led.
+Use agents for speed and reach. Keep the final judgment human-led.

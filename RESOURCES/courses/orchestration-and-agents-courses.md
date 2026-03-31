@@ -4,13 +4,19 @@ This guide covers the resources that explain how multiple model calls, tools, an
 
 An `agent` is a model-enabled system that can choose actions. `Orchestration` means coordinating those actions step by step so the system does not just wander. A simple `loop` is not enough if you cannot see where state lives or how to recover after failure.
 
+## How To Use This Guide
+
+- Start here when a single prompt is no longer enough.
+- Keep track of where state lives, who changes it, and what happens if a step fails.
+- If a framework name starts to dominate the explanation, step back and restate the workflow in plain language.
+
 ## LangChain For LLM Application Development
 
 ### What it teaches
 
 This course teaches the first layer of orchestration abstractions. The real value is seeing how prompts, retrieval, tools, and application logic get composed, even if you later choose a different framework.
 
-### Major topics and subtopics
+### Core topics and subtopics
 
 - Chain composition: breaking work into ordered steps.
 - Retrieval integration: adding grounded context to a workflow.
@@ -22,13 +28,17 @@ This course teaches the first layer of orchestration abstractions. The real valu
 - Best as an early bridge into Phase 7.
 - Also useful in Phase 4 when you are learning how tool boundaries shape agent behavior.
 
+### Watch for
+
+- The useful lesson is the composition pattern, not the framework label.
+
 ## Broader AI Engineering Programs
 
 ### What they teach
 
-Longer programs can help when you need a guided build sequence across APIs, retrieval, agents, and deployment. Their best contribution is usually repetition across projects, not novel theory.
+Longer programs help when you need a guided build sequence across APIs, retrieval, agents, and deployment. Their best contribution is usually repetition across projects, not novel theory.
 
-### Major topics and subtopics
+### Core topics and subtopics
 
 - End-to-end app construction.
 - Tool selection and framework comparison.
@@ -39,6 +49,10 @@ Longer programs can help when you need a guided build sequence across APIs, retr
 
 - Use them selectively in Phases 5 to 7.
 - Avoid turning them into passive content consumption. Extract the build patterns and move back into your own repo quickly.
+
+### Watch for
+
+- If a program keeps adding more frameworks without showing the control flow, it is probably hiding the important lesson.
 
 ## What To Practice After This Guide
 

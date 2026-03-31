@@ -4,13 +4,19 @@ This guide covers the resources that teach how to measure model systems, compare
 
 An `eval` is just a test with a purpose. It tells you whether a change made the system better, worse, or different in a way that matters.
 
+## How To Use This Guide
+
+- Start here when opinions are not enough and you need a repeatable way to compare versions.
+- Build the habit of measuring before you change.
+- Always ask what the metric can miss, not just what it can show.
+
 ## Weights & Biases AI Academy: MLOps And Evals
 
 ### What it teaches
 
-This course teaches evaluation as an operating system for improvement. It helps you think in terms of datasets, metrics, experiment logs, regressions, and repeatable comparisons instead of gut feeling.
+This course explains evaluation as an operating system for improvement. It helps you think in terms of datasets, metrics, experiment logs, regressions, and repeatable comparisons instead of gut feeling.
 
-### Major topics and subtopics
+### Core topics and subtopics
 
 - Experiment tracking: recording prompts, runs, metrics, and artifacts.
 - Dataset thinking: creating evaluation sets that represent real tasks.
@@ -22,6 +28,10 @@ This course teaches evaluation as an operating system for improvement. It helps 
 
 - Best in Phase 9.
 - Useful in Phase 7 if you are already building a harness and need measurement attached to it.
+
+### Watch for
+
+- A number is only useful if you understand what it leaves out.
 
 ## How To Practice Evals After The Course
 

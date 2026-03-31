@@ -1,6 +1,6 @@
 # Phase 04 Troubleshooting
 
-Use this page when a command, API call, or handoff does not behave the way you expected.
+Use this page when a command, API call, or handoff does not behave the way you expected. If a word in this phase feels new, go back to Chapter 1 and read the definitions again before debugging the tool itself.
 
 ## `gh auth status` fails
 

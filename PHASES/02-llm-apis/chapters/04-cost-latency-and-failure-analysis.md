@@ -4,7 +4,7 @@ Good AI systems are not judged only by answer quality. They are also judged by s
 
 ## 1. Tokens Affect Cost
 
-A **token** is a small piece of text. More text usually means more tokens.
+A `token` is a small piece of text. More text usually means more tokens.
 
 Every extra instruction, document, and tool result increases input size. Longer outputs increase output cost.
 
@@ -15,6 +15,8 @@ That means architecture choices affect money:
 - verbose tool output costs more
 
 ## 2. Latency Has Layers
+
+`Latency` means how long one request takes from start to finish.
 
 When a model call feels slow, the delay may come from:
 

@@ -1,6 +1,18 @@
 # Phase 3 - Spec-Driven Development
 
-This phase teaches how to make agent behavior visible, reviewable, and versioned. A **spec** is a written description of how something should behave. In this phase, that usually means the rules for a worker, an agent, or a reusable workflow.
+This phase teaches how to make agent behavior visible, reviewable, and versioned.
+
+Before we go further, here are the plain meanings of the main words:
+
+- a `spec` is a written description of how something should behave
+- a `contract` is a clear promise about what something will and will not do
+- a `constraint` is a rule that limits behavior so it stays safe and predictable
+- a `skill` is a reusable how-to file for one repeated task
+- `versioned` means the document can be updated over time and those changes can be tracked
+
+In this phase, a spec usually means the rules for a worker, an agent, or a reusable workflow.
+
+A spec is not just a prompt string. A prompt can be a temporary instruction, while a spec is meant to be read, reviewed, updated, and trusted over time.
 
 The goal is not to write longer prompts. The goal is to move important behavior out of hidden places and into clear documents that people can inspect.
 

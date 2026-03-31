@@ -4,6 +4,10 @@ This chapter connects theory to incidents you are likely to face.
 
 An `incident` is just a real safety problem that happened in practice. The goal is to learn how to react, document, and improve the system so the same mistake is less likely next time.
 
+## Why this matters
+
+It is much easier to remember safety rules when you see how they fail. Real examples teach the difference between a system that looks safe and a system that is actually safe.
+
 ## Walkthrough 1: prompt injection via retrieved note
 
 ### Scenario
@@ -79,5 +83,7 @@ When a safety incident happens:
 3. identify the trust boundary that failed
 4. patch policy or validation
 5. turn the incident into a permanent regression test
+
+That last step matters because the best way to avoid repeating a mistake is to make the mistake impossible to ignore later.
 
 This handoff matters because [Phase 09 Evals](../09-evals/README.md) should absorb safety failures into automated checks.

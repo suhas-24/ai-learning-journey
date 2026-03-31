@@ -1,22 +1,56 @@
 # Project 2 - Multi-Agent Research Harness
 
-Build a stateful research harness with multiple agent roles, explicit handoffs, checkpointing, approval gates, and observability. The project is about reliability and control, not agent count for its own sake.
+This project teaches how to coordinate multiple agents safely.
 
-An agent is a program that can take steps toward a goal by using tools or making decisions in stages. A harness is the system around the agents that keeps them organized, safe, and inspectable. Checkpointing means saving progress so the run can continue later instead of starting over. Observability means being able to see what happened during a run. Traceability means being able to connect each step back to the run that produced it. Approval gates are pauses where a human must approve a risky action before it continues.
+If those words are new:
 
-## Project Goal
+- an `agent` is a program that can take steps toward a goal
+- a `harness` is the system around the agents that keeps them organized and inspectable
+- `state` is the information the system remembers while it is working
+- `checkpointing` means saving progress so a run can continue later
+- an `approval gate` is a human pause before a risky action continues
+- `observability` means you can see what the system did
+- `traceability` means you can connect each step back to the run that produced it
+- a `trace` is the step-by-step record of that run
 
-Demonstrate that you can design bounded autonomy around a multi-step task that survives interruptions, exposes traceability, and asks for human approval before risky actions.
+The main idea is simple: many agents are useful only if the system around them is disciplined.
 
-In plain English, the system should keep working even when things go wrong, and it should always be able to explain what it did.
+## What You Will Build
+
+You will build a research workflow that can:
+
+- keep state across steps
+- hand work from one role to another
+- pause safely when approval is needed
+- resume after interruption
+- show traces and logs for debugging
+
+## Why This Project Matters
+
+This is not about making the biggest swarm.
+
+It is about showing that you can:
+
+- control a multi-step system
+- make handoffs visible
+- recover from failure
+- explain what happened after the run
 
 ## Core Roles
 
-- Researcher: gathers evidence and records sources
-- Analyst: checks quality, gaps, and contradictions
-- Reporter: packages findings and prepares the final artifact
+- `Researcher`: gathers evidence and records sources
+- `Analyst`: checks quality, gaps, and contradictions
+- `Reporter`: packages the findings for the final output
 
-## Recommended Folder Layout
+## How To Use This Folder
+
+- `README.md` explains the project in plain language
+- `architecture.md` shows the moving parts
+- `build-plan.md` gives the order of work
+- `eval-plan.md` shows how to test reliability
+- `rubric.md` checks whether the project is actually controlled
+
+## Suggested Repo Layout
 
 ```text
 02-multi-agent-harness/
@@ -27,7 +61,7 @@ In plain English, the system should keep working even when things go wrong, and 
 └── rubric.md
 ```
 
-When implemented as a code repo, target:
+When implemented as code, the project often looks like this:
 
 ```text
 src/
@@ -42,27 +76,31 @@ reports/
 
 ## Milestones
 
-1. Single-agent baseline with persistent state
-2. Split roles into Researcher, Analyst, Reporter
-3. Add checkpointing and resume
-4. Add approval gates and stop conditions
-5. Add traces, logs, and run reports
-6. Run eval scenarios and publish a demo
+1. Build one stateful worker first.
+2. Split the work into Researcher, Analyst, and Reporter.
+3. Add checkpointing and resume support.
+4. Add approval gates and stop conditions.
+5. Add traces, logs, and run reports.
+6. Test scenarios and package the result.
 
 ## Required Artifacts
 
 - task state schema
 - run event log
 - approval policy
-- trace screenshots or examples
+- trace examples
 - scenario-based eval report
 
-## Success Criteria
+Here, a `task state schema` is the simple field list for what the system needs to remember, such as current step, evidence collected, and approval status.
+
+## Success Looks Like
+
+A strong version of this project should prove that:
 
 - the harness can pause and resume safely
-- agent handoffs are inspectable
+- handoffs are visible
 - risky actions are gated
-- failures are debuggable after the run
+- failures can be debugged after the run
 
 ## Demo Guidance
 
@@ -71,5 +109,5 @@ Show:
 - a multi-step task
 - one pause/resume cycle
 - one approval request
-- one trace view or event log
+- one trace or event log
 - one failure path and recovery behavior

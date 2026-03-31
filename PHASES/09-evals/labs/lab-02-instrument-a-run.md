@@ -2,6 +2,10 @@
 
 This lab teaches the minimum observability layer for a multi-step workflow.
 
+## Why this matters
+
+When a run fails, good logs and traces help you answer two simple questions: what happened and where did it go wrong?
+
 ## Scenario
 
 You have a run with these nodes:
@@ -49,3 +53,5 @@ Write how the trace data would reveal it.
 Describe which of your signals should block a merge and which should only trigger investigation.
 
 Use [Observability, Traces, and Runtime Signals](../chapters/03-observability-traces-and-runtime-signals.md) for examples.
+
+If your trace fields are hard to explain out loud, they are probably too complicated.

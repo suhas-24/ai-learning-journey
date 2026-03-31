@@ -2,6 +2,10 @@
 
 This lab turns a vague "be safe" instruction into concrete controls.
 
+## Why this matters
+
+Safety gets real when you decide where the system must stop, where it must ask for help, and what it must log.
+
 ## Scenario
 
 You have an agent with these abilities:
@@ -54,3 +58,5 @@ For each blocked or approved action, record:
 Add a rule for suspicious retrieved instructions and explain whether the system should redact, label, or discard them.
 
 Use [Troubleshooting](../troubleshooting.md) if your design starts blocking too much normal work.
+
+If you can explain each gate in one sentence, you understand it well enough to use it in a real project.

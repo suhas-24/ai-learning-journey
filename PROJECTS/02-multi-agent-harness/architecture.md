@@ -1,13 +1,15 @@
 # Architecture - Multi-Agent Research Harness
 
-Before the diagram, here are the important terms:
+This page explains how the harness is built and why each piece exists.
 
-- state is the shared record of what the run knows so far
-- handoff means one role passes work to the next role
-- approval gate means a human must review before a risky step continues
-- observability means the ability to inspect what happened during a run
+## Key Words
 
-## System Overview
+- `state` is the shared record of what the run knows so far
+- a `handoff` means one role passes work to the next role
+- an `approval gate` means a human must review before a risky step continues
+- `observability` means the ability to inspect what happened during a run
+
+## System Shape
 
 ```text
 task intake -> planner/state initializer -> Researcher -> Analyst -> Reporter -> approval gate -> final artifact
@@ -15,11 +17,13 @@ task intake -> planner/state initializer -> Researcher -> Analyst -> Reporter ->
                            +---- persistence ---+---- traces +---- audit -+
 ```
 
-## Core Components
+## Component Guide
 
 ### 1. Task State
 
-Store a structured state object containing:
+Task state is the notebook the harness carries from step to step.
+
+It usually stores:
 
 - task id
 - user goal
@@ -29,52 +33,40 @@ Store a structured state object containing:
 - approval status
 - budget or timeout counters
 
-If the Python type syntax looks unfamiliar, treat it as a labeled note about what information the run keeps. A `TypedDict` is just a dictionary shape with named fields.
+Why it exists:
 
-Suggested interface:
-
-```python
-class TaskState(TypedDict):
-    task_id: str
-    goal: str
-    stage: str
-    evidence: list[dict]
-    decisions: list[dict]
-    approval_required: bool
-```
+- the run needs memory if it is going to continue after interruptions
 
 ### 2. Agent Roles
 
-Researcher:
+Each role has a job description.
 
-- queries tools
-- gathers sources
-- records confidence and provenance
+- `Researcher` gathers sources and records where they came from
+- `Analyst` checks whether the evidence is strong enough
+- `Reporter` turns the collected work into the final artifact
 
-Analyst:
+Why it exists:
 
-- inspects evidence quality
-- requests more research when gaps remain
-- identifies contradictions
-
-Reporter:
-
-- formats the output
-- summarizes decisions and assumptions
-- prepares the artifact for approval
+- role separation makes the system easier to inspect and debug
 
 ### 3. Tooling Layer
 
-Possible tools:
+The tools layer is the set of actions each role is allowed to use.
+
+Possible tools include:
 
 - search
-- file system
+- file system access
 - GitHub
 - structured document parsing
 
-The harness, not the agent prompt alone, should decide which tools are available per role.
+Why it exists:
+
+- the harness should control tool access, not only the prompt text
 
 ### 4. Persistence And Recovery
+
+Persistence means saving the run so it can continue later.
 
 Persist:
 
@@ -83,13 +75,15 @@ Persist:
 - partial artifacts
 - approval requests
 
-This is what makes the system resumable.
+Why it exists:
 
-If state feels abstract, think of it as the notebook the harness carries from step to step.
+- without persistence, a restart destroys the work
 
 ### 5. Policy Layer
 
-The policy layer enforces:
+The policy layer sets the guardrails.
+
+It enforces:
 
 - max iterations
 - budget caps
@@ -97,20 +91,30 @@ The policy layer enforces:
 - disallowed actions
 - approval requirements
 
+Why it exists:
+
+- the system should stay bounded even when the task is messy
+
 ### 6. Observability
+
+Observability means the run leaves a trail you can inspect.
 
 Log:
 
-- agent step start and end
+- step start and end
 - tool invocations
 - retries
 - approvals
-- terminal run status
+- terminal status
 
-## Architecture Decisions To Document
+Why it exists:
+
+- if a run fails, you need evidence to explain why
+
+## Decisions To Document
 
 - why each role exists
 - what state is shared across roles
 - what is intentionally isolated
-- how you prevent endless loops
-- how you pause or resume safely
+- how loops are prevented
+- how the system pauses and resumes safely

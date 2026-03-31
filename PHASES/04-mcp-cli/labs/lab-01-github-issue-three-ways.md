@@ -1,5 +1,7 @@
 # Lab 1 - Build One Workflow Three Ways
 
+In this lab, a `workflow` means one small job done from start to finish.
+
 This lab uses the same small job three times so you can feel the difference between a command, a direct request, and a shared tool description.
 
 ## Goal

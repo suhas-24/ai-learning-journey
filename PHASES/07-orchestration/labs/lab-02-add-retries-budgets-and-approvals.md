@@ -2,6 +2,8 @@
 
 This lab upgrades a fragile orchestrator into a safer runtime.
 
+`Retry` means trying again after a temporary failure. `Approval` means a person must say yes before a risky step happens.
+
 ## Starting point
 
 Assume you already have these nodes:
@@ -25,6 +27,8 @@ Fill in a table like this:
 | timeout during retrieval | yes | often transient |
 | approval denied | no | policy decision |
 
+`Transient` means "temporary and likely to go away on its own."
+
 ## Task 2: define a budget policy
 
 Set explicit limits:
@@ -47,6 +51,8 @@ Write approval criteria for `send_email`:
 - how long approval stays valid
 - what audit fields must be stored
 - how duplicate sends are prevented
+
+Treat email like a real-world action, because it is. Once it leaves the system, you cannot pretend it never happened.
 
 ## Task 4: design the dead-letter record
 

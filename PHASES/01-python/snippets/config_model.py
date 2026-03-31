@@ -2,6 +2,7 @@ from pydantic import BaseModel, Field, ValidationError
 
 
 class AppConfig(BaseModel):
+    # Pydantic checks that the values match the shapes we asked for.
     project_name: str
     retry_limit: int = Field(ge=0, le=5)
     enable_logging: bool = True
@@ -17,6 +18,7 @@ def demo() -> None:
         )
         print(config.model_dump())
     except ValidationError as exc:
+        # ValidationError means the input did not match the model shape.
         print(exc)
 
 

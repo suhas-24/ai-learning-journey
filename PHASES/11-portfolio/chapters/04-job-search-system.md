@@ -1,16 +1,17 @@
 # Chapter 4 - Job Search System
 
-Job readiness is not a mood. It is a pipeline.
+Job readiness is not a mood.
+It is a pipeline.
 
-Here, a pipeline just means a repeatable sequence of steps you can run every week instead of trying to reinvent your job search each time.
+Here, a `pipeline` means a repeatable sequence of steps you can run every week instead of inventing your job search from scratch.
 
 ## Convert Projects Into Resume Bullets
 
 Every bullet should describe:
 
 - what you built
-- the technical mechanism
-- the measurable effect or evaluation
+- how it worked
+- what proof you have that it worked well
 
 Template:
 
@@ -32,7 +33,7 @@ For each project, prepare answers for:
 - hardest bug
 - biggest tradeoff
 - evaluation method
-- cost and performance considerations
+- cost and performance
 - what you would improve next
 
 Write these answers down before interviews. You do not want to invent them live.
@@ -42,14 +43,17 @@ Write these answers down before interviews. You do not want to invent them live.
 Run a weekly loop:
 
 1. polish one visible artifact
-2. publish one small update or writeup
+2. publish one small update or write-up
 3. send three thoughtful outreach messages
 4. practice one project explanation aloud
 5. review interview notes and patch weak answers
 
 ## Role Targeting
 
-Target roles that match your evidence. If your strongest work is around retrieval, evals, and orchestration, lead with that. Do not sell yourself as a deep training researcher if your portfolio shows applied systems work.
+Target roles that match your evidence.
+
+If your strongest work is retrieval, evaluation, and orchestration, lead with that.
+Do not sell yourself as a deep training researcher if your portfolio shows applied systems work.
 
 ## Chapter Exercise
 

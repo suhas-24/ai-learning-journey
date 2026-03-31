@@ -4,6 +4,18 @@ Evaluation tells you whether a system is good on known cases. Observability tell
 
 You need both.
 
+## First words
+
+- `trace` means a step-by-step record of what the system did
+- `signal` means a number or event that helps you notice a problem
+- `dashboard` means a screen that shows those signals together
+- a `node` is one step in a larger workflow
+- a `validator` is a pass-or-fail check that looks for mistakes
+
+## Why this matters
+
+When something goes wrong in production, you need clues. Observability gives you those clues so you can stop guessing.
+
 ## What to log for each run
 
 At minimum, record:
@@ -20,6 +32,15 @@ At minimum, record:
 - approval events
 
 `Token` is a small piece of text that the model reads or writes. `Token usage` is the count of those pieces, which helps you estimate how much work a run did and how much it cost.
+
+If the word token feels strange, just read it as "small text piece."
+
+Other quick meanings:
+
+- a `run id` is the label for one full attempt
+- a `prompt version` is the exact wording of the instruction used for that run
+- `node transitions` means the order of workflow steps the system moved through
+- `validator outcomes` means which checks passed and which checks failed
 
 ## A useful trace shape
 
@@ -61,14 +82,16 @@ Plain-language definitions:
 - a `dead-letter rate` is the share of runs that fail so badly they get pushed into a holding area for manual inspection
 - a `trace_id` is a shared label that lets you connect logs, tool calls, approvals, and validator results from the same run
 
+Those definitions matter because a dashboard is only useful when you know what each number means.
+
 Sample operational dashboard:
 
 | Signal | Healthy range | Warning sign |
 | --- | --- | --- |
-| P95 latency | under 8s | rising after prompt expansion |
-| Cost per run | under $1.20 | sudden spike after parallel fan-out |
-| Validator failure rate | under 5% | jumps after schema change |
-| Dead-letter rate | under 2% | cluster on one node |
+| P95 latency | under 8s | rising after the instructions get much longer |
+| Cost per run | under $1.20 | sudden spike after the system starts many branches at once |
+| Validator failure rate | under 5% | jumps after the expected output format changes |
+| Dead-letter rate | under 2% | most failures now happen in one workflow step |
 
 ## Failure case: no trace linkage
 
