@@ -10,6 +10,7 @@ Quick meanings:
 - `approval precision` asks whether the system requests approval for the right cases instead of too many or too few
 - `audit log completeness` asks whether the record contains enough detail to reconstruct what happened
 - `autonomy` means how much the system does on its own without a human step
+- `latency` means how long one task takes from start to finish
 
 ## Questions To Answer
 

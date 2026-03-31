@@ -14,6 +14,8 @@ Score each area from 1 to 5.
 
 ## Retrieval Design
 
+Here, `vector search` means meaning-based search, `chunking` means splitting documents into smaller pieces, and `reranking` means sorting the found evidence again so the strongest items rise to the top.
+
 - 1: vector search only, with no explanation
 - 3: chunking and retrieval choices are documented
 - 5: hybrid retrieval and reranking are justified with evidence

@@ -66,7 +66,7 @@ This course explains how one model call becomes a workflow. The central lesson i
 
 ### What they teach
 
-These are example libraries more than traditional courses, but they act like lab manuals. They show how SDK calls, tool use, structured outputs, and streaming patterns look in real code.
+These are example libraries more than traditional courses, but they act like lab manuals. An `SDK`, or software development kit, is a helper library that makes an API easier to use in code. These examples show how SDK calls, tool use, structured outputs, and streaming patterns look in real code.
 
 ### Core topics and subtopics
 

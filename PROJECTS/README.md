@@ -8,8 +8,8 @@ These project guides turn the curriculum into proof. They are not toy exercises.
 2. Read the project `README.md` for scope and success criteria.
 3. Use `architecture.md` to shape the system before you start coding.
 4. Use `build-plan.md` to break the work into milestones.
-5. Use `eval-plan.md` to define how quality will be measured.
-6. Use `rubric.md` to decide whether the project is portfolio-worthy yet.
+5. Use `eval-plan.md` to define how quality will be measured. Here, an `eval` is a purposeful test that tells you whether the system is actually getting better.
+6. Use `rubric.md` to decide whether the project is portfolio-worthy yet. A `rubric` is just a scoring guide with clear criteria.
 
 If a project word feels too advanced, read the project `README.md` before anything else. The README should explain the idea in plain language first.
 

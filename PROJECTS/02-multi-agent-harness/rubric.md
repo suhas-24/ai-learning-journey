@@ -2,6 +2,8 @@
 
 Use this rubric to check whether the design is controlled instead of merely complicated.
 
+Here, `autonomy` means how much the system does on its own without waiting for a person.
+
 Score each area from 1 to 5.
 
 ## Role Design
@@ -14,7 +16,7 @@ Score each area from 1 to 5.
 
 - 1: mostly autonomous with weak safeguards
 - 3: retries and approvals exist
-- 5: bounded autonomy is explicit and testable
+- 5: the amount the system does on its own is clearly limited and testable
 
 ## Persistence
 

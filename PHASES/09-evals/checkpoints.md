@@ -14,7 +14,7 @@ Use these checkpoints as a quick self-test. If a line feels fuzzy, go back to th
 - I can draft a small labeled dataset for a real workflow.
 - I can write a rubric that defines what good output means.
 - I can define a minimum trace schema with run ids and node outcomes.
-- I can choose at least two signals that should block a merge.
+- I can choose at least two signals that should stop a weak change from being accepted into the main project.
 
 ## Failure checks
 

@@ -7,7 +7,7 @@ If these words are unfamiliar, here is the quick version:
 - `Control flow` is the order in which a system does things.
 - `State` is the information the system remembers while it is working.
 - A `tool boundary` is the line between what the model can decide and what an external tool can do.
-- `MCP` means Model Context Protocol, which is a shared way to describe tools for model-driven systems.
+- `MCP` means Model Context Protocol, which is a shared way to describe tools for systems where a model decides when to use them.
 - `A2A` means agent-to-agent communication.
 - `CLI` means command-line interface, which is a text-based way to run a program from the terminal.
 
@@ -27,10 +27,10 @@ The MCP SDK teaches how tools are described and exposed in a standard way. In pl
 
 ### Core topics and subtopics
 
-- Tool schemas and typed boundaries.
-- Capability discovery.
-- Client-server communication.
-- Safe integration of external actions into an agent workflow.
+- Clear descriptions of what a tool expects and returns.
+- How a system discovers what tools are available.
+- How the caller and the tool server exchange information.
+- Safe use of outside actions inside an agent workflow.
 
 ### Best phases
 

@@ -39,7 +39,7 @@ By the end of this phase, you should be able to:
 - write a task spec with one clear output format
 - build train, validation, and test splits
 - prepare a small supervised fine-tuning dataset
-- choose between LoRA, QLoRA, or no fine-tuning
+- choose between LoRA, QLoRA, or no fine-tuning, where LoRA-style methods train a small add-on part instead of changing the whole model
 - evaluate a tuned model against the same baseline and held-out set
 - write a short decision memo that names both gains and tradeoffs
 

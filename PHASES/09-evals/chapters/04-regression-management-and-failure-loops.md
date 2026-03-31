@@ -23,9 +23,9 @@ For AI systems, the loop expands:
 production failure -> classify failure -> add dataset case -> add trace label -> patch system -> rerun evals
 ```
 
-## What should block a merge
+## What should stop a weak change from being accepted
 
-Good merge-blocking signals:
+Good stop-the-change signals:
 
 - significant drop in task success rate
 - major regression in safety refusal correctness

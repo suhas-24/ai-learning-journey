@@ -50,7 +50,7 @@ Write how the trace data would reveal it.
 
 ## Stretch task
 
-Describe which of your signals should block a merge and which should only trigger investigation.
+Describe which of your signals should stop a weak change from being accepted into the main project and which should only trigger investigation.
 
 Use [Observability, Traces, and Runtime Signals](../chapters/03-observability-traces-and-runtime-signals.md) for examples.
 

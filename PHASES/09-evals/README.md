@@ -42,4 +42,4 @@ Without evals, teams often ship changes that look fine in a demo but fail on rea
 
 ## Completion standard
 
-You are done with this phase when you can build a small golden dataset, choose metrics that match a task, instrument the key runtime signals, and explain which failures should block a merge.
+You are done with this phase when you can build a small golden dataset, choose metrics that match a task, instrument the key runtime signals, and explain which failures should stop a change from being accepted into the main project.
