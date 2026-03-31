@@ -3,6 +3,7 @@ from pathlib import Path
 
 
 def read_file(path: str) -> str:
+    # A path is the location of a file on disk.
     file_path = Path(path)
     if not file_path.exists():
         raise FileNotFoundError(f"Missing file: {path}")
@@ -10,6 +11,7 @@ def read_file(path: str) -> str:
 
 
 def simulate_model(messages: list[dict]) -> dict:
+    # In this demo, "the model" is just a simple rule so the flow stays easy to inspect.
     last_user_message = messages[-1]["content"]
 
     if "notes.txt" in last_user_message:
@@ -26,6 +28,7 @@ def simulate_model(messages: list[dict]) -> dict:
 
 
 def main() -> None:
+    # A message is one item in the conversation history.
     messages = [
         {"role": "system", "content": "Use tools when file evidence is needed."},
         {"role": "user", "content": "What unfinished tasks are in notes.txt?"},
@@ -37,6 +40,7 @@ def main() -> None:
     if first_response["type"] == "tool_call":
         # The model asked for help, so the program decides whether to run the tool.
         tool_result = read_file(first_response["arguments"]["path"])
+        # The tool result becomes part of the context for the next step.
         messages.append({"role": "tool", "content": tool_result})
         final_response = {
             "type": "final",

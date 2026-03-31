@@ -2,6 +2,11 @@
 
 This plan begins with scope because a safe workflow agent is only useful if everyone agrees on what it is allowed to do.
 
+Two terms to pin down before the milestones:
+
+- a `boundary statement` is a short note explaining what the system will do and what it will refuse to do
+- a `risk register` is a list of important risks and how you plan to reduce them
+
 Quick meanings:
 
 - a `request schema` is the expected shape of the incoming request

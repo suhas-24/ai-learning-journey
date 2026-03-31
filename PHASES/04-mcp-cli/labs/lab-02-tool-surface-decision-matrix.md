@@ -6,6 +6,13 @@ This lab trains the judgment layer, not just implementation skill.
 
 ## Instructions
 
+Quick reminder before you choose:
+
+- `CLI` means a command-line tool your program runs on the local machine.
+- `API` means a service your code calls over the network.
+- `MCP` means a shared tool interface that helps an agent discover what a tool does and how to call it.
+- `A2A` means one agent handing a bounded task to another agent.
+
 For each task below, choose `CLI`, `API`, `MCP`, or `A2A`, then explain why in two sentences:
 
 1. Run a local test suite after every generated code change.

@@ -2,6 +2,8 @@
 
 This eval plan checks quality, safety, and operator trust.
 
+Here, an `operator` is the person who watches or manages the system, and `trust` means they can understand what happened and rely on the controls.
+
 Quick meanings:
 
 - `operator trust` means a human reviewer feels the system is understandable and safe enough to rely on

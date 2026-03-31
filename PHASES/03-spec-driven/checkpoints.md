@@ -1,5 +1,9 @@
 # Phase 3 Checkpoints
 
+Use this page as a plain-language self-test.
+
+Here, a `spec` is the written description of how something should behave, and a `constraint` is a rule that limits what it is allowed to do.
+
 ## Concept Checks
 
 1. Why are specs valuable even when the code already works?
@@ -13,7 +17,7 @@
 
 ## Practical Checks
 
-- write a short agent contract with role, constraints, escalation, and done
+- write a short agent contract with role, constraints, escalation, and done condition
 - separate one mixed rule set into repo-level, agent-level, and skill-level instructions
 - review a vague spec and rewrite it into concrete language
 

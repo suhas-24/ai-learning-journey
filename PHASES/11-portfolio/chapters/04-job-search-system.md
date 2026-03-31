@@ -25,6 +25,14 @@ Example:
 Built a retrieval-augmented QA system over 2,000 internal documents using hybrid search, reranking, and citation-aware generation; tracked faithfulness and answer relevance on a 120-question regression set.
 ```
 
+If that sentence feels compressed, unpack it:
+
+- `retrieval-augmented` means the system looks up evidence before answering
+- `hybrid search` means combining more than one search method
+- `reranking` means sorting the results again so the best evidence rises higher
+- `faithfulness` means the answer matches the evidence
+- a `regression set` is a saved test set used to catch old failures returning
+
 ## Interview Preparation Matrix
 
 For each project, prepare answers for:

@@ -5,9 +5,9 @@ Use these checkpoints as a plain self-test. If a line feels fuzzy, go back to th
 ## Knowledge checks
 
 - I can define prompt injection in operational terms, not only as a buzzword.
-- I can name at least four trust boundaries in an AI workflow.
+- I can name at least four trust boundaries, which means places where control changes hands, in an AI workflow.
 - I can explain why validation after the final answer is too late for risky tools.
-- I can explain least privilege with an agent-specific example.
+- I can explain least privilege, which means giving only the minimum needed permission, with an agent-specific example.
 
 ## Design checks
 
@@ -20,6 +20,6 @@ Use these checkpoints as a plain self-test. If a line feels fuzzy, go back to th
 
 - I can walk through a prompt injection from retrieval to containment.
 - I can identify one guardrail that is too weak and one that is too strict.
-- I can turn a safety incident into a permanent regression test for Phase 09.
+- I can turn a safety incident into a permanent regression test, which means a test that prevents the same failure from quietly returning, for Phase 09.
 
 If you miss any item, revisit [Threat Models for AI Systems](./chapters/01-threat-models-for-ai-systems.md) and [Lab 02](./labs/lab-02-build-safety-gates.md).

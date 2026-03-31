@@ -45,6 +45,8 @@ Measure:
 - citation accuracy
 - abstention quality, which checks whether the system refuses weak questions instead of guessing
 
+Here, `abstention` means the system says "I do not have enough evidence to answer safely" instead of pretending to know.
+
 ## Manual Review
 
 Even with metrics, humans still need to read hard cases.

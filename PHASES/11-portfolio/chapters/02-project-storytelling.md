@@ -34,6 +34,14 @@ Stronger line:
 Built a document-grounded question answering system over internal policy manuals, using retrieval, reranking, and citation-aware answer generation. Evaluated it on a 120-question regression set.
 ```
 
+If that stronger line still feels dense, translate it like this:
+
+- `document-grounded` means the answer is tied to documents you can inspect
+- `retrieval` means finding the right evidence first
+- `reranking` means sorting the found evidence again so the best items rise higher
+- `citation-aware` means the answer keeps track of where its evidence came from
+- a `regression set` is a saved group of test questions used to catch old failures coming back
+
 The stronger line explains scope, mechanism, and evidence.
 
 ## What To Include In A Failure Story
@@ -51,7 +59,7 @@ Example:
 Early retrieval looked good in demos but failed on policy comparison questions. Manual review showed chunking had split exceptions away from the main rule text. I changed the chunking strategy, added reranking, and context recall improved on the hard set.
 ```
 
-That kind of story builds trust because it shows judgment, not just success.
+If that example feels technical, the simpler version is: "the search looked fine at first, but it kept finding incomplete evidence." That kind of story builds trust because it shows judgment, not just success.
 
 ## Anti-Patterns
 

@@ -9,6 +9,7 @@ You need both.
 - `trace` means a step-by-step record of what the system did
 - `signal` means a number or event that helps you notice a problem
 - `dashboard` means a screen that shows those signals together
+- a `token` is a small piece of text the model reads or writes
 - a `node` is one step in a larger workflow
 - a `validator` is a pass-or-fail check that looks for mistakes
 
@@ -31,7 +32,7 @@ At minimum, record:
 - validator outcomes
 - approval events
 
-`Token` is a small piece of text that the model reads or writes. `Token usage` is the count of those pieces, which helps you estimate how much work a run did and how much it cost.
+`Token usage` is the count of those pieces, which helps you estimate how much work a run did and how much it cost.
 
 If the word token feels strange, just read it as "small text piece."
 

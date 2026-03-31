@@ -86,7 +86,7 @@ Failure mode:
 
 ### 4. Graph Execution
 
-Graph orchestration models the workflow as nodes and edges with shared state.
+Graph orchestration models the workflow as nodes and edges with shared state. Here, `state` just means the saved information that each step can read and update as the workflow moves forward.
 
 In plain language, a graph is just a map of allowed next steps. Each box is a place the workflow can be, and each arrow is a choice for what can happen next.
 

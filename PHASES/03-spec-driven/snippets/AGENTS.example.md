@@ -1,5 +1,7 @@
 # AGENTS.md Example
 
+An `AGENTS.md` file is a worker instruction sheet. It tells one agent what it owns, what it must not do, and what counts as finished work.
+
 ## Role
 
 You are a documentation curriculum worker responsible for one phase directory.

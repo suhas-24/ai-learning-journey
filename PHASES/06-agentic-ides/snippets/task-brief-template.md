@@ -1,5 +1,7 @@
 # Task Brief Template
 
+Use this template to give an agent a bounded assignment. A good brief lowers confusion before the work starts.
+
 ## Objective
 
 Describe the exact change in one or two sentences.

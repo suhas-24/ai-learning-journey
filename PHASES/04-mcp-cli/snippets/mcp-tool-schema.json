@@ -3,19 +3,23 @@
   "description": "Create a GitHub issue in a pre-approved repository with validated fields.",
   "inputSchema": {
     "type": "object",
+    "description": "This schema describes the exact input shape the tool accepts.",
     "properties": {
       "title": {
         "type": "string",
+        "description": "A short human-readable issue title.",
         "minLength": 8,
         "maxLength": 120
       },
       "body": {
         "type": "string",
+        "description": "The main issue text with enough detail to be useful.",
         "minLength": 20,
         "maxLength": 5000
       },
       "labels": {
         "type": "array",
+        "description": "Optional category tags to attach to the issue.",
         "items": {
           "type": "string",
           "minLength": 1,

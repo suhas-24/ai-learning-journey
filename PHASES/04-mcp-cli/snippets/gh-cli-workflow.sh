@@ -1,6 +1,9 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
+# This script uses the GitHub command-line tool, often shortened to "CLI",
+# to create one issue in a controlled way.
+
 # Keep the script flexible by letting the caller provide the repo, title, and body.
 repo="${1:-OWNER/TEST_REPO}"
 title="${2:-Lab: compare tool surfaces}"

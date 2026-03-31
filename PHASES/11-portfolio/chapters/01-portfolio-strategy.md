@@ -37,6 +37,13 @@ Pick projects that reveal engineering judgment:
 
 These are useful because they show different layers of skill.
 
+If those examples feel dense, translate them like this:
+
+- a `retrieval system` finds evidence before answering
+- `grounded citations` point back to the source of the answer
+- an `orchestration harness` is the control layer around a workflow
+- `traces` are step-by-step records of what happened
+
 ## The Hiring Manager Lens
 
 A hiring manager usually asks:

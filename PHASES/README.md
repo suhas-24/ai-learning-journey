@@ -23,8 +23,8 @@ If a word in a phase title feels new, that is a clue to read the `README.md` slo
 
 ### Integration
 
-- [04-mcp-cli](./04-mcp-cli/README.md): learn how programs connect to outside tools and when to use an API, a command line, or a protocol like MCP
-- [05-rag-graphrag](./05-rag-graphrag/README.md): learn how to look up useful information before answering, and why chunking, reranking, and memory matter
+- [04-mcp-cli](./04-mcp-cli/README.md): learn how programs connect to outside tools and when to use an API, a command line, or a shared tool language like MCP
+- [05-rag-graphrag](./05-rag-graphrag/README.md): learn how to look up useful information before answering, and how to break documents into smaller pieces, find the best pieces, and reuse past information
 - [06-agentic-ides](./06-agentic-ides/README.md): learn how AI coding tools fit into a developer’s workflow and how to keep control of your changes
 
 ### Systems

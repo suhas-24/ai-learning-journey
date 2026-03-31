@@ -2,7 +2,7 @@
 
 This file is the navigation map for the full curriculum. Use it when you want to understand how the phases build on one another instead of treating them as disconnected topics.
 
-If words like `model`, `token`, `retrieval`, or `eval` feel fuzzy, read [FOUNDATIONS/README.md](./FOUNDATIONS/README.md) first. This page is the map, but the Foundations pages explain the vocabulary.
+If words like `model`, `token`, `retrieval`, or `quality check` (`eval`) feel fuzzy, read [FOUNDATIONS/README.md](./FOUNDATIONS/README.md) first. This page is the map, but the Foundations pages explain the vocabulary.
 
 ## The Dependency Chain
 

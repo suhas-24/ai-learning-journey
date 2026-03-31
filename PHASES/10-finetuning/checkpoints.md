@@ -11,7 +11,7 @@ You should be able to explain:
 - how prompting, retrieval, and fine-tuning are different
 - one good reason to fine-tune
 - one good reason not to fine-tune
-- what LoRA changes
+- what LoRA changes, where `LoRA` means a small add-on training method instead of changing the whole model
 - why a held-out test set matters
 
 ## Skill Check
@@ -20,7 +20,7 @@ You should be able to:
 
 - write a clear task spec
 - create train, validation, and test splits
-- format a small supervised fine-tuning dataset in JSONL
+- format a small supervised fine-tuning dataset in `JSONL`, which means one JSON record per line
 - describe a first LoRA experiment
 - compare a baseline and tuned model on the same scorecard
 
@@ -28,7 +28,7 @@ You should be able to:
 
 Before leaving this phase, produce:
 
-- one labeled dataset with a written policy
+- one labeled dataset with a written label policy
 - one baseline prompt
 - one experiment config
 - one scorecard

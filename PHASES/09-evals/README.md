@@ -6,6 +6,13 @@ An `eval` is a structured check that asks whether the system is doing its job. `
 
 If those words are unfamiliar, start with a school test. Evals are the test, observability is the ability to watch how the student solved the problem, and regression control is the habit of noticing when a new lesson accidentally makes the student worse.
 
+Two more simple translations help:
+
+- a `dataset` is a collection of examples
+- a `metric` is a number used to measure quality
+- a `trace` is the step-by-step record of one run
+- a `safety gate` is a check or pause before risky work continues
+
 Recommended order:
 
 1. [Evaluation Design and Golden Datasets](./chapters/01-evaluation-design-and-golden-datasets.md)

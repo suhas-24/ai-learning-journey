@@ -9,6 +9,7 @@ Three quick terms before the walkthroughs:
 - `fan-out` means one step splits into several parallel sub-tasks
 - an `SLA`, or service-level agreement, is a target such as "reply within 8 seconds"
 - an `idempotent boundary` is a repeat-safe boundary where retrying the same step does not create a duplicate side effect
+- a `budget spiral` is a failure where cost keeps growing because too many steps keep running
 
 ## Walkthrough 1: fan-out search causes budget spiral
 
@@ -94,6 +95,8 @@ A downstream API changes `title` to `headline`. The tool adapter is not updated.
 2. fail fast with a typed error
 3. route to fallback or escalation
 4. create a regression test from the broken payload
+
+Here, a `typed error` means an error with a specific name and meaning, so your program can react in a deliberate way instead of treating all failures as the same.
 
 ## Runbook habit
 

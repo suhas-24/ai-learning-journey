@@ -34,6 +34,14 @@ Stronger:
 Built a workflow agent with schema-validated tool calls, approval gates, and audit logging; tracked task completion, intervention rate, and latency across staged demo scenarios.
 ```
 
+If that sentence feels too compressed, unpack it this way:
+
+- `schema-validated` means the data shape was checked before use
+- `approval gates` means the system paused for human review before risky steps
+- `audit logging` means important actions were recorded so another person could inspect them later
+- `intervention rate` means how often a human had to step in
+- `latency` means how long one task took from start to finish
+
 ## Deliverable
 
 Store your best three bullets in [snippets/resume-bullets-template.md](../snippets/resume-bullets-template.md).

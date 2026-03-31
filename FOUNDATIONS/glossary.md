@@ -131,7 +131,7 @@ A vector database stores embeddings and finds similar items quickly.
 
 MCP means Model Context Protocol.
 
-It is a standard way for tools and data sources to expose typed capabilities to model-driven systems.
+It is a shared way for tools to describe what they can do, what input they need, and what output they return.
 
 ## A2A
 

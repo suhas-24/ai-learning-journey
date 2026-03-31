@@ -2,6 +2,8 @@
 
 Use this rubric as a quick honesty check.
 
+Here, a `rubric` is just a scoring guide with clear criteria.
+
 Score each area from 1 to 5.
 
 ## Problem Framing

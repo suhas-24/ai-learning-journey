@@ -2,6 +2,15 @@
 
 This lab teaches the handoff between model reasoning and outside evidence.
 
+If the title feels dense, here are the words in plain language:
+
+- a `tool` is a helper your program can run, such as reading a file
+- `augmented` means "helped by something extra"
+- a `loop` is a repeated pattern of steps
+- `context` is the information the model can currently see
+
+So a `tool-augmented research loop` is just a repeated pattern where the model can ask your program for outside information before answering.
+
 ## Goal
 
 Create a small loop where:
@@ -17,6 +26,8 @@ Create a small loop where:
 `read_notes(path: str) -> str`
 
 The tool can read a local text file instead of using the web. That keeps the lesson focused on the interaction pattern.
+
+Here, `path` just means the location of the file on your computer.
 
 ## Important Design Rule
 

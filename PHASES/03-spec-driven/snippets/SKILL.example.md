@@ -1,5 +1,7 @@
 # SKILL.md Example
 
+A `skill` file is a reusable workflow note. Instead of repeating the same teaching or review steps in every task, you write them down once and reuse them.
+
 ## Name
 
 Documentation Review Workflow

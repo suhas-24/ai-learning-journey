@@ -2,6 +2,8 @@
 
 This template helps you explain a project in a calm, repeatable order instead of improvising under pressure.
 
+Here, `evidence` means the proof that the project works, such as a chart, trace, screenshot, or measured result.
+
 ## Opening
 
 - What problem does this system solve?

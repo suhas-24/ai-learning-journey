@@ -9,12 +9,15 @@ This page explains the system in plain language before the design details.
 - `telemetry` means logs, traces, or metrics that show system behavior
 - an `audit trail` is a record you can inspect later to reconstruct what happened
 - a `schema` is the shape of the data you expect
+- an `artifact` is a saved output, such as a report, file, or structured record
 
 ## System Shape
 
 ```text
 user or API -> intake layer -> agent planner/executor -> tools and policies -> approval/audit -> artifact delivery -> telemetry
 ```
+
+If `API` is new, it means a structured way for one program to send a request to another program.
 
 ## Component Guide
 

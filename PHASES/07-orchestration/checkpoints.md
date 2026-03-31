@@ -2,6 +2,11 @@
 
 Use this list to verify actual understanding, not just familiarity.
 
+If a word feels dense, slow down and translate it:
+
+- `idempotency` means "safe to repeat"
+- a `dead-letter condition` means a failure so serious the run is moved aside for human review
+
 ## Knowledge checks
 
 - I can explain the difference between a single loop, a pipeline, and a graph.

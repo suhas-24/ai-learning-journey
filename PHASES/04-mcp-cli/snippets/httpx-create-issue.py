@@ -4,6 +4,8 @@ import httpx
 
 
 def main() -> None:
+    # This script uses a direct API call instead of a command-line tool.
+    # An API is a structured way for one program to ask another program to do work.
     # Read the secret and repo name from the environment so the script stays reusable.
     token = os.environ["GITHUB_TOKEN"]
     repo = os.environ.get("GITHUB_REPO", "OWNER/TEST_REPO")

@@ -132,7 +132,7 @@ In practice, each phase module should look like:
 
 - Three public projects that prove depth in evidence-grounded answers, multi-step workflows, and production safety
 - A GitHub profile with clean READMEs, evaluation evidence, and honest engineering notes
-- Enough fluency with Python, LLM APIs, tool protocols such as Model Context Protocol (MCP), workflow frameworks such as LangGraph, and safety checks to build without hand-holding
+- Enough fluency with Python, LLM APIs, tools that let models use outside systems such as MCP, software for multi-step AI workflows such as LangGraph, and safety checks to build without hand-holding
 - A personal library of wins, failures, fixes, and design decisions I can talk through in interviews
 
 ## Notes On Pace

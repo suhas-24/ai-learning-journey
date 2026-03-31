@@ -6,6 +6,11 @@ Without state, a workflow forgets what happened five seconds ago. It may repeat 
 
 A `checkpoint` is a saved point we trust. `Resumability` means the system can restart from that saved point instead of beginning again.
 
+Two more words help here:
+
+- a `run_id` is the unique name for one attempt
+- an `artifact` is a saved output file or record the next step may need
+
 ## What belongs in orchestration state
 
 Store facts that the runtime needs in order to continue correctly:
@@ -87,6 +92,8 @@ def choose_resume_node(state: dict) -> str:
 ```
 
 `Idempotent` means "safe to repeat without causing duplicate side effects." If sending an email is not idempotent, the system needs a way to make sure a restart does not send the same email twice.
+
+A `side effect` is any real change outside the program, such as sending a message, writing a file, or changing a database record.
 
 ## What usually goes wrong
 

@@ -15,7 +15,7 @@ Here are the words we need first:
 Full fine-tuning updates all model weights.
 That can be expensive and memory-heavy.
 
-LoRA, short for low-rank adaptation, trains a smaller set of adapter weights while keeping most of the base model frozen.
+LoRA, short for low-rank adaptation, trains a smaller set of `adapter` weights while keeping most of the base model frozen. An `adapter` is a small extra component added so you can teach a new habit without rewriting the whole model.
 
 For a beginner, the key idea is simple:
 
@@ -64,7 +64,7 @@ You should understand these knobs:
 
 - batch size: how many examples are processed at one time
 - learning rate: how quickly the model changes
-- epochs: how many times the model sees the training data
+- epochs: how many times the model sees the training data from start to finish
 - sequence length: the maximum number of tokens in one example
 - gradient accumulation: a way to simulate larger batches when memory is tight
 - target modules: which parts of the model receive adapters
@@ -90,6 +90,8 @@ max_seq_length: 2048
 ```
 
 See [snippets/lora-config.yaml](../snippets/lora-config.yaml) for the same idea in a commented file.
+
+If names like `q_proj` and `v_proj` look strange, do not worry about the math yet. They are internal names for selected parts of the model where the adapters are attached.
 
 ## Start Small
 
@@ -128,6 +130,8 @@ There is no moral winner here. Pick the path that matches what you are trying to
 - cost
 - validation scores
 - gold-set failures
+
+Here, a `checkpoint` is a saved version of the tuned model at one moment in training.
 
 If you cannot reconstruct what changed between runs, you are not doing experiments. You are guessing.
 

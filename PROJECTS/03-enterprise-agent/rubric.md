@@ -2,6 +2,8 @@
 
 Use this rubric to check whether the project feels like a real operational system with guardrails, not just a clever prototype.
 
+Here, `operational` means "ready to run and monitor in real use," not just "looks good in a demo."
+
 Score each area from 1 to 5.
 
 ## Scope Discipline

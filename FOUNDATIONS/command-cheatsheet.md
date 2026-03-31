@@ -18,7 +18,7 @@ cd /path/to/project
 
 Git is the tool that keeps track of file changes over time.
 
-`git status --short --branch` shows what changed. `git add` stages a file. `git commit` saves a checkpoint. `git push` sends your commits to GitHub. `git pull --rebase` brings in newer changes while keeping history tidy.
+`git status --short --branch` shows what changed. `git add` puts a changed file into the next save; this step is called `staging`. `git commit` saves a checkpoint. `git push` sends your commits to GitHub. `git pull --rebase` downloads newer changes, then places your local work on top so the story of changes is easier to read.
 
 ```bash
 git status --short --branch

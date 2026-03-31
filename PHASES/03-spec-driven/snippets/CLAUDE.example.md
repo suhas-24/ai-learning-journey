@@ -1,5 +1,7 @@
 # CLAUDE.md Example
 
+A repo rule file like `CLAUDE.md` is a shared instruction layer. It holds broad rules that apply across many tasks instead of one narrow assignment.
+
 ## Repo Rules
 
 - Prefer ASCII in edited files unless the file already relies on other characters.

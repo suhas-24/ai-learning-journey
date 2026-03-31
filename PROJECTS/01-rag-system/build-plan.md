@@ -2,6 +2,14 @@
 
 This plan moves from an empty folder to a system that can answer with evidence.
 
+If the key words are new:
+
+- `RAG` means retrieval-augmented generation, which is a pattern where the system finds evidence before answering
+- a `corpus` is the document collection you want to search
+- `ingestion` means reading those documents into a form your system can use
+- `retrieval` means finding the most useful evidence
+- `reranking` means sorting the results again to improve quality
+
 Quick meanings for the terms used below:
 
 - a `metadata schema` is a simple description of the fields stored with each chunk, such as source name, page, date, or section
