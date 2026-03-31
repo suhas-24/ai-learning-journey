@@ -7,7 +7,7 @@ This file is the heartbeat of the journey. Every week should answer four questio
 3. What confused me?
 4. What is the next concrete move?
 
-It is also the bridge between reading and building. The phase files tell me what to understand; this file tells me whether I actually used that understanding.
+It is also the bridge between reading and building. The phase modules tell me what to understand; this file tells me whether I actually used that understanding.
 
 ---
 
@@ -33,6 +33,7 @@ This week is successful if I can explain the difference between reading about Py
 - Created `ai-trends-tracker` and pushed the roadmap repo
 - Created `ai-learning-journey` and pushed the tracker repo
 - Wrote a first pass of the complete learning structure: phases, projects, resources, wins, and stuck logs
+- Restructured the curriculum into chapter-based phase modules with labs, snippets, checkpoints, and troubleshooting guides
 - Validated the `ai-trends-tracker` Poetry setup and GitHub workflow syntax
 
 ### What I Built

@@ -50,3 +50,9 @@ Each win should record:
 **What happened:** Created coordination files for a five-module rewrite so the repo can be expanded in parallel without losing context.  
 **Why it matters:** The learning system can now scale without forcing every idea into one crowded window.  
 **What it unlocks next:** Separate workers can rewrite different parts of the repo at the same time with clear ownership.
+
+### 2026-03-31 - Rebuilt the curriculum into teachable modules
+**Phase:** Pre-Phase 1  
+**What happened:** Replaced the flat phase notes and project briefs with chapter-based modules, guided labs, reusable snippets, checkpoints, troubleshooting guides, and a structured resource library.  
+**Why it matters:** The repo now teaches concepts directly instead of only naming topics or pointing elsewhere.  
+**What it unlocks next:** Weekly work can focus on actually studying, building, and measuring progress instead of reorganizing notes.

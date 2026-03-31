@@ -1,0 +1,33 @@
+{
+  "name": "create_issue",
+  "description": "Create a GitHub issue in a pre-approved repository with validated fields.",
+  "inputSchema": {
+    "type": "object",
+    "properties": {
+      "title": {
+        "type": "string",
+        "minLength": 8,
+        "maxLength": 120
+      },
+      "body": {
+        "type": "string",
+        "minLength": 20,
+        "maxLength": 5000
+      },
+      "labels": {
+        "type": "array",
+        "items": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 40
+        },
+        "maxItems": 5
+      }
+    },
+    "required": [
+      "title",
+      "body"
+    ],
+    "additionalProperties": false
+  }
+}

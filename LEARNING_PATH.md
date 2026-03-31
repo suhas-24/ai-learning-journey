@@ -1,0 +1,78 @@
+# Learning Path
+
+This file is the navigation map for the full curriculum. Use it when you want to understand how the phases build on one another instead of treating them as disconnected topics.
+
+## The Dependency Chain
+
+### Foundation Layer
+
+- [Phase 1: Python + Dev Tooling](./PHASES/01-python/README.md)
+- [Phase 2: Raw LLM APIs + Context Engineering](./PHASES/02-llm-apis/README.md)
+- [Phase 3: Spec-Driven Development](./PHASES/03-spec-driven/README.md)
+
+These phases teach how to write code, call models directly, and define agent behavior clearly.
+
+### Integration Layer
+
+- [Phase 4: MCP + CLI + A2A](./PHASES/04-mcp-cli/README.md)
+- [Phase 5: RAG + GraphRAG + Memory](./PHASES/05-rag-graphrag/README.md)
+- [Phase 6: Agentic IDEs + Coding Agents](./PHASES/06-agentic-ides/README.md)
+
+These phases teach how models connect to tools, knowledge, and coding workflows.
+
+### Systems Layer
+
+- [Phase 7: Orchestration + Harness Engineering](./PHASES/07-orchestration/README.md)
+- [Phase 8: Guardrails + Security + Governance](./PHASES/08-guardrails/README.md)
+- [Phase 9: Evals + Observability + EDD](./PHASES/09-evals/README.md)
+
+These phases teach how to turn an interesting agent into a durable system.
+
+### Specialization + Proof Layer
+
+- [Phase 10: Fine-Tuning](./PHASES/10-finetuning/README.md)
+- [Phase 11: Portfolio + Job Readiness](./PHASES/11-portfolio/README.md)
+
+These phases teach when advanced adaptation is worth it and how to present real capability publicly.
+
+Use [PHASES/README.md](./PHASES/README.md) if you want the full module list in one place. Pair phase study with [RESOURCES/by-phase.md](./RESOURCES/by-phase.md) so you read and watch material that matches the current learning goal.
+
+## Recommended Order
+
+1. Finish enough of Phase 1 that you can build and debug small Python programs.
+2. Do Phase 2 before committing to any framework.
+3. Do Phase 3 early so later agent workflows stay disciplined.
+4. Treat Phase 6 as parallel support, not a substitute for core learning.
+5. Only go deep on Phase 10 if prompting, context engineering, and retrieval are no longer enough.
+
+## Project Path
+
+The portfolio projects align with later phases:
+
+- [PROJECTS/01-rag-system/README.md](./PROJECTS/01-rag-system/README.md) after Phase 5
+- [PROJECTS/02-multi-agent-harness/README.md](./PROJECTS/02-multi-agent-harness/README.md) after Phase 7
+- [PROJECTS/03-enterprise-agent/README.md](./PROJECTS/03-enterprise-agent/README.md) after Phases 8 and 9
+
+## What You Should Be Able To Do Before Moving On
+
+### Before Phase 2
+
+- create and run a small Python project
+- use Git without fear
+- debug simple errors in the terminal
+
+### Before Phase 5
+
+- call model APIs directly
+- understand context windows and tool calls
+- explain the role of specs and tool contracts
+
+### Before Phase 7
+
+- understand retrieval and tool integration
+- know the difference between model behavior and system behavior
+
+### Before Phase 11
+
+- have at least one serious project with metrics and a coherent README
+- be able to explain tradeoffs you made, not just tools you used

@@ -1,0 +1,23 @@
+# Checkpoints
+
+## Knowledge checks
+
+- I can explain the difference between evaluation and observability.
+- I can explain why a golden dataset should include adversarial and edge cases.
+- I can name metrics for retrieval, generation, and end-to-end task success.
+- I can explain why a single overall score is usually misleading.
+
+## Design checks
+
+- I can draft a small labeled dataset for a real workflow.
+- I can write a rubric that defines what good output means.
+- I can define a minimum trace schema with run ids and node outcomes.
+- I can choose at least two signals that should block a merge.
+
+## Failure checks
+
+- I can turn a real incident into a new eval case.
+- I can spot the difference between noisy retrieval and weak generation.
+- I can explain how a dead-letter spike should appear in dashboards and traces.
+
+If any item is weak, revisit [Evaluation Design and Golden Datasets](./chapters/01-evaluation-design-and-golden-datasets.md) and [Lab 02](./labs/02-instrument-a-run.md).

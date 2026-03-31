@@ -7,8 +7,16 @@
 
 This repository is the working notebook for the full journey from absolute beginner to production-capable AI engineer. It is intentionally practical: the goal is not to collect links or certificates, but to build real systems, document what breaks, and turn each phase into proof of skill.
 
+The repository has been restructured into a chapter-based curriculum with labs, snippets, checkpoints, and troubleshooting so it can teach directly instead of behaving like a long outline.
+
 The files in this repo should not be treated like a passive reading list. They are meant to behave like a learning operating system:
 
+- `START-HERE.md` gives the quickest entry ramp
+- `LEARNING_PATH.md` shows the full dependency chain
+- `FOUNDATIONS/` explains shared terms, assumptions, and mental models
+- `PHASES/README.md` is the curriculum index
+- `PROJECTS/README.md` is the portfolio build index
+- `RESOURCES/README.md` explains how to use the reference library
 - `README.md` tells me how to use the repository
 - `PROGRESS.md` captures the weekly learning loop
 - `PHASES/` contains the actual study notes
@@ -41,7 +49,7 @@ Phase 11 ░░░░░░░░░░  0%   Portfolio + Job Readiness
 ```
 
 **Overall:** 0/11 phases complete  
-**What is already done:** the roadmap tracker repo, this learning tracker repo, and the initial structure for the whole curriculum
+**What is already done:** the roadmap tracker repo, this learning tracker repo, and the full module-based curriculum structure
 
 ## Current Focus
 
@@ -49,14 +57,23 @@ Phase 11 ░░░░░░░░░░  0%   Portfolio + Job Readiness
 **Week:** Week 1  
 **Working on:** getting fluent with Python basics, terminal workflow, Git, Poetry, and the habit of writing notes while building
 
+## Best Entry Points
+
+- Start here: [START-HERE.md](./START-HERE.md)
+- Full curriculum map: [LEARNING_PATH.md](./LEARNING_PATH.md)
+- Shared concepts and assumptions: [FOUNDATIONS/README.md](./FOUNDATIONS/README.md)
+- Phase index: [PHASES/README.md](./PHASES/README.md)
+- Project index: [PROJECTS/README.md](./PROJECTS/README.md)
+- Resource library: [RESOURCES/README.md](./RESOURCES/README.md)
+
 ## Weekly Operating Loop
 
-1. Read the current phase file and identify one concept to study deeply.
+1. Read the current phase `README.md` and pick one chapter to study deeply.
 2. Build one small thing that uses that concept.
 3. Update `PROGRESS.md` with what happened, what got stuck, and what comes next.
 4. If something went well, log it in `WINS/README.md`.
 5. If something confused me or slowed me down, log it in `STUCK/README.md`.
-6. Add one note to the active phase file so the phase gets richer over time.
+6. Add one note to the active phase module so the material gets richer over time.
 
 The loop matters because the curriculum gets longer than memory does. Notes need to become external memory.
 
@@ -64,16 +81,16 @@ The loop matters because the curriculum gets longer than memory does. Notes need
 
 | Folder | How I will use it |
 | --- | --- |
-| `PHASES/` | Main study notebook for each phase: concepts, sequence, traps, and exit criteria |
-| `PROJECTS/` | Detailed plans for the three portfolio-grade systems this roadmap requires |
-| `RESOURCES/` | Curated reading and watching list with notes on why each resource matters |
+| `PHASES/` | Chapter-based learning modules with teaching notes, labs, snippets, checkpoints, and troubleshooting |
+| `PROJECTS/` | Detailed build guides for the three portfolio-grade systems this roadmap requires |
+| `RESOURCES/` | Curated books, courses, tools, people, and newsletters with notes on what each one teaches |
 | `WINS/` | Visible proof of progress, especially on slow weeks |
 | `STUCK/` | Debugging journal that turns confusion into reusable knowledge |
 | `PROGRESS.md` | Weekly review cadence, goals, outcomes, and next moves |
 
-## What A Phase File Should Contain
+## What A Phase Module Should Contain
 
-Each phase file should explain the topic, not just name it. A good phase file usually has:
+Each phase module should explain the topic, not just name it. A good phase module usually has:
 
 - why the phase exists
 - the main concepts and subtopics
@@ -83,6 +100,15 @@ Each phase file should explain the topic, not just name it. A good phase file us
 - what success looks like before moving on
 
 That structure is important because AI engineering concepts build on one another. If I cannot explain one layer clearly, the next layer becomes noisy.
+
+In practice, each phase module should look like:
+
+- `README.md` for the big picture and study order
+- `chapters/` for direct teaching
+- `labs/` or `exercises/` for guided practice
+- `snippets/` for reusable code and command examples
+- `checkpoints.md` for self-review
+- `troubleshooting.md` for common failure modes
 
 ## Definition Of A Good Week
 

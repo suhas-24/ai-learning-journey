@@ -1,0 +1,32 @@
+experiment_name: support-routing-lora-v1
+base_model: mistral-7b-instruct
+method: lora
+dataset:
+  train_path: data/train.jsonl
+  validation_path: data/validation.jsonl
+  test_path: data/test.jsonl
+training:
+  learning_rate: 0.0002
+  epochs: 3
+  micro_batch_size: 4
+  gradient_accumulation_steps: 4
+  warmup_ratio: 0.05
+  max_seq_length: 2048
+lora:
+  r: 16
+  alpha: 32
+  dropout: 0.05
+  target_modules:
+    - q_proj
+    - k_proj
+    - v_proj
+    - o_proj
+evaluation:
+  primary_metric: macro_f1
+  secondary_metrics:
+    - schema_validity
+    - latency_ms
+    - cost_per_1000_requests
+artifacts:
+  adapter_output_dir: outputs/support-routing-lora-v1
+  report_path: reports/support-routing-lora-v1.md

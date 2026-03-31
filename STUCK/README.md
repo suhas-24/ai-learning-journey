@@ -62,3 +62,11 @@ Capture five things:
 **The Solution:** Use parallel workers with clear ownership instead of one giant editing pass.  
 **Root Cause:** Context compression becomes a real risk once the notes become rich.  
 **Lesson:** The repo needs modular ownership as much as it needs content quality.
+
+### 2026-03-31 - Local markdown links worked here but broke on GitHub
+**Phase:** Pre-Phase 1  
+**The Problem:** Some rewritten notes used absolute filesystem paths, which made links usable locally but broken in the hosted repository.  
+**What I Tried:** Searched the repo for local path prefixes and traced them back to the generated markdown.  
+**The Solution:** Replaced local absolute links with relative repo links and added index pages so navigation works both locally and on GitHub.  
+**Root Cause:** Repo content inherited assistant-style file references instead of repository-style markdown links.  
+**Lesson:** Files written into a repo must be validated for GitHub compatibility, not only local readability.

@@ -1,0 +1,81 @@
+# Metrics, Rubrics, and Score Interpretation
+
+Metrics are useful only when they match the failure mode you care about.
+
+## Separate the layers
+
+For a retrieval system, at least three layers matter:
+
+- retrieval quality
+- generation quality
+- task outcome
+
+A response can sound polished while being poorly grounded. That is why one score is rarely enough.
+
+## Common metrics
+
+| Metric | What it measures | Typical failure signal |
+| --- | --- | --- |
+| Faithfulness | whether output stays grounded in context | hallucinated claims |
+| Answer relevance | whether the output addresses the question | vague or off-topic answer |
+| Context precision | whether retrieved chunks were useful | noisy retrieval |
+| Context recall | whether the right evidence was found | missing key facts |
+| Task success rate | whether the user goal was completed | workflow failure |
+| Tool success rate | whether tool calls returned useful results | broken integration |
+| Refusal correctness | whether unsafe requests were handled correctly | over-permissive or over-blocking behavior |
+
+More examples live in [Metrics Catalog](../snippets/metrics-catalog.md).
+
+## Rubrics
+
+A rubric makes qualitative judgment more consistent.
+
+Example rubric for a policy-grounded answer:
+
+```yaml
+rubric:
+  grounded_in_sources:
+    score_0: makes unsupported claims
+    score_1: mostly grounded but includes one weak claim
+    score_2: every important claim is source-backed
+  completeness:
+    score_0: misses major requested parts
+    score_1: covers most requested parts
+    score_2: covers all requested parts clearly
+  safety:
+    score_0: exposes restricted details
+    score_1: avoids unsafe content but is clumsy
+    score_2: safely responds and remains useful
+```
+
+## Sample scorecard
+
+```text
+run_id: eval_2026_04_11_a12
+faithfulness: 0.84
+answer_relevance: 0.91
+context_precision: 0.52
+tool_success_rate: 0.67
+overall: investigate retrieval noise and tool adapter failures
+```
+
+Interpretation:
+
+- the answer sounds relevant
+- retrieval is noisy
+- tool execution is unstable
+
+Do not conclude "system is good" from one high number.
+
+## Judge models and their limits
+
+LLM-as-judge can scale qualitative scoring, but it introduces its own bias.
+
+Use it well by:
+
+- providing a structured rubric
+- anchoring with examples
+- spot-checking with human review
+- comparing trends, not worshipping single numbers
+
+Continue with [Observability, Traces, and Runtime Signals](./03-observability-traces-and-runtime-signals.md).

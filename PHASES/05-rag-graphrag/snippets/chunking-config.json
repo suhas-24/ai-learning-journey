@@ -1,0 +1,23 @@
+{
+  "default_strategy": "markdown_headings",
+  "strategies": {
+    "markdown_headings": {
+      "max_tokens": 500,
+      "overlap_tokens": 60
+    },
+    "code_by_symbol": {
+      "max_tokens": 300,
+      "overlap_tokens": 30
+    },
+    "fixed_fallback": {
+      "max_tokens": 400,
+      "overlap_tokens": 40
+    }
+  },
+  "metadata_fields": [
+    "source_path",
+    "doc_type",
+    "topic",
+    "effective_date"
+  ]
+}
