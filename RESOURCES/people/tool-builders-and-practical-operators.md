@@ -2,6 +2,8 @@
 
 This guide focuses on people who teach through workflows, tools, and real project decisions. They are most useful when you want to see how ideas become commands, scripts, traces, and operating habits.
 
+These are the people to study when you want to see the difference between knowing an idea and using it in a real project.
+
 ## Harrison Chase
 
 ### What to learn from him

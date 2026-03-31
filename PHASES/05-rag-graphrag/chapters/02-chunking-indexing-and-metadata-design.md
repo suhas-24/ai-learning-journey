@@ -1,106 +1,102 @@
-# Chapter 2 - Chunking, Indexing, and Metadata Design
+# Chapter 2 - Chunking, Indexing, and Metadata
 
-Chunking is one of the most underestimated retrieval decisions. A chunk is the unit your system can remember, compare, rerank, and cite. If the unit is wrong, the rest of the pipeline works with damaged inputs.
+A `chunk` is a small piece of a document.
 
-## Chunking Strategies
+That piece is what the system searches, ranks, and cites. If the piece is too big, it may mix unrelated ideas. If it is too small, it may lose the meaning.
+
+## Chunking Choices
 
 ### Fixed-size chunking
 
-Useful when:
+This means splitting text into equal-sized pieces.
 
-- documents are messy or unstructured
+Use it when:
+
 - you need a quick baseline
+- the documents are messy
 
 Weakness:
 
-- can split concepts across boundaries
+- it can split a thought in half
 
 ### Structure-aware chunking
 
-Useful when:
+This means splitting by headings, sections, or natural boundaries.
 
-- documents have headings, sections, tables, or code blocks
-- you care about preserving meaning inside boundaries
+Use it when:
+
+- the documents already have structure
+- you want the chunks to preserve meaning
 
 Examples:
 
 - Markdown by heading
-- HTML by semantic section
-- code by function or class
+- HTML by section
+- code by function
 
 ### Semantic chunking
 
-Useful when:
+This means using meaning to decide where one chunk should end and the next should begin.
 
-- you can afford more preprocessing
-- the corpus has long narrative sections
+Use it when:
+
+- the text is long and narrative
+- you can afford extra preprocessing
 
 Weakness:
 
-- harder to reason about
-- may be less predictable for debugging
+- it is harder to debug
+- it is less predictable than heading-based chunking
 
-## Metadata Design
+## Metadata
 
-Metadata is not decoration. It is how retrieval gets narrowed before expensive ranking happens.
+`Metadata` is extra information attached to a chunk.
 
-Strong metadata examples:
+Think of it like labels on a box.
+
+Useful metadata includes:
 
 - `source_path`
 - `doc_type`
-- `product`
+- `topic`
 - `team`
 - `effective_date`
-- `security_level`
 
-Weak metadata examples:
+Why it matters:
 
-- generic tags with no operational use
-- dozens of low-quality labels that never drive filtering
+- it lets you filter before expensive ranking
+- it helps you know where the evidence came from
+- it makes debugging much easier
 
-## Worked Example
+## Indexing
 
-Suppose you index:
+An `index` is the search structure that helps the system find chunks quickly.
+
+Three simple patterns matter here:
+
+- dense index: good for meaning-based search
+- sparse index: good for exact words, names, and error codes
+- hybrid index: uses both
+
+## Example
+
+Suppose you have:
 
 - design docs
 - runbooks
-- incident postmortems
-- architecture diagrams
+- postmortems
 
-Good retrieval design:
+A good setup might:
 
-- chunk runbooks by procedure step
+- chunk runbooks by step
 - chunk postmortems by section
-- attach `doc_type` metadata everywhere
-- filter to `doc_type=runbook` for "how do I recover" questions
+- add `doc_type` everywhere
+- filter to `doc_type=runbook` when the question is "how do I fix this?"
 
-## Indexing Patterns
+## Simple Rule
 
-### Dense vector index
+Choose chunking and metadata together.
 
-Best when:
+If the chunks are bad, the index cannot rescue them. If the metadata is missing, the search will be harder to control.
 
-- semantic similarity matters most
-- users ask natural-language questions
-
-### Sparse keyword index
-
-Best when:
-
-- product names, error codes, and identifiers matter
-- exact terminology must be preserved
-
-### Hybrid index
-
-Best when:
-
-- both semantic and lexical cues matter
-- your query set mixes fuzzy and exact-match needs
-
-See [../snippets/chunking-config.json](../snippets/chunking-config.json) for a sample configuration.
-
-## Design Rule
-
-Choose chunking and metadata together. A beautiful vector index cannot rescue bad chunk units or missing metadata fields.
-
-Continue to [Chapter 3](./03-hybrid-retrieval-reranking-and-evaluation.md).
+Next: [Chapter 3](./03-hybrid-retrieval-reranking-and-evaluation.md).

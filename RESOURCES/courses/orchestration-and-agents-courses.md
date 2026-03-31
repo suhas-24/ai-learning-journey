@@ -2,6 +2,8 @@
 
 This guide covers the resources that explain how multiple model calls, tools, and state transitions become a system instead of an unstructured loop.
 
+An `agent` is a model-enabled system that can choose actions. `Orchestration` means coordinating those actions step by step so the system does not just wander. A simple `loop` is not enough if you cannot see where state lives or how to recover after failure.
+
 ## LangChain For LLM Application Development
 
 ### What it teaches

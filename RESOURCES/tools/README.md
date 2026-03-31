@@ -2,6 +2,8 @@
 
 A tool matters only when you understand the boundary it owns. This folder explains what each tool category teaches, which concepts sit behind it, and where in the learning journey it becomes useful.
 
+Think of tools as the machinery around the idea. The model is not the whole system. The tools decide how the system reads files, calls APIs, stores data, checks results, and keeps people safe.
+
 ## Guides In This Folder
 
 - [python-foundation-tools.md](./python-foundation-tools.md)

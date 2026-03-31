@@ -1,50 +1,56 @@
-# Chapter 3 - Review, Verification, and Safe Iteration
+# Chapter 3 - Checking The Result Safely
 
-Agent output is only useful when it survives verification. A clean-looking diff is not evidence.
+An agent output is only useful if it survives review.
 
-## Review Loop
+A nice-looking diff is not proof. A confident summary is not proof either.
 
-Use this loop for non-trivial changes:
+## The Review Loop
+
+Use this loop for anything beyond a tiny edit:
 
 1. inspect the plan
 2. inspect the changed files
-3. run the relevant checks
-4. review logs or test output
+3. run the checks
+4. read the logs or output
 5. decide whether to accept, revise, or reject
 
-## What To Look For In Diffs
+## What To Look For
 
-- scope creep into unrelated files
-- duplicated logic instead of proper reuse
-- invented APIs or flags
-- fragile tests that only match the new implementation
-- missing error handling around I/O or network calls
+- changes in unrelated files
+- duplicated logic instead of reuse
+- invented commands or APIs
+- tests that only fit the new code
+- missing error handling
 
-## Verification Layers
+## Three Kinds Of Verification
 
 ### Static verification
 
+This means checking the code without running the whole system.
+
 - linting
 - type checks
-- schema validation
+- schema checks
 
 ### Behavioral verification
 
+This means running the code and seeing what happens.
+
 - unit tests
 - integration tests
-- golden file or snapshot comparisons
+- snapshot checks
 
 ### Human reasoning
 
-- does the architecture still make sense?
-- does the code match the actual requirement?
-- would you trust this in a code review?
+This means asking whether the result actually makes sense.
 
-## Worked Example
+- does the design still fit the job?
+- did the code match the request?
+- would you trust this in review?
 
-Agent claim: "I fixed retrieval ranking."
+## Example
 
-Verification:
+If an agent says it fixed retrieval ranking, you might run:
 
 ```bash
 pytest tests/retrieval -q
@@ -52,13 +58,13 @@ python scripts/compare_rankers.py
 git diff -- src/retrieval tests/retrieval
 ```
 
-If the tests pass but the diff quietly changed unrelated config, the work is still not acceptable.
+If the tests pass but unrelated config changed, the result is still not acceptable.
 
 ## Red Flags
 
-- the agent says "done" without mentioning checks
-- commands are summarized but logs are absent
-- the diff rewrites architecture with no prior approval
-- the agent touched files outside ownership
+- the agent says `done` without naming checks
+- the summary mentions tests but not the actual output
+- the diff changes architecture without approval
+- the agent touched files outside the brief
 
-Continue to [Chapter 4](./04-multi-agent-coding-workflows.md).
+Next: [Chapter 4](./04-multi-agent-coding-workflows.md).

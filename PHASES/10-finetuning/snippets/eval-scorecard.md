@@ -1,5 +1,7 @@
 # Eval Scorecard Template
 
+Use this page to compare a baseline model and a tuned model side by side. The goal is to make the decision easy to explain later.
+
 ## Run Metadata
 
 - experiment:

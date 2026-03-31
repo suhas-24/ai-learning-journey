@@ -1,5 +1,7 @@
 # Rubric - Production RAG System
 
+Use this rubric as a quick honesty check. If a section scores low, the project probably needs more work before it is portfolio-ready.
+
 Score the project from 1 to 5 in each area.
 
 ## Problem Framing

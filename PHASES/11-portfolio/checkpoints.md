@@ -1,5 +1,7 @@
 # Phase 11 Checkpoints
 
+If you can explain your projects to someone who is friendly but uninformed, the phase is working.
+
 ## Knowledge Check
 
 You should be able to explain:

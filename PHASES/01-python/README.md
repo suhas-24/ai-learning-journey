@@ -1,25 +1,32 @@
-# Phase 1 - Python Fluency and Modern Dev Environment
+# Phase 1 - Python From Zero
 
-Phase 1 teaches the working habits that everything else in this repo depends on: reading Python, writing small programs, debugging failures, structuring code into modules, and running a repeatable development workflow from the terminal.
+This phase starts at the beginning. It assumes you are learning Python as a language, a computer program as a set of steps, and debugging as a normal part of learning. The goal is to help you read simple code, write simple code, and understand why it behaves the way it does.
 
-You do not need the roadmap open while using this phase. Start here, move through the chapters in order, and stop after each lab to make sure you can explain what your code is doing.
+If a word feels new, slow down. A good rule for this phase is: define the thing, then use the thing.
+
+## What This Phase Is For
+
+- Python is the first language tool you need to read and write.
+- A script is the first small program you will control by hand.
+- A project is the first time you split one program into parts.
+- Validation, logging, and testing are the first habits that keep code honest.
 
 ## What You Will Be Able To Do
 
-- read and write small Python programs without guessing
-- use lists, dictionaries, functions, files, and exceptions intentionally
-- split a script into modules and a simple project layout
-- validate data with Pydantic and test behavior with pytest
-- understand when `async` helps and when it does not
-- use a repeatable workflow with `venv`, `pip`, Ruff, and Git
+- explain what a value, variable, function, file, and error are
+- write a tiny Python program without copying every line blindly
+- read and write JSON data from a file
+- split one script into multiple files when it gets crowded
+- use `pytest`, `pydantic`, `ruff`, and `asyncio` at a beginner level
+- run a repeatable terminal workflow with `venv` and Git
 
 ## How To Use This Phase
 
 1. Read the chapters in order.
-2. Run or copy the snippets while reading.
-3. Complete the labs with your own edits.
-4. Use [checkpoints.md](./checkpoints.md) to test understanding.
-5. Use [troubleshooting.md](./troubleshooting.md) whenever something feels confusing or broken.
+2. Read the code examples slowly and say out loud what each line does.
+3. Do the labs with your own edits, even if the result is messy at first.
+4. Use [checkpoints.md](./checkpoints.md) to check your understanding.
+5. Use [troubleshooting.md](./troubleshooting.md) when a bug or error message feels confusing.
 
 ## Study Path
 
@@ -41,4 +48,4 @@ You do not need the roadmap open while using this phase. Start here, move throug
 
 ## Success Standard
 
-If you can build a small CLI tool that reads a file, validates config, logs useful information, and survives a few obvious errors, this phase has done its job.
+If you can build a small command-line tool that reads a file, checks the data, prints a useful summary, and handles obvious mistakes without crashing mysteriously, this phase has done its job.

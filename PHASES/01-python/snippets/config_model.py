@@ -9,6 +9,7 @@ class AppConfig(BaseModel):
 
 def demo() -> None:
     try:
+        # Build the config with normal Python values first.
         config = AppConfig(
             project_name="phase-1-demo",
             retry_limit=2,

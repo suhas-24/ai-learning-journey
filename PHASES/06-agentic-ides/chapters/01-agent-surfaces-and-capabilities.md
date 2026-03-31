@@ -1,65 +1,68 @@
-# Chapter 1 - Agent Surfaces and Capabilities
+# Chapter 1 - What Coding Agents Do
 
-Not all coding agents behave the same way. The tool surface changes the rhythm of collaboration, the available context, and the kinds of mistakes you should expect.
+A coding agent is a program that can read code, suggest changes, and sometimes run commands.
+
+The exact experience depends on where you use it.
 
 ## Agentic IDEs
 
-Examples include editors or IDEs with deep built-in model workflows.
+An agentic IDE is an editor that has the agent built into the editing flow.
 
-Strong at:
+Good for:
 
-- interactive back-and-forth while reading code
-- inline edits and fast diffs
-- staying close to the visible file context
+- reading a file and editing it at the same time
+- quick back-and-forth while you are exploring code
+- staying close to the file you are working in
 
-Weak at:
+Harder for:
 
-- large repo orchestration unless rules are strong
-- non-interactive automation
+- big repo-wide jobs
+- workflows that need a lot of command-line automation
 
 ## CLI Agents
 
-CLI agents work well when tasks are repo-scoped, command-heavy, or need deliberate planning.
+A CLI agent runs from the terminal.
 
-Strong at:
+Good for:
 
-- searching a repo
-- editing multiple files
-- running tests or checks
-- producing explicit plans and summaries
+- searching many files
+- editing several files
+- running tests and checks
+- following explicit instructions
 
-Weak at:
+Harder for:
 
-- highly visual UI work without extra tooling
-- ambiguous tasks with missing repo context
+- visual UI work
+- tasks with weak boundaries
 
 ## Editor Extensions
 
-Extensions are useful when convenience matters, but the workflow often depends heavily on prompt quality.
+An editor extension is the lightest form of help.
 
-Good use cases:
+Good for:
 
 - quick explanations
-- lightweight transformations
-- local refactors in a file you already understand
+- small rewrites
+- simple local changes
 
-## Decision Rule
+Harder for:
 
-Choose the surface that best matches the task:
+- big changes across the repo
+- complicated workflows that need strong structure
 
-- IDE agent for interactive code exploration
-- CLI agent for repo-wide implementation and verification
-- extension for small in-editor assistance
+## Simple Decision
 
-## Worked Example
+- choose an IDE agent for interactive exploration
+- choose a CLI agent for repo-wide work and verification
+- choose an extension for small in-editor help
 
-Task: "Refactor the retrieval pipeline to separate indexing from querying."
+## Example
 
-Best fit:
+Task: refactor the retrieval pipeline so indexing and querying are separate.
 
-- `CLI agent` if the change crosses several files and needs tests
-- `IDE agent` if you are already inside the retrieval module and want iterative pair-programming
+- use a CLI agent if the change crosses several files and needs tests
+- use an IDE agent if you are already inside the file and want interactive help
 
-The tool matters less than whether the scope and verification loop are explicit.
+The important part is not the tool label. The important part is whether the task is clear and the checks are clear.
 
-Continue to [Chapter 2](./02-task-framing-context-and-prompt-design.md).
+Next: [Chapter 2](./02-task-framing-context-and-prompt-design.md).

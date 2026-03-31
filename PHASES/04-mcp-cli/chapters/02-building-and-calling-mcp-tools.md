@@ -1,37 +1,51 @@
-# Chapter 2 - Building and Calling MCP Tools
+# Chapter 2 - How MCP Tools Work
 
-MCP is most valuable when you treat it as an interface design problem, not just a transport detail. A good MCP tool is narrow, typed, and easy to reason about in failure cases.
+`MCP` is a way to publish tools with a clear shape so a model can use them without guessing.
 
-## Mental Model
+The useful idea here is simple: if a tool has a strict input shape and a predictable output shape, it is easier to use, easier to test, and easier to share.
 
-An MCP interaction usually looks like this:
+## The Basic Flow
 
-1. the server advertises tools and resources
-2. the client inspects available capabilities
-3. the model chooses a tool
-4. the client sends structured arguments
-5. the server validates, executes, and returns structured output
+An MCP tool usually works like this:
 
-The key benefit is that the model does not have to guess the contract from prose alone.
+1. the server says what tools exist
+2. the client reads the tool list
+3. the model chooses one tool
+4. the client sends the arguments
+5. the server checks the arguments and runs the action
+6. the server returns a result
 
-## Anatomy of a Good Tool
+That is all a protocol is doing here. It is just a shared rulebook.
 
-Good MCP tools have:
+## What Makes A Good Tool
 
-- a verb-based name such as `create_issue`
-- a short description that describes action and constraints
-- a JSON schema for arguments
-- explicit error behavior
-- bounded side effects
+A good tool should be:
 
-See the sample schema in [../snippets/mcp-tool-schema.json](../snippets/mcp-tool-schema.json).
+- narrow
+- named clearly
+- strict about its inputs
+- honest about its errors
+- limited in what it can change
+
+For example, `create_issue` is better than `do_github_thing` because the caller can understand the job immediately.
+
+## Why A Schema Helps
+
+A `schema` is a description of what inputs are allowed.
+
+This matters because the model should not have to invent the contract from prose alone. The schema can say:
+
+- which fields are required
+- how long a string may be
+- whether extra keys are allowed
+- how many labels are allowed
 
 ## Example Tool Contract
 
 ```json
 {
   "name": "create_issue",
-  "description": "Create a GitHub issue in a pre-approved repository.",
+  "description": "Create a GitHub issue in one pre-approved repository.",
   "inputSchema": {
     "type": "object",
     "properties": {
@@ -42,7 +56,8 @@ See the sample schema in [../snippets/mcp-tool-schema.json](../snippets/mcp-tool
       },
       "body": {
         "type": "string",
-        "minLength": 20
+        "minLength": 20,
+        "maxLength": 5000
       },
       "labels": {
         "type": "array",
@@ -56,29 +71,32 @@ See the sample schema in [../snippets/mcp-tool-schema.json](../snippets/mcp-tool
 }
 ```
 
-Why this is better than a loose prompt:
+Why this is helpful:
 
-- titles cannot be empty
-- random extra keys are rejected
-- labels are bounded
-- the repo can remain server-side so the caller cannot target arbitrary repos
+- the caller cannot send random extra fields
+- the text must be long enough to be useful
+- the tool stays focused on one job
+- the repository choice can stay server-side
 
-## Server Design Guidelines
+## What The Server Should Keep For Itself
 
-Ask these questions before implementing the server:
+Not everything should come from the model.
 
-1. Which arguments should the model provide?
-2. Which values should stay hidden on the server side?
-3. What errors should be returned to the model?
-4. What should be logged for audit and debugging?
+Keep these server-side:
 
-Good default pattern:
+- secrets
+- allowlists
+- repository names
+- retry policy
+- logging policy
 
-- model provides intent fields like `title` and `body`
-- server owns secrets, hostnames, and allowlists
-- server returns compact structured status
+Let the model provide the intent:
 
-## Example Pseudocode
+- title
+- body
+- labels
+
+## Example In Plain Python
 
 ```python
 def create_issue_tool(arguments: dict) -> dict:
@@ -88,7 +106,12 @@ def create_issue_tool(arguments: dict) -> dict:
         "body": validated["body"],
         "labels": validated.get("labels", []),
     }
-    response = github_client.create_issue(repo="org/project", payload=payload)
+
+    response = github_client.create_issue(
+        repo="org/project",
+        payload=payload,
+    )
+
     return {
         "status": "ok",
         "issue_number": response["number"],
@@ -96,47 +119,24 @@ def create_issue_tool(arguments: dict) -> dict:
     }
 ```
 
-## Common MCP Failure Modes
+## Common Mistakes
 
-### Schema too broad
+### The schema is too open
 
-Bad:
+If `additionalProperties` is `true`, the caller can send junk the server never wanted.
 
-```json
-{
-  "type": "object",
-  "additionalProperties": true
-}
-```
+### The description is too vague
 
-This invites junk arguments and weak tool use.
+Bad: `Works with GitHub.`
 
-### Tool description too vague
+Better: `Create one GitHub issue in the incident-tracker repository using a validated title, body, and optional labels.`
 
-Bad description: "Works with GitHub."
+### The result is only prose
 
-Better description: "Create a GitHub issue in the incident-tracker repo using a validated title, body, and optional labels."
+The caller should get a result it can read programmatically, not a guess.
 
-### Returning prose instead of structured results
+## Simple Rule
 
-Bad result:
+Use MCP when you want one shared, typed tool that multiple clients can discover and call. If you only need one local command or one direct HTTP request, Chapter 3 may be simpler.
 
-```text
-I think the issue was probably created successfully.
-```
-
-Better result:
-
-```json
-{
-  "status": "ok",
-  "issue_number": 142,
-  "url": "https://github.com/org/project/issues/142"
-}
-```
-
-## Decision Rule
-
-If the tool needs to be reused across clients and you care about typed discoverability, MCP is a strong default. If not, Chapter 3 may give you a cheaper option.
-
-Continue to [Chapter 3](./03-cli-and-direct-api-workflows.md).
+Next: [Chapter 3](./03-cli-and-direct-api-workflows.md).

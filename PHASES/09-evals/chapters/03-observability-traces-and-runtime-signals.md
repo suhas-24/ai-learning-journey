@@ -19,6 +19,8 @@ At minimum, record:
 - validator outcomes
 - approval events
 
+`Token` is a small piece of text that the model reads or writes. `Token usage` is the count of those pieces, which helps you estimate how much work a run did and how much it cost.
+
 ## A useful trace shape
 
 ```json
@@ -50,6 +52,14 @@ Track these over time:
 - validator failure rate
 - approval frequency
 - dead-letter rate
+
+Plain-language definitions:
+
+- `latency` means how long one run takes from start to finish
+- a `percentile` helps you see how bad the slower runs are, not just the average
+- `P95 latency` means 95 out of 100 runs finish faster than that number, while the slowest 5 runs take longer
+- a `dead-letter rate` is the share of runs that fail so badly they get pushed into a holding area for manual inspection
+- a `trace_id` is a shared label that lets you connect logs, tool calls, approvals, and validator results from the same run
 
 Sample operational dashboard:
 

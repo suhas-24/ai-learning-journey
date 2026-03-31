@@ -2,6 +2,8 @@
 
 This chapter connects theory to incidents you are likely to face.
 
+An `incident` is just a real safety problem that happened in practice. The goal is to learn how to react, document, and improve the system so the same mistake is less likely next time.
+
 ## Walkthrough 1: prompt injection via retrieved note
 
 ### Scenario

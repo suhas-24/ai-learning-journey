@@ -2,6 +2,8 @@
 
 Build a production-minded workflow agent for a narrow business process, with clear boundaries, safety checks, observability, and deployment documentation. This project should show that you know how to make an AI system useful without pretending it can do everything safely.
 
+A workflow is a repeatable sequence of steps that turns an input into an output. Intake is the part that accepts the request. Telemetry is the information the system records so operators can understand what happened. Audit trails are the records that show who did what and when. Deployment documentation is the written setup guide for running the system safely. Schema validation means checking that incoming or outgoing data matches the shape you expect. Audit logging means writing down important actions in a way that can be reviewed later. Monitoring means watching the system over time so problems are noticed quickly.
+
 ## Project Goal
 
 Demonstrate end-to-end thinking across:
@@ -12,6 +14,8 @@ Demonstrate end-to-end thinking across:
 - deployment
 - monitoring
 - human oversight
+
+The beginner-friendly version of that goal is: build a system that can do a narrow job, explain itself, and stop when a human needs to step in.
 
 ## Suitable Use Cases
 

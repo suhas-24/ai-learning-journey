@@ -2,9 +2,13 @@
 
 Threat modeling is the practice of asking, before launch, "How can this system be pushed into doing the wrong thing, leaking the wrong thing, or costing the wrong amount?"
 
+If that sounds abstract, think of it like safety planning for a busy kitchen. Before service starts, we ask what could burn, spill, get mixed up, or be sent to the wrong table. For AI systems, we ask the same style of question, but about prompts, data, and tools.
+
 ## Why AI threat models feel different
 
 Traditional software risk often lives in code paths and network boundaries. AI systems add a second control surface: language. The system can be manipulated through instructions, retrieved text, examples, or tool outputs.
+
+`Language` matters here because the model reads text and tries to follow instructions inside it. That means not every piece of text should be treated as trusted direction.
 
 That means we must analyze:
 
@@ -51,7 +55,9 @@ Retrieved documents can contain malicious instructions, false facts, or stale po
 
 ### Unbounded consumption
 
-The system burns tokens, money, or time because no guard exists around looping, fan-out, or tool use.
+The system burns time, money, or compute because no guard exists around looping, fan-out, or tool use.
+
+When you see token counts in logs or budgets, think of them as a rough measure of how much text work the system did.
 
 ## A simple threat modeling method
 
@@ -107,4 +113,4 @@ For each workflow, ask:
 - what is the most damaging abuse
 - what is the cheapest control that meaningfully lowers risk
 
-Use [Lab 01](../labs/01-build-a-threat-model.md) to practice this directly.
+Use [Lab 01](../labs/lab-01-build-a-threat-model.md) to practice this directly.

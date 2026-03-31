@@ -2,6 +2,8 @@
 
 This file is the navigation map for the full curriculum. Use it when you want to understand how the phases build on one another instead of treating them as disconnected topics.
 
+If words like `model`, `token`, `retrieval`, or `eval` feel fuzzy, read [FOUNDATIONS/README.md](./FOUNDATIONS/README.md) first. This page is the map, but the Foundations pages explain the vocabulary.
+
 ## The Dependency Chain
 
 ### Foundation Layer
@@ -10,7 +12,7 @@ This file is the navigation map for the full curriculum. Use it when you want to
 - [Phase 2: Raw LLM APIs + Context Engineering](./PHASES/02-llm-apis/README.md)
 - [Phase 3: Spec-Driven Development](./PHASES/03-spec-driven/README.md)
 
-These phases teach how to write code, call models directly, and define agent behavior clearly.
+These phases teach how to write code, call models directly, and define agent behavior clearly. In plain words, this is the part where you learn how to make a computer program, ask a text model for help, and tell it what you want in a way that is hard to misunderstand.
 
 ### Integration Layer
 
@@ -18,7 +20,7 @@ These phases teach how to write code, call models directly, and define agent beh
 - [Phase 5: RAG + GraphRAG + Memory](./PHASES/05-rag-graphrag/README.md)
 - [Phase 6: Agentic IDEs + Coding Agents](./PHASES/06-agentic-ides/README.md)
 
-These phases teach how models connect to tools, knowledge, and coding workflows.
+These phases teach how models connect to tools, knowledge, and coding workflows. This is where the model stops being a text box by itself and starts becoming part of a larger system that can look things up, act on information, and help you build software.
 
 ### Systems Layer
 
@@ -26,14 +28,14 @@ These phases teach how models connect to tools, knowledge, and coding workflows.
 - [Phase 8: Guardrails + Security + Governance](./PHASES/08-guardrails/README.md)
 - [Phase 9: Evals + Observability + EDD](./PHASES/09-evals/README.md)
 
-These phases teach how to turn an interesting agent into a durable system.
+These phases teach how to turn an interesting agent into a durable system. In other words, you learn how to make it repeatable, safe, measurable, and easier to debug when something goes wrong.
 
 ### Specialization + Proof Layer
 
 - [Phase 10: Fine-Tuning](./PHASES/10-finetuning/README.md)
 - [Phase 11: Portfolio + Job Readiness](./PHASES/11-portfolio/README.md)
 
-These phases teach when advanced adaptation is worth it and how to present real capability publicly.
+These phases teach when advanced adaptation is worth it and how to present real capability publicly. This is the part where you decide whether the system should learn new behavior from examples, and how to show other people what you can build.
 
 Use [PHASES/README.md](./PHASES/README.md) if you want the full module list in one place. Pair phase study with [RESOURCES/by-phase.md](./RESOURCES/by-phase.md) so you read and watch material that matches the current learning goal.
 
@@ -44,6 +46,8 @@ Use [PHASES/README.md](./PHASES/README.md) if you want the full module list in o
 3. Do Phase 3 early so later agent workflows stay disciplined.
 4. Treat Phase 6 as parallel support, not a substitute for core learning.
 5. Only go deep on Phase 10 if prompting, context engineering, and retrieval are no longer enough.
+
+If any step feels too abstract, return to the Foundations pages. Slow is fine. Clear is better than fast.
 
 ## Project Path
 

@@ -1,33 +1,35 @@
 # Lab 2 - Debug Retrieval Failures
 
-This lab is about diagnosis, not feature expansion.
+This lab is about diagnosis.
 
 ## Goal
 
-Take one failed QA example and isolate the exact failure point.
+Take one failed question and find the exact step where the system went wrong.
 
 ## Workflow
 
 1. Save the question.
-2. Save top-10 retrieved chunks with scores.
-3. Mark which chunk should have been retrieved.
+2. Save the top retrieved chunks and their scores.
+3. Mark which chunk should have won.
 4. Test whether metadata filters removed it.
-5. Test dense-only retrieval vs hybrid retrieval.
-6. If the right chunk appears after retrieval but disappears later, inspect reranking and answer synthesis.
+5. Compare meaning-based search with exact-word search.
+6. If the right chunk appears early but disappears later, inspect reranking and answer writing.
 
 ## Comparison Table
 
 Use a table like this:
 
-| Query | Expected source | Dense hit? | Sparse hit? | Reranked top 5? | Final answer grounded? |
+| Query | Expected source | Meaning hit? | Exact-word hit? | Reranked top 5? | Final answer grounded? |
 | --- | --- | --- | --- | --- | --- |
 
-## Optional GraphRAG Extension
+## Optional Graph Exercise
 
-Choose one multi-hop question and answer:
+Pick one question that needs more than one hop.
 
-- did plain retrieval miss relationship structure?
-- would a graph traversal help?
-- what entity and edge types would you need?
+Ask:
 
-If the answer is "no," that is a useful conclusion. It means GraphRAG is not yet justified.
+- did plain retrieval miss a relationship?
+- would a graph help?
+- what things and connections would the graph need?
+
+If the answer is no, that is still a good result.

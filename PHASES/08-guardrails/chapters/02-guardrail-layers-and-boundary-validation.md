@@ -2,6 +2,8 @@
 
 Good safety does not live in one prompt line. It lives in layers.
 
+`Boundary validation` means checking something right before it crosses an important boundary, like before a model sees it, before a tool runs, or before an email leaves the system.
+
 ## The four main checkpoints
 
 ### 1. Before the model call

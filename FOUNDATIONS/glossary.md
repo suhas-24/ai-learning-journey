@@ -1,54 +1,92 @@
 # Glossary
 
-This glossary is intentionally practical. Definitions are written for builders, not for textbooks.
+This glossary is intentionally practical. The goal is not to impress anyone. The goal is to make the first important words feel simple enough to use.
 
 ## AI
 
-Artificial intelligence is the broad field of building systems that perform tasks that normally require human-like pattern recognition, decision-making, or language handling.
+Artificial intelligence is the broad field of building software that can do tasks we usually associate with human thinking, such as recognizing patterns, understanding language, or making decisions.
+
+## Model
+
+A model is a piece of software that has been trained on examples so it can make predictions. In this repo, the models we care about often work with text.
 
 ## LLM
 
-A large language model is a model trained to predict the next token in a sequence of text. In practice, this gives it the ability to generate, transform, summarize, and reason over language-like inputs.
+An LLM is a large language model. That means a model trained on lots of text so it can predict and generate text. If you ask it a question, it does not "know" facts the way a person does. It uses patterns learned from training and the text you give it right now.
 
 ## Token
 
-A token is a chunk of text the model reads or generates. Pricing, limits, and latency are usually measured in tokens rather than words.
+A token is a small piece of text the model reads or writes. A token can be a whole word, part of a word, punctuation, or even a space. The model does not work with raw sentences the way people do. It works with tokens.
+
+## Tokenization
+
+Tokenization is the step that breaks text into tokens.
+
+For example, the sentence `I like coffee.` might be split into several pieces instead of being treated as one block. The exact split is not important for a beginner. The important idea is that the model sees text in pieces, not as human eyes do.
+
+Why this matters:
+
+- prices are often based on tokens
+- model limits are often based on tokens
+- speed and latency are often affected by token count
 
 ## Context Window
 
-The context window is the total amount of information the model can see in one call. It includes instructions, history, retrieved documents, tool results, and the user’s current request.
+The context window is the total amount of information the model can see in one call. It includes your instruction, the conversation so far, retrieved documents, tool results, and any other text passed into the model.
+
+Think of it as the model’s short-term working space. If something is not inside the context window, the model cannot use it for that call.
+
+## Prompt
+
+A prompt is the instruction or question you give the model. A prompt can be short, like "Summarize this paragraph," or longer, like a detailed task with examples and rules.
 
 ## Prompt Engineering
 
-Prompt engineering is the craft of writing instructions to steer a model’s output. It matters, but by itself it is not enough for production systems.
+Prompt engineering is the craft of writing prompts that steer a model’s output. It is useful, but it is only one part of building a reliable system.
 
 ## Context Engineering
 
-Context engineering is the broader discipline of deciding what information enters the model’s context window, in what order, and in what compressed form.
+Context engineering is the broader job of deciding what information should go into the model’s context window, in what order, and in what form.
 
-## Harness Engineering
+This includes:
 
-Harness engineering is the design of the full system around the model: planning, retries, budgets, state, checkpoints, approvals, logs, and recovery behavior.
+- instructions
+- examples
+- user messages
+- retrieved documents
+- tool outputs
+
+## API
+
+An API is a way for one program to ask another program to do something. In this repo, an API is often how your code talks to a model service.
 
 ## Tool Calling
 
-Tool calling is the pattern where a model asks external code to perform an action or fetch information, then continues reasoning with the result.
+Tool calling is the pattern where the model asks external code to fetch information or perform an action, then uses the result to continue.
+
+## Harness Engineering
+
+Harness engineering is the design of the system around the model. It includes the code that decides what to send, what to retry, what to log, when to stop, and when to ask for help.
+
+## Retrieval
+
+Retrieval means finding relevant information at question time and adding it to the model’s context.
 
 ## RAG
 
-Retrieval-Augmented Generation is the pattern of retrieving relevant information at runtime and adding it to the model’s context before generation.
+Retrieval-Augmented Generation, or RAG, is a pattern where the system looks up helpful information first and then asks the model to answer using that information.
 
 ## GraphRAG
 
-GraphRAG extends retrieval by representing entities and relationships explicitly, which helps when questions require connected or multi-hop reasoning.
+GraphRAG extends retrieval by representing entities and relationships explicitly. That helps when a question depends on connected facts rather than one isolated passage.
 
 ## Embedding
 
-An embedding is a vector representation of content that captures semantic similarity. Embeddings make vector search possible.
+An embedding is a numerical representation of text that helps a computer compare pieces of text by meaning.
 
 ## Vector Database
 
-A vector database stores embeddings and retrieves similar items efficiently.
+A vector database stores embeddings and finds similar items quickly.
 
 ## MCP
 
@@ -56,11 +94,11 @@ Model Context Protocol is a standard way for tools and data sources to expose ty
 
 ## A2A
 
-Agent-to-agent communication is the pattern or protocol used when one agent delegates work to another.
+Agent-to-agent communication is the pattern used when one agent delegates work to another agent.
 
 ## Eval
 
-An eval is a structured way of measuring quality. Good evals test the behavior you actually care about, not just generic fluency.
+An eval is a structured way of measuring quality. A good eval checks the behavior you actually care about, not just whether the model sounds fluent.
 
 ## Observability
 

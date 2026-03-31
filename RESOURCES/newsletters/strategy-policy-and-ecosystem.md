@@ -2,6 +2,8 @@
 
 This guide covers newsletters that help you understand the broader environment around model capability, risk, governance, and industry direction.
 
+Use this when you want the bigger picture: what is changing, why it matters, and how it could affect what builders need to know next.
+
 ## Import AI
 
 ### What it teaches

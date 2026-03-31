@@ -2,6 +2,8 @@
 
 This guide covers the tools that teach how knowledge is stored, indexed, retrieved, and assembled into grounded answers. These tools matter because most RAG failures come from data and retrieval design, not from the final prompt alone.
 
+If `RAG` is a new term, it means retrieval-augmented generation. That is a system where the model looks up useful information before it writes the answer.
+
 ## ChromaDB
 
 ### What it teaches

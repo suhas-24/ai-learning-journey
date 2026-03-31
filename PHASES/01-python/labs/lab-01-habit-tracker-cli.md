@@ -1,22 +1,22 @@
 # Lab 1 - Build a Habit Tracker CLI
 
-This lab turns the chapter ideas into one complete beginner project.
+This lab turns the chapter ideas into one small program you can run from the terminal.
 
 ## Goal
 
-Build a small command-line tool that:
+Build a command-line tool that:
 
-- loads tasks from a JSON file
-- counts completed and incomplete tasks
+- reads tasks from a JSON file
+- counts how many are done and how many are not done
 - prints a readable summary
 - fails clearly if the file is missing or malformed
 
 ## What You Will Practice
 
-- file reading with `Path`
-- list and dictionary access
-- functions and return values
-- simple exception handling
+- reading a file with `Path`
+- checking list and dictionary data
+- writing functions that return values
+- handling errors without hiding them
 
 ## Suggested Structure
 
@@ -38,14 +38,14 @@ Example `tasks.json`:
 
 ## Step 1 - Write the Loader
 
-Create a function that:
+Write a function that:
 
 - accepts a file path
 - checks that the file exists
-- loads JSON
-- verifies the top-level value is a list
+- loads JSON text
+- confirms the top-level value is a list
 
-If you get stuck, inspect the pattern in [inventory_report.py](../snippets/inventory_report.py).
+If you need a pattern to copy, look at [inventory_report.py](../snippets/inventory_report.py).
 
 ## Step 2 - Write the Summarizer
 
@@ -59,7 +59,7 @@ Write a function that returns:
 }
 ```
 
-Do not print inside this function. Return the data.
+Do not print inside this function. Return the data so the CLI can decide how to display it.
 
 ## Step 3 - Build the CLI Output
 
@@ -75,14 +75,14 @@ Todo: 1
 
 ## Failure Cases To Test
 
-- file does not exist
-- JSON is invalid
+- the file does not exist
+- the JSON is invalid
 - one task is missing the `done` field
 
 ## Stretch Goal
 
-Add a second command-line argument that filters only completed tasks.
+Add a second command-line argument that shows only completed tasks.
 
 ## Done Check
 
-You are done when you can intentionally break the input file and still explain exactly why the program failed.
+You are done when you can intentionally break the input file and explain exactly why the program failed.

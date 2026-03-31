@@ -2,6 +2,8 @@
 
 This guide focuses on people who make model internals, training behavior, and research ideas easier to understand without stripping away the hard parts.
 
+This is the folder to use when you want someone to explain how the model works from the inside, not just how to call it from code.
+
 ## Andrej Karpathy
 
 ### What to learn from him

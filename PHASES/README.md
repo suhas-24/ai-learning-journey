@@ -16,20 +16,20 @@ This directory is the main curriculum. Each phase is a self-contained learning m
 ### Foundations
 
 - [01-python](./01-python/README.md): Python fluency, debugging habits, project structure, and the modern terminal workflow
-- [02-llm-apis](./02-llm-apis/README.md): raw model APIs, structured outputs, tool calling, context engineering, and failure analysis
-- [03-spec-driven](./03-spec-driven/README.md): agent contracts, layered instructions, reusable skills, and review discipline
+- [02-llm-apis](./02-llm-apis/README.md): direct model APIs, predictable response shapes, tool use, context design, and failure analysis
+- [03-spec-driven](./03-spec-driven/README.md): writing clear rules for agent behavior, layered instructions, reusable skills, and review discipline
 
 ### Integration
 
 - [04-mcp-cli](./04-mcp-cli/README.md): when to use MCP, CLI, or direct API calls, plus tool-surface design
-- [05-rag-graphrag](./05-rag-graphrag/README.md): retrieval pipelines, chunking, reranking, GraphRAG, and memory systems
-- [06-agentic-ides](./06-agentic-ides/README.md): coding agents, task framing, safe iteration, and review workflows
+- [05-rag-graphrag](./05-rag-graphrag/README.md): systems that look up useful information before answering, plus chunking, reranking, GraphRAG, and memory systems
+- [06-agentic-ides](./06-agentic-ides/README.md): coding agents, task framing, safe iteration, and review workflows inside AI-assisted development tools
 
 ### Systems
 
-- [07-orchestration](./07-orchestration/README.md): control flow, state, resumability, runtime policies, and failure handling
-- [08-guardrails](./08-guardrails/README.md): threat modeling, validation layers, approvals, least privilege, and incident response
-- [09-evals](./09-evals/README.md): golden datasets, metrics, tracing, observability, and regression management
+- [07-orchestration](./07-orchestration/README.md): step ordering, state, resumability, runtime policies, and failure handling
+- [08-guardrails](./08-guardrails/README.md): safety checks, threat modeling, approval rules, least privilege, and incident response
+- [09-evals](./09-evals/README.md): test datasets, metrics, traces, runtime visibility, and regression management
 
 ### Specialization And Proof
 

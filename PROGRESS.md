@@ -7,7 +7,7 @@ This file is the heartbeat of the journey. Every week should answer four questio
 3. What confused me?
 4. What is the next concrete move?
 
-It is also the bridge between reading and building. The phase modules tell me what to understand; this file tells me whether I actually used that understanding.
+It is also the bridge between reading and building. The phase modules tell me what to understand; this file tells me whether I actually used that understanding. If a word or idea was confusing, this is the place to say that plainly.
 
 ---
 
@@ -23,6 +23,7 @@ It is also the bridge between reading and building. The phase modules tell me wh
 - [ ] Install and practice Poetry, Ruff, and pytest in a throwaway Python project
 - [ ] Write the first small Python scripts covering variables, loops, functions, and file I/O
 - [ ] Start the `agent-cli` skeleton for Phase 1
+- [ ] Write down any new terms that still feel unclear so they can be defined in plain language
 
 ### Working Definition Of This Week
 
@@ -58,6 +59,7 @@ This week is successful if I can explain the difference between reading about Py
 - The roadmap only becomes real when every phase turns into artifacts: code, tests, notes, diagrams, and postmortems.
 - Early momentum matters. A clean repo structure lowers friction when the work gets harder later.
 - The right question is not "Do I understand this topic completely?" but "Can I build one honest thing with it?"
+- A new term is not a test. If a word feels unfamiliar, it should be defined, not glossed over.
 
 ### This Week's Learning Pattern
 

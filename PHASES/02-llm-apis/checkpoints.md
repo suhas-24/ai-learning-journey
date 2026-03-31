@@ -2,15 +2,17 @@
 
 ## Concept Checks
 
-1. What information does a model request usually include?
+1. What is an LLM in plain language?
    Review: [Chapter 1](./chapters/01-request-shape-and-message-roles.md)
-2. Why is structured output better than free-form text for downstream code?
+2. What information does a model request usually include?
+   Review: [Chapter 1](./chapters/01-request-shape-and-message-roles.md)
+3. Why is structured output better than free-form text for downstream code?
    Review: [Chapter 2](./chapters/02-structured-output-and-tool-calling.md)
-3. What is the exact role of your program in a tool-calling loop?
+4. What is the exact role of your program in a tool-calling loop?
    Review: [Chapter 2](./chapters/02-structured-output-and-tool-calling.md)
-4. What makes context "focused" instead of "overloaded"?
+5. What makes context focused instead of overloaded?
    Review: [Chapter 3](./chapters/03-context-engineering.md)
-5. How would you separate a prompt problem from a tool problem?
+6. How would you separate a prompt problem from a tool problem?
    Review: [Chapter 4](./chapters/04-cost-latency-and-failure-analysis.md)
 
 ## Practical Checks

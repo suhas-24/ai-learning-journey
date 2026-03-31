@@ -2,6 +2,8 @@
 
 This guide covers the tools that teach direct interaction with language models. The point is not just calling an endpoint. The point is learning how messages, schemas, streaming, and model tradeoffs shape application behavior.
 
+If you are new, the simplest picture is this: your code sends a request, the model returns text, and your job is to make that exchange predictable enough to build on.
+
 ## OpenAI SDK
 
 ### What it teaches

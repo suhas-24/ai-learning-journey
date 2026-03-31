@@ -2,6 +2,8 @@
 
 Guardrails become real when the system knows not only what it can do, but also what it is forbidden to do without extra permission.
 
+`Least privilege` means giving each part of the system only the power it truly needs. If a component only needs to read data, do not let it write or delete data too.
+
 ## Least privilege
 
 Give each tool, worker, and role the minimum power required.
@@ -47,6 +49,8 @@ Example approval record:
   "idempotency_key": "send_run_912"
 }
 ```
+
+`Idempotency key` is a unique label that helps the system recognize "this exact action already happened" if it restarts or retries.
 
 ## Safe execution environments
 

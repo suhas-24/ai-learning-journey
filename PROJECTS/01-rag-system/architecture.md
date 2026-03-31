@@ -1,5 +1,14 @@
 # Architecture - Production RAG System
 
+Before the diagram, here are the key words in simple language:
+
+- a corpus is the set of documents you want to search
+- a chunk is a smaller piece of a document
+- an embedding is a numerical representation of text that helps similar text sit near each other
+- retrieval means finding the most relevant chunks
+- reranking means reordering those chunks to improve quality
+- citations are the pointers that show where the answer came from
+
 ## System Overview
 
 ```text
@@ -88,6 +97,8 @@ Responsibilities:
 ## Optional Graph Layer
 
 Add a graph layer only if your corpus demands multi-hop reasoning across entities, policies, or relationships. Do not add it for resume theater.
+
+Graph reasoning means following connections between things, like who owns what policy or how one concept links to another.
 
 ## Architecture Decisions To Document
 

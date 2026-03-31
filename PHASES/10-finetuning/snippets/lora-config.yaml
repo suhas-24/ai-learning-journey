@@ -1,3 +1,6 @@
+# Example LoRA config
+# This file shows the shape of a small fine-tuning run.
+
 experiment_name: support-routing-lora-v1
 base_model: mistral-7b-instruct
 method: lora

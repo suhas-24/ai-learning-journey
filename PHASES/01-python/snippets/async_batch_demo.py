@@ -9,6 +9,7 @@ async def run_job(name: str, delay: float) -> str:
 
 async def main() -> None:
     start = perf_counter()
+    # Start all three jobs at the same time so waiting overlaps.
     results = await asyncio.gather(
         run_job("job-1", 1.0),
         run_job("job-2", 2.0),

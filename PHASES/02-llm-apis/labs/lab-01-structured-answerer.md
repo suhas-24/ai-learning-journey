@@ -1,6 +1,6 @@
 # Lab 1 - Build a Structured Answerer
 
-This lab forces you to stop treating the model like a chat box and start treating it like one step in a program.
+This lab helps you stop treating the model like a chat box and start treating it like one step in a program.
 
 ## Goal
 
@@ -8,7 +8,7 @@ Build a script that:
 
 - sends a user question plus a clear system instruction
 - asks for a structured answer with named fields
-- validates the returned shape before printing it
+- checks the returned shape before printing it
 
 ## Suggested Output Shape
 
@@ -22,16 +22,16 @@ Build a script that:
 
 ## Recommended Steps
 
-1. Write the desired schema first.
+1. Write the schema first.
 2. Write the prompt that asks for exactly that shape.
-3. Simulate one malformed response and handle the failure.
+3. Simulate one bad response and handle it.
 4. Print only validated output.
 
 ## Questions To Ask Yourself
 
 - what happens if the model adds extra prose?
 - what happens if `confidence` is missing?
-- would this design still work if another engineer used it tomorrow?
+- would another person understand how to use this tomorrow?
 
 ## Stretch Goal
 

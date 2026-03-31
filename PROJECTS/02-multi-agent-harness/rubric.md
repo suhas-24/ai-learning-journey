@@ -1,5 +1,7 @@
 # Rubric - Multi-Agent Research Harness
 
+Use this rubric to check whether the design is actually controlled, not just complicated.
+
 Score the project from 1 to 5 in each area.
 
 ## Role Design

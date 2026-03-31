@@ -1,22 +1,24 @@
-# Chapter 1 - Retrieval Foundations and Failure Modes
+# Chapter 1 - What Retrieval Is and Why It Fails
 
-RAG exists because the model should not guess facts that can be retrieved from a trusted corpus. That sounds simple, but the engineering challenge starts before generation: bad retrieval means the model never sees the right evidence.
+Retrieval means finding the right evidence before the model answers.
 
-## Core Pipeline
+That matters because an `LLM` can only use what it can see. If the wrong evidence is given to it, the answer may still sound confident while being wrong.
 
-A retrieval pipeline usually has these stages:
+## The Basic Pipeline
 
-1. ingest documents
+A simple retrieval system often does this:
+
+1. collect documents
 2. split them into chunks
-3. generate embeddings or sparse indexes
-4. retrieve candidates
-5. rerank or filter results
-6. compress context
-7. generate an answer with citations
+3. turn each chunk into a searchable form
+4. look up likely matches for a question
+5. rank the matches again if needed
+6. give the best evidence to the model
+7. ask the model to answer with citations
 
-If you cannot name the stage that failed, you cannot fix the system responsibly.
+If the answer looks bad, you need to know which step went wrong.
 
-## Retrieval Failure vs Generation Failure
+## Retrieval Failure And Generation Failure
 
 ### Retrieval failure
 
@@ -24,69 +26,61 @@ The right evidence never reaches the model.
 
 Examples:
 
-- chunk boundaries separated the crucial sentence from its context
-- the query used exact jargon but vector retrieval ignored it
-- metadata filters removed the best document
+- the chunk split cut a useful sentence in half
+- the search method missed an exact error code
+- a metadata filter removed the right document
 
 ### Generation failure
 
-The model had the right evidence but answered badly anyway.
+The evidence was there, but the answer still went wrong.
 
 Examples:
 
-- it ignored the cited chunk
-- the synthesis prompt over-compressed the evidence
-- the model stitched together conflicting passages incorrectly
+- the model ignored the best chunk
+- the answer mixed up two similar passages
+- the model compressed the evidence too aggressively
 
 ## Worked Example
 
-User question: "Which service owns the nightly billing retry workflow?"
+Question: `Which service owns the nightly billing retry workflow?`
 
-Bad answer path:
+Bad path:
 
-- documents are chunked every 1,000 characters
-- the ownership table is split away from the workflow description
-- vector search retrieves a general billing design doc
-- the model guesses the wrong team name
+- the document is cut into chunks with no regard for sections
+- the ownership table is separated from the workflow description
+- search returns a general billing document
+- the model guesses the team
 
-Better answer path:
+Better path:
 
-- chunk by section boundaries
-- retain metadata like `service`, `team`, and `doc_type`
-- use hybrid retrieval because ownership names are exact-match sensitive
-- rerank by relevance before answering
+- chunk by headings or sections
+- keep metadata like `service`, `team`, and `doc_type`
+- use search that can match both meaning and exact names
+- rank the evidence before answering
 
-## Why Naive RAG Breaks
+## Why Simple Retrieval Breaks
 
-Naive RAG often assumes:
+Many people assume:
 
-- one chunk size fits every document
-- semantic search is enough for all queries
-- top-k retrieval quality is obvious from answer quality
-- more context always helps
+- one chunk size works for everything
+- meaning-based search is enough
+- more context is always better
+- if the answer sounds good, the retrieval must have been good
 
-All four assumptions are weak.
+Those assumptions often fail.
 
-## Diagnostic Questions
+## Questions To Ask
 
-When a grounded answer looks wrong, ask:
+When an answer looks wrong, ask:
 
-1. Was the right document ingested at all?
-2. Was it chunked in a retrievable way?
-3. Was the query represented well?
-4. Was retrieval mode appropriate for the query?
-5. Did reranking select the best evidence?
-6. Did answer synthesis distort the evidence?
+1. Did we ingest the right document?
+2. Did we chunk it in a useful way?
+3. Did the search method fit the question?
+4. Did ranking choose the best evidence?
+5. Did answer writing distort the evidence?
 
-## Retrieval-First Mindset
+## Simple Rule
 
-Before changing the model or prompt, inspect:
+Look at the retrieved chunks first. Do not start by changing the model or the prompt.
 
-- retrieved chunks
-- scores
-- metadata filters
-- missing evidence patterns
-
-That discipline prevents wasted work and makes the system explainable.
-
-Continue to [Chapter 2](./02-chunking-indexing-and-metadata-design.md).
+Next: [Chapter 2](./02-chunking-indexing-and-metadata-design.md).

@@ -2,6 +2,8 @@
 
 This lab teaches the core discipline of the phase: never judge a tuned model in isolation.
 
+If the word "baseline" is new, it simply means "the simplest version we compare everything else against."
+
 ## Goal
 
 Build a prompt-only baseline for a narrow classification task, then compare it with a tuned model using the same held-out set.
@@ -71,6 +73,8 @@ Answer:
 - Did the tuned model improve enough to matter?
 - Which failures remain?
 - Would better prompts or more data likely help more than another training run?
+
+The goal of this lab is not to chase the fanciest training setup. It is to learn how to make a fair comparison.
 
 ## Deliverable
 

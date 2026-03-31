@@ -2,6 +2,8 @@
 
 These are the commands that appear over and over in the learning journey.
 
+The point is not to memorize these all at once. The point is to know where to look when you want the computer to tell you what is happening.
+
 ## Navigation
 
 ```bash

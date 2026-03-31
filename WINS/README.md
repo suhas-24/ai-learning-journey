@@ -56,3 +56,9 @@ Each win should record:
 **What happened:** Replaced the flat phase notes and project briefs with chapter-based modules, guided labs, reusable snippets, checkpoints, troubleshooting guides, and a structured resource library.  
 **Why it matters:** The repo now teaches concepts directly instead of only naming topics or pointing elsewhere.  
 **What it unlocks next:** Weekly work can focus on actually studying, building, and measuring progress instead of reorganizing notes.
+
+### 2026-03-31 - Added first-principles definitions for the beginner vocabulary
+**Phase:** Pre-Phase 1  
+**What happened:** Expanded the top-level guidance and Foundations pages so words like `LLM`, `token`, and `tokenization` are explained from zero before the curriculum uses them.  
+**Why it matters:** A beginner can now enter the repo without already knowing the field vocabulary.  
+**What it unlocks next:** Later phase notes can stay focused on learning the topic instead of stopping to define the very first words.

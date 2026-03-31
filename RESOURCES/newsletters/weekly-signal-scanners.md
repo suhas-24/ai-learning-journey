@@ -2,6 +2,8 @@
 
 This guide covers newsletters that are useful for staying aware of changes in the ecosystem without getting buried in detail.
 
+These are the easiest sources to skim when you want to know what changed this week without reading a full paper or product announcement.
+
 ## The Batch
 
 ### What it teaches

@@ -2,6 +2,10 @@
 
 A tuned model is not "better" because the training loss went down. It is better only if it performs better than the baseline on the task you care about.
 
+Evaluation means checking the model against examples you did not train on. That is how you find out whether the improvement is real or just memorized.
+
+The word `held-out` means "kept aside and not used for training."
+
 ## Baselines First
 
 Always compare at least:
@@ -12,6 +16,8 @@ Always compare at least:
 
 If the task needs private or fresh knowledge, also compare a retrieval-augmented baseline.
 
+A baseline is the simple version you compare against. Without it, you do not know whether the training run actually helped.
+
 ## What To Measure
 
 Choose metrics that match the task:
@@ -21,7 +27,11 @@ Choose metrics that match the task:
 - structured generation: schema validity and task-specific correctness
 - summarization or rewriting: human rubric plus constrained checks
 
+Accuracy means "how often was it right overall?" Macro F1 is a score that gives each class equal weight so one common class does not hide problems in smaller classes. Schema validity means "did the output follow the format we asked for?"
+
 Avoid single-metric thinking. A tuned model that improves accuracy but breaks output format may still be worse in production.
+
+This is why evaluation is about behavior, not just one score.
 
 ## Error Analysis
 
@@ -42,6 +52,8 @@ For each cluster, ask whether the issue comes from:
 - weak baseline design
 - mismatch between training examples and real traffic
 
+Error analysis is the part where you ask, "Why did it fail this way?" That question usually points to the real fix.
+
 ## Example Scorecard
 
 Use a scorecard like the one in [snippets/eval-scorecard.md](../snippets/eval-scorecard.md).
@@ -55,6 +67,8 @@ Most improved class: account_access
 Worst remaining weakness: feature_request vs other boundary cases
 ```
 
+The scorecard is not just a report. It is a compact explanation of what improved and what still needs work.
+
 ## Iteration Loop
 
 Use this loop after every run:
@@ -65,6 +79,8 @@ Use this loop after every run:
 4. Add targeted examples instead of random volume.
 5. Re-run the smallest useful experiment.
 6. Stop when marginal gains are no longer worth the maintenance cost.
+
+Iteration is how you avoid both overconfident shipping and endless tuning.
 
 ## Production Readiness Questions
 
@@ -77,6 +93,8 @@ Before shipping a tuned model, ask:
 - Can we roll back quickly if quality drops?
 
 Fine-tuning is not a one-time trick. It creates an ongoing asset that must be maintained.
+
+That is why the "should we ship this?" question matters just as much as the training run itself.
 
 ## Final Experiment Memo Template
 

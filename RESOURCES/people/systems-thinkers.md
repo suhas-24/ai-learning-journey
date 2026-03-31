@@ -2,6 +2,8 @@
 
 This guide focuses on people who repeatedly explain AI work as a systems problem: tradeoffs, reliability, deployment, feedback loops, and governance.
 
+If you are still building your vocabulary, `systems thinking` just means looking at how the pieces affect each other instead of judging one piece in isolation.
+
 ## Chip Huyen
 
 ### What to learn from her

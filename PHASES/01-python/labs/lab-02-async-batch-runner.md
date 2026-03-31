@@ -1,14 +1,14 @@
 # Lab 2 - Build an Async Batch Runner
 
-This lab teaches the first useful async mental model without needing a real API.
+This lab teaches the first useful async idea without needing an API key or a real network call.
 
 ## Goal
 
-Simulate three slow jobs and run them concurrently so total runtime is closer to the slowest task, not the sum of every task.
+Simulate three slow jobs and run them together so the total runtime is closer to the slowest job, not the sum of all jobs.
 
 ## Why This Matters
 
-Later phases call APIs, tools, retrievers, and evaluation jobs. Those steps often wait on network responses. Async lets one task wait while another keeps moving.
+Later phases wait on APIs, tools, file lookups, and evaluation jobs. Async helps one task wait while another continues.
 
 ## Step 1 - Start From This Shape
 
@@ -23,9 +23,7 @@ async def run_job(name: str, delay: float) -> str:
 
 ## Step 2 - Run Jobs Together
 
-Use `asyncio.gather(...)` to start several jobs.
-
-Expected pattern:
+Use `asyncio.gather(...)` to start several jobs at once.
 
 ```python
 results = await asyncio.gather(
@@ -43,14 +41,14 @@ Run the same jobs one after another and compare the total time.
 
 - async changes waiting behavior, not your business logic
 - `await` appears inside `async def`
-- `asyncio.run(...)` is the outer entry point for a standalone script
+- `asyncio.run(...)` starts a standalone async program
 
 ## Failure Cases To Trigger
 
-- forget `await` and observe the coroutine warning
-- call `asyncio.run(...)` from inside an already running event loop
+- forget `await` and look at the warning
+- call `asyncio.run(...)` from inside another event loop
 - pass a normal function into `gather` and inspect the error
 
 ## Reference Snippet
 
-Use [async_batch_demo.py](../snippets/async_batch_demo.py) as a working reference after you try it yourself first.
+Use [async_batch_demo.py](../snippets/async_batch_demo.py) after you try it yourself first.

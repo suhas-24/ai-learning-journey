@@ -2,6 +2,13 @@
 
 The first advanced skill in fine-tuning is refusing to do it when it is the wrong tool.
 
+Before we go further, here are the plain-English definitions we will use:
+
+- an LLM is a text model that predicts likely responses from patterns in text
+- a prompt is the instruction you give the model at run time
+- retrieval means fetching outside information and placing it in the model's context
+- fine-tuning means training the model again on your own examples so it learns a new default pattern
+
 ## What Fine-Tuning Changes
 
 Prompting changes instructions at runtime.
@@ -9,6 +16,8 @@ RAG changes what information is provided at runtime.
 Fine-tuning changes the model's learned behavior so the model is more likely to produce a certain style, structure, or decision pattern even before long prompting.
 
 That difference matters because it changes both capability and maintenance burden.
+
+If the model is missing facts, fine-tuning is usually the wrong fix. If the model keeps making the same kind of decision error on the same narrow task, fine-tuning may help.
 
 ## Good Reasons To Fine-Tune
 
@@ -27,6 +36,8 @@ Examples:
 - rewriting messy meeting notes into a fixed team format
 - classifying documents into internal workflow buckets
 
+These work well because the job is narrow, the outputs are repeatable, and the right answer can usually be checked.
+
 ## Bad Reasons To Fine-Tune
 
 Do not fine-tune because:
@@ -39,6 +50,8 @@ Do not fine-tune because:
 
 If the issue is knowledge freshness, use retrieval. If the issue is output structure, consider validation plus retries before training.
 
+The reason for this order is simple: the cheaper fix should come first.
+
 ## Decision Framework
 
 Ask these questions in order:
@@ -49,6 +62,8 @@ Ask these questions in order:
 4. Is the failure due to model behavior remaining inconsistent after 1 to 3 are fixed?
 
 Only question 4 points strongly toward fine-tuning.
+
+That sequence keeps you from paying for training when a simpler change would have solved the problem.
 
 ## Worked Example: Support Routing
 
@@ -73,6 +88,8 @@ This is a classic fine-tuning candidate because:
 - examples can be labeled consistently
 - the output is short and easy to score
 
+In other words, the model is choosing one bucket from a small set of buckets.
+
 ## What A Tuning-Worthy Spec Looks Like
 
 Write the task spec before collecting data:
@@ -93,6 +110,8 @@ Business goal: reduce manual triage time by 40 percent
 
 Without this spec, your dataset and evaluation drift immediately.
 
+The spec is the plain-language promise you make before collecting examples. It keeps the work focused.
+
 ## Fine-Tuning Modes You Should Recognize
 
 - Supervised fine-tuning: learn from input-output pairs
@@ -100,6 +119,8 @@ Without this spec, your dataset and evaluation drift immediately.
 - Preference tuning: optimize toward preferred answers over rejected ones
 - LoRA: train low-rank adapter weights instead of the full model
 - QLoRA: pair quantization with LoRA to reduce memory needs
+
+You do not need the math to use these methods well. The practical difference is that some methods change the whole model, while others add a small trainable layer on top of the base model.
 
 For most personal experimentation, start with supervised fine-tuning plus LoRA or a managed provider workflow. That path is easier to run, easier to repeat, and easier to reason about.
 

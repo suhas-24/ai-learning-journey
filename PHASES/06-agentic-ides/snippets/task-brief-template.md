@@ -2,7 +2,7 @@
 
 ## Objective
 
-Describe the exact change required.
+Describe the exact change in one or two sentences.
 
 ## Owned Paths
 
@@ -10,7 +10,7 @@ List the only files or directories the agent may edit.
 
 ## Forbidden Paths
 
-List files or systems that must not be touched.
+List the files or systems that must not be touched.
 
 ## Success Criteria
 

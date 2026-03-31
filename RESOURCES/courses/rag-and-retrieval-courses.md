@@ -2,11 +2,15 @@
 
 This guide covers the resources that teach how retrieval improves answer quality, where it fails, and how to evaluate the quality of grounded responses.
 
+If the phrase `retrieval` is new, think of it as "find the right information before the model answers." `Grounding` means the answer is tied back to that information instead of being a guess.
+
 ## Building And Evaluating Advanced RAG
 
 ### What it teaches
 
 This course teaches retrieval as a design problem, not a checkbox. It helps you see how chunk size, embedding quality, retrieval strategy, and context assembly change the final answer.
+
+An `embedding` is a number pattern that stands in for meaning. Similar text should end up with similar number patterns, which is why retrieval can search by meaning instead of exact words alone.
 
 ### Major topics and subtopics
 

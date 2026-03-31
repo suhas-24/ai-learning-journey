@@ -1,5 +1,7 @@
 # Demo Script Template
 
+This template helps you explain a project in a calm, repeatable order instead of improvising under pressure.
+
 ## Opening
 
 - What problem does this system solve?

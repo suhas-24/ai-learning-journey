@@ -1,77 +1,74 @@
 # Chapter 4 - GraphRAG and Memory Systems
 
-GraphRAG is not "better RAG" by default. It is useful when your corpus contains entities and relationships that matter for answering multi-hop questions.
+`GraphRAG` means using a graph to help retrieval.
+
+A `graph` is a set of things and the connections between them. If that sounds abstract, think of people and who knows whom, or services and what they depend on.
 
 ## When GraphRAG Helps
 
-GraphRAG is strong when questions look like:
+GraphRAG is useful when the question needs relationships, not just matching text.
 
-- "Which team owns the service that depends on the workflow updated after the March incident?"
-- "What systems are connected to customer onboarding through identity verification?"
+Example questions:
 
-These questions require traversing relationships, not just matching paragraphs.
+- Which team owns the service that depends on the updated workflow?
+- What systems connect to customer onboarding through identity verification?
 
-## GraphRAG Building Blocks
+Those questions need a chain of connections.
 
-- entity extraction
-- relation extraction
-- graph storage
-- graph traversal or neighborhood retrieval
-- text grounding from linked source passages
+## What GraphRAG Usually Adds
 
-GraphRAG should still point back to textual evidence. The graph guides retrieval. It does not replace the need for source-backed answers.
+- entity extraction, which means finding named things
+- relation extraction, which means finding how those things connect
+- graph storage, which means keeping those links in a searchable form
+- graph traversal, which means walking the connections
+- grounding, which means still pointing back to source text
 
-## When GraphRAG Is Overkill
+The graph should help you find evidence. It should not replace evidence.
 
-Avoid GraphRAG when:
+## When GraphRAG Is Too Much
 
-- your corpus is mostly standalone notes
-- questions are simple FAQ-style lookups
-- you cannot maintain high-quality entity extraction
+Skip it when:
 
-In those cases, better chunking and hybrid retrieval usually deliver more value per hour.
+- the documents are mostly standalone
+- the questions are simple lookup questions
+- the entity extraction is not reliable yet
+
+In those cases, better chunking and better retrieval are usually more valuable.
 
 ## Memory Types
 
-### Short-term memory
+Not every saved thing is the same kind of memory.
 
-The active conversation context.
+- short-term memory: what the current conversation can see
+- long-term factual memory: saved facts or summaries
+- episodic memory: what happened in a past task or session
+- procedural memory: instructions and playbooks to follow
 
-### Long-term semantic memory
+## Simple Rule For Memory
 
-Stored facts, summaries, and embeddings from prior work.
+Say what the storage is for before you call it memory.
 
-### Episodic memory
+Ask:
 
-Records of what happened in previous tasks or sessions.
+- is this a fact to recall later
+- is this a past event
+- is this an instruction
+- is this just temporary working context
 
-### Procedural memory
+Different jobs need different storage.
 
-Instructions, playbooks, and reusable workflows.
+## Example
 
-## Design Rule for Memory
-
-Do not call every persistence layer "memory." Name the job first:
-
-- facts to recall later
-- past events to reference
-- instructions to follow
-- temporary context for the current task
-
-Different jobs need different storage and retrieval patterns.
-
-## Worked Example
-
-Question: "What changed after the billing incident, and which downstream services were affected?"
+Question: `What changed after the billing incident, and which downstream services were affected?`
 
 A useful system might:
 
-1. retrieve the postmortem and remediation tickets
-2. extract incident, service, and dependency nodes
-3. traverse connected services
-4. fetch the source passages for each edge
+1. retrieve the postmortem and remediation notes
+2. extract the services and incidents
+3. follow the connections to downstream systems
+4. fetch the source passages for those connections
 5. answer with citations to the original documents
 
-## Final Principle
+## Final Rule
 
-Reach for GraphRAG only after dense retrieval, sparse retrieval, reranking, and metadata design are already competent. Complexity should earn its keep.
+Only reach for GraphRAG after chunking, metadata, hybrid search, and reranking are already working well.

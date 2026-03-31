@@ -4,6 +4,8 @@
 
 Review each portfolio project as if you were a hiring manager opening it for the first time.
 
+That means you should notice whether the project is understandable, believable, and complete without needing hidden context.
+
 ## Review Questions
 
 - Can I understand the problem in under 30 seconds?

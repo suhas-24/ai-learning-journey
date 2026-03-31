@@ -2,6 +2,14 @@
 
 This guide covers the books that teach how LLM applications become real systems. The main shift here is moving from "the model answered well once" to "the product behaves predictably across users, inputs, and failures."
 
+If you are new here, a quick translation helps:
+
+- an `LLM` is a large language model, which means a model trained on lots of text so it can continue text in useful ways
+- a `token` is one small piece of text the model works with
+- `embeddings` are number-based representations of meaning
+- a `retrieval system` finds the right information before the model answers
+- an `eval` checks whether the system is actually getting better
+
 ## AI Engineering by Chip Huyen
 
 ### What this book teaches
@@ -35,6 +43,8 @@ This book teaches AI engineering as a discipline of feedback loops, system bound
 
 This book teaches the bridge between intuition and implementation. It is especially good when you can call a model but do not yet have a clean mental model for embeddings, tokenization, semantic search, and generation behavior.
 
+`Tokenization` means splitting text into the small pieces the model actually sees. That matters because the model does not read your sentence the way a person does.
+
 ### Major topics and subtopics
 
 - Tokenization and representation: how text becomes tokens and why token boundaries matter.
@@ -59,6 +69,8 @@ This book teaches the bridge between intuition and implementation. It is especia
 ### What this book teaches
 
 This book teaches application architecture. It helps you see an LLM system as a composition of ingestion, retrieval, tool use, control flow, evaluation, and deployment choices rather than one prompt wrapped in a web app.
+
+An `orchestration loop` is the repeatable path the system follows when it plans, acts, checks the result, and decides whether to continue. That loop is what turns a single model call into a dependable workflow.
 
 ### Major topics and subtopics
 

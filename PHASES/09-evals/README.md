@@ -1,6 +1,8 @@
 # Phase 09 - Evals, Observability, and Regression Control
 
-This module teaches how to measure an AI system honestly. You will learn how to define success, build useful datasets, score outputs and trajectories, instrument traces, and convert production failures into permanent tests.
+This module teaches how to measure an AI system honestly.
+
+An `eval` is a structured check that asks whether the system is doing its job. `Observability` means being able to see what happened during a real run. A `regression` is when a change accidentally makes something worse that used to work. We begin with those simple ideas and then build toward datasets, metrics, traces, and safety gates.
 
 Recommended order:
 
@@ -8,7 +10,7 @@ Recommended order:
 2. [Metrics, Rubrics, and Score Interpretation](./chapters/02-metrics-rubrics-and-score-interpretation.md)
 3. [Observability, Traces, and Runtime Signals](./chapters/03-observability-traces-and-runtime-signals.md)
 4. [Regression Management and Failure Loops](./chapters/04-regression-management-and-failure-loops.md)
-5. [Labs](./labs/01-build-a-golden-dataset.md)
+5. [Labs](./labs/lab-01-build-a-golden-dataset.md)
 6. [Checkpoints](./checkpoints.md)
 7. [Troubleshooting](./troubleshooting.md)
 
@@ -19,6 +21,7 @@ Supporting references:
 
 ## What you will learn
 
+- what evaluation, observability, and regression mean in plain language
 - how to define "good" before changing prompts, models, or workflows
 - how to separate answer quality, retrieval quality, and tool behavior
 - what to log so an incident can be debugged after the fact

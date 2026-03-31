@@ -4,6 +4,8 @@ This is a personal learning repository, not a collaborative project roadmap for 
 
 Because the repo is personal, the main standard is usefulness to the learner. A change is good if it makes the next study session clearer, the next build easier, or the next bug easier to understand.
 
+The writing style should stay beginner-safe. If you use a new term, define it before you rely on it. If a sentence would make sense only to someone who already knows the field, rewrite it in plain language.
+
 ## What Is Welcome
 
 - Forks for your own adaptation
@@ -40,3 +42,5 @@ When updating this repository, prefer content that answers:
 - how does it show up in practice?
 - what usually goes wrong?
 - what should I do next?
+
+When in doubt, choose the explanation that would help a thoughtful beginner on their first reading.

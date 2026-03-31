@@ -35,6 +35,7 @@ def main() -> None:
     print(json.dumps(first_response, indent=2))
 
     if first_response["type"] == "tool_call":
+        # The model asked for help, so the program decides whether to run the tool.
         tool_result = read_file(first_response["arguments"]["path"])
         messages.append({"role": "tool", "content": tool_result})
         final_response = {

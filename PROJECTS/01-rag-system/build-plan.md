@@ -1,5 +1,7 @@
 # Build Plan - Production RAG System
 
+This build plan is the step-by-step path from "empty folder" to "a system that can answer with evidence."
+
 ## Milestone 1 - Corpus And Ingestion
 
 Deliverables:

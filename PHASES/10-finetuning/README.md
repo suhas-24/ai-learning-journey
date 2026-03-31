@@ -1,8 +1,14 @@
 # Phase 10 - Fine-Tuning
 
+This phase is about one simple question: when is it worth teaching a model a new habit instead of just giving it better instructions?
+
+A large language model, or LLM, is a program trained on lots of text so it can predict useful text responses. Fine-tuning means training that model a little more on your own examples so it behaves better on one narrow task. That is different from prompting, which changes the instructions at run time, and different from retrieval, which changes the information the model can see at run time.
+
 Fine-tuning is the phase where you stop asking "Can I train a model?" and start asking "What failure mode am I fixing that prompting and retrieval did not fix?" If you cannot answer that question in one sentence, you are not ready to tune yet.
 
 This phase teaches fine-tuning as an engineering decision, not a prestige move. By the end, you should be able to define a narrow task, assemble a clean dataset, run a small LoRA-style experiment, and decide with evidence whether the tuned model is actually better than a strong prompt baseline.
+
+`LoRA` is short for low-rank adaptation. In beginner terms, it means teaching the model with a much smaller set of trainable add-ons instead of retraining the whole model. `QLoRA` is a memory-saving version of the same idea, which makes this style of tuning easier on smaller hardware.
 
 ## Outcomes
 
@@ -24,9 +30,13 @@ You should already be comfortable with:
 - retrieval and eval basics from earlier phases
 - command-line workflows, Git, and simple experiment tracking
 
+If any of those terms feel fuzzy, do not worry. The chapters below will restate the ideas in simpler words before they use them.
+
 ## What You Will Build
 
 You will run a narrow-task fine-tuning experiment around a realistic business task such as support routing, document labeling, or structured summarization. The project in this phase is not "train a giant model." The project is "prove whether a tuned model beats a careful baseline on a task that matters."
+
+In plain language, the goal is to make one small job more reliable, not to make the model smarter at everything.
 
 ## Recommended Study Order
 
@@ -72,6 +82,8 @@ Bad output -> inspect task definition
 ```
 
 Fine-tuning is about changing the model's default behavior. It is not the right tool for giving the model fresh facts every day. If the failure comes from missing knowledge, fix retrieval. If the failure comes from inconsistent behavior on the same narrow task, tuning may help.
+
+When you see the word `token`, think "a small piece of text." Tokenization is the process of splitting text into those pieces before the model can process it.
 
 ## Time Budget
 

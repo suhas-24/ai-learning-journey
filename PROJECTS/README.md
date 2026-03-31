@@ -13,9 +13,9 @@ These project guides turn the curriculum into proof. They are not toy exercises.
 
 ## Projects
 
-- [01-rag-system](./01-rag-system/README.md): best started after Phase 5, focused on document grounding, retrieval quality, citations, and evaluation
-- [02-multi-agent-harness](./02-multi-agent-harness/README.md): best started after Phase 7, focused on orchestration, state, tool use, retries, and approvals
-- [03-enterprise-agent](./03-enterprise-agent/README.md): best started after Phases 8 and 9, focused on governance, observability, safety, and production constraints
+- [01-rag-system](./01-rag-system/README.md): best started after Phase 5, focused on finding the right documents, grounding answers in evidence, citations, and evaluation
+- [02-multi-agent-harness](./02-multi-agent-harness/README.md): best started after Phase 7, focused on step ordering, saved state, tool use, retries, and human approvals
+- [03-enterprise-agent](./03-enterprise-agent/README.md): best started after Phases 8 and 9, focused on business rules, runtime visibility, safety, and production constraints
 
 ## Portfolio Rule
 

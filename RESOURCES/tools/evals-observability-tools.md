@@ -2,6 +2,8 @@
 
 This guide covers the tools that teach how to see inside an LLM system, compare versions, and measure whether changes are actually improving quality.
 
+`Observability` means being able to see what the system did, not just what answer it produced. `Tracing` is one way to follow the path step by step.
+
 ## Langfuse
 
 ### What it teaches

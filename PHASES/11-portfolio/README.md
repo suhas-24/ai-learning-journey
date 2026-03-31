@@ -2,6 +2,10 @@
 
 This phase turns your private competence into public proof. The goal is not to decorate GitHub. The goal is to make another engineer believe, within a few minutes, that you can build, evaluate, and communicate production-minded AI systems.
 
+A portfolio is a collection of proof that shows what you can build and how you think. In this phase, "proof" means code, explanations, demos, and evaluation results that a stranger can inspect.
+
+Portfolio-grade means the project is clear, believable, and useful enough that another person can inspect it without hidden context.
+
 ## Outcomes
 
 By the end of this phase, you should have:
@@ -21,6 +25,8 @@ Portfolio quality is a technical skill. You are learning to:
 - present metrics honestly
 - show failure handling, not only best-case demos
 - translate project work into resume, GitHub, and interview language
+
+Think of this phase as the bridge between private practice and public trust.
 
 ## Recommended Study Order
 

@@ -20,4 +20,4 @@
 - I can spot the difference between noisy retrieval and weak generation.
 - I can explain how a dead-letter spike should appear in dashboards and traces.
 
-If any item is weak, revisit [Evaluation Design and Golden Datasets](./chapters/01-evaluation-design-and-golden-datasets.md) and [Lab 02](./labs/02-instrument-a-run.md).
+If any item is weak, revisit [Evaluation Design and Golden Datasets](./chapters/01-evaluation-design-and-golden-datasets.md) and [Lab 02](./labs/lab-02-instrument-a-run.md).

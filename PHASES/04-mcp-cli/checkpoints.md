@@ -1,31 +1,31 @@
 # Phase 04 Checkpoints
 
-Use these checkpoints after reading the chapters and completing the labs.
+Use these checks after the chapters and the lab.
 
 ## Concept Checks
 
-You are ready to move on if you can answer these without hand-waving:
+You should be able to explain:
 
-1. Why is CLI often the best default for local developer tooling?
-2. What value does MCP add beyond "the model can call a function"?
-3. When is a direct API wrapper simpler than MCP?
-4. What makes a delegation boundary healthy instead of noisy?
-5. Which parts of a tool contract should stay server-side?
+1. why a command is often the simplest choice for local work
+2. what MCP adds beyond a plain function call
+3. when a direct HTTP request is simpler than MCP
+4. why delegation needs clear ownership
+5. which parts of a tool should stay hidden on the server
 
 ## Practical Checks
 
 - I can write a JSON schema that rejects extra properties.
-- I can wrap a CLI command without shell-string interpolation.
-- I can explain the auth flow for both CLI and API variants.
-- I can design a handoff contract with explicit owned paths.
-- I can compare the same workflow across at least two tool surfaces.
+- I can wrap a command without building one giant shell string.
+- I can explain who owns auth in the CLI and API paths.
+- I can write a handoff that names owned files and forbidden files.
+- I can compare one workflow across at least two surfaces.
 
 ## Mini Quiz
 
-Question: A model running in CI needs to open a GitHub issue, and the runner already has `gh` installed and authenticated. What is the best starting point?
+Question: A CI job already has `gh` installed and authenticated. What is the simplest way to create an issue?
 
-Expected answer: `CLI`, unless there is a strong requirement for reusable typed discovery across clients.
+Expected answer: `CLI`, unless shared typed discovery is the real requirement.
 
-Question: A shared platform team wants one discoverable issue tool for several agent clients. What is the better fit?
+Question: A team wants one issue-creation tool that several agents can discover. What is the better fit?
 
-Expected answer: `MCP`, because the schema and discovery layer are part of the requirement.
+Expected answer: `MCP`, because the shared tool contract matters.

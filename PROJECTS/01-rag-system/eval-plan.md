@@ -1,5 +1,7 @@
 # Eval Plan - Production RAG System
 
+An eval plan is how you decide whether the system is actually getting better. It is more than a screenshot because it gives you repeatable questions and repeatable checks.
+
 ## Eval Questions
 
 - Did retrieval surface the right evidence?

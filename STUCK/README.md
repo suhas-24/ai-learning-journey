@@ -70,3 +70,11 @@ Capture five things:
 **The Solution:** Replaced local absolute links with relative repo links and added index pages so navigation works both locally and on GitHub.  
 **Root Cause:** Repo content inherited assistant-style file references instead of repository-style markdown links.  
 **Lesson:** Files written into a repo must be validated for GitHub compatibility, not only local readability.
+
+### 2026-03-31 - Beginner vocabulary needed to be defined before it appeared
+**Phase:** Pre-Phase 1  
+**The Problem:** The repo could still feel like it assumed terms such as `LLM` and `tokenization` were already known.  
+**What I Tried:** Re-read the top-level docs from the point of view of someone with zero AI background and looked for first-use definitions.  
+**The Solution:** Added plain-language definitions and a glossary path so the beginner can build vocabulary in order.  
+**Root Cause:** It is easy for writing to drift into field shorthand once the structure is in place.  
+**Lesson:** The first time a new term appears, it should be explained simply right there.

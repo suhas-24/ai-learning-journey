@@ -2,6 +2,8 @@
 
 Courses are best used as guided accelerators. A good course gives you a first pass through a topic, a minimal vocabulary, and one or two patterns you can immediately test in code.
 
+If a book is the long explanation, a course is the short version. It should help you say, "I know what this thing is, I know why it matters, and I know the next small thing to try."
+
 ## How To Use Courses Well
 
 - Pair every course with a build task, even if the build is tiny.

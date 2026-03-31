@@ -1,24 +1,26 @@
-# Chapter 4 - Multi-Agent Coding Workflows
+# Chapter 4 - Working With More Than One Agent
 
-Subagents are useful when they reduce context overload and parallelize genuinely separable work. They are harmful when ownership overlaps or when the conductor does not define integration rules.
+Multiple agents only help when the work can be split cleanly.
 
-## Healthy Multi-Agent Pattern
+If two agents need the same file at the same time, the setup is probably wrong.
 
-Use a conductor plus workers:
+## A Healthy Pattern
 
-- conductor owns overall plan, file boundaries, integration, and final verification
-- each worker owns a bounded slice with no overlapping writes
-- reviewer agents inspect work without rewriting it blindly
+Use a conductor and workers:
 
-## Handoff Contract
+- the conductor owns the overall plan
+- each worker owns a clear slice
+- a reviewer checks the work without blindly rewriting it
 
-A worker assignment should include:
+## What A Handoff Should Say
 
-- exact owned files or directories
-- files that must not be touched
-- required structure or artifacts
-- commands to run
-- expected summary format
+A good handoff includes:
+
+- the exact files or folders the worker owns
+- the files it must not touch
+- the artifacts it should produce
+- the checks it should run
+- the format of the final report
 
 Example:
 
@@ -30,31 +32,31 @@ Run pytest tests/retrieval -q.
 Return files changed, findings, and conductor follow-up.
 ```
 
-## Integration Rules
+## What The Conductor Does
 
 The conductor should:
 
 1. review each worker summary
-2. inspect overlaps before merging work
-3. run repo-level checks only after workers finish
-4. preserve unexpected edits made by other workers unless there is a direct conflict
+2. check for overlap
+3. run repo-level checks after the workers finish
+4. keep unrelated edits unless they truly conflict
 
-## When To Spawn Another Agent
+## When To Add Another Agent
 
 Add a worker only if:
 
-- the task has a clean ownership boundary
+- the task has a clear ownership boundary
 - the worker can finish with its own checks
-- the conductor can verify the result without reopening the whole repo
+- the result can be verified without rereading the whole repo
 
 ## When Not To
 
-Do not spawn another agent for:
+Do not add another agent for:
 
-- one-file edits
-- vague research with no owned output
-- tasks that need the same write access as the main agent
+- a one-file edit
+- vague research with no real output
+- work that would still require the same write access
 
-## Final Principle
+## Final Rule
 
-Multi-agent coding is a coordination problem first and a model problem second. Good boundaries beat clever prompts.
+Multi-agent work is mostly about coordination. Good boundaries matter more than clever prompts.

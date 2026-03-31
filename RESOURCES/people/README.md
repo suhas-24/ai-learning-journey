@@ -2,6 +2,8 @@
 
 People are not here for hero worship. They are here because the best teachers in this space compress years of experience into a few durable patterns, warnings, and mental models.
 
+Use this folder like a second set of explanations. If one person's writing makes a hard idea click, that usually means they found a simpler way to say the same thing.
+
 ## Guides In This Folder
 
 - [systems-thinkers.md](./systems-thinkers.md)

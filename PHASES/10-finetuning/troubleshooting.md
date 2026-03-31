@@ -1,5 +1,7 @@
 # Fine-Tuning Troubleshooting
 
+When something goes wrong, try to name which part failed: the task, the data, the training setup, or the evaluation. That keeps the fix focused.
+
 ## Symptom: Training Loss Improves But Test Results Do Not
 
 Likely causes:
@@ -74,3 +76,5 @@ What to do:
 ## Recovery Rule
 
 When a run fails, do not immediately change five variables. Change one variable, rerun the smallest useful experiment, and log the reason.
+
+Small, careful changes are easier to understand than big messy ones.

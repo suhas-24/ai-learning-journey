@@ -18,7 +18,7 @@ For each node event, record:
 - run id
 - node
 - start and end time
-- token usage
+- token usage, meaning how many small pieces of text the model read or wrote
 - model or tool name
 - validator result if any
 - next action

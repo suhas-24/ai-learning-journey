@@ -2,6 +2,8 @@
 
 Good evaluation starts before optimization. If you wait until after a change to decide what success means, you can always talk yourself into believing the new output is better.
 
+`Evaluation` means checking a system with a repeatable method instead of guessing. A `golden dataset` is a small set of examples that represents the real work the system must do.
+
 ## What a golden dataset is
 
 A golden dataset is a small, carefully chosen set of examples that represents the real job your system must do.
@@ -57,7 +59,7 @@ Split eval cases by capability:
 - tool-use cases
 - safety/refusal cases
 
-If all cases are mixed without labels, you will not know which subsystem regressed.
+If all cases are mixed without labels, you will not know which part regressed.
 
 ## Failure case: cherry-picked dataset
 
@@ -76,4 +78,4 @@ Lesson:
 
 Easy cases measure comfort, not reliability.
 
-Practice this directly in [Lab 01](../labs/01-build-a-golden-dataset.md).
+Practice this directly in [Lab 01](../labs/lab-01-build-a-golden-dataset.md).

@@ -22,4 +22,4 @@ Use this list to verify actual understanding, not just familiarity.
 - I can walk through a crash after approval without creating duplicate side effects.
 - I can walk through tool schema drift and show where validation belongs.
 
-If any item feels fuzzy, revisit [Failure Walkthroughs](./chapters/04-failure-walkthroughs.md) and [Lab 02](./labs/02-add-retries-budgets-and-approvals.md).
+If any item feels fuzzy, revisit [Failure Walkthroughs](./chapters/04-failure-walkthroughs.md) and [Lab 02](./labs/lab-02-add-retries-budgets-and-approvals.md).

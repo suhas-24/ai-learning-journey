@@ -1,23 +1,33 @@
-# Phase 2 - Raw LLM APIs and Context Engineering
+# Phase 2 - Working With Language Models
 
-This phase teaches how to work with language models before a framework hides the important details. The goal is to make request shape, message history, tool use, and context decisions feel understandable and inspectable.
+This phase teaches how to talk to a language model directly, before a framework hides the pieces. If the term "LLM" is new, it means "large language model." That is a program trained on lots of text so it can predict and generate language.
+
+Before anything else:
+
+- a **token** is a small piece of text the model reads
+- **tokenization** is the process of breaking text into tokens
+- **context** is everything the model can see right now
+
+You do not need to know the math behind the model. You only need to understand what information your code sends, what the model returns, and where your program must take over.
 
 ## What You Will Learn
 
+- what an LLM is and what it is not
+- what a token is and why tokenization matters
 - what a model request usually contains
 - how conversation history is represented in code
 - how structured output differs from free-form text
-- how tool calling works as a loop between model and program
-- how to decide what belongs in context and what should be omitted
-- how to think about latency, token cost, and failure modes
+- how tool calling works as a loop between the model and your program
+- how to decide what belongs in context and what should be left out
+- how to think about latency, cost, and failure modes
 
 ## How To Use This Phase
 
 1. Read the chapters in order.
 2. Copy or adapt the snippets into a sandbox project.
-3. Do the labs with your own API key or a simulated provider wrapper.
-4. Use [checkpoints.md](./checkpoints.md) to make sure you can explain every moving part.
-5. Use [troubleshooting.md](./troubleshooting.md) when responses become inconsistent or confusing.
+3. Do the labs with a simulated provider or your own API key.
+4. Use [checkpoints.md](./checkpoints.md) to make sure you can explain every moving part in plain language.
+5. Use [troubleshooting.md](./troubleshooting.md) when responses feel inconsistent or confusing.
 
 ## Study Path
 
@@ -43,4 +53,4 @@ You should be able to look at a model request and explain:
 
 - what the model sees
 - why each piece of context is present
-- what the next program step should be if the model asks for a tool
+- what the program should do if the model asks for a tool

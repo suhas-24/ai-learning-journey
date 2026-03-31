@@ -1,6 +1,6 @@
 # Chapter 2 - Agent Contracts and Constraints
 
-This chapter teaches what belongs in a good agent contract and how to write constraints that help instead of confuse.
+This chapter shows what belongs in a good agent contract and how to write rules that help instead of confuse.
 
 ## 1. Core Parts of an Agent Contract
 
@@ -29,7 +29,7 @@ Better:
 Do not edit files outside your ownership. Do not revert work you did not make.
 ```
 
-The second version changes actual behavior because a person can test whether it was followed.
+The second version changes behavior because a person can check whether it was followed.
 
 ## 3. Worked Example Contract
 
@@ -43,7 +43,7 @@ Done: All owned modules include explanations, labs, snippets, checkpoints, and t
 
 This is short, but still operational.
 
-## 4. Failure Cases
+## 4. Common Confusion
 
 ### Constraint without rationale
 

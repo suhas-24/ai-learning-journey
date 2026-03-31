@@ -1,5 +1,13 @@
 # Architecture - Enterprise Workflow Agent
 
+Before the diagram, here are the main words in plain language:
+
+- intake means accepting and checking the request
+- policy means the rules that decide what the system is allowed to do
+- telemetry means logs, traces, or metrics that show system behavior
+- audit means a record you can inspect later to reconstruct what happened
+- a schema is the shape of the data you expect, like which fields must exist and what they should contain
+
 ## System Overview
 
 ```text
@@ -69,6 +77,8 @@ Responsibilities:
 - manage secrets safely
 - provide a rollback path
 - expose health and status endpoints if relevant
+
+Deployment means making the system available in a controlled environment so real users or operators can rely on it.
 
 ## Architecture Decisions To Document
 

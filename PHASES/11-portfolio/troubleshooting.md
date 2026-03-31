@@ -1,5 +1,7 @@
 # Portfolio Troubleshooting
 
+When a portfolio feels weak, the fix is usually to add clearer evidence, clearer explanation, or a clearer scope.
+
 ## Symptom: The Repo Looks Busy But Not Impressive
 
 Likely cause:

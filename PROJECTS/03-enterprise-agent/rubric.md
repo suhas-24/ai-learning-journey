@@ -1,5 +1,7 @@
 # Rubric - Enterprise Workflow Agent
 
+Use this rubric to check whether the project feels like a real operational system with guardrails, not just a clever prototype.
+
 Score the project from 1 to 5 in each area.
 
 ## Scope Discipline

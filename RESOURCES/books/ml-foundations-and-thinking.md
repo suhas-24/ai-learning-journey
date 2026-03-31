@@ -2,6 +2,13 @@
 
 This guide covers the books that give you the vocabulary and judgment needed to understand model-based systems without hand-waving. These books matter because they make later phases less magical and more explainable.
 
+If you are seeing terms like `model`, `training`, `evaluation`, or `generalization` for the first time, think of them this way:
+
+- a `model` is a system that learns patterns from examples
+- `training` is the process of teaching it from data
+- `evaluation` is how you check whether it works
+- `generalization` is whether it still works on new data it has not seen before
+
 ## The Hundred-Page Machine Learning Book
 
 ### What this book teaches

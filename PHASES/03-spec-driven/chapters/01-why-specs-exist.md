@@ -1,19 +1,19 @@
 # Chapter 1 - Why Specs Exist
 
-Specs exist because hidden behavior scales badly.
+Specs exist because hidden behavior becomes hard to trust.
 
-If an agent’s rules only live inside code, future collaborators have to reverse-engineer the system to understand what it is supposed to do. That creates fragile behavior, slow reviews, and accidental drift.
+If an agent’s rules only live inside code, the next person has to reverse-engineer the system to understand what it is supposed to do. That creates fragile behavior, slow reviews, and accidental drift.
 
 ## 1. The Core Problem
 
 Without specs, important behavior gets buried in places like:
 
-- hardcoded prompts in Python files
+- hardcoded prompt strings inside code
 - scattered comments
 - chat history that nobody can review later
 - editor-specific rule files with no clear scope
 
-That means the behavior is real, but not visible.
+That means the behavior exists, but it is not easy to inspect.
 
 ## 2. What a Good Spec Does
 
@@ -25,7 +25,7 @@ A good spec tells a reader:
 - when it should escalate
 - what success looks like
 
-This is not marketing copy. It is an operational contract.
+This is not marketing copy. It is a working contract.
 
 ## 3. Worked Example
 
@@ -43,19 +43,19 @@ You are a documentation review agent. You identify broken links, missing example
 
 Why the second version is better:
 
-- clear scope
-- explicit exclusions
-- real escalation rule
+- it has a clear job
+- it says what not to do
+- it gives a real escalation rule
 
-## 4. Failure Cases
+## 4. Common Confusion
 
 ### Too vague
 
-If a spec says "use best judgment" everywhere, it is not providing enough guidance.
+If a spec says "use best judgment" everywhere, it is not giving enough guidance.
 
 ### Too theatrical
 
-If the spec sounds impressive but does not change behavior, it is decorative instead of useful.
+If the spec sounds impressive but does not change behavior, it is decoration, not guidance.
 
 ### Too duplicated
 

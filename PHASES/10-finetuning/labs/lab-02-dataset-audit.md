@@ -2,6 +2,8 @@
 
 This lab exists because most model improvements are blocked by dataset clarity, not optimizer magic.
 
+An audit is just a careful check before you spend time and money training.
+
 ## Goal
 
 Audit a candidate fine-tuning dataset before any training run.
@@ -74,3 +76,5 @@ You are allowed to move on only when:
 - the distribution is understood
 - the hard examples are intentional
 - the test set is protected
+
+If you can explain why the data is trustworthy, the rest of the experiment becomes much easier to believe.

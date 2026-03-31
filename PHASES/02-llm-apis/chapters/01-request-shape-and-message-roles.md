@@ -1,25 +1,27 @@
 # Chapter 1 - Request Shape and Message Roles
 
-The first thing to learn is that a model call is not "send prompt, get magic." It is a structured request with explicit pieces.
+An LLM call is not "send a paragraph and hope." It is a structured request made of parts. If you understand the parts, the behavior stops feeling mysterious.
 
-## 1. A Useful Mental Model
+## 1. Start With the Plain Meaning
 
-Think of an LLM call as a function:
+An **LLM** is a large language model. It is a program trained on lots of text so it can predict and generate text.
+
+Think of a model call like this:
 
 ```text
 response = model(messages, tools, settings, extra_context)
 ```
 
-Your code decides what goes into that function call. That means your code controls far more behavior than the model itself.
+Your code decides what goes into that call. That means your code has a lot of influence over the result.
 
-## 2. Common Message Roles
+## 2. Message Roles
 
-Most modern APIs use some variation of these roles:
+Most APIs use some version of these roles:
 
-- `system`: broad rules, tone, boundaries, operating instructions
-- `user`: the task or question
-- `assistant`: earlier model outputs in the conversation
-- `tool`: results produced by external code after a tool call
+- `system`: broad rules, tone, and boundaries
+- `user`: the question or task
+- `assistant`: earlier model replies
+- `tool`: output from outside code after a tool runs
 
 Example conversation shape:
 
@@ -32,26 +34,26 @@ Example conversation shape:
 ]
 ```
 
-Even if a provider uses slightly different field names, the same idea remains: you are sending structured context, not one mysterious paragraph.
+This is just a structured way of saying "here is the conversation so far."
 
-## 3. Generation Settings
+## 3. Settings
 
-Typical settings include:
+Common settings include:
 
-- temperature: how much randomness to allow
-- max output size: how long the answer may become
-- streaming: whether results arrive incrementally
-- tool definitions: what actions the model is allowed to request
+- `temperature`: how much randomness to allow
+- output limit: how long the answer may become
+- streaming: whether the answer arrives in pieces
+- tool definitions: what actions the model may ask for
 
-### Practical explanation of temperature
+### Temperature in plain language
 
-- low temperature: safer and more repeatable
-- medium temperature: more variety
-- high temperature: more exploration, more drift
+- low temperature: more repeatable
+- medium temperature: some variety
+- high temperature: more creative, but less predictable
 
-Use low temperature for extraction, classification, or structured tasks. Use higher temperature only when creativity truly matters.
+Use low temperature for extraction, classification, and structured tasks. Use higher temperature only when creativity is the point.
 
-## 4. Worked Example: Same Task, Better Request
+## 4. Better Request Shape
 
 Weak request:
 
@@ -77,25 +79,25 @@ Better request:
 }
 ```
 
-Why the second request is better:
+Why the second request works better:
 
-- clearer role
-- concrete task
-- lower randomness for a ranking problem
+- it gives the model a job
+- it narrows the task
+- it uses low randomness for a ranking task
 
-## 5. Failure Cases
+## 5. Common Confusion
 
-### Failure case: conflicting instructions
+### Conflicting instructions
 
-If your system message says "be concise" but the user message says "write a 2,000-word essay," your prompt stack contains tension. The model may try to satisfy both and do neither cleanly.
+If one instruction says "be concise" and another says "write a long essay," the model sees a conflict. Your job is to remove or resolve the conflict before sending the request.
 
-### Failure case: missing history
+### Missing history
 
-If your program forgets to resend earlier facts, the model does not truly remember them. Conversation state only exists if your code includes it again.
+The model does not truly remember unless your code sends the earlier facts again.
 
-### Failure case: overstuffed context
+### Too much context
 
-If you paste ten documents when only one matters, the answer may become noisy or generic. More tokens do not automatically mean better context.
+If you paste ten documents when only one matters, the answer can become noisy. More text does not automatically mean better help.
 
 ## 6. What To Practice
 

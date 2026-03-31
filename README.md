@@ -7,13 +7,15 @@
 
 This repository is the working notebook for the full journey from absolute beginner to production-capable AI engineer. It is intentionally practical: the goal is not to collect links or certificates, but to build real systems, document what breaks, and turn each phase into proof of skill.
 
-The repository has been restructured into a chapter-based curriculum with labs, snippets, checkpoints, and troubleshooting so it can teach directly instead of behaving like a long outline.
+If words like `LLM`, `token`, or `tokenization` feel unfamiliar, that is completely fine. A large language model, or LLM, is a program trained on lots of text so it can predict and generate text. A token is a small piece of text the model works with. Tokenization is the step that breaks text into those pieces. The repo explains those ideas from zero, so you do not need to arrive already fluent.
+
+The repository has been reorganized into a chapter-based curriculum with labs, snippets, checkpoints, and troubleshooting so it can teach directly instead of behaving like a long outline.
 
 The files in this repo should not be treated like a passive reading list. They are meant to behave like a learning operating system:
 
 - `START-HERE.md` gives the quickest entry ramp
 - `LEARNING_PATH.md` shows the full dependency chain
-- `FOUNDATIONS/` explains shared terms, assumptions, and mental models
+- `FOUNDATIONS/` explains shared terms, assumptions, and mental models from zero
 - `PHASES/README.md` is the curriculum index
 - `PROJECTS/README.md` is the portfolio build index
 - `RESOURCES/README.md` explains how to use the reference library
@@ -31,6 +33,7 @@ The files in this repo should not be treated like a passive reading list. They a
 - Break things on purpose. Debugging is part of the curriculum, not a side effect.
 - Keep notes close to code. Each phase should produce artifacts, not just opinions.
 - Treat agent behavior like software. Specs, evals, observability, and safety all matter.
+- Define a new term before you rely on it. If a word feels fuzzy, pause and write down what it means in plain language.
 
 ## Overall Progress
 

@@ -1,33 +1,33 @@
 # Lab 1 - Run a Safe Refactor With an Agent
 
-This lab teaches disciplined execution, not blind automation.
+This lab is about using an agent carefully, not automatically.
 
 ## Goal
 
-Use a coding agent to make one bounded refactor in a repository you understand, then verify it properly.
+Use a coding agent to make one small refactor in a repository you already understand, then verify it yourself.
 
-## Pick a Task
+## Pick A Task
 
 Choose something like:
 
-- extract duplicated parsing logic into a helper
+- move duplicated parsing code into one helper
 - rename a confusing function and update tests
 - separate configuration loading from business logic
 
-Avoid architecture rewrites for this lab.
+Do not try to redesign the whole system.
 
 ## Task Brief
 
 Start with [../snippets/task-brief-template.md](../snippets/task-brief-template.md) and fill it in for your repo.
 
-## Execution Steps
+## Steps
 
 1. let the agent inspect the relevant files
 2. ask for a plan
 3. approve only the bounded change
 4. inspect the diff
-5. run the relevant checks
-6. record what the agent got right and wrong
+5. run the checks
+6. write down what the agent did well and what it missed
 
 ## Command Examples
 

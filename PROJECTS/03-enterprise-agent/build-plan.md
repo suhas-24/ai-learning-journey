@@ -1,5 +1,7 @@
 # Build Plan - Enterprise Workflow Agent
 
+This plan begins with scope, because a safe workflow agent is only useful if everyone agrees on what it is allowed to do.
+
 ## Milestone 1 - Workflow Definition
 
 Deliverables:

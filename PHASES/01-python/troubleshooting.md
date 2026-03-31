@@ -2,15 +2,15 @@
 
 ## "I keep getting indentation errors"
 
-Python uses indentation as syntax, not decoration. One extra space can change block structure. Keep one editor setting and use it consistently.
+Python uses indentation as part of the language. One extra space can change what code belongs inside a block. Keep one editor setting and use it consistently.
 
-## "My file loads in one run and fails in another"
+## "My file works once and fails later"
 
-Check the current working directory. Use `Path(...)` deliberately and print `Path.cwd()` if you are unsure where Python is looking.
+Check the current working directory. Use `Path(...)` deliberately and print `Path.cwd()` if you are not sure where Python is looking.
 
 ## "Why is my loop not changing the original data?"
 
-You may be reassigning a local variable instead of updating the list or dictionary itself. Print the object before and after the loop to see what actually changed.
+You may be changing a temporary name instead of the list or dictionary itself. Print the object before and after the loop to see what actually changed.
 
 ## "I wrote async code and it looks slower"
 
@@ -24,9 +24,9 @@ That usually means it is doing its job. Read the error path carefully. It tells 
 
 Use this order:
 
-1. reproduce the failure with the smallest input possible
-2. print or log the value right before the error
-3. check the type and shape of the data
-4. write down what you expected versus what happened
+1. Reproduce the failure with the smallest input possible.
+2. Print or log the value right before the error.
+3. Check the type and shape of the data.
+4. Write down what you expected versus what happened.
 
 If you follow that loop calmly, debugging gets much less emotional.

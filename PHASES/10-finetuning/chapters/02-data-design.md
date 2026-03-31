@@ -2,11 +2,23 @@
 
 Most tuning failures are data failures wearing a model hat.
 
+Before you collect anything, here is the simplest way to think about the moving parts:
+
+- a dataset is a set of examples the model learns from
+- a label is the answer you want the model to produce
+- train data teaches the model
+- validation data helps you adjust the experiment
+- test data is kept aside for the final check
+
+If you see `JSONL`, it means "JSON lines": one JSON object per line in a text file.
+
 ## The Dataset Is The Product
 
 When you fine-tune, you are not only training a model. You are encoding a policy. Every inconsistency in the dataset becomes an inconsistency the model may learn confidently.
 
 That is why dataset work comes before training code.
+
+If the examples are sloppy, the model learns sloppy habits. If the examples are clear, consistent, and realistic, the model has a much better chance of learning the right pattern.
 
 ## Build A Label Policy First
 
@@ -20,6 +32,8 @@ Your label policy should answer:
 
 For the support routing example, a weak label policy says "route tickets to the right team." A strong policy defines each class with inclusion and exclusion rules.
 
+Inclusion rules explain what belongs in a label. Exclusion rules explain what does not belong there.
+
 ## Dataset Splits
 
 Use three splits:
@@ -29,6 +43,8 @@ Use three splits:
 - test: used only for final comparison
 
 The test set must stay untouched. Do not relabel it after peeking at errors unless you are fixing a true annotation mistake and documenting the change.
+
+This separation matters because you want one honest final check. If you keep changing the test set, the final score stops being trustworthy.
 
 ## Example Format
 
@@ -49,6 +65,8 @@ Good examples are:
 - close to production inputs
 - balanced across easy and hard cases
 
+If you are new to tokenization, remember this simple idea: the model reads your examples after they have been split into small pieces called tokens. That is why example length and wording matter.
+
 ## Coverage Matters More Than Volume
 
 A dataset with 500 carefully chosen examples often beats 5,000 lazy examples.
@@ -62,6 +80,8 @@ Make sure your dataset covers:
 - typo-heavy user language
 - class boundary cases
 - adversarial or misleading wording
+
+The goal is not to make the data look beautiful. The goal is to make it honest.
 
 ## Common Data Mistakes
 
@@ -80,6 +100,8 @@ Before training, ask:
 3. Do we have enough hard examples?
 4. Are train and test examples clearly separated?
 5. Does the assistant output format exactly match production needs?
+
+If a human cannot explain the label policy, the model probably will not learn it cleanly either.
 
 ## Minimal Audit Script
 
@@ -101,6 +123,8 @@ print(counter)
 
 The point is not just counting labels. The point is discovering bad data before paying to train on it.
 
+This is a little like checking ingredients before cooking. Bad ingredients usually lead to a bad meal.
+
 ## Gold Set Design
 
 Create a small gold set of difficult examples that you review manually every time:
@@ -111,6 +135,8 @@ Create a small gold set of difficult examples that you review manually every tim
 - 10 business-critical examples
 
 This becomes your sanity set across all experiments.
+
+The gold set is the small set of examples you trust most. It helps you see whether the model really improved on the tricky cases.
 
 ## Chapter Exercise
 

@@ -1,6 +1,8 @@
 # Harness Components and Runtime Policies
 
-The harness is the operational shell around the model. If the model is the brain, the harness is the nervous system, memory, and seatbelt.
+The harness is the operational shell around the model.
+
+If the model is the part that writes the next sentence or picks the next action, the harness is the part that asks, "Should we do that, can we afford that, and what should happen if it fails?" It keeps the work safe, repeatable, and observable.
 
 ## The minimum viable harness
 
@@ -14,6 +16,15 @@ A production-worthy harness usually includes:
 - approval gate
 - structured logs and traces
 - dead-letter path for repeated failures
+
+That sounds like a lot, but each piece solves one simple problem:
+
+- who decides the next step
+- where do we remember progress
+- when do we try again
+- when do we stop
+- when do we ask a person
+- how do we know what happened
 
 ## Where each piece fits
 
@@ -66,7 +77,9 @@ retry_policy:
 
 ## Budgets
 
-Budgets keep the system from turning a small task into an expensive mystery.
+Budgets keep the system from turning a small task into an expensive mystery. A budget is just a limit on time, money, or effort.
+
+When a model processes text, its work is often counted by `tokens`, which are small pieces of text. You do not need to memorize the counting rule yet. For now, just remember that token count is one way to measure how much text the system read or wrote.
 
 Track:
 

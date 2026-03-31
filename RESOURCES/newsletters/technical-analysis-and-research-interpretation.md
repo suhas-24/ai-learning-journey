@@ -2,6 +2,8 @@
 
 This guide covers newsletters and sources that help you understand what a technical change actually means. They are most useful when raw announcements are too shallow and research papers are too dense.
 
+Use this when you need a translation layer between "interesting news" and "what should I actually do differently?"
+
 ## Ahead Of AI
 
 ### What it teaches

@@ -2,11 +2,11 @@
 
 ## Task
 
-What was the assignment?
+What was the assignment in one sentence?
 
 ## Tool Surface
 
-CLI agent, IDE agent, or editor extension?
+Was this a CLI agent, IDE agent, or editor extension?
 
 ## Context Given
 

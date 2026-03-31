@@ -1,18 +1,18 @@
 # Chapter 3 - From Script to Project
 
-Most beginners start with one file. That is normal. The next step is learning when one file stops being enough.
+A **script** is one file that gets a job done. A **project** is a small group of files that share a purpose. This chapter shows you when to split one script into a project.
 
-## 1. A Script Is Fine Until It Is Carrying Too Many Jobs
+## 1. When One File Stops Being Enough
 
-One file becomes painful when it does all of this at once:
+One file becomes hard to maintain when it tries to do too many different jobs:
 
-- parse user input
-- load config
-- call helper logic
+- read input
+- validate input
+- do the main work
 - format output
 - handle errors
 
-That is your signal to split the program.
+When that happens, the file is not "bad." It is just doing too much.
 
 ## 2. A Minimal Project Layout
 
@@ -29,25 +29,25 @@ habit_tracker/
   README.md
 ```
 
-The point is not to create many files for style points. The point is to give each file one main reason to change.
+The goal is not to create lots of folders. The goal is to give each file one main reason to change.
 
-## 3. Imports and Modules
+## 3. Modules and Imports
 
-If `storage.py` contains file-reading logic, `main.py` can import it:
+A **module** is a Python file you can import. A **package** is a folder of modules.
 
 ```python
 from app.storage import load_tasks
 ```
 
-A module is just a Python file you can import. A package is a directory of modules, usually with `__init__.py`.
+That line means "reuse the code from another file instead of copying it here."
 
-### Failure case: circular imports
+### Common confusion
 
-If `main.py` imports `storage.py` and `storage.py` imports `main.py`, the program becomes tangled.
+If `main.py` imports `storage.py` and `storage.py` imports `main.py`, the files depend on each other in a circle. That makes the program confusing.
 
-Fix it by moving shared logic into a third file, such as `models.py` or `utils.py`.
+Fix the problem by moving shared logic into a third file, such as `models.py` or `utils.py`.
 
-## 4. Tests Turn Guessing Into Verification
+## 4. Tests Turn Guessing Into Checking
 
 ```python
 from app.storage import summarize_done
@@ -62,11 +62,9 @@ def test_summarize_done_counts_completed_tasks():
     assert summarize_done(tasks) == 1
 ```
 
-The lesson is simple: if a function matters, write a test that proves what it should return.
+The point of the test is simple: if the code matters, write down what it should do and check it.
 
-## 5. Tooling Loop
-
-For a beginner-friendly local workflow:
+## 5. A Beginner-Friendly Tool Loop
 
 ```bash
 python3 -m venv .venv
@@ -77,11 +75,16 @@ pytest
 ruff check .
 ```
 
-If your machine can repeatedly create the environment, run tests, and lint code, your project is becoming stable.
+This sequence matters because it teaches a repeatable habit:
 
-## 6. Worked Refactor
+- make a clean environment
+- install only what the project needs
+- run tests
+- run lint checks
 
-Start with one file:
+## 6. Refactor Example
+
+Start with one crowded file:
 
 ```python
 def main():
@@ -91,7 +94,7 @@ def main():
     ...
 ```
 
-Refactor toward:
+Refactor toward small focused functions:
 
 ```python
 def load_tasks(...): ...
@@ -102,14 +105,14 @@ def main(): ...
 
 Why this is better:
 
-- each function can be tested alone
-- naming reveals intent
-- bugs are easier to isolate
+- each function has one job
+- each function is easier to test
+- bugs are easier to find
 
 ## 7. What To Practice Before Moving On
 
-- split one 40-line file into 3 focused functions
-- add one test before changing the behavior
+- split one 40-line file into three focused functions
+- add one test before changing behavior
 - explain why each file exists in a project layout
 
 Next: [Chapter 4: Modern AI Python Habits](./04-modern-ai-python-habits.md)

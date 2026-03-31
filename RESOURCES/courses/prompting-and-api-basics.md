@@ -2,11 +2,19 @@
 
 This guide covers the resources that teach how to talk to models clearly, shape outputs, and turn single calls into simple workflows.
 
+If these terms are still new, here is the plain version:
+
+- a `prompt` is the instruction you give the model
+- an `API` is a programmatic way for one piece of software to talk to another
+- a `workflow` is a sequence of steps, not just one answer
+
 ## ChatGPT Prompt Engineering For Developers
 
 ### What it teaches
 
 This course teaches the first principles of working with instruction-following models. The value is not the exact prompt wording. The value is learning how models respond to framing, examples, structure, and constraints.
+
+An instruction-following model is a model that tries to do what you ask in text. It still needs clear directions, just like a person does.
 
 ### Major topics and subtopics
 

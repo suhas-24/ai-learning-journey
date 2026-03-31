@@ -1,57 +1,59 @@
 # Phase 04 Troubleshooting
 
-Use this page when examples fail or the tool-choice logic feels fuzzy.
+Use this page when a command, API call, or handoff does not behave the way you expected.
 
 ## `gh auth status` fails
 
-Symptoms:
+What you may see:
 
-- `gh` says you are not logged in
-- issue creation exits with auth errors
+- `gh` says you are not signed in
+- issue creation fails with an auth error
 
-Fix:
+What to try:
 
 ```bash
 gh auth login
 gh auth status
 ```
 
-If you are running in CI, use a non-interactive token flow instead of assuming a browser login.
+If you are in CI, use a token-based flow. Do not assume a browser login will exist there.
 
-## Shell command works manually but fails in code
+## A command works in the terminal but not in code
 
-Common causes:
+Common reasons:
 
-- you built one long shell string instead of an argument array
-- environment variables are missing in the subprocess
-- the working directory is not what you expected
+- you built one long shell string instead of a list of arguments
+- the subprocess is missing environment variables
+- the working directory is wrong
 
 Safer pattern:
 
 ```python
+import subprocess
+
 subprocess.run(["gh", "issue", "list"], check=True)
 ```
 
-## MCP tool is called with junk arguments
+## MCP accepts the wrong inputs
 
-Causes:
+Common reasons:
 
-- schema is too permissive
-- description is vague
-- required fields are missing
+- the schema is too open
+- the description is too vague
+- the required fields are not strict enough
 
 Fixes:
 
-- set `additionalProperties` to `false`
-- add `minLength`, `maxLength`, and bounded arrays
-- tighten the tool description to one job only
+- reject extra fields
+- add length limits
+- keep the tool focused on one job
 
-## Delegation created more confusion than value
+## Delegation caused more confusion than help
 
-This usually means one of three things:
+That usually means:
 
-- the worker did not have clear ownership
-- the handoff lacked success criteria
-- the task should have stayed with one agent
+- the worker ownership was unclear
+- the handoff did not say what success looked like
+- the second agent was not actually needed
 
-Return to [Chapter 4](./chapters/04-delegation-and-agent-to-agent-handshakes.md) and rewrite the contract before trying again.
+Go back to [Chapter 4](./chapters/04-delegation-and-agent-to-agent-handshakes.md) and make the handoff smaller and clearer.

@@ -1,19 +1,19 @@
 # Lab 1 - Build One Workflow Three Ways
 
-In this lab, you will implement the same GitHub issue creation workflow with a CLI wrapper, a direct API wrapper, and an MCP tool. The goal is not just to make the issue appear. The goal is to compare ergonomics, observability, and maintenance cost.
+This lab uses the same small job three times so you can feel the difference between a command, a direct request, and a shared tool description.
 
 ## Goal
 
-Create an issue titled `Lab: compare tool surfaces` in a test repository and record the differences among three implementations.
+Create a GitHub issue titled `Lab: compare tool surfaces` in a test repository, then compare the experience.
 
-## Prerequisites
+## What You Need
 
-- GitHub account and a test repository
-- `gh` installed and authenticated
-- Python 3.11+
-- an isolated environment with `httpx`
+- a GitHub account
+- a test repository you can safely write to
+- `gh` installed and signed in
+- Python 3.11+ with `httpx`
 
-## Part A - CLI Path
+## Part A - Use The Command
 
 Run:
 
@@ -26,15 +26,15 @@ gh issue create \
   --label experiment
 ```
 
-Record:
+Write down:
 
-- how much setup was required
-- what the failure mode looked like if auth was missing
-- whether the output was easy to parse
+- how much setup was needed
+- what happened when auth was missing
+- how easy the output was to understand
 
-## Part B - Direct API Path
+## Part B - Use The HTTP Request
 
-Use the example in [../snippets/httpx-create-issue.py](../snippets/httpx-create-issue.py).
+Use [../snippets/httpx-create-issue.py](../snippets/httpx-create-issue.py).
 
 Run:
 
@@ -43,34 +43,36 @@ export GITHUB_TOKEN=YOUR_TOKEN
 python ../snippets/httpx-create-issue.py
 ```
 
-Record:
+Write down:
 
-- how explicit the request contract felt
+- how clear the request felt
 - what extra code you had to own
-- how easy it was to surface structured errors
+- how easy it was to see structured errors
 
-## Part C - MCP Path
+## Part C - Use The Shared Tool Shape
 
-Start from [../snippets/mcp-tool-schema.json](../snippets/mcp-tool-schema.json) and implement a server-side tool that hides the repository name and token.
+Start from [../snippets/mcp-tool-schema.json](../snippets/mcp-tool-schema.json).
 
-Record:
+Imagine a tool server that hides the repository name and token. The caller only provides the issue title, body, and labels.
 
-- how the schema improved or failed to improve tool use
-- whether a second client could reuse the same tool easily
-- what logs you would want in production
+Write down:
 
-## Reflection Questions
+- whether the schema made the tool easier to understand
+- whether a second client could reuse the same tool
+- what you would want to log in a real system
 
-1. Which path had the lowest implementation cost?
-2. Which path had the clearest failure surface?
-3. Which path would you standardize across a team?
-4. Was a second agent needed anywhere in this workflow?
+## Reflection
+
+1. Which path took the least setup?
+2. Which path gave the clearest error messages?
+3. Which path would you choose for a team-wide standard?
+4. Did a second agent actually help anywhere, or was one worker enough?
 
 ## Deliverable
 
-Create a short comparison table with these columns:
+Create a small comparison table:
 
-| Approach | Setup cost | Runtime clarity | Reuse potential | Best fit |
+| Approach | Setup cost | Clarity | Reuse potential | Best fit |
 | --- | --- | --- | --- | --- |
 
 Then review [../checkpoints.md](../checkpoints.md).

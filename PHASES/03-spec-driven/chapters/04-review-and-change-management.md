@@ -15,7 +15,7 @@ When reviewing a spec change, ask:
 
 If an agent starts using a new tool, escalating differently, or changing output format, that should appear in a spec diff where reviewers can see it.
 
-## 3. Worked Example: Good Change Discipline
+## 3. Worked Example
 
 Bad pattern:
 
@@ -37,7 +37,7 @@ Better pattern:
 - done condition is testable
 - no duplicated rules across files
 
-## 5. Failure Cases
+## 5. Common Confusion
 
 ### Stale specs
 

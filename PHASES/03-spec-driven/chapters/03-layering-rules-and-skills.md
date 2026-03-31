@@ -58,7 +58,7 @@ Before editing docs, inspect the existing file, identify missing examples, then 
 
 These three rules do different jobs. Putting them all in one file would make the system harder to maintain.
 
-## 5. Failure Cases
+## 5. Common Confusion
 
 ### Everything lives in one giant file
 

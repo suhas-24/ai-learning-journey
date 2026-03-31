@@ -2,6 +2,8 @@
 
 A demo should confirm your engineering work, not hide missing rigor behind a happy-path screen recording.
 
+Evidence is anything that helps a reviewer check that the system behaves the way you say it does.
+
 ## What A Good Demo Shows
 
 A strong technical demo includes:

@@ -3,6 +3,7 @@ import json
 
 
 def load_items(path: Path) -> list[dict]:
+    # Check the file before reading so the error is easy to understand.
     if not path.exists():
         raise FileNotFoundError(f"Missing file: {path}")
 
@@ -16,6 +17,7 @@ def summarize_items(items: list[dict]) -> dict[str, int]:
     in_stock = 0
 
     for item in items:
+        # Treat missing counts as zero so one bad record does not crash the whole summary.
         if item.get("count", 0) > 0:
             in_stock += 1
 

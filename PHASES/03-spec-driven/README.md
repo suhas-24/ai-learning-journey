@@ -1,12 +1,15 @@
 # Phase 3 - Spec-Driven Development
 
-This phase teaches how to make agent behavior visible, reviewable, and versioned. The goal is not to write longer prompts. The goal is to move important behavior out of hidden code paths and into clear contracts that humans can inspect.
+This phase teaches how to make agent behavior visible, reviewable, and versioned. A **spec** is a written description of how something should behave. In this phase, that usually means the rules for a worker, an agent, or a reusable workflow.
+
+The goal is not to write longer prompts. The goal is to move important behavior out of hidden places and into clear documents that people can inspect.
 
 ## What You Will Learn
 
-- why behavior specs matter in AI systems
+- why specs matter in AI systems
+- what belongs in an agent contract
 - how to separate repo rules, agent roles, and reusable skills
-- how to write constraints that reduce ambiguity without becoming vague
+- how to write constraints that are concrete instead of vague
 - how to review a spec the same way you review code
 - how to change behavior by editing the contract first
 
@@ -16,7 +19,7 @@ This phase teaches how to make agent behavior visible, reviewable, and versioned
 2. Study the example spec files in `snippets/`.
 3. Do the labs by rewriting one small workflow in a spec-first way.
 4. Use [checkpoints.md](./checkpoints.md) to make sure you can explain the boundaries and responsibilities of each file.
-5. Use [troubleshooting.md](./troubleshooting.md) if your specs feel fluffy, duplicated, or impossible to follow.
+5. Use [troubleshooting.md](./troubleshooting.md) if your specs feel fluffy, duplicated, or hard to follow.
 
 ## Study Path
 
@@ -38,4 +41,4 @@ This phase teaches how to make agent behavior visible, reviewable, and versioned
 
 ## Success Standard
 
-You should be able to point to one behavior change and say, "that changed because I edited the contract here," instead of "that changed because I buried a new prompt string inside Python."
+You should be able to point to one behavior change and say, "that changed because I edited the contract here," instead of "that changed because I hid a new prompt string inside code."

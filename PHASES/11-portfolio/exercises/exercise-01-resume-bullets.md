@@ -4,6 +4,8 @@
 
 Turn project reality into resume bullets that are specific, technical, and defensible.
 
+Defensible means you can explain why the bullet is true if someone asks you about it.
+
 ## Instructions
 
 For each of the three portfolio projects, write:

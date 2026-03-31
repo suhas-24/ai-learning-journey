@@ -2,11 +2,15 @@
 
 This guide is for the phase where you need to understand what is happening inside the model itself. The goal is not to become a researcher overnight. The goal is to stop treating model behavior as a black box.
 
+If you are new to this, `fine-tuning` means teaching an already-trained model with extra examples so it behaves differently on a task. It is not the same as writing a better prompt. It changes the model's learned settings, which are often called `weights`.
+
 ## Build A Large Language Model (from Scratch) by Sebastian Raschka
 
 ### What this book teaches
 
 This book teaches the mechanics behind transformer-style models: how text becomes vectors, how attention mixes information, how optimization updates weights, and why training data shapes capability.
+
+In plain English: the model reads text in small pieces, turns those pieces into numbers, mixes the numbers to decide what matters, and then predicts the next piece of text. Fine-tuning changes what the model tends to do by updating its learned numbers.
 
 ### Major topics and subtopics
 

@@ -1,18 +1,20 @@
 # Phase 1 Checkpoints
 
-Use these checkpoints after the labs. If you cannot answer one, go back to the chapter linked beside it.
+Use these checkpoints after the labs. If one feels fuzzy, go back to the chapter named beside it.
 
 ## Concept Checks
 
-1. What is the difference between a list and a dictionary?
-   Review: [Chapter 2](./chapters/02-data-structures-files-and-errors.md)
-2. Why is returning data usually more reusable than printing it?
+1. What is the difference between a value and a variable?
    Review: [Chapter 1](./chapters/01-python-core-and-control-flow.md)
-3. When is `async` useful, and when is it the wrong tool?
+2. What is the difference between a list and a dictionary?
+   Review: [Chapter 2](./chapters/02-data-structures-files-and-errors.md)
+3. Why is returning data usually more reusable than printing it?
+   Review: [Chapter 1](./chapters/01-python-core-and-control-flow.md)
+4. When is `async` useful, and when is it the wrong tool?
    Review: [Chapter 4](./chapters/04-modern-ai-python-habits.md)
-4. Why should input validation happen near the boundary of a program?
+5. Why should input validation happen near the edge of a program?
    Review: [Chapter 4](./chapters/04-modern-ai-python-habits.md)
-5. What signals that one script should become multiple modules?
+6. What is a sign that one script should become multiple modules?
    Review: [Chapter 3](./chapters/03-from-script-to-project.md)
 
 ## Practical Checks

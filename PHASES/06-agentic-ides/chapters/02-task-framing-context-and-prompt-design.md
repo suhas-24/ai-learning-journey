@@ -1,19 +1,20 @@
-# Chapter 2 - Task Framing, Context, and Prompt Design
+# Chapter 2 - Writing a Clear Task Brief
 
-Many agent failures are prompt design failures in disguise. If the task lacks boundaries, expected outputs, or repo context, the model is forced to guess.
+Most agent problems are not really model problems. They are task problems.
 
-## What a Good Task Brief Contains
+If the task is vague, the agent will guess. If the task is bounded, the agent has a chance to be helpful.
 
-- objective
-- owned files
-- forbidden files or systems
-- success criteria
-- checks to run
-- output format
+## What A Good Brief Includes
 
-Use [../snippets/task-brief-template.md](../snippets/task-brief-template.md) as a reusable starting point.
+- the objective
+- the files or folders the agent may edit
+- the files or systems the agent must not touch
+- the checks the agent should run
+- the format of the final answer
 
-## Bad vs Good Prompt
+Use [../snippets/task-brief-template.md](../snippets/task-brief-template.md) as a starting point.
+
+## Bad Versus Good
 
 Bad:
 
@@ -31,34 +32,36 @@ Run pytest tests/retrieval -q.
 Return a short summary with files changed and any open risks.
 ```
 
-The second prompt reduces ambiguity around scope, verification, and return format.
+The second prompt is better because it says what to change, what not to change, and how to prove success.
 
-## Context Strategy
+## Context
+
+`Context` is the information the agent can see while it works.
 
 Give the agent:
 
-- repo instructions if they exist
-- a small set of target files
-- adjacent files only when needed
-- one clear success definition
+- the repo instructions that matter
+- only the files it needs
+- nearby files if they help
+- one clear definition of done
 
-Avoid:
+Do not give the agent:
 
-- pasting irrelevant architecture prose
-- asking for implementation before the agent has inspected the codebase
-- mixing brainstorm mode and execute mode in one vague instruction
+- a giant pile of unrelated prose
+- instructions without boundaries
+- both brainstorming and execution instructions at once
 
-## Worked Example
+## Example
 
-Suppose you want an agent to compare two retrieval ranking strategies.
+Suppose you want an agent to compare two ranking strategies.
 
-Strong brief:
+A strong brief would say:
 
 1. inspect `src/retrieval/` and `tests/retrieval/`
-2. do not edit production config
-3. add a small benchmark script under `scripts/`
+2. do not edit deployment config
+3. add a tiny benchmark script under `scripts/`
 4. return results as a table
 
-That prompt makes it easier for the agent to produce useful artifacts instead of confident fluff.
+That makes it much more likely the agent will produce something useful.
 
-Continue to [Chapter 3](./03-review-verification-and-safe-iteration.md).
+Next: [Chapter 3](./03-review-verification-and-safe-iteration.md).

@@ -1,10 +1,13 @@
 # Chapter 2 - Structured Output and Tool Calling
 
-Once you stop asking only for prose, model integration becomes much more powerful. Structured output lets downstream code consume model results. Tool calling lets the model ask your program to fetch or compute something it does not know.
+This chapter is about two useful ideas:
+
+- asking the model for a shaped answer instead of a paragraph
+- letting the model ask your program for outside help
 
 ## 1. Structured Output
 
-Suppose you want the model to classify a support ticket. Free-form prose is annoying to parse. A structured target is better.
+Suppose you want the model to classify a support ticket. Free-form prose is awkward for code to read. A shape with named fields is easier.
 
 Desired shape:
 
@@ -16,28 +19,28 @@ Desired shape:
 }
 ```
 
-Now your program can validate fields before acting.
+Now your code can check the fields before it acts.
 
 ### Why validation matters
 
-Models can still produce:
+A model can still produce:
 
 - missing keys
 - wrong data types
-- extra text around JSON
+- extra words around the JSON
 
-That is why you validate after generation rather than trusting the model by appearance.
+So you validate after generation. You do not trust the output just because it looks neat.
 
-## 2. Tool Calling as a Program Loop
+## 2. Tool Calling
 
-Tool calling is not the model secretly using the internet. It is a handshake:
+Tool calling is not magic and it is not the model reaching out on its own. It is a simple loop:
 
-1. your code sends available tools
-2. the model decides a tool is needed
-3. the model returns a tool request
-4. your code executes the tool
-5. your code sends the tool result back
-6. the model finishes the answer
+1. your code sends the list of tools
+2. the model decides one is needed
+3. the model asks for that tool
+4. your code runs the tool
+5. your code sends the result back
+6. the model writes the final answer
 
 That loop is the backbone of many agent systems.
 
@@ -49,7 +52,7 @@ User asks:
 What unresolved tasks are left in notes.txt?
 ```
 
-The model might say:
+The model might ask for a file-reading tool:
 
 ```json
 {
@@ -67,7 +70,7 @@ Your program runs the tool, gets the file content, and sends back something like
 }
 ```
 
-Then the model can produce a final answer grounded in actual data.
+Then the model can answer using the actual file instead of guessing.
 
 ## 4. Good Tool Design
 
@@ -78,21 +81,21 @@ Good tools are:
 - safe to run
 - easy to test without a model
 
-Bad tools try to do too many unrelated jobs. If your tool is called `do_everything`, your design is already decaying.
+If a tool tries to do too many unrelated jobs, it becomes hard to trust.
 
-## 5. Failure Cases
+## 5. Common Confusion
 
 ### Tool schema is vague
 
-If the tool description is ambiguous, the model may supply unusable arguments.
+If the tool description is unclear, the model may send unusable arguments.
 
 ### Tool output is too large
 
-If a file reader returns a 50,000-line file, you may overwhelm the next model step. Summarize or chunk tool results before re-inserting them.
+If a file reader returns a huge file, the next model step can become noisy. Summarize or chunk the result.
 
-### Tool result is not validated
+### Tool result is not checked
 
-If a search tool returns `None` or a malformed object and you pass it onward blindly, the rest of the loop becomes brittle.
+If a tool returns `None` or malformed data and you pass it onward, the loop becomes brittle.
 
 ## 6. What To Practice
 

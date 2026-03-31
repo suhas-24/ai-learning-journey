@@ -1,30 +1,34 @@
-# Chapter 4 - Delegation and Agent-to-Agent Handshakes
+# Chapter 4 - Safe Delegation Between Agents
 
-Many teams reach for multi-agent systems too early. A second agent is only justified when it owns something the first agent does not: different permissions, different context, or different specialization.
+Delegation means giving part of the work to another agent on purpose.
 
-## When Delegation Is Worth It
+That sounds simple, but it only helps when the second agent truly owns a different piece of the job. If both agents need the same files, the same permission, and the same context, then delegation is mostly noise.
 
-Delegation makes sense when:
+## When Delegation Helps
 
-- one agent owns the codebase and another owns deployment policy
-- one agent can parallelize a bounded research task
-- one agent should verify or review another's work independently
+Use a second agent when:
 
-Delegation is not worth it when:
+- one worker can do implementation and another can do review
+- one worker has a different permission boundary
+- one worker can finish a clearly bounded slice in parallel
 
-- the main agent simply has an underspecified prompt
-- both agents need the same full context anyway
-- the task could be one tool call
+Do not use a second agent when:
 
-## Handoff Contract
+- the prompt is just vague
+- the work is one file and one person can finish it
+- both agents would have to write the same files
 
-A good handoff includes:
+## What A Handoff Should Say
 
-- task objective
-- owned files or owned systems
-- success criteria
-- forbidden actions
-- expected return format
+A good handoff is just a clear note.
+
+It should include:
+
+- the goal
+- the owned files or folders
+- the files that are off limits
+- the checks to run
+- the format of the final report
 
 Example:
 
@@ -34,42 +38,42 @@ Example:
   "owned_paths": ["evals/", "reports/retrieval/"],
   "must_not_touch": ["src/production/"],
   "deliverables": ["report.md", "latency-table.csv"],
-  "return_format": "brief summary with findings and next actions"
+  "return_format": "short summary with findings and next actions"
 }
 ```
 
-## Designing a Reviewer Agent
+## Builder And Reviewer
 
-One useful A2A pattern is `builder -> reviewer`.
+One healthy pattern is:
 
-- builder agent changes files and runs tests
-- reviewer agent only inspects diffs, logs, and failure risks
+- builder agent changes the code and runs checks
+- reviewer agent reads the diff and looks for mistakes
 
-That separation reduces self-confirmation bias.
+This helps because a builder can accidentally convince itself that its own work is perfect.
 
-## Failure Modes
+## Common Problems
 
-### Context leakage
+### The task was too big
 
-If a worker needs the whole repository, the split is probably weak.
+If a worker needs the whole repository, the split is probably wrong.
 
-### Ownership ambiguity
+### Ownership was unclear
 
-If two agents can both edit the same file, collisions are likely.
+If two agents can change the same file, they can easily collide.
 
-### Handoff without verification
+### The summary was treated like proof
 
-Never treat another agent's summary as evidence. Require artifacts, logs, or diffs.
+Another agent's summary is helpful, but it is not proof. Use diffs, logs, and test output.
 
-## Decision Checklist
+## Decision Steps
 
-Before adding an agent, ask:
+Before you add another agent, ask:
 
-1. What capability is unique to the second agent?
-2. Can the task be split without shared writes?
-3. What artifact proves completion?
-4. Who validates the result?
+1. What part of the work is truly separate?
+2. Can the second agent finish without shared writes?
+3. What proof will show the job is done?
+4. Who checks the result?
 
-## Next Action
+## Next Step
 
-Complete [Lab 1](../labs/lab-01-github-issue-three-ways.md) and explicitly note where delegation helped or did not help.
+Do [Lab 1](../labs/lab-01-github-issue-three-ways.md) and compare what changed when the same job was solved three different ways.

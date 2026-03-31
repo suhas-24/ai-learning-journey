@@ -12,13 +12,25 @@ This repository is a self-paced AI engineering curriculum that is meant to do th
 
 It is not a certificate course, a random bookmark dump, or a chat transcript archive. It is a working study system.
 
+## The First Words
+
+If this is all new, start with these simple meanings:
+
+- `LLM` means large language model. It is software trained on lots of text so it can predict and generate text.
+- `token` means a small piece of text the model reads or writes.
+- `tokenization` means breaking text into tokens so the model can process it.
+- `context window` means the amount of text the model can see at one time.
+
+You do not need to memorize those words immediately. You only need a safe starting point. The [FOUNDATIONS/glossary.md](./FOUNDATIONS/glossary.md) page explains them more slowly.
+
 ## The Fastest Way To Begin
 
 1. Read [README.md](./README.md) for the high-level purpose of the repository.
-2. Read [FOUNDATIONS/prerequisites.md](./FOUNDATIONS/prerequisites.md) to understand what you need before Phase 1.
-3. Read [FOUNDATIONS/mental-models.md](./FOUNDATIONS/mental-models.md) so the later phases fit into one coherent map.
-4. Read [LEARNING_PATH.md](./LEARNING_PATH.md) to see how the full curriculum unfolds.
-5. Start with [PHASES/01-python/README.md](./PHASES/01-python/README.md).
+2. Read [FOUNDATIONS/glossary.md](./FOUNDATIONS/glossary.md) if words like `LLM` or `token` are new to you.
+3. Read [FOUNDATIONS/prerequisites.md](./FOUNDATIONS/prerequisites.md) to understand what you need before Phase 1.
+4. Read [FOUNDATIONS/mental-models.md](./FOUNDATIONS/mental-models.md) so the later phases fit into one coherent map.
+5. Read [LEARNING_PATH.md](./LEARNING_PATH.md) to see how the full curriculum unfolds.
+6. Start with [PHASES/01-python/README.md](./PHASES/01-python/README.md).
 
 ## How To Study A Phase
 
@@ -56,6 +68,8 @@ Do not jump straight to agents, RAG, or LangGraph because those terms are trendy
 - not understanding APIs
 - not knowing how files, logs, and tests work
 - not being able to debug terminal output
+
+If even the word `LLM` feels strange right now, that is okay. The Foundations pages are there so the rest of the curriculum does not assume too much.
 
 ## If You Already Know Some Python
 

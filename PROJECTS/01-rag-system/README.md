@@ -2,6 +2,8 @@
 
 Build a document-grounded question answering system that can ingest a real corpus, retrieve relevant evidence, generate answers with citations, and prove quality through evaluation instead of demos alone.
 
+A RAG system, short for retrieval-augmented generation, is a setup where the model first looks up relevant text and then uses that text to answer. The retrieval part finds the evidence. The generation part turns that evidence into a response. Grounding means the answer stays tied to the evidence instead of guessing.
+
 ## Project Goal
 
 The project is successful when a reviewer can see:
@@ -10,6 +12,8 @@ The project is successful when a reviewer can see:
 - intentional retrieval design
 - answer grounding with visible evidence
 - measurable quality on a fixed eval set
+
+In plain language, the project should show that the system can find the right information and use it responsibly.
 
 ## Target Users
 
@@ -25,6 +29,16 @@ The project is successful when a reviewer can see:
 - reranker
 - optional graph store for relationship-heavy corpora
 - eval toolkit such as RAGAS plus manual review
+
+If those names are new, use this plain-English translation:
+
+- `FastAPI` is a Python web framework that makes it easier to expose your system through an API
+- a `vector database` stores embeddings, which are number-based representations of text meaning
+- `BM25` is a classic keyword-search method that works well when exact words matter
+- `lexical retrieval` means searching by words and terms rather than by meaning alone
+- a `reranker` is a second scoring step that reorders retrieved results so the most useful evidence rises to the top
+- a `graph store` keeps entities and relationships when the knowledge is better represented as connected facts
+- `RAGAS` is a toolkit people often use to evaluate retrieval-augmented systems
 
 ## Recommended Folder Layout
 
@@ -59,6 +73,8 @@ reports/
 4. Add grounded answer generation with citations.
 5. Build an eval set and track quality.
 6. Add optional graph reasoning only if the corpus needs it.
+
+`Vector-search` means retrieving documents by meaning using embeddings. `Hybrid retrieval` means combining meaning-based search with keyword-based search so you get the strengths of both.
 
 ## Core Artifacts
 

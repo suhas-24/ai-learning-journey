@@ -20,4 +20,4 @@
 - I can identify one guardrail that is too weak and one that is too strict.
 - I can turn a safety incident into a permanent regression test for Phase 09.
 
-If you miss any item, revisit [Threat Models for AI Systems](./chapters/01-threat-models-for-ai-systems.md) and [Lab 02](./labs/02-build-safety-gates.md).
+If you miss any item, revisit [Threat Models for AI Systems](./chapters/01-threat-models-for-ai-systems.md) and [Lab 02](./labs/lab-02-build-safety-gates.md).

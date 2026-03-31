@@ -2,48 +2,50 @@
 
 Use this file when you want the minimum useful reading and tooling for a specific phase. Each phase lists the resources that teach the core ideas fastest, plus why they matter at that moment.
 
+If you are new to the field, read the phase name as the topic you are learning, then treat the resource suggestions as support for that topic. The goal is not to collect everything. The goal is to understand one idea well enough to use it.
+
 ## Phase 1: Python Foundations And Build Discipline
 
-- Read [books/ml-foundations-and-thinking.md](./books/ml-foundations-and-thinking.md) for the machine learning vocabulary that keeps later API and evaluation work from feeling magical.
-- Use [tools/python-foundation-tools.md](./tools/python-foundation-tools.md) to learn project structure, linting, typing, CLI ergonomics, and container basics.
-- Keep [people/model-builders-and-research-explainers.md](./people/model-builders-and-research-explainers.md) nearby when you need fundamentals explained in plain language.
+- Read [books/ml-foundations-and-thinking.md](./books/ml-foundations-and-thinking.md) for the plain-language ideas behind machine learning, model behavior, and why measuring results matters.
+- Use [tools/python-foundation-tools.md](./tools/python-foundation-tools.md) to learn project structure, linting, typing, command-line basics, and how to keep a Python project tidy.
+- Keep [people/model-builders-and-research-explainers.md](./people/model-builders-and-research-explainers.md) nearby when you want someone to explain hard ideas slowly and clearly.
 
 ## Phase 2: LLM APIs, Prompting, And Model Behavior
 
-- Start with [courses/prompting-and-api-basics.md](./courses/prompting-and-api-basics.md) because it teaches the shape of a prompt, the role of examples, and how API calls become workflows.
-- Pair it with [tools/model-api-tools.md](./tools/model-api-tools.md) to understand SDK boundaries, streaming, structured outputs, and local model tradeoffs.
-- Read the early sections of [books/ai-engineering-and-llm-systems.md](./books/ai-engineering-and-llm-systems.md) to understand why prompt quality alone is not enough for a reliable product.
+- Start with [courses/prompting-and-api-basics.md](./courses/prompting-and-api-basics.md) because it shows how to talk to a model in a clear, structured way.
+- Pair it with [tools/model-api-tools.md](./tools/model-api-tools.md) to understand the pieces around the model, like messages, streaming, and structured responses.
+- Read the early sections of [books/ai-engineering-and-llm-systems.md](./books/ai-engineering-and-llm-systems.md) to understand why a good answer once is not the same as a reliable product.
 - Use [newsletters/technical-analysis-and-research-interpretation.md](./newsletters/technical-analysis-and-research-interpretation.md) when you want model updates explained without hype.
 
 ## Phase 3: Spec-Driven Development
 
-- Reuse [courses/prompting-and-api-basics.md](./courses/prompting-and-api-basics.md) to sharpen instruction writing, output contracts, and structured response design.
-- Read [books/ai-engineering-and-llm-systems.md](./books/ai-engineering-and-llm-systems.md) for system framing, failure modes, and the difference between a good demo and a dependable workflow.
-- Use [tools/python-foundation-tools.md](./tools/python-foundation-tools.md) because typed interfaces, linting, and CLI discipline are what make specs executable instead of vague notes.
+- Reuse [courses/prompting-and-api-basics.md](./courses/prompting-and-api-basics.md) to practice clear instructions, output rules, and simple response contracts.
+- Read [books/ai-engineering-and-llm-systems.md](./books/ai-engineering-and-llm-systems.md) for how to turn a good idea into a dependable workflow.
+- Use [tools/python-foundation-tools.md](./tools/python-foundation-tools.md) because typed interfaces, linting, and CLI discipline make rules easier to trust.
 - Follow [people/tool-builders-and-practical-operators.md](./people/tool-builders-and-practical-operators.md) for concrete examples of turning language into reliable software boundaries.
 
 ## Phase 4: MCP, CLI Agents, And Tool Boundaries
 
-- Read [tools/agent-orchestration-tools.md](./tools/agent-orchestration-tools.md) for MCP SDK, A2A, and `gh` CLI context. The key lesson here is not the syntax. It is how tools expose capabilities safely and predictably.
+- Read [tools/agent-orchestration-tools.md](./tools/agent-orchestration-tools.md) for tool boundaries, handoffs, and how a model gets permission to do something useful.
 - Use [courses/orchestration-and-agents-courses.md](./courses/orchestration-and-agents-courses.md) to see how model calls, tools, and workflow state fit together.
-- Keep [people/tool-builders-and-practical-operators.md](./people/tool-builders-and-practical-operators.md) open when you need practical examples of agent tooling and command-line workflows.
+- Keep [people/tool-builders-and-practical-operators.md](./people/tool-builders-and-practical-operators.md) open when you want practical examples of agent tooling and command-line workflows.
 
 ## Phase 5: RAG And GraphRAG
 
-- Read [books/ai-engineering-and-llm-systems.md](./books/ai-engineering-and-llm-systems.md) for retrieval architecture, chunking tradeoffs, and grounding patterns.
-- Use [courses/rag-and-retrieval-courses.md](./courses/rag-and-retrieval-courses.md) for first-pass intuition on chunking, embeddings, evaluation, and retrieval quality.
+- Read [books/ai-engineering-and-llm-systems.md](./books/ai-engineering-and-llm-systems.md) for how retrieval, grounding, and system design fit together.
+- Use [courses/rag-and-retrieval-courses.md](./courses/rag-and-retrieval-courses.md) for a first pass on chunking, embeddings, retrieval, and why answers can go wrong.
 - Pair that with [tools/retrieval-data-tools.md](./tools/retrieval-data-tools.md) so you understand what vector stores, indexing frameworks, and graph retrieval systems actually do under the hood.
 - Scan [newsletters/technical-analysis-and-research-interpretation.md](./newsletters/technical-analysis-and-research-interpretation.md) when retrieval patterns or research claims need interpretation.
 
 ## Phase 6: Agentic IDEs And AI-Native Development Loops
 
 - Start with [tools/agent-orchestration-tools.md](./tools/agent-orchestration-tools.md) for agent workflow thinking, then read the IDE section in [tools/README.md](./tools/README.md) through the linked tool guide.
-- Use [people/tool-builders-and-practical-operators.md](./people/tool-builders-and-practical-operators.md) because this phase benefits from watching practitioners explain how they prompt, review diffs, and manage agent scope.
+- Use [people/tool-builders-and-practical-operators.md](./people/tool-builders-and-practical-operators.md) because this phase benefits from watching practitioners explain how they prompt, review diffs, and keep control of the work.
 - Keep [newsletters/weekly-signal-scanners.md](./newsletters/weekly-signal-scanners.md) lightweight here. The goal is to notice meaningful workflow shifts, not chase every editor launch.
 
 ## Phase 7: Orchestration, State, And Harnesses
 
-- Read [books/ai-engineering-and-llm-systems.md](./books/ai-engineering-and-llm-systems.md) for system composition, control flow, reliability, and the interaction between prompts, tools, and evaluation.
+- Read [books/ai-engineering-and-llm-systems.md](./books/ai-engineering-and-llm-systems.md) for how a model becomes part of a larger workflow with steps, checks, and retries.
 - Use [courses/orchestration-and-agents-courses.md](./courses/orchestration-and-agents-courses.md) to get concrete examples of chains, graphs, role-based agents, and workflow state.
 - Pair it with [tools/agent-orchestration-tools.md](./tools/agent-orchestration-tools.md) so you learn which orchestration framework to use for branching, checkpointing, and typed outputs.
 

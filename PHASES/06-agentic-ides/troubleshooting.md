@@ -4,13 +4,13 @@ Use this page when a coding-agent workflow feels fast but unsafe.
 
 ## The agent keeps changing unrelated files
 
-Likely causes:
+Common reasons:
 
-- the prompt is too broad
-- ownership was not specified
-- the task mixes planning and execution without boundaries
+- the prompt was too broad
+- ownership was not stated
+- planning and execution were mixed together
 
-Fix:
+Try this:
 
 - rewrite the brief with exact owned paths
 - ask for a plan first
@@ -18,33 +18,33 @@ Fix:
 
 ## The agent sounds confident but the code is wrong
 
-This is normal. Confidence is not evidence.
+Confidence is not proof.
 
-Response:
+Try this:
 
 - inspect the diff
 - run the checks
-- ask for the concrete log or command output summary
+- ask for the exact command output
 
 ## The agent wants to redesign architecture immediately
 
-Likely causes:
+Common reasons:
 
-- the task is underspecified
-- the model is filling gaps with assumptions
+- the task was too vague
+- the model filled gaps with guesses
 
-Fix:
+Try this:
 
 - narrow the goal
-- state what must stay unchanged
-- require incremental edits
+- say what must not change
+- ask for small edits first
 
-## Multi-agent setup caused merge collisions
+## Multi-agent work caused collisions
 
-This usually means:
+Common reasons:
 
 - ownership overlapped
-- conductor rules were weak
-- workers edited shared docs without coordination
+- the conductor rules were weak
+- workers edited shared files
 
-Use [Chapter 4](./chapters/04-multi-agent-coding-workflows.md) and reduce overlap before rerunning the workflow.
+Go back to [Chapter 4](./chapters/04-multi-agent-coding-workflows.md) and make the split smaller.

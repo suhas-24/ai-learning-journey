@@ -1,6 +1,10 @@
 # Control Flow and Topologies
 
-Orchestration is the part of the system that decides what happens next. A model can generate a good next action, but production reliability comes from the rules around that action.
+Orchestration is just a fancy word for "deciding the order of steps."
+
+When a person cooks, they do not dump every ingredient into the pan at once. They decide what comes first, what comes second, and what should happen if something goes wrong. Orchestration is that same idea for software: a system decides the next step, watches the result, and chooses the following step.
+
+A model can suggest an answer or next action, but reliable software needs rules around that suggestion.
 
 ## The core idea
 
@@ -19,6 +23,8 @@ That is enough for simple tasks. It breaks down when we need:
 - visibility into which step failed
 
 At that point we need explicit control flow.
+
+`Control flow` means the path your program follows. Sometimes that path is straight. Sometimes it branches, repeats, pauses, or asks a human for help.
 
 ## Common orchestration topologies
 
@@ -81,6 +87,8 @@ Failure mode:
 ### 4. Graph execution
 
 Graph orchestration models the workflow as nodes and edges with shared state.
+
+In plain language, a graph is just a map of allowed next steps. Each box is a place the workflow can be, and each arrow is a choice for what can happen next.
 
 Best for:
 

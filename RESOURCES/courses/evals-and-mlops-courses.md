@@ -2,6 +2,8 @@
 
 This guide covers the resources that teach how to measure model systems, compare experiments, and build confidence that a change actually improved the product.
 
+An `eval` is just a test with a purpose. It tells you whether a change made the system better, worse, or different in a way that matters.
+
 ## Weights & Biases AI Academy: MLOps And Evals
 
 ### What it teaches

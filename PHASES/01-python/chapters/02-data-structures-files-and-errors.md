@@ -1,23 +1,25 @@
 # Chapter 2 - Data Structures, Files, and Errors
 
-Real AI scripts do not just calculate values in memory. They load config, read prompts, inspect API responses, and write results back to disk. This chapter connects Python data structures to real program behavior.
+This chapter shows how Python stores information and how real programs move that information in and out of files.
 
-## 1. Lists, Dictionaries, Sets, and Tuples
+## 1. Four Basic Containers
+
+A **container** is a value that holds other values.
 
 ### Lists
 
-Lists are ordered collections.
+A list keeps items in order.
 
 ```python
 models = ["small", "medium", "large"]
-print(models[0])  # small
+print(models[0])  # "small"
 ```
 
-Use a list when order matters or duplicates are allowed.
+Use a list when order matters or duplicates are okay.
 
 ### Dictionaries
 
-Dictionaries map keys to values.
+A dictionary matches names to values.
 
 ```python
 request = {
@@ -27,32 +29,32 @@ request = {
 }
 ```
 
-Use a dictionary when you want named fields instead of positions.
+Use a dictionary when you want to ask for a value by name instead of by position.
 
 ### Sets
 
-Sets store unique values.
+A set keeps only unique values.
 
 ```python
 tags = {"python", "llm", "python"}
-print(tags)  # {"python", "llm"}
+print(tags)  # {'python', 'llm'}
 ```
 
-Useful for deduplication.
+Use a set when duplicates do not matter.
 
 ### Tuples
 
-Tuples are ordered like lists but meant to stay unchanged.
+A tuple is like a list that is meant to stay fixed.
 
 ```python
 coordinate = (12.9, 77.6)
 ```
 
-Use them when the position has stable meaning.
+Use a tuple when the order matters and the values should not change.
 
 ## 2. Reading and Writing JSON
 
-JSON is everywhere in AI engineering: config files, request payloads, tool results, and logs.
+JSON is a plain-text format that many programs use to store structured data. In this repo, it shows up as config, task lists, and API-style data.
 
 ```python
 import json
@@ -66,14 +68,13 @@ config = {
 }
 
 config_path.write_text(json.dumps(config, indent=2), encoding="utf-8")
-
 loaded = json.loads(config_path.read_text(encoding="utf-8"))
 print(loaded["project_name"])
 ```
 
-### Failure case: assuming the file exists
+### Common confusion
 
-This crashes if the file is missing:
+If the file does not exist, Python cannot read it:
 
 ```python
 Path("missing.json").read_text()
@@ -87,20 +88,20 @@ if not path.exists():
     print("Config file not found")
 ```
 
-## 3. Exceptions Are Feedback
+That pattern is important because many bugs are really just missing input.
 
-An exception means Python detected a problem it could not safely ignore.
+## 3. Errors Are Useful Feedback
+
+An **exception** is Python saying, "I cannot continue safely with the data I have."
 
 ```python
 def divide(total: int, count: int) -> float:
     return total / count
 ```
 
-If `count` is `0`, Python raises `ZeroDivisionError`.
+If `count` is `0`, Python raises an error. That is good. It stops the program from pretending the answer is fine.
 
-That is good news. Silent wrong answers are worse than visible failures.
-
-### Catch expected failures, not everything
+### Catch only the errors you expect
 
 ```python
 try:
@@ -109,7 +110,7 @@ except ValueError:
     print("Please enter a whole number.")
 ```
 
-Avoid broad error handling like this:
+Do not hide every error:
 
 ```python
 try:
@@ -118,7 +119,7 @@ except Exception:
     pass
 ```
 
-That hides useful debugging information.
+That makes debugging harder because the real problem disappears.
 
 ## 4. Worked Example: Load Tasks from a File
 
@@ -140,17 +141,17 @@ def load_tasks(path: Path) -> list[dict]:
     return data
 ```
 
-This function checks:
+This function checks three things:
 
-- file presence
-- JSON parsing
-- top-level shape
+- does the file exist?
+- is the file valid JSON?
+- is the top-level shape what we expected?
 
-That pattern matters. In AI systems, data often arrives from outside your control. Validation is part of the feature, not extra polish.
+That is the basic habit behind reliable AI data handling too. Check the shape early, not after the program has already gone wrong.
 
-## 5. Pathlib Is Better Than Hand-Built Strings
+## 5. `Path` Objects Make File Work Easier
 
-Use `Path` objects instead of manually stitching file paths.
+Use `Path` instead of hand-building file strings.
 
 ```python
 from pathlib import Path
@@ -159,7 +160,7 @@ project_dir = Path("reports")
 report_file = project_dir / "summary.json"
 ```
 
-This is clearer and safer than `"reports/" + filename`.
+This is easier to read than stitching path strings together yourself.
 
 ## 6. What To Practice Before Moving On
 

@@ -2,6 +2,17 @@
 
 This folder is the reference layer for the learning journey. It is not a pile of links. It is a set of study guides that explain what each resource teaches, which ideas inside it are worth extracting, and when that resource becomes useful in the roadmap.
 
+If some of the words in this repo feel new, that is normal. A few basics will show up everywhere:
+
+- An `LLM` is a large language model, which means a model trained on lots of text so it can predict and generate text.
+- A `token` is a small piece of text the model actually works with. A word may be one token or several tokens.
+- `Tokenization` means splitting text into those small pieces.
+- An `embedding` is a list of numbers that stands in for meaning, so similar text ends up with similar number patterns.
+- A `retrieval system` finds useful information from a collection before the model answers.
+- An `eval` is a test or measurement that tells you how well the system is doing.
+- `Fine-tuning` means changing the model's internal weights with training data so it behaves differently.
+- An `orchestration loop` is the step-by-step path a system follows when it plans, calls tools, checks results, and decides what to do next.
+
 ## How To Use This Layer
 
 - Start with [by-phase.md](./by-phase.md) when you want the shortest path for your current phase.
@@ -19,6 +30,14 @@ This folder is the reference layer for the learning journey. It is not a pile of
 - Courses are usually strong at compressing a concept into a guided first pass.
 - Tools become valuable when you understand the problem boundary they solve.
 - People and newsletters help you keep your judgment current without turning learning into endless scrolling.
+
+Think of the folder this way:
+
+- books help you understand the idea
+- courses help you get a quick first pass
+- tools help you turn the idea into a working system
+- people help you hear how experienced builders explain the same idea
+- newsletters help you notice what is changing without chasing every headline
 
 ## Recommended Reading Order
 

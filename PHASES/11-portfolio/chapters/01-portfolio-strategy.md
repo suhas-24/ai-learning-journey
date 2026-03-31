@@ -2,6 +2,8 @@
 
 The mistake most learners make is thinking a portfolio is a gallery. A strong portfolio is an argument.
 
+That argument is simple: "I can build useful systems, explain how they work, and show evidence that they behave well."
+
 ## What The Portfolio Needs To Prove
 
 For AI engineering roles, your public work should prove:
@@ -10,6 +12,8 @@ For AI engineering roles, your public work should prove:
 - you can measure quality, not just show outputs
 - you can handle failure, risk, and iteration
 - you can communicate clearly to technical readers
+
+Here, evidence means something a reviewer can inspect, not just something you say is true.
 
 ## Choose Projects By Signal, Not By Novelty
 
@@ -20,6 +24,8 @@ Pick projects that expose engineering judgment:
 - production-minded workflow agent with safety boundaries and metrics
 
 These projects are good not because they sound impressive, but because they reveal different layers of skill.
+
+Signal means "what this project tells a reviewer about your abilities."
 
 ## The Hiring Manager Lens
 
@@ -32,6 +38,8 @@ A reviewer scanning your repo asks:
 
 Design your portfolio to answer those questions quickly.
 
+The reviewer is usually looking for clarity, not hype.
+
 ## Portfolio Narrative
 
 Write a one-paragraph story that links the projects:
@@ -41,6 +49,8 @@ I build AI systems that are useful, measurable, and safe to operate. My work sta
 ```
 
 That narrative should show progression without exaggeration.
+
+It should sound like a real person describing their work, not a slogan.
 
 ## Evidence Stack For Each Project
 

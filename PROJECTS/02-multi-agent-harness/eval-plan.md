@@ -1,5 +1,7 @@
 # Eval Plan - Multi-Agent Research Harness
 
+An eval plan answers a simple question: did the harness do the whole job safely and recoverably, or did it only look good in one demo?
+
 ## Eval Questions
 
 - Can the harness complete complex tasks reliably?

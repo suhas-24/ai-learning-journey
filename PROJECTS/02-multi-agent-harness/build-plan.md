@@ -1,5 +1,7 @@
 # Build Plan - Multi-Agent Research Harness
 
+This build plan starts small on purpose: first one worker with memory, then more roles, then safety and visibility.
+
 ## Milestone 1 - Single-Agent Baseline
 
 Deliverables:

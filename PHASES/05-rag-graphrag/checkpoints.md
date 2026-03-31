@@ -2,29 +2,29 @@
 
 ## Concept Checks
 
-You are ready to advance if you can explain:
+You are ready to move on if you can explain:
 
-1. the difference between retrieval failure and generation failure
-2. why chunking strategy should vary by document type
-3. when hybrid retrieval beats vector-only retrieval
-4. what reranking adds to the pipeline
-5. when GraphRAG is justified and when it is not
-6. why memory is not one single storage concept
+1. the difference between retrieval failure and answer failure
+2. why chunk size should change with the document
+3. when exact-word search and meaning search work best together
+4. what reranking adds
+5. when a graph is actually worth the extra work
+6. why memory is more than one thing
 
 ## Practical Checks
 
-- I can show retrieved chunks for a question instead of only showing the final answer.
-- I can justify a metadata schema that actually drives filtering.
-- I can compare dense retrieval and hybrid retrieval on the same query set.
-- I can identify whether a failure happened before or after reranking.
-- I can explain what evidence a graph edge should map back to.
+- I can show the retrieved chunks for a question.
+- I can explain why a metadata field matters.
+- I can compare meaning-based search with hybrid search.
+- I can tell whether a failure happened before or after reranking.
+- I can explain what the graph edge points back to.
 
 ## Mini Quiz
 
-Question: A query includes exact error codes and fuzzy natural-language intent. Which retrieval approach is a strong default?
+Question: A question has exact error codes and plain-English wording. What search style is a strong default?
 
-Expected answer: `Hybrid retrieval`, because it captures both lexical and semantic signals.
+Expected answer: `Hybrid retrieval`, because it handles both kinds of signal.
 
-Question: Your system answers simple FAQ questions over independent notes. Should you add GraphRAG first?
+Question: Your system only answers short FAQ questions from independent notes. Should you add GraphRAG first?
 
-Expected answer: No. Improve chunking, metadata, hybrid retrieval, and reranking first.
+Expected answer: No. Improve chunking, metadata, and search first.

@@ -1,5 +1,7 @@
 # Eval Plan - Enterprise Workflow Agent
 
+An eval plan here is not just about quality. It is also about safety, clarity, and whether operators can trust the system after something goes wrong.
+
 ## Eval Questions
 
 - Does the agent complete the bounded workflow accurately?

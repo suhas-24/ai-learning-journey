@@ -2,6 +2,14 @@
 
 Books are where you build durable mental models. A strong book slows you down just enough to understand why a system behaves the way it does, which tradeoffs matter, and what failure patterns keep showing up across tools and frameworks.
 
+If you are brand new, think of a book here as a long explanation of the idea behind the tool. It should help you answer questions like:
+
+- What is this thing?
+- Why does it exist?
+- What problem does it solve?
+- What does it not solve?
+- What usually goes wrong?
+
 ## How To Read A Technical Book In This Repo
 
 - Read for concepts you can reuse, not for completion.

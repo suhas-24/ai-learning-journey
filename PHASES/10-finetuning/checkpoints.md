@@ -2,6 +2,8 @@
 
 Use these checkpoints to confirm you are learning the material instead of merely reading it.
 
+If you can explain the main ideas to someone who has never heard the words "fine-tuning" or "tokenization" before, you are understanding the phase in the right way.
+
 ## Knowledge Check
 
 You should be able to explain, out loud and without notes:

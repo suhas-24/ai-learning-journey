@@ -1,6 +1,10 @@
 # State, Checkpoints, and Resumability
 
-If orchestration is the traffic controller, state is the flight board. Without it, the system does not know where it is, what has already happened, or what can safely happen next.
+If orchestration is the part that decides what happens next, `state` is the notebook that remembers where you are.
+
+Without state, a workflow forgets what happened five seconds ago. It may repeat work, lose approvals, or continue from the wrong step.
+
+A `checkpoint` is a saved point we trust. `Resumability` means the system can restart from that saved point instead of beginning again.
 
 ## What belongs in orchestration state
 
@@ -15,6 +19,8 @@ Store facts that the runtime needs in order to continue correctly:
 - last stable checkpoint
 
 Do not store everything. Raw prompts, giant transcripts, and ephemeral formatting can live elsewhere if they are not needed for recovery.
+
+Think of state as the minimum memory required to keep the workflow honest.
 
 ## Example state document
 
@@ -57,7 +63,7 @@ Checkpoint after:
 - any stage that fans out into multiple workers
 - any step whose output is reused downstream
 
-Avoid checkpointing after every token-level event. That creates noise and storage cost without improving recovery.
+Avoid checkpointing after every tiny text fragment. That creates noise and storage cost without improving recovery.
 
 ## Resume logic
 
@@ -79,6 +85,8 @@ def choose_resume_node(state: dict) -> str:
         return "stop_budget_exceeded"
     return state["current_node"]
 ```
+
+`Idempotent` means "safe to repeat without causing duplicate side effects." If sending an email is not idempotent, the system needs a way to make sure a restart does not send the same email twice.
 
 ## What usually goes wrong
 

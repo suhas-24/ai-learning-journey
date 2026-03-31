@@ -1,12 +1,20 @@
 # Chapter 3 - CLI and Direct API Workflows
 
-MCP is not the answer to everything. Many production systems mix all three patterns: CLI for local tooling, APIs for narrow integrations, and MCP for shared discovery.
+Not every job needs a special protocol.
 
-## CLI Workflow Design
+Sometimes the best tool is already available as a command. Sometimes the best tool is a direct request to a web service. This chapter helps you choose between those two simple options before you reach for anything heavier.
 
-CLI workflows shine when the tool already exists. The model does not need to know how GitHub issues are created internally if `gh issue create` already does it well.
+## CLI
 
-Example shell flow:
+`CLI` means command-line interface. It is a program you run from the terminal.
+
+CLI is a strong choice when:
+
+- the command already exists
+- the command is trusted
+- the work is local or CI-based
+
+Example:
 
 ```bash
 gh auth status
@@ -17,14 +25,19 @@ gh issue create \
   --label bug
 ```
 
-Safe CLI design principles:
+Why this is useful:
 
-- check tool presence before execution
-- keep commands explicit instead of dynamically concatenating strings
-- prefer argument arrays in code instead of shell interpolation
-- capture exit code, stdout, and stderr separately
+- the command is already doing the hard work
+- humans can run the same command by hand
+- debugging is usually straightforward
 
-Example Python wrapper:
+Things to watch:
+
+- quoting mistakes
+- unexpected output changes
+- hidden environment assumptions
+
+If you wrap a CLI in Python, keep the command as a list of arguments instead of one big string.
 
 ```python
 import subprocess
@@ -47,11 +60,17 @@ if result.returncode != 0:
 print(result.stdout.strip())
 ```
 
-## API Workflow Design
+## Direct API
 
-A direct API wrapper is often easier to test and reason about than a shell wrapper.
+A direct API means your code sends a request to another service over HTTP.
 
-Sample implementation:
+This is often a better choice when:
+
+- the service is already remote
+- the input is naturally structured
+- you want easier testing and clearer error handling
+
+Example:
 
 ```python
 import httpx
@@ -71,35 +90,38 @@ def create_issue(token: str, repo: str, title: str, body: str) -> dict:
     return response.json()
 ```
 
-## CLI vs API Tradeoff Table
+Why this is useful:
+
+- the request shape is explicit
+- JSON is easy to inspect
+- unit tests can mock the request cleanly
+
+Things to watch:
+
+- auth errors
+- retries
+- rate limits
+- network failures
+
+## Quick Comparison
 
 | Question | CLI | API |
 | --- | --- | --- |
-| Already installed and authenticated locally? | Strong | Depends |
-| Easy to test in pure unit tests? | Weaker | Stronger |
-| Best for CI shell automation? | Strong | Strong |
-| Lowest custom code? | Strong | Medium |
-| Most portable across environments? | Medium | Strong |
-| Fine-grained error handling? | Medium | Strong |
+| Already exists as a trusted command? | Strong | Maybe not |
+| Easy to run by hand? | Strong | Weak |
+| Easy to test in code? | Medium | Strong |
+| Best for a remote service? | Weak | Strong |
+| Best when the output is structured? | Medium | Strong |
 
-## Worked Comparison
+## Example Choice
 
-Scenario: "Run a retrieval evaluation job and upload results."
+Task: run a retrieval evaluation and upload the results.
 
-Use `CLI` when:
+- use `CLI` if the evaluation tool already ships as a command
+- use `API` if the evaluation service is remote and returns JSON
 
-- the evaluation tool already exists as a stable command
-- the job runs in a developer or CI environment
-- the output can be captured in a predictable format
+## Simple Rule
 
-Use `API` when:
+If the job is already embodied in a command, use the command. If the job is already a remote service, call the service directly.
 
-- the evaluation service is remote
-- you need strong retry logic
-- the result payload should be parsed as JSON
-
-## Practical Rule
-
-If your integration is local, short-lived, and already embodied in a trustworthy command, prefer CLI. If your integration is remote, narrow, and data-centric, prefer an API wrapper.
-
-Next, read [Chapter 4](./04-delegation-and-agent-to-agent-handshakes.md) before introducing another agent into the system.
+Next: [Chapter 4](./04-delegation-and-agent-to-agent-handshakes.md).

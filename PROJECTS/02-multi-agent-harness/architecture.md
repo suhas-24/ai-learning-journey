@@ -1,5 +1,12 @@
 # Architecture - Multi-Agent Research Harness
 
+Before the diagram, here are the important terms:
+
+- state is the shared record of what the run knows so far
+- handoff means one role passes work to the next role
+- approval gate means a human must review before a risky step continues
+- observability means the ability to inspect what happened during a run
+
 ## System Overview
 
 ```text
@@ -21,6 +28,8 @@ Store a structured state object containing:
 - pending questions
 - approval status
 - budget or timeout counters
+
+If the Python type syntax looks unfamiliar, treat it as a labeled note about what information the run keeps. A `TypedDict` is just a dictionary shape with named fields.
 
 Suggested interface:
 
@@ -75,6 +84,8 @@ Persist:
 - approval requests
 
 This is what makes the system resumable.
+
+If state feels abstract, think of it as the notebook the harness carries from step to step.
 
 ### 5. Policy Layer
 

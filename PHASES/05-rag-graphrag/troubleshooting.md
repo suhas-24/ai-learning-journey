@@ -1,51 +1,51 @@
 # Phase 05 Troubleshooting
 
-Use this page when your retrieval system feels "smart" in demos but brittle in practice.
+Use this page when the system feels impressive in a demo but weak in practice.
 
-## Retrieved chunks look vaguely related but not useful
+## The retrieved chunks are related but not useful
 
-Likely causes:
+Likely reasons:
 
-- chunk size is too large and smears multiple topics together
-- exact terms matter more than semantic similarity
-- metadata filters are missing
+- the chunks are too large
+- exact words matter more than meaning
+- metadata is missing
 
 Try:
 
-- structure-aware chunking
-- hybrid retrieval
-- doc-type filters
+- chunk by section
+- use hybrid search
+- add filters based on document type
 
-## Citations point to the wrong section
+## The citation points to the wrong section
 
-Likely causes:
+Likely reasons:
 
-- chunk boundaries are too coarse
+- the chunks are too coarse
 - reranking kept a related but less specific chunk
-- answer synthesis merged evidence from several places carelessly
+- answer writing merged evidence too loosely
 
 Try:
 
-- smaller section-aware chunks
-- tighter top-k after reranking
-- explicit citation instructions in the generation prompt
+- smaller chunks
+- tighter reranking
+- explicit citation instructions
 
-## GraphRAG gives impressive diagrams but weak answers
+## GraphRAG looks fancy but answers are weak
 
-This usually means:
+Likely reasons:
 
-- entity extraction quality is low
-- graph traversal is not grounded back to source text
-- the problem did not require graph structure
+- entity extraction is poor
+- the graph is not grounded in source text
+- the question did not need a graph
 
-Use [Chapter 4](./chapters/04-graphrag-and-memory-systems.md) as a decision gate, not a justification layer.
+Use Chapter 4 as a decision point, not a justification for complexity.
 
-## Memory store keeps retrieving stale or irrelevant facts
+## The memory store returns stale facts
 
 Check:
 
-- whether records have timestamps
-- whether you distinguish procedural memory from semantic memory
-- whether old summaries are replacing primary evidence
+- whether the records have timestamps
+- whether you separated facts from instructions
+- whether old summaries are hiding the original evidence
 
-Memory should support retrieval, not pollute it.
+Memory should help retrieval, not confuse it.

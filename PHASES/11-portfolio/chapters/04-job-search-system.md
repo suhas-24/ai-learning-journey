@@ -2,6 +2,8 @@
 
 Job readiness is not a mood. It is a pipeline.
 
+Here, a pipeline just means a repeatable sequence of steps you can run every week instead of trying to reinvent your job search each time.
+
 ## Convert Projects Into Resume Bullets
 
 Every bullet should describe:

@@ -1,19 +1,19 @@
 # Lab 2 - Compare Two Coding Agent Workflows
 
-This lab is about workflow comparison, not tool fandom.
+This lab compares workflows, not brands.
 
 ## Goal
 
-Run the same small task through two different agent surfaces and compare the outcome.
+Run the same small task through two different agent surfaces and compare what happened.
 
 ## Suggested Comparison
 
-- one CLI agent vs one IDE agent
-- one IDE agent vs one extension
+- one CLI agent versus one IDE agent
+- one IDE agent versus one editor extension
 
-## Keep the Task Constant
+## Keep The Task The Same
 
-Use the same task brief, same target files, and same tests. Otherwise the comparison is meaningless.
+Use the same task brief, the same target files, and the same checks. Otherwise the comparison is not fair.
 
 ## Scorecard
 
@@ -28,9 +28,9 @@ Evaluate each tool on:
 | verification discipline |  |  |
 | correction effort required |  |  |
 
-## Reflection Questions
+## Reflection
 
-1. Which tool was easier to steer?
+1. Which tool was easier to guide?
 2. Which tool overreached more often?
 3. Which tool made review easier?
-4. Which tool would you trust for larger repo-scoped work?
+4. Which tool would you trust for a larger repo task?

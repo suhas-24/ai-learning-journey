@@ -1,44 +1,59 @@
-# Chapter 1 - Choosing a Tool Surface
+# Chapter 1 - What a Tool Surface Is
 
-The first design mistake in agent systems is choosing the integration method before understanding the task. Tooling decisions should come from the shape of the work, not from protocol hype.
+A tool surface is the way a system reaches outside itself to do work.
 
-## Four Common Tool Surfaces
+For example, if an AI system needs to open a GitHub issue, it can do that in more than one way. It might run a command, send an HTTP request, call a shared tool, or ask another agent to do the job. The choice matters because each path has different cost, safety, and reuse tradeoffs.
 
-### CLI
+## Start With the Job
 
-The command line is best when:
+Before choosing a surface, ask a simple question: what must happen in the real world?
 
-- the tool already exists and is trusted
-- the task runs on the same machine as the agent
-- a human could plausibly run the same command by hand
+- maybe a file should change
+- maybe an issue should be created
+- maybe a report should be generated
+- maybe another worker should review the result
+
+Once the job is clear, the surface becomes easier to choose.
+
+## CLI
+
+`CLI` means command-line interface. That is just a program you run by typing a command in a terminal.
+
+Choose a CLI when:
+
+- the command already exists
+- the command is trusted
+- the work is local or already available on the machine
 
 Examples:
 
 ```bash
+git status --short
 gh issue create --title "Bug: cache invalidation" --body "Cache is stale after deploy"
 pytest tests/retrieval/test_ranker.py -q
-git status --short
 ```
 
-CLI advantages:
+Why this is nice:
 
-- low implementation cost
-- easy local debugging
-- good fit for dev tooling
+- it is easy to debug
+- it is already familiar to many developers
+- it is usually the cheapest path
 
-CLI risks:
+What can go wrong:
 
-- brittle parsing if output format changes
-- shell quoting bugs
-- weaker portability across operating systems
+- shell quoting can break commands
+- text output can be hard to parse
+- commands can differ slightly between machines
 
-### Direct API Wrapper
+## API
 
-An API wrapper is best when:
+`API` means application programming interface. In plain English, that means a program sends a request to another program over the network.
 
-- you only need a few endpoints
-- the service is remote anyway
-- you want deterministic request and response handling
+Choose an API when:
+
+- the service already lives somewhere remote
+- the request can be described with clear input fields
+- you want structured responses back
 
 Example:
 
@@ -54,86 +69,80 @@ response = httpx.post(
 response.raise_for_status()
 ```
 
-API advantages:
+Why this is nice:
 
-- explicit payloads
-- low latency compared with spawning shells
-- easier unit testing than many CLI wrappers
+- the input is explicit
+- the response can be JSON
+- testing is often simpler than shell parsing
 
-API risks:
+What can go wrong:
 
-- you own auth, retries, and pagination yourself
-- the model needs to know the payload contract
-- every integration becomes custom code
+- you must manage auth and retries
+- you own the network failure handling
+- the contract has to be written clearly
 
-### MCP
+## MCP
 
-Model Context Protocol is best when:
+`MCP` stands for Model Context Protocol. Here, `model` means the AI program, `context` means the information the model can see right now, and `protocol` means an agreed set of rules.
 
-- the same tool should be discoverable by multiple clients
-- tool contracts should be typed and self-describing
-- you want a stable boundary between the model and external systems
+Choose MCP when:
 
-MCP advantages:
+- several clients should find the same tool
+- you want a typed, discoverable contract
+- you want the tool boundary to stay clear
 
-- discoverable tool metadata
-- typed schemas reduce ambiguity
-- clean separation between client and tool implementation
+Why this is nice:
 
-MCP risks:
+- the tool can advertise what it does
+- the input shape is explicit
+- multiple clients can reuse the same tool
 
-- more infrastructure than a one-off script
-- another layer to debug
-- overkill for tiny local tasks
+What can go wrong:
 
-### Agent-to-Agent Delegation
+- it adds another system to maintain
+- it is too much for one tiny command
+- a bad schema can still confuse the caller
 
-Delegation is best when:
+## Agent-To-Agent Delegation
 
-- a different agent owns distinct context, permissions, or expertise
-- the task is large enough to partition
-- you need parallel work rather than one giant prompt
+Delegation means one agent gives a bounded task to another agent.
 
-Delegation risks:
+Choose delegation when:
 
-- extra orchestration complexity
-- ambiguous handoff boundaries
-- context drift if contracts are weak
+- the second agent owns a different piece of the work
+- the task can be split without shared writes
+- a separate review or verification step would help
 
-## Decision Framework
+Why this is nice:
 
-Use this sequence every time:
+- you can work in parallel
+- a reviewer can catch mistakes
+- different permissions can stay separated
 
-1. What side effect is needed?
-2. Where does the capability already live?
-3. Who owns authentication?
-4. Does the model need a typed contract or just a bounded action?
-5. Will multiple agents or clients reuse the tool?
-6. What is the cheapest safe option?
+What can go wrong:
 
-## Worked Example
+- the handoff can be vague
+- two agents can edit the same file
+- the first agent can use delegation to avoid thinking
 
-Question: "Create a GitHub issue when a nightly evaluation fails."
+## Decision Steps
 
-Option analysis:
+Use this order:
 
-- `CLI`: great for a local developer machine or CI runner that already has `gh` auth
-- `API`: great for a small service that already talks to GitHub over HTTP
-- `MCP`: great if several agent clients should discover and call the same issue-creation tool
-- `A2A`: only useful if a separate repo-ops agent owns GitHub permissions and audit policy
+1. What is the job?
+2. Is there already a safe command for it?
+3. Is the service remote?
+4. Do multiple clients need the same tool?
+5. Does a second agent truly own a different part of the work?
+6. Which option is the smallest safe choice?
 
-Best answer depends on environment:
+## Example
 
-- local prototype: `CLI`
-- backend service: `API`
-- shared enterprise tool layer: `MCP`
-- regulated team with specialized repo agent: `A2A`
+Task: create a GitHub issue when an evaluation fails.
 
-## Anti-Patterns
+- use `CLI` if the machine already has `gh` and the workflow is local
+- use `API` if you are already inside a service that talks to GitHub
+- use `MCP` if multiple clients should discover the same issue-creation tool
+- use delegation if another agent owns repository operations and review
 
-- building an MCP server for a single `ls` command
-- using a shell pipeline when the API payload is simple and structured
-- delegating to another agent because the first agent prompt is weak
-- letting a model invent flags instead of teaching the actual tool contract
-
-Continue to [Chapter 2](./02-building-and-calling-mcp-tools.md) for the mechanics of MCP tool design.
+Next: [Chapter 2](./02-building-and-calling-mcp-tools.md).

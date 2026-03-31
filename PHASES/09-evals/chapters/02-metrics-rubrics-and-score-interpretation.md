@@ -2,6 +2,8 @@
 
 Metrics are useful only when they match the failure mode you care about.
 
+A `metric` is a number or label that helps summarize behavior. A `rubric` is a scoring guide that explains what different scores mean. You use both because numbers alone can be misleading.
+
 ## Separate the layers
 
 For a retrieval system, at least three layers matter:
@@ -69,7 +71,7 @@ Do not conclude "system is good" from one high number.
 
 ## Judge models and their limits
 
-LLM-as-judge can scale qualitative scoring, but it introduces its own bias.
+An LLM can be used as a judge to help score outputs, but that judge is still a model with biases of its own. In other words, the scorer is not magically perfect just because it is another model.
 
 Use it well by:
 

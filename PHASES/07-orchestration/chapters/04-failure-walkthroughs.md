@@ -2,6 +2,14 @@
 
 Reliable systems are designed by tracing failure paths before users discover them.
 
+The point of this chapter is not to be dramatic. It is to learn that strong systems are built by asking, "What happens when this goes wrong?" before users find out for us.
+
+Three quick terms before the walkthroughs:
+
+- `fan-out` means one step splits into several parallel sub-tasks
+- an `SLA`, or service-level agreement, is a target such as "reply within 8 seconds"
+- an `idempotent boundary` is a repeat-safe boundary where retrying the same step does not create a duplicate side effect
+
 ## Walkthrough 1: fan-out search causes budget spiral
 
 ### Scenario
@@ -66,6 +74,8 @@ Example:
 
 Every irreversible action needs an idempotent boundary.
 
+That means the system needs a repeat-safe check, such as an idempotency key, so a restart does not repeat the same side effect.
+
 ## Walkthrough 3: tool schema drift
 
 ### Scenario
@@ -99,4 +109,4 @@ This habit turns orchestration from abstraction into operations.
 
 ## Next step
 
-Practice the design work in [Lab 01](../labs/01-design-an-orchestrator.md) and [Lab 02](../labs/02-add-retries-budgets-and-approvals.md).
+Practice the design work in [Lab 01](../labs/lab-01-design-an-orchestrator.md) and [Lab 02](../labs/lab-02-add-retries-budgets-and-approvals.md).

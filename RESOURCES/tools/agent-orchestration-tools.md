@@ -2,11 +2,17 @@
 
 This guide covers the tools that teach coordination, delegation, tool boundaries, and workflow state. The core lesson across all of them is that an agent system succeeds when control flow is explicit.
 
+If these words are unfamiliar, here is the quick version:
+
+- `control flow` is the order in which a system does things
+- `state` is the information the system remembers while it is working
+- a `tool boundary` is the line between what the model can decide and what an external tool can do
+
 ## MCP SDK
 
 ### What it teaches
 
-The MCP SDK teaches how tools are described and exposed in a standard way. It helps you think in terms of capability boundaries, typed inputs, discovery, and client-server separation.
+The MCP SDK teaches how tools are described and exposed in a standard way. In plain language, it helps you describe what a tool can do, what input shape it expects, how another system can discover it, and how a model-facing client stays separate from the server that actually performs the work.
 
 ### Major topics and subtopics
 
@@ -24,6 +30,8 @@ The MCP SDK teaches how tools are described and exposed in a standard way. It he
 ### What it teaches
 
 A2A teaches agent-to-agent communication. The valuable idea is not just message passing. It is designing delegation so one system can hand off work without losing context or accountability.
+
+Here, a `delegation contract` means the shared understanding of what work is being handed off, what inputs are provided, what result is expected, and who is responsible for the outcome.
 
 ### Major topics and subtopics
 
@@ -59,6 +67,8 @@ The GitHub CLI teaches local automation against a remote system. It is excellent
 
 LangGraph teaches stateful orchestration. It makes it easier to reason about branching, retries, checkpoints, and the difference between a linear chain and a durable workflow graph.
 
+`Stateful orchestration` means the workflow remembers what already happened, what the current step is, and what should happen next.
+
 ### Major topics and subtopics
 
 - State graphs and transitions.
@@ -92,6 +102,8 @@ CrewAI teaches role-based agent collaboration. It is most useful when you are co
 ### What it teaches
 
 PydanticAI teaches typed agent pipelines. Its strongest lesson is that schemas reduce ambiguity in both inputs and outputs, which is critical when agents call tools or exchange structured state.
+
+Here, a `schema` means a clear description of what fields are expected in the data and what shape that data should have.
 
 ### Major topics and subtopics
 

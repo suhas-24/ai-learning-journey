@@ -2,6 +2,8 @@
 
 Storytelling for engineers is not marketing fluff. It is structured explanation.
 
+The point is to help another person understand the problem, the system, the evidence, and the limits without guessing.
+
 ## The Four-Part Project Story
 
 Use this order when explaining a project:
@@ -12,6 +14,8 @@ Use this order when explaining a project:
 4. Tradeoffs: what is still limited or risky?
 
 This structure works in READMEs, interviews, demos, and networking conversations.
+
+If you remember only one pattern from this chapter, remember this one.
 
 ## Turning Raw Work Into Strong README Sections
 
@@ -45,6 +49,8 @@ Early retrieval quality looked good in demos but failed on policy comparison que
 ```
 
 That is the kind of explanation interviewers remember.
+
+Failure stories build trust because they show judgment, not just success.
 
 ## Anti-Patterns
 

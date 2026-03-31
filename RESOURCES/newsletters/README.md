@@ -2,6 +2,8 @@
 
 Newsletters are filters, not a curriculum. Their job is to help you notice meaningful shifts in tools, research, and product patterns without turning your learning process into continuous distraction.
 
+Think of them as a weekly check-in, not your main teacher. If a newsletter makes a concept clearer, keep it. If it only creates noise, skip it.
+
 ## Guides In This Folder
 
 - [weekly-signal-scanners.md](./weekly-signal-scanners.md)

@@ -2,6 +2,8 @@
 
 This guide covers the tools that teach containment, validation, and operational safety. The important idea in this phase is that safety is layered: input handling, output validation, isolation, and policy controls all matter.
 
+In plain English, safety means the system should not take dangerous actions, reveal secrets, or keep running when it should stop.
+
 ## Docker
 
 ### What it teaches
