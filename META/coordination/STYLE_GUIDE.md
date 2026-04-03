@@ -1,5 +1,20 @@
 # Style Guide For The Parallel Rewrite
 
+## Mandatory Base Prompt
+
+Every new topic draft or rewrite should start from [../prompts/TOPIC_BASE_PROMPT.md](../prompts/TOPIC_BASE_PROMPT.md).
+
+That prompt is the default authoring baseline for:
+
+- phase `README.md` rewrites
+- chapter files
+- lab and exercise teaching intros
+- troubleshooting explanations
+- glossary additions
+- resource explainers
+
+Replace `[concept]` with the topic name, then adapt the output to the repository structure without removing the zero-assumption teaching style.
+
 ## The Main Shift
 
 The repository must stop behaving like a reading checklist and start behaving like a self-contained teaching notebook.
@@ -37,6 +52,7 @@ Every rewritten content file should include, where relevant:
 - practical
 - honest
 - beginner-friendly without being simplistic
+- warm, caring, enthusiastic, and calm when teaching from the base prompt
 - no hype
 - no empty motivational filler
 

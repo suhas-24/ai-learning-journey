@@ -6,6 +6,18 @@ Because the repo is personal, the main standard is usefulness to the learner. A 
 
 The writing style should stay beginner-safe. If you use a new term, define it before you rely on it. If a sentence would make sense only to someone who already knows the field, rewrite it in plain language.
 
+## Base Prompt For Every Topic
+
+Every topic draft or rewrite in this repository should start from [META/prompts/TOPIC_BASE_PROMPT.md](./META/prompts/TOPIC_BASE_PROMPT.md).
+
+Working rule:
+
+- replace `[concept]` with the exact topic name
+- keep the zero-assumption, patient teaching style
+- explain every term before using it
+- verify facts before finalizing the content
+- adapt the result to the repository's Markdown structure without losing the beginner-first teaching flow
+
 ## What Is Welcome
 
 - Forks for your own adaptation
