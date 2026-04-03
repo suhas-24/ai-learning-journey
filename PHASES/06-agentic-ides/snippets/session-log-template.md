@@ -11,6 +11,7 @@ What was the assignment in one sentence?
 Was this a CLI agent, IDE agent, or editor extension?
 
 Here, `tool surface` means the place where the agent was allowed to act.
+`Session log` means a written record of what happened during the run.
 
 ## Context Given
 

@@ -1,6 +1,7 @@
 # Task Brief Template
 
 Use this template to give an agent a bounded assignment. A good brief lowers confusion before the work starts.
+`Bounded` means clearly limited.
 
 ## Objective
 

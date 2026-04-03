@@ -1,8 +1,6 @@
 # Lab 1 - Run a Safe Refactor With an Agent
 
-This lab is about using an agent carefully, not automatically.
-
-A `refactor` means changing how code is organized without changing what it does for the user.
+This lab is about using an agent carefully, not automatically. A `refactor` means changing how code is organized without changing what it does for the user.
 
 ## Goal
 
@@ -31,7 +29,7 @@ Start with [../snippets/task-brief-template.md](../snippets/task-brief-template.
 5. run the checks
 6. write down what the agent did well and what it missed
 
-If the agent wants to widen the change, stop and re-state the small goal.
+If the agent wants to widen the change, stop and re-state the small goal. `Bounded` here means the change stays small and clearly limited.
 
 ## Command Examples
 

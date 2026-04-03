@@ -1,6 +1,6 @@
 # Lab 1 - Build a Grounded QA Pipeline
 
-This lab helps you build a small question-answering system that is `grounded`, which means it uses evidence instead of guessing first. It looks up evidence first, then writes the answer.
+This lab helps you build a small question-answering system, or `QA` system, that is `grounded`, which means it uses evidence instead of guessing first. It looks up evidence first, then writes the answer.
 
 ## Goal
 

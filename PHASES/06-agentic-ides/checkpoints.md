@@ -14,6 +14,8 @@ You are ready to move on if you can explain:
 
 ## Practical Checks
 
+- I can explain what `scope` means in a task.
+- I can explain `scope creep`, meaning the task grew beyond what was asked for.
 - I can write a task brief with owned and forbidden paths.
 - I can review a diff for scope creep.
 - I can verify a change with commands, not just summary text.

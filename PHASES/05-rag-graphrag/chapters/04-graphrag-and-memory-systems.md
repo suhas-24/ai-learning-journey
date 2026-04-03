@@ -51,6 +51,7 @@ In those cases, better chunking and better retrieval are usually more valuable.
 ## Memory Types
 
 Not every saved thing is the same kind of memory.
+The names sound fancy, but each one is just a different way of saving information for later use.
 
 - short-term memory: what the current conversation can see
 - long-term factual memory: saved facts or summaries

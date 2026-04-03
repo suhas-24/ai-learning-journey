@@ -18,6 +18,8 @@ This phase uses a few new words:
 
 If any of those words feel new, that is normal. We define them slowly in the chapters below.
 
+`QA` means question-answering, which is just a system that tries to answer a question in plain language after finding evidence.
+
 ## What This Phase Is Really About
 
 The goal is not to make the model magically smarter.

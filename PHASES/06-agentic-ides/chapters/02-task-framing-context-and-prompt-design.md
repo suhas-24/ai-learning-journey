@@ -2,7 +2,7 @@
 
 Most agent problems are not really model problems. They are task problems.
 
-If the task is vague, the agent guesses. If the task is bounded, the agent can help.
+If the task is vague, the agent guesses. If the task is bounded, meaning small and clearly limited, the agent can help.
 
 ## What A Task Brief Is
 

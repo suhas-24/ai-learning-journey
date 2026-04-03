@@ -4,6 +4,8 @@ Use this page when a coding-agent workflow feels fast but unsafe.
 
 If you are unsure what went wrong, start with the scope, then the checks, then the files.
 
+`Scope` means the boundary of the task. `Scope creep` means the task quietly grows beyond what was asked for.
+
 ## The agent keeps changing unrelated files
 
 Common reasons:
