@@ -1,6 +1,6 @@
 # Lab 2 - Build an Async Batch Runner
 
-This lab teaches the first useful async idea without needing an API key or a real network call.
+This lab teaches the first useful async idea without needing an API key or a real network call. It is about learning how waiting can happen more efficiently.
 
 **Async** means the program can start waiting on one task and then work on other tasks while that waiting happens. A **network call** is a request to another computer, but we will only pretend here with timers.
 
@@ -53,13 +53,15 @@ Sequential code means one task finishes before the next one starts.
 - `await` appears inside `async def`
 - `asyncio.run(...)` starts a standalone async program
 
-`asyncio.run(...)` creates the event loop for this one program. An **event loop** is the manager that keeps track of which async task is waiting and which one can run next.
+`asyncio.run(...)` creates the event loop for this one program. An **event loop** is the manager that keeps track of which async task is waiting and which one can run next. You can picture it as the person in charge of the queue.
 
 ## Failure Cases To Trigger
 
 - forget `await` and look at the warning
 - call `asyncio.run(...)` from inside another event loop
 - pass a normal function into `gather` and inspect the error
+
+When those mistakes happen, they are showing you the boundaries of async in a very direct way.
 
 These are not random mistakes. They show what async expects so you can recognize the shape of a correct program.
 

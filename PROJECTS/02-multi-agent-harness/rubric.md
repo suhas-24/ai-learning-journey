@@ -4,6 +4,8 @@ Use this rubric to check whether the design is controlled instead of merely comp
 
 Here, `autonomy` means how much the system does on its own without waiting for a person.
 
+If `bounded` feels fuzzy, it means the system is allowed to act, but only inside a narrow and clearly defined limit.
+
 Score each area from 1 to 5.
 
 ## Role Design

@@ -9,6 +9,8 @@ This page explains how the harness is built and why each piece exists.
 - an `approval gate` means a human must review before a risky step continues
 - `observability` means the ability to inspect what happened during a run
 
+If `handoff` is new, think of it as one role passing a clear packet of work to the next role, like handing a baton in a relay race.
+
 ## System Shape
 
 ```text

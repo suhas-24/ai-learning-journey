@@ -10,6 +10,8 @@ Quick meanings:
 - an `intervention` is a moment when a human needs to step in
 - a `final artifact` is the saved result of the run, such as a report or summary
 
+If a term feels vague, imagine testing the harness the way you would test a game save, a baton pass, and a safety alarm all at once.
+
 ## Questions To Answer
 
 - Can the harness complete complex tasks reliably?

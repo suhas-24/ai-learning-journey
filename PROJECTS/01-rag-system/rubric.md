@@ -4,6 +4,8 @@ Use this rubric as a quick honesty check.
 
 Here, a `rubric` is just a scoring guide with clear criteria.
 
+If you read this later, use it as a reminder that a good RAG system is not just a chat box. It is a system that finds evidence, explains itself, and proves the answer is tied to the right source.
+
 Score each area from 1 to 5.
 
 ## Problem Framing

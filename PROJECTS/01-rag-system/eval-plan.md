@@ -10,6 +10,8 @@ Quick meanings:
 - `faithfulness` asks whether the answer matches the evidence instead of inventing extra claims
 - `abstention` means the system says "I do not have enough evidence" instead of guessing
 
+If `faithfulness` is new, think of it as "does the answer stay true to the documents?"
+
 ## What This Plan Checks
 
 - Did retrieval find the right evidence?
@@ -26,6 +28,8 @@ Create 80 to 150 questions that cover:
 - comparison across documents
 - multi-hop questions, which need more than one piece of evidence
 - hard edge cases that often fail
+
+For a beginner, the goal is not to build the biggest dataset. The goal is to build a small but honest test set that reveals where the system breaks.
 
 For each question, store:
 

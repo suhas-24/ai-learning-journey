@@ -1,3 +1,5 @@
+"""Load a JSON file, check the shape, and print a small inventory summary."""
+
 import json
 from pathlib import Path
 

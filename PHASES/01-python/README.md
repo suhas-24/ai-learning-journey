@@ -1,6 +1,6 @@
 # Phase 1 - Python From Zero
 
-This phase starts at the beginning. It assumes you may not know what a program, a variable, a file, or an error is yet. The goal is to help you read simple Python, write simple Python, and understand why it behaves the way it does.
+This phase starts at the beginning. It assumes you may not know what a program, a variable, a file, or an error is yet. The goal is to help you read simple Python, write simple Python, and understand why it behaves the way it does, one tiny idea at a time.
 
 If a word feels new, slow down. A good rule for this phase is: define the thing, then use the thing.
 
@@ -29,6 +29,8 @@ If a word feels new, slow down. A good rule for this phase is: define the thing,
 - split one script into multiple files when it gets crowded
 - use `pytest`, `pydantic`, `ruff`, and `asyncio` at a beginner level
 - run a repeatable terminal workflow with `venv` and Git
+
+The chapters repeat the same ideas in slightly different ways on purpose. Repetition helps a beginner turn a new word into something familiar.
 
 ## How To Use This Phase
 

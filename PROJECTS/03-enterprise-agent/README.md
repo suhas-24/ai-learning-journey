@@ -17,6 +17,8 @@ If those words are new:
 The point of this project is not to make an “AI does everything” assistant.
 It is to make a bounded system that can do one job well, explain itself, and stop when a human needs to step in.
 
+If `enterprise` feels vague, think of it as a real work setting where mistakes, approvals, and audit trails matter.
+
 ## What You Will Build
 
 You will build a workflow agent that can:
@@ -38,6 +40,8 @@ It demonstrates:
 - safe decision making
 - operator visibility
 - deployment thinking
+
+That matters because a system is only useful in real work if people can understand, trust, and supervise it.
 
 ## Suitable Use Cases
 

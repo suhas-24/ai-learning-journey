@@ -1,6 +1,6 @@
 # Lab 2 - Build a Tool-Augmented Research Loop
 
-This lab teaches the handoff between model reasoning and outside evidence.
+This lab teaches the handoff between model reasoning and outside evidence. That handoff is the heart of many useful AI systems.
 
 If the title feels dense, here are the words in plain language:
 
@@ -33,6 +33,8 @@ Here, `path` just means the location of the file on your computer.
 
 Do not let the model run the tool directly. The model requests. Your code decides whether and how to execute.
 
+That rule keeps the system easy to inspect and safer to use.
+
 ## Failure Cases To Test
 
 - the tool path does not exist
@@ -42,3 +44,5 @@ Do not let the model run the tool directly. The model requests. Your code decide
 ## Stretch Goal
 
 Add a context summary after the first loop so the final request stays small and clear.
+
+If you can explain why the summary still keeps the important facts, you understand the loop well.

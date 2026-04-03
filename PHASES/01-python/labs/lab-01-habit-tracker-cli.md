@@ -1,6 +1,6 @@
 # Lab 1 - Build a Habit Tracker CLI
 
-This lab turns the chapter ideas into one small program you can run from the terminal.
+This lab turns the chapter ideas into one small program you can run from the terminal. It is meant to feel like a small, safe practice round, not a test of genius.
 
 A **terminal** is a text window where you type commands. A **CLI** is a program you run by typing a command instead of clicking buttons.
 
@@ -14,6 +14,8 @@ Build a command-line tool that:
 - counts how many are done and how many are not done
 - prints a readable summary
 - fails clearly if the file is missing or malformed
+
+If any of these words are new, the point is to learn them by using them in one tiny program.
 
 ## What You Will Practice
 
@@ -49,7 +51,7 @@ Write a function that:
 - loads JSON text
 - confirms the top-level value is a list
 
-If a **file path** feels new, think of it as the address of a file on your computer.
+If a **file path** feels new, think of it as the address of a file on your computer. The address helps Python find the right file without guessing.
 
 If you need a pattern to copy, look at [inventory_report.py](../snippets/inventory_report.py).
 
@@ -96,3 +98,5 @@ Add a second command-line argument that shows only completed tasks.
 ## Done Check
 
 You are done when you can intentionally break the input file and explain exactly why the program failed.
+
+If you can explain the failure in plain words, you have learned more than just how to make the code run.

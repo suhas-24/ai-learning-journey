@@ -1,6 +1,6 @@
 # Lab 1 - Build a Structured Answerer
 
-This lab helps you stop treating the model like a chat box and start treating it like one step in a program.
+This lab helps you stop treating the model like a chat box and start treating it like one step in a program. That shift matters because code works best when it can expect a shape.
 
 ## Goal
 
@@ -14,7 +14,7 @@ Build a script that:
 
 If the model gives you a paragraph, your code has to guess what each part means.
 
-If the model gives you named fields, your code can check them directly.
+If the model gives you named fields, your code can check them directly. That makes the result easier to trust.
 
 ## Suggested Output Shape
 
@@ -38,6 +38,8 @@ If the model gives you named fields, your code can check them directly.
 - what happens if the model adds extra prose?
 - what happens if `confidence` is missing?
 - would another person understand how to use this tomorrow?
+
+If you can answer those questions, you are thinking like someone building a tool for other people, not just for yourself.
 
 ## Stretch Goal
 

@@ -1,10 +1,10 @@
 # Chapter 1 - Python Core and Control Flow
 
-Python is a language for giving a computer small, exact instructions. This chapter starts with the smallest pieces: values, names, choices, repetition, and reusable steps.
+Python is a language for giving a computer small, exact instructions. This chapter starts with the smallest pieces: values, names, choices, repetition, and reusable steps. If a term feels new, read the example first, then the explanation, then the example again.
 
 ## 1. Values and Variables
 
-A **value** is a piece of data. A **variable** is a name that points to a value. Think of a variable like a labeled box. The label is the name, and the thing inside the box is the value.
+A **value** is a piece of data. A **variable** is a name that points to a value. Think of a variable like a labeled box. The label is the name, and the thing inside the box is the value. A `string` is text, a `number` is a mathematical value, and a `boolean` is a true-or-false value.
 
 ```python
 name = "Suhas"
@@ -188,5 +188,7 @@ This one function gives you the basic shape of many real programs:
 - write a function that keeps only names longer than five characters
 - write a loop that counts how many numbers are even
 - make one bug on purpose and explain the error message in plain language
+
+If you can explain why each line is there, you are learning the language instead of just copying it.
 
 Next: [Chapter 2: Data Structures, Files, and Errors](./02-data-structures-files-and-errors.md)

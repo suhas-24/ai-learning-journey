@@ -2,7 +2,7 @@
 
 `Context` means everything the model can see at the moment it answers: instructions, chat history, tool results, retrieved notes, and summaries.
 
-`Context engineering` is the skill of choosing that material carefully.
+`Context engineering` is the skill of choosing that material carefully. It is a practical way of asking, "What should the model see right now so it can do the next step well?"
 
 ## 1. Why Context Matters
 
@@ -43,7 +43,7 @@ This creates noise.
 - a short summary of earlier decisions
 - the most recent tool result
 
-This creates signal.
+This creates signal, which means useful information that helps the model answer well.
 
 ## 4. Summaries and Compaction
 
@@ -61,7 +61,7 @@ See [context_compaction_example.md](../snippets/context_compaction_example.md).
 
 Do not dump a whole knowledge base into every request. Bring in only the pieces that matter now.
 
-`Retrieval` means finding a useful piece of information at question time and adding it to the request instead of pasting the whole library into the prompt.
+`Retrieval` means finding a useful piece of information at question time and adding it to the request instead of pasting the whole library into the prompt. In plain language, it is like looking up the right page instead of photocopying the whole book.
 
 Inline context is best when:
 

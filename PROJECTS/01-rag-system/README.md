@@ -10,6 +10,9 @@ If the term `RAG` is new, it means `retrieval-augmented generation`. That sounds
 
 Think of it like this: before answering, the system checks its notes.
 
+If the word `citation` is new, it is just a pointer back to the place where the evidence came from.
+If the word `corpus` is new, it means the document library your system searches.
+
 ## What You Will Build
 
 You will build a system that can:
@@ -19,6 +22,8 @@ You will build a system that can:
 - search for the most relevant chunks
 - generate an answer with citations
 - evaluate whether the answer is actually good
+
+The project starts simple on purpose. You first build a baseline that can find evidence. Then you make the answer clearer, more trustworthy, and easier to inspect.
 
 ## Before You Start
 
@@ -40,6 +45,8 @@ Many beginner AI demos stop at “the answer sounds nice.” This project goes f
 - avoid unsupported claims
 - explain where its answer came from
 - improve when you tune the retrieval step
+
+If those ideas are new, imagine the system as a careful student. It should look up the notes, pick the right passages, and then answer with receipts instead of vibes.
 
 ## How To Use This Folder
 

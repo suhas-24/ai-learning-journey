@@ -1,6 +1,6 @@
 # Provider Payload Patterns
 
-The exact fields vary by provider, but the learning goal stays the same: send messages, choose settings, and optionally describe tools.
+The exact fields vary by provider, but the learning goal stays the same: send messages, choose settings, and optionally describe tools. A `payload` is just the data you send in one request.
 
 ## Generic Message Payload
 

@@ -1,6 +1,6 @@
 # Chapter 3 - From Script to Project
 
-A **script** is one file that gets a job done. A **project** is a small group of files that share a purpose. This chapter shows you when to split one script into a project.
+A **script** is one file that gets a job done. A **project** is a small group of files that share a purpose. This chapter shows you when to split one script into a project, and why that split makes the work easier to understand and debug.
 
 ## 1. When One File Stops Being Enough
 
@@ -33,7 +33,7 @@ habit_tracker/
   README.md
 ```
 
-The goal is not to create lots of folders. The goal is to give each file one main reason to change.
+The goal is not to create lots of folders. The goal is to give each file one main reason to change. That keeps the code easier to read, easier to test, and easier to explain to another person.
 
 `__init__.py` is a file that helps Python treat a folder like a package. You do not need to master it yet; just know it is part of how importable folders are marked.
 
@@ -128,5 +128,7 @@ Why this is better:
 - split one 40-line file into three focused functions
 - add one test before changing behavior
 - explain why each file exists in a project layout
+
+If you can explain which file owns which job, you are already thinking like a project builder.
 
 Next: [Chapter 4: Modern AI Python Habits](./04-modern-ai-python-habits.md)

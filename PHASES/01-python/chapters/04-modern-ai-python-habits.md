@@ -1,6 +1,6 @@
 # Chapter 4 - Modern AI Python Habits
 
-This chapter introduces the habits that show up all the time in modern Python work for AI systems: type hints, validation, async waiting, logging, and command-line tools.
+This chapter introduces the habits that show up all the time in modern Python work for AI systems: type hints, validation, async waiting, logging, and command-line tools. These habits help your code stay readable, reliable, and easier to fix later.
 
 ## 1. Type Hints Help Humans
 
@@ -38,7 +38,7 @@ If the data is wrong, the program should complain early and clearly. That is muc
 
 See [config_model.py](../snippets/config_model.py).
 
-`Pydantic` is a library that helps Python check and organize data by the shape you expect.
+`Pydantic` is a library that helps Python check and organize data by the shape you expect. Think of it as a guard that checks a form before the rest of the program trusts it.
 
 ## 3. Async Helps With Waiting
 
@@ -114,5 +114,7 @@ You should be able to explain:
 - why validation belongs near the input boundary
 - why async is mostly about waiting efficiently
 - why tests and linting reduce future pain
+
+The goal is not to know every tool perfectly. The goal is to know what each tool is for and when to reach for it.
 
 Next step: do the labs, then grade yourself with [checkpoints.md](../checkpoints.md).

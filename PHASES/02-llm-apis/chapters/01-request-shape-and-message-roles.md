@@ -1,6 +1,6 @@
 # Chapter 1 - Request Shape and Message Roles
 
-This chapter starts at the beginning: what actually happens when your code asks a language model for help.
+This chapter starts at the beginning: what actually happens when your code asks a language model for help. The answer is less mysterious than it first looks, because the request is just structured text.
 
 ## 1. The Basic Idea
 
@@ -39,6 +39,8 @@ You can think of messages like notes passed between people in a group chat:
 - one note brings back information from a tool
 
 Most model APIs use message roles so the request stays organized.
+
+If that feels abstract, imagine a notebook with labels on each page: rules, question, answer, and tool result.
 
 ## 4. Message Roles
 

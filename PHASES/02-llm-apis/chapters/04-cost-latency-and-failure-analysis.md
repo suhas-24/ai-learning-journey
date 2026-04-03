@@ -1,6 +1,6 @@
 # Chapter 4 - Cost, Latency, and Failure Analysis
 
-Good AI systems are not judged only by answer quality. They are also judged by speed, consistency, and cost.
+Good AI systems are not judged only by answer quality. They are also judged by speed, consistency, and cost. Those three extra signals matter because a useful system must also be practical to run.
 
 ## 1. Tokens Affect Cost
 
@@ -50,7 +50,7 @@ Possible root causes:
 - a tool result inserted too much unstructured text
 - the temperature was higher than the task needed
 
-Notice how "the model is dumb" is not a useful diagnosis.
+Notice how "the model is dumb" is not a useful diagnosis. A better diagnosis names the layer that failed.
 
 ## 5. Simple Logging To Add Early
 

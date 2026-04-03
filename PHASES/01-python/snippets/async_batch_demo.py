@@ -1,3 +1,5 @@
+"""Show how async lets several waiting tasks overlap instead of running one by one."""
+
 import asyncio
 from time import perf_counter
 
@@ -18,6 +20,7 @@ async def main() -> None:
     )
     duration = perf_counter() - start
 
+    # Print both the result and the total time so the benefit is visible.
     print("\n".join(results))
     print(f"Total runtime: {duration:.2f} seconds")
 

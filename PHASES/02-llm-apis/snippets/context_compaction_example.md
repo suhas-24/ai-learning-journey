@@ -1,6 +1,6 @@
 # Context Compaction Example
 
-`Context compaction` means shrinking the conversation history into a shorter summary while keeping the facts that still matter.
+`Context compaction` means shrinking the conversation history into a shorter summary while keeping the facts that still matter. It helps a long conversation stay focused instead of bloated.
 
 In the examples below, a `turn` means one step in the conversation, such as one user message, one assistant reply, or one tool result.
 

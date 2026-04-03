@@ -1,13 +1,13 @@
 # Project Index
 
-These project guides turn the curriculum into proof. They are not toy exercises. Each one is designed to demonstrate a different kind of AI engineering depth to a reviewer, hiring manager, or future collaborator.
+These project guides turn the curriculum into proof. A `project` here means one complete build that shows what you learned, how you made decisions, and how you checked your work. These are not toy exercises. Each one is designed to demonstrate a different kind of AI engineering depth to a reviewer, hiring manager, or future collaborator.
 
 ## How To Use This Directory
 
 1. Pick the project that matches the phase you are finishing.
-2. Read the project `README.md` for scope and success criteria.
-3. Use `architecture.md` to shape the system before you start coding.
-4. Use `build-plan.md` to break the work into milestones.
+2. Read the project `README.md` first. It explains the idea in plain language and tells you why the project exists.
+3. Use `architecture.md` to understand how the pieces fit together before you start coding.
+4. Use `build-plan.md` to break the work into small milestones you can finish and verify.
 5. Use `eval-plan.md` to define how quality will be measured. Here, an `eval` is a purposeful test that tells you whether the system is actually getting better.
 6. Use `rubric.md` to decide whether the project is portfolio-worthy yet. A `rubric` is just a scoring guide with clear criteria.
 

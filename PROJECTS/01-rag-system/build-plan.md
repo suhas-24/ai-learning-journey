@@ -19,6 +19,9 @@ Quick meanings for the terms used below:
 - an `answer schema` is the expected shape of the answer, such as answer text plus citations
 - `abstention` means refusing to answer when the evidence is too weak
 
+The order matters. A beginner can save a lot of time by proving that each step works before adding the next one.
+If `abstention` feels unusual, think of it as the system saying, "I do not have enough proof yet."
+
 ## Milestone 1 - Corpus And Ingestion
 
 Deliverables:

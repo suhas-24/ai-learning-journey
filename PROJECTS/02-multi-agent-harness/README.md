@@ -13,7 +13,7 @@ If those words are new:
 - `traceability` means you can connect each step back to the run that produced it
 - a `trace` is the step-by-step record of that run
 
-The main idea is simple: many agents are useful only if the system around them is disciplined.
+The main idea is simple: many agents are useful only if the system around them is disciplined. Think of the harness as the control room around a team, not the team itself.
 
 ## What You Will Build
 
@@ -41,6 +41,8 @@ It is about showing that you can:
 - `Researcher`: gathers evidence and records sources
 - `Analyst`: checks quality, gaps, and contradictions
 - `Reporter`: packages the findings for the final output
+
+If the word `swarm` is new, it just means many agents working together. Bigger is not better unless the handoffs, memory, and safety rules stay clear.
 
 ## How To Use This Folder
 

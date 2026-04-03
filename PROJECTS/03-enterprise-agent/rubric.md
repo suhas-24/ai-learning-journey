@@ -4,6 +4,8 @@ Use this rubric to check whether the project feels like a real operational syste
 
 Here, `operational` means "ready to run and monitor in real use," not just "looks good in a demo."
 
+If `guardrails` is new, think of them as the rules and checks that keep the system inside its safe lane.
+
 Score each area from 1 to 5.
 
 ## Scope Discipline

@@ -15,6 +15,8 @@ Quick meanings:
 - an `audit log` is the written record of key actions and approvals
 - a `rubric` is a scoring guide used to judge quality consistently
 
+If `boundary statement` feels abstract, read it as the promise line for the project: what the system will do, and what it will never do.
+
 ## Milestone 1 - Workflow Definition
 
 Deliverables:

@@ -11,6 +11,8 @@ Quick meanings:
 - `structured logs` are logs written in a consistent field-based format so they are easier to search later
 - an `artifact` is any saved output you can inspect, such as a report, trace, or summary file
 
+The point is to prove that the harness stays understandable while it becomes more capable.
+
 ## Milestone 1 - Single-Agent Baseline
 
 Deliverables:

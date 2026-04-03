@@ -25,4 +25,4 @@ Break the loop apart:
 3. inspect the validated structure
 4. inspect the tool execution result
 
-Once you separate those layers, the bug usually becomes less mysterious.
+Once you separate those layers, the bug usually becomes less mysterious. This is normal AI debugging, not a sign that you are doing it wrong.

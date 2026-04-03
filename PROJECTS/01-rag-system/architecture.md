@@ -11,6 +11,9 @@ If a word below is new, read its short definition before looking at the diagram:
 - `reranking` means sorting the first results again to improve quality
 - a `citation` is the link back to the evidence used in the answer
 
+If `grounded` is new, it means the answer stays connected to evidence you can inspect.
+If `answer generation` sounds abstract, think of it as the step where the system turns selected evidence into a readable response.
+
 ## System Shape
 
 ```text

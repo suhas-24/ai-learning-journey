@@ -1,6 +1,6 @@
 # Phase 2 Checkpoints
 
-Use these to test understanding, not memory.
+Use these to test understanding, not memory. If a question feels hard, it usually means you need one more example rather than more willpower.
 
 ## Concept Checks
 

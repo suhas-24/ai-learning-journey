@@ -29,4 +29,4 @@ Use this order:
 3. Check the type and shape of the data.
 4. Write down what you expected versus what happened.
 
-If you follow that loop calmly, debugging gets much less emotional.
+If you follow that loop calmly, debugging gets much less emotional. You are not failing when you debug; you are learning how the program tells the truth.

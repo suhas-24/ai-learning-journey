@@ -1,6 +1,6 @@
 # Phase 2 - Working With Language Models
 
-This phase is about learning how to talk to a language model directly, before a framework hides the pieces.
+This phase is about learning how to talk to a language model directly, before a framework hides the pieces. We will keep the moving parts visible so the system feels understandable instead of magical.
 
 Here are the first words in plain language:
 
@@ -43,7 +43,7 @@ This phase teaches that surrounding work one small step at a time.
 - how to choose the right amount of context
 - how to think about cost, latency, and failure
 
-`Structured output` means the model returns information in a predictable shape, such as fields with names, so your code can read it without guessing.
+`Structured output` means the model returns information in a predictable shape, such as fields with names, so your code can read it without guessing. That shape is often described with a schema, which is just a rule for how the output should look.
 
 ## How To Use This Phase
 

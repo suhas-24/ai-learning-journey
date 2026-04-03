@@ -1,10 +1,10 @@
 # Chapter 2 - Data Structures, Files, and Errors
 
-This chapter shows how Python stores information and how real programs move that information in and out of files.
+This chapter shows how Python stores information and how real programs move that information in and out of files. The key idea is simple: data has a shape, and your code should check that shape before trusting it.
 
 ## 1. Four Basic Containers
 
-A **container** is a value that holds other values. Containers help you organize data so you can find it later.
+A **container** is a value that holds other values. Containers help you organize data so you can find it later. A list, dictionary, set, or tuple is just one common way to hold information.
 
 ### Lists
 
@@ -54,7 +54,7 @@ Use a tuple when the order matters and the values should not change.
 
 ## 2. Reading and Writing JSON
 
-JSON is a plain-text format that many programs use to store structured data. In this repo, it shows up as config, task lists, and API-style data.
+JSON is a plain-text format that many programs use to store structured data. In this repo, it shows up as config, task lists, and API-style data. It is useful because both people and programs can read it without much drama.
 
 ```python
 import json
@@ -169,5 +169,7 @@ This is easier to read than stitching path strings together yourself.
 - create a JSON file, load it, and print one field
 - write a function that rejects invalid data with a clear error
 - use a set to remove duplicates from a list
+
+Try explaining the same idea in three ways: with a box analogy, with a code example, and with one sentence in plain English.
 
 Next: [Chapter 3: From Script to Project](./03-from-script-to-project.md)

@@ -1,6 +1,6 @@
 # Phase 1 Checkpoints
 
-Use these checkpoints after the labs. If one feels fuzzy, go back to the chapter named beside it.
+Use these checkpoints after the labs. If one feels fuzzy, go back to the chapter named beside it and reread the simplest example first.
 
 ## Concept Checks
 
@@ -23,6 +23,8 @@ Use these checkpoints after the labs. If one feels fuzzy, go back to the chapter
 - explain a `TypeError` you caused on purpose, meaning Python got the wrong kind of value for the operation
 - create a mini project with `tests/` and run `pytest`
 - run the async snippet and explain why runtime is not the sum of all delays
+
+If you can answer these without guessing, the next phase will feel much less strange.
 
 ## Exit Standard
 

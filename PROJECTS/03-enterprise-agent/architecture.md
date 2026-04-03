@@ -11,6 +11,8 @@ This page explains the system in plain language before the design details.
 - a `schema` is the shape of the data you expect
 - an `artifact` is a saved output, such as a report, file, or structured record
 
+If `telemetry` is new, think of it as the evidence trail that helps a person see what the system did and why.
+
 ## System Shape
 
 ```text

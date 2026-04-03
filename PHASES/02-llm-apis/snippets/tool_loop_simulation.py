@@ -1,3 +1,5 @@
+"""Simulate a tiny tool-calling loop so the request, tool result, and final answer stay visible."""
+
 import json
 from pathlib import Path
 

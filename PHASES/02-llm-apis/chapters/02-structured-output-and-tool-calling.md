@@ -5,6 +5,8 @@ This chapter shows two things:
 1. how to ask for an answer in a shape code can read
 2. how the model can ask your program for outside help
 
+The big idea is that the model is useful, but your code still needs to keep the request and the result in a shape it can trust.
+
 ## 1. Structured Output
 
 Sometimes you do not want a paragraph. You want a result with named pieces.
@@ -19,7 +21,7 @@ For example, if the model is classifying a support ticket, this is easier for co
 }
 ```
 
-That shape is easier to check than a free-form paragraph.
+That shape is easier to check than a free-form paragraph. A **schema** is the set of rules that says what fields should exist and what type of data each field should hold.
 
 ### Why validation matters
 
@@ -45,7 +47,7 @@ Think of it like this:
 6. your program sends the result back to the model
 7. the model writes the final answer
 
-The model does not run tools by itself. Your program stays in charge.
+The model does not run tools by itself. Your program stays in charge. That separation is what keeps the system safe and inspectable.
 
 ## 3. Worked Example
 
@@ -77,7 +79,7 @@ Good tools are:
 - safe to run
 - easy to test without a model
 
-If a tool tries to do too many unrelated jobs, it becomes hard to trust and hard to debug.
+If a tool tries to do too many unrelated jobs, it becomes hard to trust and hard to debug. A beginner-friendly tool does one thing clearly.
 
 ## 5. Common Confusion
 
