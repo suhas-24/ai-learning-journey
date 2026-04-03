@@ -14,9 +14,7 @@ This phase is about learning the basic building blocks of software work. You are
 
 ## Phase 2: LLM APIs, Prompting, And Model Behavior
 
-This phase is about learning how to talk to a model and how to turn a single model answer into something you can depend on.
-
-`LLM` means large language model. `API` means a structured way for one program to send a request to another.
+This phase is about learning how to talk to a model and how to turn a single model answer into something you can depend on. An `LLM`, or large language model, is text-prediction software. An `API` is the doorway your code uses to send it a request.
 
 - [courses/prompting-and-api-basics.md](./courses/prompting-and-api-basics.md) teaches the first pass on prompts, API calls, and structured outputs.
 - [tools/model-api-tools.md](./tools/model-api-tools.md) explains the surrounding machinery, such as messages, streaming, and output shape.
@@ -36,7 +34,7 @@ This phase is about making instructions, outputs, and rules explicit so people a
 
 This phase is about controlled actions. A model is useful only when it can ask for tools in a safe, explicit way.
 
-`MCP` is a protocol for exposing tools in a structured way. `Command-line` means working through typed commands instead of buttons.
+`MCP` is a shared rulebook for how tools describe themselves so model-facing software can find and use them. `Command-line` means working through typed commands instead of buttons.
 
 - [tools/agent-orchestration-tools.md](./tools/agent-orchestration-tools.md) explains tools, boundaries, handoffs, and workflow state.
 - [courses/orchestration-and-agents-courses.md](./courses/orchestration-and-agents-courses.md) shows how model calls and tools fit into one path.
@@ -44,12 +42,10 @@ This phase is about controlled actions. A model is useful only when it can ask f
 
 ## Phase 5: Retrieval-Augmented Generation (RAG) And GraphRAG
 
-This phase is about making answers grounded in evidence instead of guessing from memory.
-
-`RAG` means retrieval-augmented generation: find evidence first, then answer. `GraphRAG` adds relationships between entities so retrieval can use both text and connections.
+This phase is about making answers grounded in evidence instead of guessing from memory. `RAG` means retrieval-augmented generation: find evidence first, then answer. `GraphRAG` adds relationships between related facts so retrieval can follow connections, not just similar words.
 
 - [books/ai-engineering-and-llm-systems.md](./books/ai-engineering-and-llm-systems.md) connects retrieval, grounding, and system design.
-- [courses/rag-and-retrieval-courses.md](./courses/rag-and-retrieval-courses.md) explains chunking, embeddings, retrieval, and failure modes.
+- [courses/rag-and-retrieval-courses.md](./courses/rag-and-retrieval-courses.md) explains chunking, embeddings, retrieval, and failure modes. `Chunking` means splitting documents into smaller pieces. `Reranking` means sorting the first results again so the strongest evidence rises to the top.
 - [tools/retrieval-data-tools.md](./tools/retrieval-data-tools.md) shows what vector stores, indexing tools, and graph retrieval systems actually do. A `vector store` is a database for meaning-based text search.
 - [newsletters/technical-analysis-and-research-interpretation.md](./newsletters/technical-analysis-and-research-interpretation.md) helps when new retrieval ideas need careful interpretation.
 
@@ -65,9 +61,7 @@ An `IDE` is an integrated development environment, which means the app where you
 
 ## Phase 7: Orchestration, State, And Harnesses
 
-This phase is about workflows that remember what happened, check their own work, and recover from failure.
-
-A `harness` is the system around the model or agents that keeps the workflow organized and safe.
+This phase is about workflows that remember what happened, check their own work, and recover from failure. A `harness` is the control layer around a workflow that keeps steps organized and safe.
 
 - [books/ai-engineering-and-llm-systems.md](./books/ai-engineering-and-llm-systems.md) explains how a model becomes part of a larger workflow.
 - [courses/orchestration-and-agents-courses.md](./courses/orchestration-and-agents-courses.md) gives concrete examples of step-by-step workflows, branching workflow graphs, and multi-role agent systems.
@@ -83,9 +77,7 @@ This phase is about limiting harm. Safety is not one check; it is a stack of che
 
 ## Phase 9: Evals, Monitoring, And Observability
 
-This phase is about measurement. If you cannot see what changed, you cannot know whether the system improved.
-
-`Observability` means you can see what happened during a real run, not just whether the final answer looked good.
+This phase is about measurement. If you cannot see what changed, you cannot know whether the system improved. `Observability` means you can see what happened during a real run, not just whether the final answer looked good.
 
 - [courses/evals-and-mlops-courses.md](./courses/evals-and-mlops-courses.md) turns quality into datasets, metrics, and comparisons.
 - [tools/evals-observability-tools.md](./tools/evals-observability-tools.md) explains tracing, prompt versioning, and RAG evaluation. `Tracing` means recording the step-by-step path of one run.
@@ -93,9 +85,7 @@ This phase is about measurement. If you cannot see what changed, you cannot know
 
 ## Phase 10: Finetuning And Model Internals
 
-This phase is about what changes inside a model when you train it further.
-
-`Fine-tuning` means training a base model again on your own examples so it improves on one narrow task.
+This phase is about what changes inside a model when you train it further. `Fine-tuning` means training a base model again on your own examples so it improves on one narrow task.
 
 - [books/model-internals-and-finetuning.md](./books/model-internals-and-finetuning.md) explains attention, optimization, data shaping, and weight updates. In plain language, this means how the model focuses, learns, and changes during training.
 - [people/model-builders-and-research-explainers.md](./people/model-builders-and-research-explainers.md) helps when the math or training story feels dense.
@@ -103,7 +93,7 @@ This phase is about what changes inside a model when you train it further.
 
 ## Phase 11: Portfolio, Positioning, And Storytelling
 
-This phase is about explaining your work clearly so other people can see the decisions behind it.
+This phase is about explaining your work clearly so other people can see the decisions behind it. An `artifact` is a saved thing a reviewer can inspect, such as a README, a diagram, a demo, or a report.
 
 - [books/ml-foundations-and-thinking.md](./books/ml-foundations-and-thinking.md) and [books/ai-engineering-and-llm-systems.md](./books/ai-engineering-and-llm-systems.md) help you talk about tradeoffs and outcomes.
 - [people/systems-thinkers.md](./people/systems-thinkers.md) helps you borrow clear systems language.

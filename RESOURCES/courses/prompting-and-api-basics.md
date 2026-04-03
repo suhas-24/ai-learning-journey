@@ -22,6 +22,8 @@ This course teaches the first principles of working with instruction-following m
 
 An instruction-following model is a model that tries to do what you ask in text. It still needs clear directions, just like a person does.
 
+A `schema` is a shape for data, like a template that says what fields should exist and what they should contain.
+
 ### Core topics and subtopics
 
 - Instruction design: clear tasks, context, and intent.

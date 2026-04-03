@@ -52,7 +52,7 @@ This book explains AI engineering as a system of feedback loops, boundaries, and
 
 ### What this book teaches
 
-This book bridges intuition and implementation. It is especially useful when you can call a model but do not yet have a clear mental model for tokenization, embeddings, semantic search, and generation behavior.
+This book bridges intuition and implementation. It is especially useful when you can call a model but do not yet have a clear mental model for tokenization, embeddings, meaning-based search, and generation behavior.
 
 `Tokenization` means splitting text into the small pieces the model actually sees. That matters because the model does not read your sentence the way a person does.
 

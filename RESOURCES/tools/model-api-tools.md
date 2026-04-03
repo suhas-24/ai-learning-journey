@@ -4,6 +4,8 @@ This guide covers the tools that teach direct interaction with language models. 
 
 If you are new, the simplest picture is this: your code sends a request, the model returns text, and your job is to make that exchange predictable enough to build on.
 
+An `SDK`, or software development kit, is a helper library that makes an API easier to use in code.
+
 ## How To Use This Guide
 
 - Start here when you want to move from prompt writing to actual application calls.

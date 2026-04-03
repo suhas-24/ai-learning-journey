@@ -4,6 +4,8 @@ This guide is for the phase where you need to understand what is happening insid
 
 If you are new to this, `fine-tuning` means teaching an already-trained model with extra examples so it behaves differently on a task. It is not the same as writing a better prompt. It changes the model's learned settings, which are often called `weights`.
 
+The learned numbers inside the model are called `weights`, and they are part of why the model changes as it trains.
+
 ## How To Use This Guide
 
 - Start here when you want to understand why a model behaves the way it does.

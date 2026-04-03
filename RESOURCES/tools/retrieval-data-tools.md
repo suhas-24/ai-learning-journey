@@ -4,6 +4,8 @@ This guide covers the tools that teach how knowledge is stored, indexed, retriev
 
 If `RAG` is a new term, it means retrieval-augmented generation. That is a system where the model looks up useful information before it writes the answer.
 
+`Semantic search` means search by meaning instead of exact word matching.
+
 ## How To Use This Guide
 
 - Start here when the model needs outside evidence to answer well.

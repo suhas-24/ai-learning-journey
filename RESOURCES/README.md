@@ -1,6 +1,6 @@
 # Resources Reference System
 
-This folder is the study companion for the learning journey. It is not a list of links to collect. It is a set of beginner-friendly guides that explain what each resource is, what idea it teaches, when it helps, and what to skip when you are still learning.
+This folder is the study companion for the learning journey. It is not a list of links to collect. It is a set of beginner-friendly guides that explain what each resource is, what problem it helps solve, what idea it teaches, when it helps, and what to skip when you are still learning.
 
 If some terms here feel unfamiliar, that is expected. The resource pages define their own vocabulary, but a few words will appear often:
 

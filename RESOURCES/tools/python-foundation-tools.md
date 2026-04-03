@@ -54,7 +54,7 @@ Ruff teaches fast feedback and consistency. The point is not style for style's s
 
 ### What it teaches
 
-Pyright teaches type discipline. In AI systems, types are a quiet form of reliability because they make tool contracts, response shapes, and state objects easier to reason about.
+Pyright teaches type discipline. A `type` is a label that says what kind of value something should be. In AI systems, types are a quiet form of reliability because they make tool contracts, response shapes, and state objects easier to reason about.
 
 ### Core topics and subtopics
 
