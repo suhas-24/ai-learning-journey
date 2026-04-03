@@ -2,6 +2,8 @@
 
 This lab turns a vague "be safe" instruction into concrete controls.
 
+A `safety gate` is a check that stops or slows an action until the system knows it is allowed.
+
 ## Why this matters
 
 Safety gets real when you decide where the system must stop, where it must ask for help, and what it must log.

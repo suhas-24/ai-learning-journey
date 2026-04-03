@@ -4,6 +4,12 @@ This lab upgrades a fragile orchestrator into a safer runtime.
 
 `Retry` means trying again after a temporary failure. `Approval` means a person must say yes before a risky step happens.
 
+If those ideas are new, think of them like this:
+
+- `retry` is a second chance after a temporary problem
+- a `budget` is a cap on cost, time, or effort
+- an `approval` is a human pause before a risky action
+
 ## Starting point
 
 Assume you already have these nodes:

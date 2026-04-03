@@ -4,6 +4,8 @@ Use the smallest validator that reliably catches the failure mode you care about
 
 Think of a validator as a gatekeeper. It checks whether the thing passing through is the right shape, allowed by policy, or suspicious enough to stop.
 
+`Pydantic` is a Python library that checks and shapes data using fields and types.
+
 ## Schema validator
 
 ```python

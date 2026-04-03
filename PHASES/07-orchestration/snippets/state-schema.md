@@ -4,6 +4,13 @@ Use this as a compact template for orchestrated runs.
 
 This is the memory card for one run. Keep it small, clear, and easy to resume from.
 
+If these field names are new:
+
+- `run_id` is the unique name for one attempt
+- `task_type` is the kind of job the workflow is doing
+- `current_node` is the step that is running now
+- `status` says whether the run is waiting, running, failed, or finished
+
 ```json
 {
   "run_id": "string",

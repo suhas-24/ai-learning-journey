@@ -6,6 +6,15 @@ A `guardrail` is any rule or check that lowers the chance of harm. A `threat mod
 
 If those words are new, do not worry. This phase starts with the simplest possible version of the problem: an AI system can be helpful, but it can also be tricked, rushed, or given too much power. We learn how to notice those risks early and how to slow the system down in the right places.
 
+First words:
+
+- `guardrail` means a rule or check that reduces harm
+- `threat model` means a simple map of how things could go wrong
+- `trust boundary` means a place where we stop trusting input automatically
+- `least privilege` means giving each part only the permission it truly needs
+- `approval` means a human must say yes before a risky action happens
+- `sandbox` means a contained place where risky work cannot easily damage the rest of the system
+
 Recommended order:
 
 1. [Threat Models for AI Systems](./chapters/01-threat-models-for-ai-systems.md)

@@ -9,6 +9,7 @@ Good safety does not live in one prompt line. It lives in layers.
 - `boundary` means a point where control changes
 - `validation` means checking whether something is allowed or well formed
 - `irreversible` means you cannot easily take the action back
+- `gate` means a place where the system must pause and check before it continues
 
 ## Why this matters
 

@@ -11,6 +11,7 @@ If that sounds abstract, think of it like safety planning for a busy kitchen. Be
 - `asset` means something valuable that we want to protect
 - `trust boundary` means a place where we stop trusting something automatically
 - `attack path` means the way a bad outcome could happen
+- `control` means a step that lowers risk or blocks the bad path
 
 ## Why this matters
 

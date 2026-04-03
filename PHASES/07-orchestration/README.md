@@ -1,20 +1,25 @@
 # Phase 07 - Orchestration and Harness Engineering
 
-This module teaches how to turn one model call into a dependable workflow.
+This phase teaches how to turn one model call into a dependable workflow.
 
 Before we go further, here are the core words in plain language:
 
-- a `model` is the part that generates text or chooses an action
+- a `workflow` is a sequence of steps that work toward one goal
+- a `node` is one step in that workflow
 - `orchestration` means deciding what happens next
 - a `harness` is the system around the model that keeps work organized, safe, and observable
 - `state` is the information the system remembers while it works
 - a `checkpoint` is a saved point that lets the system continue later
+- a `budget` is a limit on time, money, or effort
+- an `approval gate` is a point where a person must say yes before the system continues
 
 If those words are new, that is normal. We start with ordinary ideas like step order, memory, and recovery, then name the technical version after the idea is clear.
 
 ## What This Phase Is Really About
 
 The main lesson is simple: a model can suggest the next move, but a larger system must decide whether that move should happen, how much it may cost, and what to do if something breaks.
+
+If you can explain the workflow in terms of steps, memory, retries, and stops, you already understand the heart of orchestration.
 
 ## What You Will Learn
 

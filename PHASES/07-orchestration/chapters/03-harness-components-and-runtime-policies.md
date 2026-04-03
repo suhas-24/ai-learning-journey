@@ -7,10 +7,12 @@ If the model is the part that writes the next sentence or picks the next action,
 If those words are new:
 
 - `harness` means the system around the model
+- a `planner` or `dispatcher` is the part that chooses the next step
 - `runtime policy` means a rule that guides what the system is allowed to do while it is running
 - `retry` means trying again after a temporary problem
 - `budget` means a limit on time, money, or effort
 - `dead-letter` means a place where failed runs are saved for human review
+- a `trace` is the step-by-step record of what happened during one run
 
 ## The minimum viable harness
 

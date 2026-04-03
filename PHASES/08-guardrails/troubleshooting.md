@@ -2,6 +2,8 @@
 
 Use this page when the guardrails feel either too weak or too strict. Each symptom below is written as a common beginner mistake so you can recognize it in a real project.
 
+If a term feels fuzzy, the safest move is to read the matching chapter again and translate the rule into plain language before changing the code.
+
 ## Symptom: the system still follows malicious instructions from retrieved text
 
 Likely causes:

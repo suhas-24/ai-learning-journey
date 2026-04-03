@@ -4,6 +4,8 @@ Guardrails become real when the system knows not only what it can do, but also w
 
 `Least privilege` means giving each part of the system only the power it truly needs. If a component only needs to read data, do not let it write or delete data too.
 
+Another simple way to think about it: give each helper the smallest key ring that still lets it do its job.
+
 ## First words
 
 - `policy` means a rule about what is allowed

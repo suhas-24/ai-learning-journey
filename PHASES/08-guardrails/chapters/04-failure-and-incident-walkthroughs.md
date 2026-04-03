@@ -4,6 +4,8 @@ This chapter connects theory to incidents you are likely to face.
 
 An `incident` is just a real safety problem that happened in practice. The goal is to learn how to react, document, and improve the system so the same mistake is less likely next time.
 
+If you can describe the failure in plain words, you can usually design a better guardrail for it.
+
 ## Why this matters
 
 It is much easier to remember safety rules when you see how they fail. Real examples teach the difference between a system that looks safe and a system that is actually safe.

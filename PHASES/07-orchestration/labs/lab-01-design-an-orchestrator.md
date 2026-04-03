@@ -4,6 +4,14 @@ This lab takes you from a vague agent idea to a concrete execution graph.
 
 An `orchestrator` is the part that decides which step happens next. A `graph` is a map of boxes and arrows that shows the allowed next steps.
 
+If those words are new, that is okay:
+
+- `orchestrator` means the control layer that chooses the next step
+- a `graph` is a picture of allowed next steps
+- a `node` is one box in that picture
+- `state` is the memory the workflow carries forward
+- a `checkpoint` is a safe place to resume from later
+
 ## Goal
 
 Design a small orchestrator for this task:

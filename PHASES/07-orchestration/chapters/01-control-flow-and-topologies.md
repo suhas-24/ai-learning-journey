@@ -6,6 +6,10 @@ When a person cooks, they do not dump every ingredient into the pan at once. The
 
 A model can suggest an answer or next action, but reliable software needs rules around that suggestion.
 
+A `topology` is the shape of the workflow. Some workflows are straight lines, some loop, some branch, and some become graphs with shared state.
+
+A `node` is one step in that workflow. If you can point to the box and say what it does, you have found a node.
+
 ## The Core Idea
 
 A single-agent loop looks like this:

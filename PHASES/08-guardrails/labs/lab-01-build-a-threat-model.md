@@ -2,6 +2,8 @@
 
 This lab helps you practice threat modeling on a realistic AI workflow.
 
+A `risk register` is a table that keeps track of what could go wrong, how bad it could be, what stops it, and how you would notice it.
+
 ## Why this matters
 
 You are learning how to spot trouble before the system ships. That is much easier than trying to fix a real incident after a user finds it.
